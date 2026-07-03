@@ -690,6 +690,395 @@ body {
   flex: 1;
 }
 
+/* ═══════════════════════════════════════════════════════════════
+   ARRIVAL SCENE — Cinematic Entrance
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── Scene Shell ── */
+.arrival-scene {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.arrival-bg {
+  position: absolute;
+  inset: -10px;
+  background: url('/cantina-arrival.png') center/cover no-repeat;
+  filter: blur(2px) brightness(0.85);
+  animation: arrivalBgBreath 20s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes arrivalBgBreath {
+  0%, 100% { transform: scale(1.05); }
+  50% { transform: scale(1.08); }
+}
+
+.arrival-dim {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+/* ── Fog Layers ── */
+.arrival-fog {
+  position: absolute;
+  width: 250%;
+  height: 60%;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.6;
+}
+
+.arrival-fog-1 {
+  top: 10%;
+  left: -75%;
+  background: linear-gradient(90deg, transparent 0%, rgba(180,160,140,0.04) 20%, rgba(200,180,160,0.06) 40%, transparent 60%, rgba(180,160,140,0.03) 80%, transparent 100%);
+  filter: blur(60px);
+  animation: fogDriftRight 28s ease-in-out infinite;
+}
+
+.arrival-fog-2 {
+  top: 40%;
+  left: -100%;
+  background: linear-gradient(90deg, transparent 0%, rgba(160,140,120,0.05) 30%, transparent 50%, rgba(180,160,140,0.04) 70%, transparent 100%);
+  filter: blur(80px);
+  animation: fogDriftLeft 35s ease-in-out infinite;
+}
+
+.arrival-fog-3 {
+  bottom: 5%;
+  left: -50%;
+  width: 200%;
+  height: 40%;
+  background: linear-gradient(90deg, transparent 0%, rgba(212,160,23,0.03) 25%, transparent 50%, rgba(233,30,140,0.02) 75%, transparent 100%);
+  filter: blur(50px);
+  animation: fogDriftRight 22s ease-in-out infinite reverse;
+}
+
+@keyframes fogDriftRight {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(20%); }
+}
+
+@keyframes fogDriftLeft {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(-15%); }
+}
+
+/* ── Warm Light Glows ── */
+.arrival-glow {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.arrival-glow-amber {
+  top: 15%;
+  left: 25%;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(212,160,23,0.07) 0%, transparent 70%);
+  filter: blur(60px);
+  animation: glowPulse 10s ease-in-out infinite;
+}
+
+.arrival-glow-magenta {
+  bottom: 20%;
+  right: 15%;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(233,30,140,0.05) 0%, transparent 70%);
+  filter: blur(50px);
+  animation: glowPulse 12s ease-in-out infinite 3s;
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.1); }
+}
+
+/* ── Dust Particles ── */
+.arrival-dust-container {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.arrival-dust {
+  position: absolute;
+  bottom: -10px;
+  border-radius: 50%;
+  background: rgba(212,180,120,0.6);
+  animation: dustFloat linear infinite;
+}
+
+@keyframes dustFloat {
+  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  100% { transform: translateY(-100vh) translateX(30px); opacity: 0; }
+}
+
+/* ── Silhouette ── */
+.arrival-silhouette {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  height: 280px;
+  background: linear-gradient(to top, rgba(10,14,23,0.4) 0%, rgba(10,14,23,0.15) 40%, transparent 70%);
+  border-radius: 45% 45% 0 0;
+  filter: blur(25px);
+  z-index: 2;
+  animation: silhouetteFade 15s ease-in-out infinite;
+  opacity: 0;
+  pointer-events: none;
+}
+
+@keyframes silhouetteFade {
+  0%, 60%, 100% { opacity: 0; transform: translateX(-50%) scaleY(0.95); }
+  65% { opacity: 0.12; }
+  75% { opacity: 0.08; transform: translateX(-48%) scaleY(1); }
+  85% { opacity: 0; }
+}
+
+/* ── Reflection (wet bar surface) ── */
+.arrival-reflection {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 25%;
+  background: linear-gradient(to top, rgba(212,160,23,0.02) 0%, transparent 100%);
+  pointer-events: none;
+  z-index: 2;
+}
+
+/* ── Vignette ── */
+.arrival-vignette {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.4) 100%);
+  pointer-events: none;
+  z-index: 3;
+}
+
+/* ── Content ── */
+.arrival-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+/* ── Age Gate ── */
+.age-gate {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: ageGateIn 1.5s ease forwards;
+  opacity: 0;
+}
+
+@keyframes ageGateIn {
+  0% { opacity: 0; transform: translateY(10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.age-gate-butterfly {
+  margin-bottom: 24px;
+}
+
+.age-gate-title {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  margin-bottom: 20px;
+}
+
+.age-gate-title-cantina {
+  font-size: 2.2rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--amber);
+  text-shadow: 0 0 20px rgba(212,160,23,0.4), 0 0 40px rgba(212,160,23,0.15);
+  line-height: 1.1;
+}
+
+.age-gate-title-virtual {
+  font-size: 1rem;
+  letter-spacing: 0.6em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  text-shadow: 0 0 10px rgba(233,30,140,0.3);
+}
+
+.age-gate-divider {
+  width: 60px;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--amber), rgba(233,30,140,0.5), transparent);
+  opacity: 0.4;
+  margin-bottom: 24px;
+}
+
+.age-gate-legal {
+  max-width: 380px;
+  text-align: center;
+  font-size: 10px;
+  line-height: 1.8;
+  color: var(--text-dim);
+  letter-spacing: 0.05em;
+  margin-bottom: 32px;
+  padding: 0 20px;
+}
+
+.age-gate-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  align-items: center;
+}
+
+.age-gate-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 14px 48px;
+  background: transparent;
+  border: 1px solid rgba(212,160,23,0.2);
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.4s ease;
+  min-width: 200px;
+}
+
+.age-gate-btn-enter:hover {
+  border-color: var(--amber);
+  background: rgba(212,160,23,0.08);
+  box-shadow: 0 0 20px rgba(212,160,23,0.15);
+}
+
+.age-gate-btn-leave {
+  border-color: rgba(255,255,255,0.06);
+}
+
+.age-gate-btn-leave:hover {
+  border-color: rgba(255,255,255,0.15);
+  background: rgba(255,255,255,0.02);
+}
+
+.age-gate-btn-label {
+  font-size: 13px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--amber);
+}
+
+.age-gate-btn-leave .age-gate-btn-label {
+  color: var(--text-dim);
+}
+
+.age-gate-btn-sub {
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  color: var(--text-dim);
+}
+
+/* ── Password Scene (inside arrival) ── */
+.password-scene {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.password-butterfly {
+  margin-bottom: 24px;
+  transform: scale(0.7);
+}
+
+.password-atmosphere {
+  margin-bottom: 8px;
+}
+
+.password-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.password-label {
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.password-input {
+  width: 220px;
+  text-align: center;
+  padding: 10px 16px;
+  background: rgba(0,0,0,0.3);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(212,160,23,0.15);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.password-input:focus {
+  border-color: rgba(212,160,23,0.4);
+  box-shadow: 0 0 20px rgba(212,160,23,0.1);
+}
+
+.password-input::placeholder {
+  color: var(--text-dim);
+  letter-spacing: 0.3em;
+}
+
+.password-btn {
+  padding: 10px 32px;
+  background: transparent;
+  border: 1px solid rgba(212,160,23,0.25);
+  color: var(--amber);
+  font-family: inherit;
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.password-btn:hover {
+  background: rgba(212,160,23,0.12);
+  border-color: var(--amber);
+  box-shadow: 0 0 16px rgba(212,160,23,0.2);
+}
+
+.password-reject {
+  margin-top: 24px;
+  font-size: 13px;
+  color: var(--sale-red);
+  text-shadow: 0 0 10px rgba(255,59,59,0.3);
+}
+
 /* ── Mobile Sidebar → Bottom Bar ── */
 @media (max-width: 768px) {
   .sidebar-hub {
@@ -788,4 +1177,14 @@ body {
     align-items: center;
     text-align: center;
   }
+
+  /* Arrival mobile */
+  .arrival-glow-amber { width: 300px; height: 300px; }
+  .arrival-glow-magenta { width: 250px; height: 250px; }
+  .age-gate-title-cantina { font-size: 1.5rem; letter-spacing: 0.25em; }
+  .age-gate-title-virtual { font-size: 0.8rem; letter-spacing: 0.4em; }
+  .age-gate-legal { max-width: 260px; font-size: 9px; }
+  .age-gate-btn { padding: 12px 36px; min-width: 170px; }
+  .arrival-silhouette { width: 120px; height: 200px; }
+  .password-input { width: 200px; }
 }

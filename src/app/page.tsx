@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
 import { DISTRICTS } from '@/data/rooms';
 import { MariposaCenterpiece } from '@/components/cantina/MariposaCenterpiece';
 import { SmokeParticles } from '@/components/cantina/SmokeParticles';
@@ -9,6 +9,101 @@ import { DistrictScene } from '@/components/cantina/DistrictScene';
 import { NectarHUD } from '@/components/cantina/NectarHUD';
 
 const HERO_BG = 'https://sfile.chatglm.cn/images-ppt/b4e9051f97b1.jpg';
+
+/* ─── Arrival Dust Particles ─── */
+function ArrivalDust() {
+  const particles = useMemo(
+    () =>
+      Array.from({ length: 24 }, (_, i) => ({
+        id: i,
+        left: Math.random() * 100,
+        delay: Math.random() * 10,
+        duration: 7 + Math.random() * 8,
+        size: 1 + Math.random() * 2,
+        opacity: 0.15 + Math.random() * 0.25,
+      })),
+    [],
+  );
+
+  return (
+    <div className="arrival-dust-container">
+      {particles.map((p) => (
+        <div
+          key={p.id}
+          className="arrival-dust"
+          style={{
+            left: `${p.left}%`,
+            animationDelay: `${p.delay}s`,
+            animationDuration: `${p.duration}s`,
+            width: `${p.size}px`,
+            height: `${p.size}px`,
+            opacity: p.opacity,
+          }}
+        />
+      ))}
+    </div>
+  );
+}
+
+/* ─── Arrival Scene (cinematic background wrapper) ─── */
+function ArrivalScene({ children }: { children: React.ReactNode }) {
+  return (
+    <div className="arrival-scene">
+      <div className="arrival-bg" />
+      <div className="arrival-dim" />
+      <div className="arrival-fog arrival-fog-1" />
+      <div className="arrival-fog arrival-fog-2" />
+      <div className="arrival-fog arrival-fog-3" />
+      <div className="arrival-glow arrival-glow-amber" />
+      <div className="arrival-glow arrival-glow-magenta" />
+      <ArrivalDust />
+      <div className="arrival-silhouette" />
+      <div className="arrival-reflection" />
+      <div className="arrival-vignette" />
+      <div className="arrival-content">{children}</div>
+    </div>
+  );
+}
+
+/* ─── Age Gate ─── */
+function AgeGate({ onConfirm }: { onConfirm: () => void }) {
+  return (
+    <ArrivalScene>
+      <div className="age-gate">
+        <div className="age-gate-butterfly">
+          <MariposaCenterpiece />
+        </div>
+        <h1 className="age-gate-title">
+          <span className="age-gate-title-cantina">CANTINA</span>
+          <span className="age-gate-title-virtual">VIRTUAL</span>
+        </h1>
+        <div className="age-gate-divider" />
+        <p className="age-gate-legal">
+          This destination is intended only for adults 18 years of age or older. By
+          entering, you confirm you meet the age of majority in your jurisdiction.
+        </p>
+        <div className="age-gate-actions">
+          <button
+            className="age-gate-btn age-gate-btn-enter"
+            onClick={onConfirm}
+          >
+            <span className="age-gate-btn-label">ENTER</span>
+            <span className="age-gate-btn-sub">I am 18 or older.</span>
+          </button>
+          <button
+            className="age-gate-btn age-gate-btn-leave"
+            onClick={() => {
+              window.location.href = 'https://google.com';
+            }}
+          >
+            <span className="age-gate-btn-label">LEAVE</span>
+            <span className="age-gate-btn-sub">Not tonight.</span>
+          </button>
+        </div>
+      </div>
+    </ArrivalScene>
+  );
+}
 
 /* ─── Password Screen ─── */
 function PasswordScreen({ onUnlock }: { onUnlock: () => void }) {
@@ -22,92 +117,65 @@ function PasswordScreen({ onUnlock }: { onUnlock: () => void }) {
     inputRef.current?.focus();
   }, []);
 
-  const handleSubmit = useCallback((e: React.FormEvent) => {
-    e.preventDefault();
-    if (input.toLowerCase().trim() === 'mariposa') {
-      onUnlock();
-    } else {
-      setShaking(true);
-      setMariposaDead(true);
-      setTimeout(() => {
-        setShaking(false);
-        setMariposaDead(false);
-        setShowReject(false);
-        setInput('');
-        inputRef.current?.focus();
-      }, 2000);
-      setShowReject(true);
-    }
-  }, [input, onUnlock]);
+  const handleSubmit = useCallback(
+    (e: React.FormEvent) => {
+      e.preventDefault();
+      if (input.toLowerCase().trim() === 'mariposa') {
+        onUnlock();
+      } else {
+        setShaking(true);
+        setMariposaDead(true);
+        setTimeout(() => {
+          setShaking(false);
+          setMariposaDead(false);
+          setShowReject(false);
+          setInput('');
+          inputRef.current?.focus();
+        }, 2000);
+        setShowReject(true);
+      }
+    },
+    [input, onUnlock],
+  );
 
   return (
-    <div className={`min-h-screen flex flex-col items-center justify-center relative ${shaking ? 'shake' : ''}`}
-      style={{ background: 'radial-gradient(ellipse at center bottom, #1a1208 0%, #0a0e17 70%)' }}>
-
-      <SmokeParticles />
-
-      <div className="mb-10">
-        <MariposaCenterpiece dead={mariposaDead} />
+    <ArrivalScene>
+      <div className={`password-scene ${shaking ? 'shake' : ''}`}>
+        <div className="password-butterfly">
+          <MariposaCenterpiece dead={mariposaDead} />
+        </div>
+        <div className="password-atmosphere">
+          <div className="h-7 overflow-hidden">
+            <span
+              className="typewriter-text text-lg tracking-widest"
+              style={{ color: 'var(--amber)' }}
+            >
+              The cantina is listening...
+            </span>
+          </div>
+        </div>
+        <form onSubmit={handleSubmit} className="password-form">
+          <label className="password-label">Whisper the password</label>
+          <input
+            ref={inputRef}
+            type="text"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            className="password-input"
+            placeholder="..."
+            autoComplete="off"
+            autoCapitalize="off"
+            spellCheck={false}
+          />
+          <button type="submit" className="password-btn">
+            Enter
+          </button>
+        </form>
+        {showReject && (
+          <p className="password-reject fade-in">Not tonight, forastero.</p>
+        )}
       </div>
-
-      <div className="mb-6 h-7 overflow-hidden">
-        <span className="typewriter-text text-lg tracking-widest" style={{ color: 'var(--amber)' }}>
-          The cantina is listening...
-        </span>
-      </div>
-
-      <form onSubmit={handleSubmit} className="flex flex-col items-center gap-4">
-        <label className="text-xs tracking-[0.3em] uppercase" style={{ color: 'var(--text-muted)' }}>
-          Whisper the password
-        </label>
-        <input
-          ref={inputRef}
-          type="text"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          className="w-56 text-center py-2 px-4 rounded-none text-sm tracking-widest outline-none"
-          style={{
-            background: 'rgba(255,255,255,0.03)',
-            border: '1px solid rgba(212,160,23,0.2)',
-            color: 'var(--text-primary)',
-            fontFamily: 'inherit',
-          }}
-          placeholder="..."
-          autoComplete="off"
-          autoCapitalize="off"
-          spellCheck={false}
-        />
-        <button
-          type="submit"
-          className="px-6 py-2 text-xs tracking-[0.25em] uppercase transition-all duration-300 cursor-pointer"
-          style={{
-            background: 'transparent',
-            border: '1px solid var(--amber)',
-            color: 'var(--amber)',
-          }}
-          onMouseEnter={(e) => {
-            e.currentTarget.style.background = 'var(--amber)';
-            e.currentTarget.style.color = '#0a0e17';
-          }}
-          onMouseLeave={(e) => {
-            e.currentTarget.style.background = 'transparent';
-            e.currentTarget.style.color = 'var(--amber)';
-          }}
-        >
-          Enter
-        </button>
-      </form>
-
-      {showReject && (
-        <p className="mt-6 text-sm fade-in" style={{ color: 'var(--sale-red)' }}>
-          Not tonight, forastero.
-        </p>
-      )}
-
-      <p className="absolute bottom-8 text-[10px] tracking-[0.2em]" style={{ color: 'var(--text-dim)' }}>
-        The password hides in the videos
-      </p>
-    </div>
+    </ArrivalScene>
   );
 }
 
@@ -118,26 +186,29 @@ function Cantina() {
   const [displayedDistrict, setDisplayedDistrict] = useState(DISTRICTS[0].id);
   const mainRef = useRef<HTMLDivElement>(null);
 
-  const handleDistrictChange = useCallback((id: string) => {
-    if (id === activeDistrict || transitioning) return;
-    setTransitioning(true);
-    const main = mainRef.current;
-    if (main) {
-      main.classList.add('scene-exit');
-      setTimeout(() => {
+  const handleDistrictChange = useCallback(
+    (id: string) => {
+      if (id === activeDistrict || transitioning) return;
+      setTransitioning(true);
+      const main = mainRef.current;
+      if (main) {
+        main.classList.add('scene-exit');
+        setTimeout(() => {
+          setActiveDistrict(id);
+          setDisplayedDistrict(id);
+          main.classList.remove('scene-exit');
+          main.classList.add('scene-transition');
+          setTransitioning(false);
+          setTimeout(() => main.classList.remove('scene-transition'), 800);
+        }, 500);
+      } else {
         setActiveDistrict(id);
         setDisplayedDistrict(id);
-        main.classList.remove('scene-exit');
-        main.classList.add('scene-transition');
         setTransitioning(false);
-        setTimeout(() => main.classList.remove('scene-transition'), 800);
-      }, 500);
-    } else {
-      setActiveDistrict(id);
-      setDisplayedDistrict(id);
-      setTransitioning(false);
-    }
-  }, [activeDistrict, transitioning]);
+      }
+    },
+    [activeDistrict, transitioning],
+  );
 
   const district = DISTRICTS.find((d) => d.id === displayedDistrict);
 
@@ -149,11 +220,19 @@ function Cantina() {
       />
 
       <main ref={mainRef} className="cantina-main scene-transition">
-        <div className="mariposa" style={{ top: '12%', right: '8%', color: '#ff69b4' }}>
+        <div
+          className="mariposa"
+          style={{ top: '12%', right: '8%', color: '#ff69b4' }}
+        >
           <span className="mariposa-wing">🦋</span>
         </div>
-        <div className="mariposa" style={{ top: '35%', left: '5%', color: '#ff69b4', animationDelay: '-3s' }}>
-          <span className="mariposa-wing" style={{ animationDelay: '-0.2s' }}>🦋</span>
+        <div
+          className="mariposa"
+          style={{ top: '35%', left: '5%', color: '#ff69b4', animationDelay: '-3s' }}
+        >
+          <span className="mariposa-wing" style={{ animationDelay: '-0.2s' }}>
+            🦋
+          </span>
         </div>
 
         {district && <DistrictScene district={district} />}
@@ -163,7 +242,10 @@ function Cantina() {
         {/* Nectar teaser — bottom of scene */}
         <div className="district-nectar-teaser">
           <div className="nectar-hud-icon">🍯</div>
-          <span className="text-xs tracking-[0.15em] uppercase" style={{ color: 'var(--text-dim)' }}>
+          <span
+            className="text-xs tracking-[0.15em] uppercase"
+            style={{ color: 'var(--text-dim)' }}
+          >
             Earn nectar. Spend it. Come back for more.
           </span>
         </div>
@@ -171,7 +253,10 @@ function Cantina() {
         {/* Discord — bottom bar */}
         <footer className="district-footer">
           <div className="district-footer-left">
-            <p className="text-[9px] tracking-[0.3em] uppercase" style={{ color: 'var(--text-dim)' }}>
+            <p
+              className="text-[9px] tracking-[0.3em] uppercase"
+              style={{ color: 'var(--text-dim)' }}
+            >
               Cantina Virtual &middot; Pacific Coast &middot; 2025
             </p>
           </div>
@@ -195,24 +280,52 @@ function Cantina() {
 
 /* ─── HOME (Entry Point) ─── */
 export default function Home() {
+  const [ageConfirmed, setAgeConfirmed] = useState(false);
+  const [ageChecked, setAgeChecked] = useState(false);
   const [state, setState] = useState<'locked' | 'exiting' | 'unlocked'>('locked');
+
+  useEffect(() => {
+    const confirmed = localStorage.getItem('cv-age-confirmed');
+    if (confirmed === 'true') {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- SSR-safe localStorage read
+      setAgeConfirmed(true);
+    }
+    setAgeChecked(true);
+  }, []);
+
+  const handleAgeConfirm = useCallback(() => {
+    localStorage.setItem('cv-age-confirmed', 'true');
+    setAgeConfirmed(true);
+  }, []);
 
   const handleUnlock = useCallback(() => {
     setState('exiting');
     setTimeout(() => setState('unlocked'), 500);
   }, []);
 
+  if (!ageChecked) return null;
+
   return (
     <>
       <NectarHUD />
+      {!ageConfirmed && <AgeGate onConfirm={handleAgeConfirm} />}
+      {ageConfirmed && state === 'locked' && (
+        <PasswordScreen onUnlock={handleUnlock} />
+      )}
       {state === 'exiting' && (
         <div
-          className="scene-exit min-h-screen"
-          style={{ background: 'radial-gradient(ellipse at center bottom, #1a1208 0%, #0a0e17 70%)' }}
-        />
-      )}
-      {state === 'locked' && (
-        <PasswordScreen onUnlock={handleUnlock} />
+          className="scene-exit"
+          style={{
+            position: 'fixed',
+            inset: 0,
+            zIndex: 20,
+            overflow: 'hidden',
+          }}
+        >
+          <div className="arrival-bg" />
+          <div className="arrival-dim" />
+          <div className="arrival-vignette" />
+        </div>
       )}
       {state === 'unlocked' && (
         <Cantina />
