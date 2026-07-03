@@ -1,0 +1,1107 @@
+
+CANTINA VIRTUAL
+
+Complete Project Handoff
+
+The exact state of the project so another thread can continue building.
+
+
+
+Generated: July 4, 2026
+
+Next.js 16  |  TypeScript  |  Tailwind CSS 4  |  CrakRevenue Affiliate
+
+Table of Contents
+
+1. File Tree 1
+
+2. File Inventory 4
+
+3. Routing and Navigation 5
+
+3.1 State Machine (page.tsx) 5
+
+3.2 District Switching 6
+
+3.3 Mobile Navigation 6
+
+4. Data Layer (rooms.ts) 6
+
+4.1 Affiliate Architecture 7
+
+4.2 Resident Interface 7
+
+4.3 Current Residents (4) 8
+
+4.4 District Interface 8
+
+4.5 Current Districts (5) 8
+
+4.6 SaleTier (Platform Mode Only) 8
+
+5. Component Architecture 9
+
+5.1 page.tsx — Home (Entry Point) 9
+
+PasswordScreen 9
+
+Cantina 9
+
+5.2 SidebarHub 9
+
+5.3 DistrictScene 10
+
+5.4 EncounterCard 10
+
+5.5 MariposaCenterpiece 10
+
+5.6 SmokeParticles 10
+
+5.7 NectarHUD 11
+
+6. Complete UX Flow 11
+
+6.1 Password Gate 11
+
+6.2 Cantina Navigation 12
+
+6.3 Encounter Interaction 12
+
+6.4 Empty Districts 12
+
+6.5 Nectar HUD 13
+
+7. CSS Architecture 13
+
+7.1 Design Tokens (CSS Custom Properties) 13
+
+7.2 Typography 13
+
+7.3 CSS Class Systems 14
+
+7.4 Animation Inventory 15
+
+7.5 Responsive Breakpoint 15
+
+8. Image Inventory 15
+
+9. Build Status and Configuration 16
+
+9.1 Build Status 16
+
+9.2 next.config.ts 16
+
+9.3 tsconfig.json 16
+
+9.4 Key Dependencies 17
+
+9.5 Font 17
+
+10. Compliance Status 17
+
+10.1 Password Gate 17
+
+10.2 Affiliate Link Hygiene 18
+
+10.3 18+ / DMCA / 2257 Footer 18
+
+11. Known Bugs and Dead Code 18
+
+11.1 Dead Code on Disk 19
+
+11.2 Unused Constants 19
+
+11.3 Placeholder Discord Link 19
+
+11.4 TypeScript Errors Suppressed 19
+
+11.5 NectarHUD Resets on Navigation 19
+
+11.6 No 18+ Compliance Footer 20
+
+12. Population Recipe 20
+
+Step 1: Add Resident to RESIDENTS 20
+
+Step 2: Add Affiliate Link (if applicable) 21
+
+Step 3: Add Encounter to District 22
+
+13. Next Recommended Milestones 23
+
+(Right-click the table of contents above and select 'Update Field' to refresh page numbers after opening in Word.)
+
+Cantina Virtual — Project Handoff
+
+1. File Tree
+
+The following is the complete file tree of all Cantina Virtual source files. Only files under src/ are listed; the project also contains standard Next.js infrastructure (package.json, tsconfig.json, next.config.ts, etc.) and a large set of unused shadcn/ui components under src/components/ui/ that are not part of the Cantina render path.
+
+src/
+
+├── app/
+
+│   ├── globals.css          # Full design system
+
+│   ├── layout.tsx            # Root layout, metadata
+
+│   └── page.tsx              # Entry: state machine
+
+├── components/
+
+│   └── cantina/
+
+│       ├── DistrictScene.tsx     # Active
+
+│       ├── EncounterCard.tsx     # Active
+
+│       ├── FanvueCard.tsx        # DEAD
+
+│       ├── MariposaCenterpiece.tsx # Active
+
+│       ├── NectarHUD.tsx         # Active
+
+│       ├── OfferButton.tsx       # DEAD
+
+│       ├── RoomCard.tsx          # Unused
+
+│       ├── SaleTier.tsx          # Unused
+
+│       ├── SidebarHub.tsx        # Active
+
+│       └── SmokeParticles.tsx     # Active
+
+├── data/
+
+│   └── rooms.ts              # Data layer + affiliates
+
+└── hooks/
+
+    └── useReveal.ts           # Unused
+
+
+
+2. File Inventory
+
+Every file in the Cantina Virtual source tree, its status in the render path, and a precise description of its role. Files marked DEAD have zero imports anywhere and are safe to delete. Files marked Unused are on disk but not currently referenced by any active render path.
+
+File
+
+Status
+
+Purpose
+
+layout.tsx
+
+Active
+
+Root layout. Sets metadata (title, OG, Twitter). Imports globals.css. No custom fonts loaded; body uses system monospace.
+
+page.tsx
+
+Active
+
+Entry point. State machine: locked > exiting > unlocked. Password gate, Cantina layout, district switching logic. Contains unused HERO_BG constant.
+
+Cantina Virtual — Project Handoff
+
+File
+
+Status
+
+Purpose
+
+globals.css
+
+Active
+
+Complete design system. CSS custom properties, 15+ keyframe animations, all component styles, responsive breakpoint at 768px.
+
+rooms.ts
+
+Active
+
+Data layer. Private AFFILIATE_MAP, resolveOfferLink() gate, RESIDENTS (4), DISTRICTS (5), SALE_TIERS (3, platform-only).
+
+SidebarHub.tsx
+
+Active
+
+Fixed sidebar with 5 district nav buttons. Renders brand header, divider, nav list, footer. Bottom bar on mobile.
+
+DistrictScene.tsx
+
+Active
+
+Full-scene renderer per district: bg image at 0.12 opacity, gradient overlay, header with neon title, encounter cards.
+
+EncounterCard.tsx
+
+Active
+
+Image-first card with resident portrait, name, subtitle, description, 'Send a Drink' CTA. Uses resolveOfferLink().
+
+MariposaCenterpiece.tsx
+
+Active
+
+Butterfly emoji + nectar drip SVG elements. 'dead' prop for password rejection state (opacity 0.1).
+
+SmokeParticles.tsx
+
+Active
+
+6 ambient CSS-only floating particles. Renders on password screen and inside Cantina main.
+
+NectarHUD.tsx
+
+Active
+
+Fixed bottom-right overlay. Fake nectar count increments every 8s with pulse animation.
+
+RoomCard.tsx
+
+Unused
+
+Legacy room doorway component. Imports non-existent Room type and ROOM_BG_IMAGES. Zero imports. Broken if rendered.
+
+SaleTier.tsx
+
+Unused
+
+Platform mode pricing cell. Imports SaleTier type from rooms.ts. Zero imports in World render path.
+
+FanvueCard.tsx
+
+Dead
+
+Imports non-existent LINKS and FanvueEntry from rooms.ts. Zero imports. Broken if rendered.
+
+OfferButton.tsx
+
+Dead
+
+Imports non-existent LINKS and LinkKey from rooms.ts. Zero imports. Broken if rendered.
+
+useReveal.ts
+
+Unused
+
+IntersectionObserver scroll-reveal hook. No elements currently use the 'reveal' class.
+
+
+
+3. Routing and Navigation
+
+The application uses a single route (/) with all navigation handled client-side through React state. There is no Next.js file-based routing, no dynamic routes, and no API routes used by the Cantina. The src/app/api/route.ts file exists from the project scaffold but is not consumed by any Cantina component.
+
+3.1 State Machine (page.tsx)
+
+Cantina Virtual — Project Handoff
+
+The Home component manages a three-state machine using useState. The initial state is 'locked', which renders the PasswordScreen. When the correct password is entered, the state transitions to 'exiting', which plays a 500ms blur-fade animation. After the timeout, the state becomes 'unlocked' and the Cantina component renders. There is no way to return to the password screen without a full page reload.
+
+type ViewState = 'locked' | 'exiting' | 'unlocked';
+
+
+locked    -> user enters 'mariposa' -> exiting (500ms blur-fade)
+
+exiting   -> setTimeout 500ms     -> unlocked (Cantina renders)
+
+unlocked  -> (no exit path)       -> stays until page reload
+
+3.2 District Switching
+
+Inside the Cantina component, district navigation is managed by two state variables: activeDistrict (the currently selected district ID) and displayedDistrict (the district actually rendered). When the user clicks a sidebar button, the handleDistrictChange callback triggers a 500ms scene-exit animation on the main content area, then swaps both state values, applies an 800ms scene-transition fade-in, and removes the animation class after it completes. A 'transitioning' boolean guard prevents double-clicks from interrupting the transition.
+
+3.3 Mobile Navigation
+
+On screens narrower than 768px, the sidebar transforms into a fixed bottom tab bar via CSS media query. The brand header, divider, and footer text are hidden. Nav items switch from vertical to horizontal layout with icons-only (dot) display. The main content area shifts from left margin 220px to bottom margin 72px. Scene backgrounds and overlays extend to full width (left: 0).
+
+
+
+4. Data Layer (rooms.ts)
+
+The file src/data/rooms.ts is the single source of truth for all Cantina data. It is organized into three sections: an internal affiliate mapping that is never exported, a link resolution gate function, and world-facing data structures that UI components consume.
+
+4.1 Affiliate Architecture
+
+The AFFILIATE_MAP is a private Record<string, string> that maps resident IDs to their CrakRevenue affiliate URLs. It is deliberately not exported. All outbound traffic flows through the single exported function resolveOfferLink(residentId: string): string, which looks up the ID, logs every resolution to the console, and returns '#' with a console warning if the ID is not found. This means adding a new affiliate link requires only adding an entry to AFFILIATE_MAP; no UI code changes are needed.
+
+Current affiliate mappings:
+
+Cantina Virtual — Project Handoff
+
+girlfriendgpt   -> t.vlmai-1.com/413627/7477?aff_sub=SSUENOS...
+
+lina-rose       -> t.acust-9.com/413627/10396/0?aff_sub=SinNoches_REV25...
+
+ava-harrington  -> t.acust-9.com/413627/10397/0?aff_sub=GPrivado_REV_AvaH...
+
+isla-king       -> t.acust-9.com/413627/10364/0?aff_sub=SinNocturn_IslaKing...
+
+4.2 Resident Interface
+
+Each resident is defined by the Resident interface with five fields: id (string, used as the key in RESIDENTS and for affiliate lookup), name (display name), subtitle (atmospheric label), description (one-line flavor text), and image (URL to portrait hosted on sfile.chatglm.cn). Residents are stored in a Record<string, Resident> dictionary, keyed by their ID.
+
+4.3 Current Residents (4)
+
+ID
+
+Name
+
+Subtitle
+
+District
+
+lina-rose
+
+Lina Rose
+
+Resident of Sinaloa Sueños
+
+Dating Lounge
+
+ava-harrington
+
+Ava Harrington
+
+Evening residency, warm light
+
+Dating Lounge
+
+girlfriendgpt
+
+GirlfriendGPT
+
+Summer residency, Perla Puente
+
+AI Companions
+
+isla-king
+
+Isla King
+
+Private residency, Golfo Privado
+
+Live Cam District
+
+4.4 District Interface
+
+Each district is defined by the District interface. The id is used for React keys and state comparison. name and subtitle are the English and Spanish names displayed in the header. neonClass maps to one of five CSS neon-pulse classes. dividerClass maps to the corresponding gradient divider class. description is atmospheric flavor text. borderColor is an rgba color used for sidebar dot glow. textColor is a CSS variable reference string. bgImage is the URL for the fixed background at 0.12 opacity. encounters is an array of DistrictEncounter objects, each containing only a residentId string.
+
+4.5 Current Districts (5)
+
+District
+
+Spanish Name
+
+Neon
+
+Encounters
+
+Dating Lounge
+
+Sinaloa Sueños
+
+Amber
+
+2 (lina-rose, ava-harrington)
+
+AI Companions
+
+Perla Puente
+
+Cyan
+
+1 (girlfriendgpt)
+
+Live Cam District
+
+Golfo Privado
+
+Purple
+
+1 (isla-king)
+
+Gaming District
+
+Arcade Nocturno
+
+Emerald
+
+0 (empty)
+
+Communities
+
+Niche District
+
+Rose
+
+0 (empty)
+
+4.6 SaleTier (Platform Mode Only)
+
+The SaleTier interface and SALE_TIERS array are exported from rooms.ts but are not imported or 
+
+Cantina Virtual — Project Handoff
+
+rendered by any component in the World mode render path. They were designed for a platform-mode pricing display that was never implemented in the current World build. The three tiers are Premium ($109/yr, 39% off), Deluxe ($199/yr, 53% off), and Elite ($239/yr, 60% off, with 'BEST' badge). The SaleTier.tsx component exists but has zero imports.
+
+
+
+5. Component Architecture
+
+5.1 page.tsx — Home (Entry Point)
+
+The Home component is the default export and root of the application. It renders three conditional branches based on the ViewState state machine. It always renders NectarHUD (fixed overlay, z-index 50). In the 'exiting' state, it renders a full-screen div with the password screen background and the scene-exit animation class. In 'locked', it renders PasswordScreen. In 'unlocked', it renders Cantina.
+
+PasswordScreen
+
+A client component with local state for input, shaking, mariposaDead, and showReject. On mount, it auto-focuses the input. The handleSubmit callback compares the trimmed lowercase input to 'mariposa'. On match, it calls onUnlock(). On mismatch, it triggers the shake animation, sets mariposaDead to true (butterfly fades to 10% opacity), shows the rejection text 'Not tonight, forastero.' in red, and resets everything after 2000ms. The visual layout centers vertically with a radial gradient background, the MariposaCenterpiece butterfly, a typewriter-animated 'The cantina is listening...' text, a password input with amber border, an Enter button with amber fill-on-hover, and a hint at the bottom: 'The password hides in the videos'.
+
+Cantina
+
+The Cantina component manages district navigation state and renders the full layout. It uses activeDistrict and displayedDistrict state (both initialized to DISTRICTS[0].id, which is 'dating-lounge'). The handleDistrictChange callback guards against double-clicks with a transitioning flag, applies scene-exit class to the main element, waits 500ms, swaps both district states, applies scene-transition class, clears transitioning, and removes scene-transition after 800ms. The layout includes two floating butterfly emojis with the mariposa class (positioned absolutely, one at top-right and one at left), the SidebarHub, the DistrictScene for the current district, SmokeParticles, a nectar teaser bar at the bottom, and a footer with a copyright line and a Discord link (currently pointing to 'https://discord.gg/' — a placeholder).
+
+5.2 SidebarHub
+
+Props: activeDistrict (string), onDistrictChange (callback). Renders a fixed-position nav element (sidebar-hub class). Contains a brand header ('Cantina' / 'Virtual'), a gradient divider, and a list of 
+
+Cantina Virtual — Project Handoff
+
+all 5 districts from the DISTRICTS array. Each district renders as a button with a colored dot (6px circle), the district name, and the Spanish subtitle. The active district gets a glowing dot (box-shadow using borderColor) and colored text. On mobile (<768px), CSS transforms this into a bottom tab bar with the brand, divider, and footer hidden.
+
+5.3 DistrictScene
+
+Props: district (District object). Renders a full-viewport scene with three layers: a fixed background image at 0.12 opacity, a gradient overlay for readability, and a content area. The content includes a district header (Spanish subtitle in muted text, English name with neon pulse class, gradient divider, atmospheric description), and an encounter grid. If the district has encounters, each one renders as an EncounterCard with the resident data and the district's textColor. If the district has no encounters, it renders 'Residents arriving soon.' in dim italic text.
+
+5.4 EncounterCard
+
+Props: resident (Resident object), ctaColor (string, CSS color for CTA border/text). The entire card is an <a> tag linking to resolveOfferLink(resident.id) in a new tab. The card has an image section (background-image, 3:2 aspect ratio, gradient overlay from bottom) and a body section with the resident name, subtitle, description, and a 'Send a Drink' CTA button using the cta-bordered class with inline border and color styles. This is the only consumer of resolveOfferLink().
+
+5.5 MariposaCenterpiece
+
+Props: dead (optional boolean). Renders a butterfly emoji with CSS mariposaGlow animation, three nectar drip elements with staggered animation delays (0s, 0.7s, 1.3s), and a nectar pool shimmer element. When dead=true, the entire wrapper gets opacity: 0.1 and filter: none (killing the glow animation) with a 0.3s transition. Used only on the password screen.
+
+5.6 SmokeParticles
+
+No props. Renders a container div with 6 smoke-particle divs, each positioned at 15% + i*14% from the left, with staggered animation delays (i * 1.2s) and durations (5s + i * 0.8s). The smokeRise keyframe moves particles upward 120px while scaling to 2.5x and fading to 0. Used on both the password screen and inside the Cantina main area.
+
+5.7 NectarHUD
+
+No props. A client component with useState for count (starts at 0) and pulse (boolean). A useEffect sets an 8-second interval that increments count and triggers a 600ms pulse animation. Renders a fixed bottom-right div with a honey emoji, 'Nectar' label, and the count. The HUD has a persistent 4s pulsing box-shadow glow. This is a cosmetic placeholder for a future loyalty/points system.
+
+
+
+Cantina Virtual — Project Handoff
+
+6. Complete UX Flow
+
+This section describes every user interaction path through the application, including timing, animations, and conditional branches.
+
+6.1 Password Gate
+
+When the user first loads the page, they see a dark screen with a radial gradient background (warm brown at center-bottom fading to deep navy). The MariposaCenterpiece butterfly glows pink with dripping nectar. Six smoke particles float upward. A typewriter animation reveals 'The cantina is listening...' in amber. Below, a label says 'Whisper the password' with a text input and Enter button.
+
+Correct password ('mariposa'): The state transitions to 'exiting', playing a 500ms blur-fade-out animation on the password screen. The NectarHUD appears immediately. After 500ms, the Cantina renders with an 800ms blur-fade-in transition.
+
+Incorrect password: The entire screen shakes (0.4s screenShake keyframe), the butterfly fades to near-invisible (opacity 0.1), and red text appears: 'Not tonight, forastero.' After 2 seconds, everything resets: shake stops, butterfly revives, rejection text disappears, input clears and re-focuses.
+
+6.2 Cantina Navigation
+
+After unlocking, the user sees the Cantina layout: a 220px sidebar on the left (or bottom bar on mobile) and a main content area. The default district is 'Dating Lounge' (Sinaloa Sueños). Two butterflies float in the main area. The district scene shows a fixed background image at low opacity with a gradient overlay, a neon-pulsing district name, a gradient divider, atmospheric description text, and encounter cards in a responsive grid.
+
+District switching: Clicking a sidebar button triggers a 500ms blur-fade-out on the main content. After the exit animation, the district data swaps instantly (including background image). An 800ms blur-fade-in plays. During the transition, additional clicks are ignored. The background image has a 1.2s CSS opacity transition, so it crossfades with the overlay.
+
+6.3 Encounter Interaction
+
+Each encounter card is a clickable link. Hovering lifts the card 2px and adds a deep box-shadow. Clicking opens the affiliate link in a new tab (target='_blank', rel='noopener noreferrer'). The link is resolved through resolveOfferLink(), which maps the resident ID to a CrakRevenue tracking URL. If no affiliate link exists for a resident, the link resolves to '#' and a console warning is logged.
+
+6.4 Empty Districts
+
+Districts with zero encounters render a single line of text: 'Residents arriving soon.' in dim italic. 
+
+Cantina Virtual — Project Handoff
+
+Currently, Gaming District (Arcade Nocturno) and Communities (Niche District) show this state. No placeholder imagery or skeleton loading is rendered.
+
+6.5 Nectar HUD
+
+A persistent fixed overlay in the bottom-right corner shows a honey emoji, 'Nectar' label, and a numeric count. The count increments by 1 every 8 seconds with a 0.6s pulse animation on the number. The entire HUD has a 4s ambient glow pulse. This is purely decorative with no backend integration. The count resets to 0 on every page load.
+
+
+
+7. CSS Architecture
+
+7.1 Design Tokens (CSS Custom Properties)
+
+All visual constants are defined as CSS custom properties on :root. These are the single source of truth for colors used throughout the application. Components reference these variables via var() rather than hardcoded values.
+
+Token
+
+Value
+
+Usage
+
+--bg-deep
+
+#0a0e17
+
+Page background, sidebar background
+
+--bg-card
+
+#0f1520
+
+Card body background, encounter card body
+
+--bg-card-hover
+
+#151d2e
+
+Defined but not actively used
+
+--amber
+
+#d4a017
+
+Primary accent. Password screen, Dating Lounge, CTA
+
+--amber-dim
+
+#a67c12
+
+Scrollbar thumb, nectar drip gradient end
+
+--purple
+
+#7b2d8e
+
+Live Cam District neon and accent
+
+--purple-dim
+
+#5a1f6a
+
+Defined, not actively used in components
+
+--cyan
+
+#00f5ff
+
+AI Companions neon and accent
+
+--cyan-dim
+
+#00b8bf
+
+Defined, not actively used
+
+--emerald
+
+#00ff88
+
+Gaming District neon and accent
+
+--emerald-dim
+
+#00b860
+
+Defined, not actively used
+
+--rose
+
+#e91e8c
+
+Communities neon and accent
+
+--rose-dim
+
+#b0156a
+
+Defined, not actively used
+
+--text-primary
+
+#e8e0d4
+
+Main text color, headings, card names
+
+--text-muted
+
+#6b6560
+
+Descriptions, subtitles, secondary text
+
+--text-dim
+
+#3d3a37
+
+Hints, footer text, empty state, labels
+
+--sale-red
+
+#ff3b3b
+
+Password rejection text, sale pulse
+
+Cantina Virtual — Project Handoff
+
+Token
+
+Value
+
+Usage
+
+--sale-green
+
+#00e676
+
+Sale tier price text (platform mode)
+
+--card-radius
+
+4px
+
+Border radius for cards, HUD
+
+7.2 Typography
+
+The body font-family is set to 'Courier New', 'Lucida Console', monospace. This gives the entire Cantina a terminal/noir aesthetic. There is no Inter or custom font loaded; the layout.tsx metadata references Inter in the original scaffold but does not import it. All text sizes are defined inline via Tailwind utility classes (text-xs, text-sm, text-lg, etc.) or in CSS classes with fixed pixel/rem values.
+
+7.3 CSS Class Systems
+
+The globals.css file defines several reusable class systems that components use directly (not via Tailwind utility classes):
+
+Neon pulse classes: .neon-amber, .neon-purple, .neon-cyan, .neon-emerald, .neon-rose — each applies the district accent color as text color and a 2–2.5s infinite neonPulse keyframe animation with staggered delays (0s, 0.3s, 0.6s, 0.9s, 1.2s).
+
+Divider classes: .divider-amber, .divider-purple, .divider-cyan, .divider-emerald, .divider-rose — each renders a 1px-tall element with a horizontal gradient from transparent through the district color to transparent at 0.3 opacity.
+
+CTA system: .cta-bordered — shared button/anchor style: transparent background, inline-block, 10px uppercase text with 0.15em letter-spacing, 2px border-radius, 0.4s transition. On hover: brightness(1.3) + 0 0 14px box-shadow in currentColor. Border and color are set inline per-instance.
+
+Encounter card: .encounter-card (flex column, 4px radius, 1px subtle border, 0.4s transition, no-underline), .encounter-card-image (3:2 aspect ratio, background cover, gradient overlay from transparent to bg-card), .encounter-card-body (14px padding, flex column, 4px gap).
+
+Sidebar: .sidebar-hub (fixed, 220px wide, bg-deep, flex column), .sidebar-brand (brand name/sub), .sidebar-nav (list, flex column, 2px gap), .sidebar-item (button, flex row, 10px gap, hover bg), .sidebar-dot (6px circle, glow on active), .sidebar-item-name/sub (uppercase, tracked).
+
+District scene: .district-scene (relative, min-height 100vh, flex column), .district-scene-bg (fixed, left: 220px, opacity 0.12, 1.2s opacity transition), .district-scene-overlay (fixed gradient), .district-scene-content (relative, z-2, max-width 900px, 60px/40px padding).
+
+7.4 Animation Inventory
+
+Every keyframe animation defined in globals.css, its properties, and where it is used:
+
+Animation
+
+Duration
+
+What It Does
+
+Used By
+
+Cantina Virtual — Project Handoff
+
+Animation
+
+Duration
+
+What It Does
+
+Used By
+
+neonPulse
+
+2–2.5s infinite
+
+Pulsing text-shadow glow on text
+
+District name headings (5 neon classes)
+
+mariposaGlow
+
+3s infinite
+
+Drop-shadow glow on butterfly
+
+MariposaCenterpiece wrapper
+
+nectarDrip
+
+2s infinite
+
+TranslateY + scaleY drip motion
+
+3 nectar drip elements on password screen
+
+nectarShimmer
+
+2s infinite
+
+Opacity pulse on pool glow
+
+Nectar pool under butterfly
+
+typewriter
+
+2.5s steps(28)
+
+Width 0 to 100% reveal
+
+Password screen hint text
+
+blinkCaret
+
+0.8s infinite
+
+Border color amber/transparent
+
+Password screen caret
+
+butterflyFloat
+
+8s infinite
+
+Translate + rotate floating path
+
+2 floating butterflies in Cantina
+
+wingFlap
+
+0.4s infinite
+
+ScaleX 1 to 0.3 (wing flap)
+
+Butterfly emojis
+
+smokeRise
+
+5–9s infinite
+
+Rise 120px, scale 2.5x, fade out
+
+6 smoke particles
+
+screenShake
+
+0.4s
+
+TranslateX jitter (-8px to +8px)
+
+Wrong password
+
+sceneFadeOut
+
+500ms
+
+Opacity 1 to 0, blur 0 to 8px
+
+District switch exit, password exit
+
+sceneFadeIn
+
+800ms
+
+Opacity 0 to 1, blur 8px to 0
+
+District switch entry
+
+fadeIn
+
+1s
+
+Opacity 0 to 1
+
+Rejection text appearance
+
+nectarHudPulse
+
+4s infinite
+
+Box-shadow glow pulse
+
+Nectar HUD container
+
+nectarCountPulse
+
+0.6s
+
+Opacity 0.6 to 1 to 0.6
+
+Nectar count on increment
+
+salePulse
+
+2s infinite
+
+Box-shadow red glow pulse
+
+Sale cards (platform mode)
+
+heroDrift
+
+20s infinite
+
+Background-position drift
+
+UNUSED — hero section removed
+
+7.5 Responsive Breakpoint
+
+A single media query at max-width: 768px handles all mobile adaptations. The sidebar transforms from a 220px fixed left column to a full-width fixed bottom bar. The brand, divider, and footer are hidden. Nav items go horizontal with 7–8px font and ellipsis truncation. Main content loses the left margin and gains a 72px bottom margin. Scene backgrounds extend full width. The encounter grid goes from auto-fill minmax(260px, 1fr) to single column. Padding values decrease from 60px/40px to 32px/20px.
+
+
+
+Cantina Virtual — Project Handoff
+
+8. Image Inventory
+
+All images are hosted on sfile.chatglm.cn and referenced by URL. There are no local image assets in the public/ directory (only robots.txt and a logo.svg from the scaffold). The following table lists every image URL used in the application, where it is referenced, and its purpose.
+
+URL Path
+
+Used In
+
+Purpose
+
+.../efdf6cbf206b.jpg
+
+RESIDENTS lina-rose
+
+Portrait for Lina Rose encounter card
+
+.../8c23e2c5aa19.jpg
+
+RESIDENTS ava-harrington
+
+Portrait for Ava Harrington encounter card
+
+.../45b22e591c90.png
+
+RESIDENTS girlfriendgpt
+
+Portrait for GirlfriendGPT encounter card
+
+.../8e81418a549d.jpg
+
+RESIDENTS isla-king
+
+Portrait for Isla King encounter card
+
+.../91b93c38ff40.jpg
+
+DISTRICTS dating-lounge
+
+Background image at 0.12 opacity
+
+.../0eb8607628ce.jpg
+
+DISTRICTS ai-companions
+
+Background image at 0.12 opacity
+
+.../310a4b1925d7.jpg
+
+DISTRICTS live-cam
+
+Background image at 0.12 opacity
+
+.../fcef82f7bbdf.png
+
+DISTRICTS gaming
+
+Background image at 0.12 opacity
+
+.../508f8158b122.jpg
+
+DISTRICTS communities
+
+Background image at 0.12 opacity
+
+.../b4e9051f97b1.jpg
+
+HERO_BG constant (unused)
+
+Declared but never referenced in render
+
+
+
+9. Build Status and Configuration
+
+9.1 Build Status
+
+The project builds cleanly with zero errors and zero warnings. The last verified build was confirmed after rolling back invented (non-affiliate) resident content. The build command is 'next build' and it produces a standalone output in .next/standalone/. The build script also copies .next/static and public/ into the standalone directory for deployment.
+
+9.2 next.config.ts
+
+The Next.js config is minimal. Output mode is 'standalone' for containerized deployment. TypeScript build errors are suppressed (ignoreBuildErrors: true) because the scaffold includes many unused shadcn/ui components and the dead Cantina components that import non-existent 
+
+Cantina Virtual — Project Handoff
+
+exports. React strict mode is disabled (reactStrictMode: false) to prevent double-rendering effects during development.
+
+9.3 tsconfig.json
+
+Target ES2017, strict mode enabled, noEmit true, noImplicitAny false. Path alias @/* maps to ./src/*. Module resolution is 'bundler'. The JSX transform is react-jsx (not the classic runtime). Incremental compilation is enabled.
+
+9.4 Key Dependencies
+
+The project uses Next.js 16.1.1, React 19, TypeScript 5, Tailwind CSS 4, and a large set of scaffold dependencies including shadcn/ui (Radix primitives), Prisma, Zustand, Framer Motion, Recharts, and many others. The Cantina itself uses none of these heavy dependencies — it is pure React + CSS with no state management library, no database, no API routes, and no third-party UI components. The actual runtime footprint is minimal.
+
+9.5 Font
+
+Despite the layout.tsx scaffold originally referencing Inter, no custom font is loaded. The body font-family in globals.css is 'Courier New', 'Lucida Console', monospace. This gives the noir/terminal aesthetic. The favicon is a data URI SVG lantern emoji.
+
+
+
+10. Compliance Status
+
+This section documents the current state of legal and compliance requirements for the Cantina Virtual site.
+
+10.1 Password Gate
+
+Implemented. The password is 'mariposa', compared case-insensitively with trim. This prevents casual browsing but is client-side only — the password string is visible in the page.tsx source. This is a UX gate, not a security measure.
+
+10.2 Affiliate Link Hygiene
+
+Verified clean. Zero matches for REV, PPS, %, $40, revenue, or affiliate in any .tsx or .css render path. All outbound links flow through resolveOfferLink() in rooms.ts. The AFFILIATE_MAP is private and never exported. The only CTA language in the UI is 'Send a Drink' (a single instance in EncounterCard.tsx). No raw affiliate URLs appear in any rendered component.
+
+10.3 18+ / DMCA / 2257 Footer
+
+Cantina Virtual — Project Handoff
+
+NOT IMPLEMENTED. This was identified as a locked requirement but no code has been written. The current footer only shows 'Cantina Virtual · Pacific Coast · 2025' and a Discord link. An age verification disclaimer, DMCA notice, and 18 U.S.C. 2257 compliance statement need to be added to the district footer area.
+
+
+
+11. Known Bugs and Dead Code
+
+The following issues exist in the current codebase. None are blocking, but all should be addressed before a production deployment.
+
+11.1 Dead Code on Disk
+
+File
+
+Issue
+
+Safe to Delete?
+
+FanvueCard.tsx
+
+Imports non-existent LINKS and FanvueEntry. Zero imports. Would crash if rendered.
+
+Yes
+
+OfferButton.tsx
+
+Imports non-existent LINKS and LinkKey. Zero imports. Would crash if rendered.
+
+Yes
+
+RoomCard.tsx
+
+Imports non-existent Room and ROOM_BG_IMAGES. Zero imports. Would crash if rendered.
+
+Yes
+
+SaleTier.tsx
+
+Valid imports but zero consumers in World render path.
+
+Yes
+
+useReveal.ts
+
+Valid hook but no elements use the 'reveal' class.
+
+Yes, or keep for future use
+
+11.2 Unused Constants
+
+The HERO_BG constant on line 11 of page.tsx ('https://sfile.chatglm.cn/images-ppt/b4e9051f97b1.jpg') is declared but never referenced. It was the hero section background image before that section was removed. Harmless dead code, but should be cleaned up.
+
+11.3 Placeholder Discord Link
+
+The Discord link in the Cantina footer points to 'https://discord.gg/' — an incomplete URL. It will lead to a Discord error page. This needs to be replaced with the actual Discord invite link.
+
+11.4 TypeScript Errors Suppressed
+
+The next.config.ts has ignoreBuildErrors: true, which hides TypeScript errors during builds. The dead components (FanvueCard, OfferButton, RoomCard) import non-existent exports and would cause type errors if this flag were removed. Once the dead files are deleted, this flag should be set to false.
+
+Cantina Virtual — Project Handoff
+
+11.5 NectarHUD Resets on Navigation
+
+The NectarHUD count resets to 0 on every full page reload because it uses local state with no persistence. This is by design for now (it is a decorative placeholder), but if a real loyalty system is implemented, the count will need server-side persistence.
+
+11.6 No 18+ Compliance Footer
+
+As documented in Section 10.3, the required legal compliance footer is missing. This is the most significant gap before any public deployment.
+
+
+
+12. Population Recipe
+
+When the user provides content for the two empty districts (Gaming and Communities), the following three-step process adds a new resident. This is the only code change required — no new components or CSS classes are needed.
+
+Step 1: Add Resident to RESIDENTS
+
+In src/data/rooms.ts, add a new entry to the RESIDENTS Record. The id must be unique and URL-safe (used as a dictionary key and for affiliate lookup). The image URL must point to a portrait hosted on an accessible CDN.
+
+'new-resident': {
+
+  id: 'new-resident',
+
+  name: 'Display Name',
+
+  subtitle: 'Atmospheric label',
+
+  description: 'Flavor text for the encounter card.',
+
+  image: 'https://example.com/portrait.jpg',
+
+},
+
+Step 2: Add Affiliate Link (if applicable)
+
+In the same file, add an entry to the private AFFILIATE_MAP. The key must match the resident ID exactly. The value is the full CrakRevenue tracking URL. If there is no affiliate link, skip this step — resolveOfferLink() will return '#' and log a warning.
+
+const AFFILIATE_MAP = {
+
+  // ... existing entries ...
+
+  'new-resident': 'https://t.acust-9.com/413627/XXXXX/0?aff_sub=...'
+
+};
+
+Step 3: Add Encounter to District
+
+Cantina Virtual — Project Handoff
+
+Find the target district in the DISTRICTS array and add a new entry to its encounters array. Only the residentId is needed — the DistrictScene component handles all rendering.
+
+// In the 'gaming' district:
+
+encounters: [
+
+  { residentId: 'new-resident' },
+
+],
+
+After these three changes, the new resident will appear as an encounter card in the district scene with their portrait, name, subtitle, description, and a 'Send a Drink' CTA that opens the affiliate link. No other files need to be modified.
+
+
+
+13. Next Recommended Milestones
+
+The following are the recommended next steps, in priority order, for continuing development on Cantina Virtual.
+
+Implement compliance footer: Add 18+ age verification disclaimer, DMCA notice, and 18 U.S.C. 2257 compliance statement to the district-footer area in page.tsx. This is the most critical gap before any public deployment.
+
+Delete dead code: Remove FanvueCard.tsx, OfferButton.tsx, RoomCard.tsx, and SaleTier.tsx. Remove the unused HERO_BG constant from page.tsx. Remove the SALE_TIERS export and SaleTier interface from rooms.ts if platform mode is definitively abandoned.
+
+Update Discord link: Replace the placeholder 'https://discord.gg/' with the actual Discord server invite URL in the Cantina footer.
+
+Enable TypeScript strict checks: After deleting dead files, set ignoreBuildErrors to false in next.config.ts and fix any remaining type errors. This prevents future broken imports from going undetected.
+
+Populate empty districts: Follow the three-step population recipe in Section 12 to add residents to Gaming District (Arcade Nocturno) and Communities (Niche District). The user needs to provide resident data (name, subtitle, description, portrait image) and affiliate links.
+
+Consider Nectar HUD persistence: If the nectar/loyalty system becomes real, move the count to localStorage or a backend store so it survives page reloads.
