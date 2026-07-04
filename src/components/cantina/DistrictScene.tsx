@@ -2,12 +2,24 @@
 
 import { RESIDENTS, type District } from '@/data/rooms';
 import { EncounterCard } from './EncounterCard';
+import { DatingRoom } from './DatingRoom';
+import { LiveCamsRoom } from './LiveCamsRoom';
 
 interface DistrictSceneProps {
   district: District;
 }
 
 export function DistrictScene({ district }: DistrictSceneProps) {
+  /* ── Immersive room overrides ── */
+  if (district.id === 'dating') {
+    return <DatingRoom district={district} />;
+  }
+
+  if (district.id === 'live-cams') {
+    return <LiveCamsRoom district={district} />;
+  }
+
+  /* ── Default generic scene (unchanged for all other districts) ── */
   return (
     <div className="district-scene" key={district.id}>
       {/* Atmospheric background */}

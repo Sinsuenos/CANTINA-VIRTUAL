@@ -72,7 +72,8 @@ export const DISTRICTS: District[] = [
     description: 'Faint guitar. Tequila slides across the bar. Someone is always watching from the corner.',
     borderColor: 'rgba(212,160,23,0.3)',
     textColor: 'var(--amber)',
-    bgImage: 'https://sfile.chatglm.cn/images-ppt/91b93c38ff40.jpg',
+    /** IMAGE SLOT — background URL. Currently: /dating-room.jpg */
+    bgImage: '/dating-room.jpg',
     encounters: [
       { residentId: 'lina-rose' },
       { residentId: 'ava-harrington' },
@@ -87,7 +88,8 @@ export const DISTRICTS: District[] = [
     description: 'The deep alcove. Red lights behind frosted glass. You know what you want.',
     borderColor: 'rgba(123,45,142,0.3)',
     textColor: 'var(--purple)',
-    bgImage: 'https://sfile.chatglm.cn/images-ppt/310a4b1925d7.jpg',
+    /** IMAGE SLOT — background URL. Currently: /livecams-room.png */
+    bgImage: '/livecams-room.png',
     encounters: [
       { residentId: 'isla-king' },
     ],

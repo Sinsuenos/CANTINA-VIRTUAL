@@ -1,0 +1,1240 @@
+     1→@import "tailwindcss";
+     2→
+     3→/* ── Cantina Virtual Design System ── */
+     4→:root {
+     5→  --bg-deep: #0a0e17;
+     6→  --bg-card: #0f1520;
+     7→  --bg-card-hover: #151d2e;
+     8→  --amber: #d4a017;
+     9→  --amber-dim: #a67c12;
+    10→  --purple: #7b2d8e;
+    11→  --purple-dim: #5a1f6a;
+    12→  --cyan: #00f5ff;
+    13→  --cyan-dim: #00b8bf;
+    14→  --text-primary: #e8e0d4;
+    15→  --text-muted: #6b6560;
+    16→  --text-dim: #3d3a37;
+    17→  --sale-red: #ff3b3b;
+    18→  --sale-green: #00e676;
+    19→  --emerald: #00ff88;
+    20→  --emerald-dim: #00b860;
+    21→  --rose: #e91e8c;
+    22→  --rose-dim: #b0156a;
+    23→  --card-radius: 4px;
+    24→}
+    25→
+    26→* { margin: 0; padding: 0; box-sizing: border-box; }
+    27→
+    28→html {
+    29→  scroll-behavior: smooth;
+    30→  scrollbar-width: thin;
+    31→  scrollbar-color: var(--amber-dim) var(--bg-deep);
+    32→}
+    33→
+    34→body {
+    35→  background: var(--bg-deep);
+    36→  color: var(--text-primary);
+    37→  font-family: 'Courier New', 'Lucida Console', monospace;
+    38→  overflow-x: hidden;
+    39→  min-height: 100vh;
+    40→}
+    41→
+    42→/* ── Custom Scrollbar ── */
+    43→::-webkit-scrollbar { width: 6px; }
+    44→::-webkit-scrollbar-track { background: var(--bg-deep); }
+    45→::-webkit-scrollbar-thumb { background: var(--amber-dim); border-radius: 3px; }
+    46→
+    47→/* ── Mariposa Centerpiece (replaces lantern) ── */
+    48→@keyframes mariposaGlow {
+    49→  0%, 100% { filter: drop-shadow(0 0 12px rgba(255,105,180,0.6)) drop-shadow(0 0 30px rgba(255,105,180,0.2)); }
+    50→  50% { filter: drop-shadow(0 0 6px rgba(255,105,180,0.4)) drop-shadow(0 0 15px rgba(255,105,180,0.1)); }
+    51→}
+    52→@keyframes nectarDrip {
+    53→  0% { transform: translateY(-4px) scaleY(0.3); opacity: 0.9; }
+    54→  40% { transform: translateY(8px) scaleY(1); opacity: 1; }
+    55→  100% { transform: translateY(22px) scaleY(0.6); opacity: 0; }
+    56→}
+    57→@keyframes nectarShimmer {
+    58→  0%, 100% { opacity: 0.7; }
+    59→  50% { opacity: 1; }
+    60→}
+    61→.mariposa-center {
+    62→  position: relative;
+    63→  display: inline-flex;
+    64→  flex-direction: column;
+    65→  align-items: center;
+    66→  animation: mariposaGlow 3s ease-in-out infinite;
+    67→}
+    68→.mariposa-center .butterfly {
+    69→  font-size: 3.5rem;
+    70→  color: #ff69b4;
+    71→  position: relative;
+    72→  z-index: 2;
+    73→}
+    74→.nectar-drips {
+    75→  position: absolute;
+    76→  top: 100%;
+    77→  left: 50%;
+    78→  transform: translateX(-50%);
+    79→  display: flex;
+    80→  gap: 6px;
+    81→  z-index: 1;
+    82→}
+    83→.nectar-drip {
+    84→  width: 3px;
+    85→  height: 10px;
+    86→  border-radius: 0 0 50% 50%;
+    87→ background: linear-gradient(to bottom, var(--amber), var(--amber-dim));
+    88→ animation: nectarDrip 2s ease-in infinite;
+    89→}
+    90→.nectar-drip:nth-child(2) { animation-delay: 0.7s; height: 8px; }
+    91→.nectar-drip:nth-child(3) { animation-delay: 1.3s; height: 12px; }
+    92→.nectar-pool {
+    93→  width: 30px;
+    94→  height: 6px;
+    95→  border-radius: 50%;
+    96→  background: radial-gradient(ellipse, rgba(212,160,23,0.5) 0%, transparent 70%);
+    97→ animation: nectarShimmer 2s ease-in-out infinite;
+    98→  margin-top: -2px;
+    99→}
+   100→
+   101→/* ── Typewriter ── */
+   102→@keyframes typewriter {
+   103→  from { width: 0; }
+   104→  to { width: 100%; }
+   105→}
+   106→@keyframes blinkCaret {
+   107→  0%, 100% { border-color: var(--amber); }
+   108→  50% { border-color: transparent; }
+   109→}
+   110→.typewriter-text {
+   111→  overflow: hidden;
+   112→  white-space: nowrap;
+   113→  border-right: 2px solid var(--amber);
+   114→  animation: typewriter 2.5s steps(28) 0.5s forwards, blinkCaret 0.8s step-end infinite;
+   115→  width: 0;
+   116→}
+   117→
+   118→/* ── Neon Glow Pulse ── */
+   119→@keyframes neonPulse {
+   120→  0%, 100% { text-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 20px currentColor; }
+   121→  50% { text-shadow: 0 0 2px currentColor, 0 0 5px currentColor, 0 0 10px currentColor; }
+   122→}
+   123→.neon-amber { color: var(--amber); animation: neonPulse 2s ease-in-out infinite; }
+   124→.neon-purple { color: var(--purple); animation: neonPulse 2.5s ease-in-out infinite 0.3s; }
+   125→.neon-cyan { color: var(--cyan); animation: neonPulse 2s ease-in-out infinite 0.6s; }
+   126→.neon-emerald { color: var(--emerald); animation: neonPulse 2s ease-in-out infinite 0.9s; }
+   127→.neon-rose { color: var(--rose); animation: neonPulse 2.5s ease-in-out infinite 1.2s; }
+   128→
+   129→/* ── Floating Butterflies ── */
+   130→@keyframes butterflyFloat {
+   131→  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+   132→  25% { transform: translate(15px, -20px) rotate(5deg); }
+   133→  50% { transform: translate(-10px, -35px) rotate(-3deg); }
+   134→  75% { transform: translate(20px, -15px) rotate(7deg); }
+   135→}
+   136→@keyframes wingFlap {
+   137→  0%, 100% { transform: scaleX(1); }
+   138→  50% { transform: scaleX(0.3); }
+   139→}
+   140→.mariposa {
+   141→  position: absolute;
+   142→  font-size: 1.5rem;
+   143→  animation: butterflyFloat 8s ease-in-out infinite;
+   144→  pointer-events: none;
+   145→  z-index: 5;
+   146→}
+   147→.mariposa-wing {
+   148→  display: inline-block;
+   149→  animation: wingFlap 0.4s ease-in-out infinite;
+   150→}
+   151→
+   152→/* ── Smoke Particles ── */
+   153→@keyframes smokeRise {
+   154→  0% { transform: translateY(0) scale(1); opacity: 0.15; }
+   155→  50% { opacity: 0.08; }
+   156→  100% { transform: translateY(-120px) scale(2.5); opacity: 0; }
+   157→}
+   158→.smoke-container {
+   159→  position: absolute;
+   160→  inset: 0;
+   161→  overflow: hidden;
+   162→  pointer-events: none;
+   163→  z-index: 1;
+   164→}
+   165→.smoke-particle {
+   166→  position: absolute;
+   167→  bottom: 0;
+   168→  width: 60px;
+   169→  height: 60px;
+   170→  border-radius: 50%;
+   171→  background: radial-gradient(circle, rgba(212,160,23,0.1) 0%, transparent 70%);
+   172→  animation: smokeRise 6s ease-out infinite;
+   173→}
+   174→
+   175→/* ── Scroll Reveal ── */
+   176→.reveal {
+   177→  opacity: 0;
+   178→  transform: translateY(30px);
+   179→  transition: opacity 0.8s ease, transform 0.8s ease;
+   180→}
+   181→.reveal.visible {
+   182→  opacity: 1;
+   183→  transform: translateY(0);
+   184→}
+   185→.reveal-delay-1 { transition-delay: 0.15s; }
+   186→.reveal-delay-2 { transition-delay: 0.3s; }
+   187→.reveal-delay-3 { transition-delay: 0.45s; }
+   188→
+   189→/* ── Sale Countdown Pulse ── */
+   190→@keyframes salePulse {
+   191→  0%, 100% { box-shadow: 0 0 5px rgba(255,59,59,0.3), inset 0 0 5px rgba(255,59,59,0.1); }
+   192→  50% { box-shadow: 0 0 20px rgba(255,59,59,0.6), inset 0 0 10px rgba(255,59,59,0.2); }
+   193→}
+   194→.sale-card { animation: salePulse 2s ease-in-out infinite; }
+   195→
+   196→/* ── Password Screen ── */
+   197→@keyframes screenShake {
+   198→  0%, 100% { transform: translateX(0); }
+   199→  20% { transform: translateX(-8px); }
+   200→  40% { transform: translateX(8px); }
+   201→  60% { transform: translateX(-4px); }
+   202→  80% { transform: translateX(4px); }
+   203→}
+   204→.shake { animation: screenShake 0.4s ease-in-out; }
+   205→
+   206→/* ── Room Card Hover ── */
+   207→.room-card {
+   208→  transition: all 0.4s ease;
+   209→  border: 1px solid var(--room-border, rgba(255,255,255,0.05));
+   210→  position: relative;
+   211→  overflow: hidden;
+   212→}
+   213→.room-card:hover {
+   214→  transform: translateY(-4px) scale(1.02);
+   215→  border-color: var(--room-border-hover, rgba(255,255,255,0.15));
+   216→}
+   217→
+   218→/* ── Room Card Background Layer ── */
+   219→.room-card-bg {
+   220→  position: absolute;
+   221→  inset: 0;
+   222→  background-size: cover;
+   223→  background-position: center;
+   224→  opacity: 0.12;
+   225→  transition: opacity 0.6s ease, transform 0.6s ease;
+   226→  z-index: 0;
+   227→}
+   228→.room-card:hover .room-card-bg {
+   229→  opacity: 0.25;
+   230→  transform: scale(1.08);
+   231→}
+   232→.room-card > * {
+   233→  position: relative;
+   234→  z-index: 1;
+   235→}
+   236→
+   237→/* ── Card Radius Normalization ── */
+   238→.room-card,
+   239→.sale-card {
+   240→  border-radius: var(--card-radius);
+   241→}
+   242→
+   243→/* ── Room Card Image Overlay ── */
+   244→.room-card-bg::after {
+   245→  content: '';
+   246→  position: absolute;
+   247→  inset: 0;
+   248→  background: linear-gradient(
+   249→    to bottom,
+   250→    rgba(15,21,32,0.2) 0%,
+   251→    rgba(15,21,32,0.55) 50%,
+   252→    rgba(15,21,32,0.88) 100%
+   253→  );
+   254→  z-index: 0;
+   255→}
+   256→
+   257→/* ── CTA Shared Treatment ── */
+   258→.cta-bordered {
+   259→  display: inline-block;
+   260→  text-align: center;
+   261→  padding: 6px 24px;
+   262→  font-size: 10px;
+   263→  letter-spacing: 0.15em;
+   264→  text-transform: uppercase;
+   265→  text-decoration: none;
+   266→  border-radius: 2px;
+   267→  transition: all 0.4s ease;
+   268→  cursor: pointer;
+   269→  background: transparent;
+   270→}
+   271→.cta-bordered:hover {
+   272→  filter: brightness(1.3);
+   273→  box-shadow: 0 0 14px currentColor;
+   274→}
+   275→
+   276→/* ── Scene Transitions ── */
+   277→@keyframes sceneFadeOut {
+   278→  from { opacity: 1; filter: blur(0); }
+   279→  to { opacity: 0; filter: blur(8px); }
+   280→}
+   281→@keyframes sceneFadeIn {
+   282→  from { opacity: 0; filter: blur(8px); }
+   283→  to { opacity: 1; filter: blur(0); }
+   284→}
+   285→.scene-exit {
+   286→  animation: sceneFadeOut 500ms ease forwards;
+   287→}
+   288→.scene-transition {
+   289→  animation: sceneFadeIn 800ms ease forwards;
+   290→}
+   291→
+   292→/* ── Hero Drift ── */
+   293→@keyframes heroDrift {
+   294→  0%, 100% { background-position: center 40%; }
+   295→  50% { background-position: center 45%; }
+   296→}
+   297→.hero-bg {
+   298→  animation: heroDrift 20s ease-in-out infinite;
+   299→}
+   300→
+   301→/* ── Fade In ── */
+   302→@keyframes fadeIn {
+   303→  from { opacity: 0; }
+   304→  to { opacity: 1; }
+   305→}
+   306→.fade-in { animation: fadeIn 1s ease forwards; }
+   307→
+   308→/* ── Gradient Dividers ── */
+   309→.divider-amber {
+   310→  height: 1px;
+   311→  background: linear-gradient(90deg, transparent, var(--amber), transparent);
+   312→  opacity: 0.3;
+   313→}
+   314→.divider-purple {
+   315→  height: 1px;
+   316→  background: linear-gradient(90deg, transparent, var(--purple), transparent);
+   317→  opacity: 0.3;
+   318→}
+   319→.divider-cyan {
+   320→  height: 1px;
+   321→  background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+   322→  opacity: 0.3;
+   323→}
+   324→.divider-emerald {
+   325→  height: 1px;
+   326→  background: linear-gradient(90deg, transparent, var(--emerald), transparent);
+   327→  opacity: 0.3;
+   328→}
+   329→.divider-rose {
+   330→  height: 1px;
+   331→  background: linear-gradient(90deg, transparent, var(--rose), transparent);
+   332→  opacity: 0.3;
+   333→}
+   334→
+   335→/* ── Encounter Card (image-first) ── */
+   336→.encounter-card {
+   337→  display: flex;
+   338→  flex-direction: column;
+   339→  border-radius: var(--card-radius);
+   340→  overflow: hidden;
+   341→  border: 1px solid rgba(255,255,255,0.05);
+   342→  transition: all 0.4s ease;
+   343→  text-decoration: none;
+   344→  color: inherit;
+   345→}
+   346→.encounter-card:hover {
+   347→  border-color: rgba(255,255,255,0.15);
+   348→  transform: translateY(-2px);
+   349→  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+   350→}
+   351→.encounter-card-image {
+   352→  width: 100%;
+   353→  aspect-ratio: 3/2;
+   354→  background-size: cover;
+   355→  background-position: center 30%;
+   356→  position: relative;
+   357→}
+   358→.encounter-card-image::after {
+   359→  content: '';
+   360→  position: absolute;
+   361→  inset: 0;
+   362→  background: linear-gradient(to bottom, rgba(15,21,32,0.1) 0%, rgba(15,21,32,0.4) 40%, var(--bg-card) 100%);
+   363→}
+   364→.encounter-card-body {
+   365→  padding: 12px 14px 14px;
+   366→  background: var(--bg-card);
+   367→  display: flex;
+   368→  flex-direction: column;
+   369→  gap: 4px;
+   370→  text-align: left;
+   371→}
+   372→.encounter-card-name {
+   373→  font-size: 12px;
+   374→  letter-spacing: 0.15em;
+   375→  text-transform: uppercase;
+   376→  color: var(--text-primary);
+   377→}
+   378→.encounter-card-subtitle {
+   379→  font-size: 10px;
+   380→  letter-spacing: 0.3em;
+   381→  color: var(--text-dim);
+   382→}
+   383→.encounter-card-desc {
+   384→  font-size: 12px;
+   385→  color: var(--text-muted);
+   386→  line-height: 1.6;
+   387→  margin: 2px 0;
+   388→}
+   389→
+   390→/* ── Nectar HUD ── */
+   391→@keyframes nectarHudPulse {
+   392→  0%, 100% { box-shadow: 0 0 8px rgba(212,160,23,0.2), inset 0 0 4px rgba(212,160,23,0.05); }
+   393→  50% { box-shadow: 0 0 16px rgba(212,160,23,0.5), inset 0 0 8px rgba(212,160,23,0.1); }
+   394→}
+   395→@keyframes nectarCountPulse {
+   396→  0% { opacity: 0.6; }
+   397→  50% { opacity: 1; }
+   398→  100% { opacity: 0.6; }
+   399→}
+   400→.nectar-hud {
+   401→  position: fixed;
+   402→  bottom: 20px;
+   403→  right: 20px;
+   404→  display: flex;
+   405→  align-items: center;
+   406→  gap: 8px;
+   407→  padding: 6px 14px;
+   408→  border-radius: var(--card-radius);
+   409→  background: rgba(10,14,23,0.85);
+   410→  border: 1px solid rgba(212,160,23,0.15);
+   411→  z-index: 50;
+   412→  animation: nectarHudPulse 4s ease-in-out infinite;
+   413→  backdrop-filter: blur(8px);
+   414→}
+   415→.nectar-hud-icon {
+   416→  font-size: 0.85rem;
+   417→}
+   418→.nectar-hud-label {
+   419→  font-size: 9px;
+   420→  letter-spacing: 0.15em;
+   421→  color: var(--text-dim);
+   422→  text-transform: uppercase;
+   423→}
+   424→.nectar-hud-count {
+   425→  font-size: 11px;
+   426→  letter-spacing: 0.15em;
+   427→  color: var(--amber);
+   428→  font-family: inherit;
+   429→  min-width: 16px;
+   430→  text-align: right;
+   431→}
+   432→.nectar-hud-count.pulse {
+   433→  animation: nectarCountPulse 0.6s ease;
+   434→}
+   435→
+   436→/* ═══════════════════════════════════════════════════════════════
+   437→   CANTINA LAYOUT — Sidebar + District Scene
+   438→   ═══════════════════════════════════════════════════════════════ */
+   439→
+   440→/* ── Cantina Layout Shell ── */
+   441→.cantina-layout {
+   442→  display: flex;
+   443→  min-height: 100vh;
+   444→  width: 100%;
+   445→}
+   446→
+   447→/* ── Sidebar Hub ── */
+   448→.sidebar-hub {
+   449→  position: fixed;
+   450→  top: 0;
+   451→  left: 0;
+   452→  bottom: 0;
+   453→  width: 220px;
+   454→  background: var(--bg-deep);
+   455→  border-right: 1px solid rgba(255,255,255,0.04);
+   456→  display: flex;
+   457→  flex-direction: column;
+   458→  z-index: 40;
+   459→  padding: 24px 0;
+   460→  flex-shrink: 0;
+   461→}
+   462→
+   463→.sidebar-brand {
+   464→  padding: 0 20px 16px;
+   465→  display: flex;
+   466→  flex-direction: column;
+   467→  gap: 2px;
+   468→}
+   469→.sidebar-brand-name {
+   470→  font-size: 14px;
+   471→  letter-spacing: 0.2em;
+   472→  text-transform: uppercase;
+   473→  color: var(--amber);
+   474→}
+   475→.sidebar-brand-sub {
+   476→  font-size: 10px;
+   477→  letter-spacing: 0.35em;
+   478→  text-transform: uppercase;
+   479→  color: var(--text-dim);
+   480→}
+   481→
+   482→.sidebar-divider {
+   483→  height: 1px;
+   484→  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+   485→  margin: 8px 16px 16px;
+   486→}
+   487→
+   488→.sidebar-nav {
+   489→  list-style: none;
+   490→  flex: 1;
+   491→  display: flex;
+   492→  flex-direction: column;
+   493→  gap: 2px;
+   494→  padding: 0 8px;
+   495→}
+   496→
+   497→.sidebar-item {
+   498→  display: flex;
+   499→  align-items: center;
+   500→  gap: 10px;
+   501→  width: 100%;
+   502→  padding: 10px 12px;
+   503→  border: none;
+   504→  background: transparent;
+   505→  cursor: pointer;
+   506→  text-align: left;
+   507→  font-family: inherit;
+   508→  transition: all 0.3s ease;
+   509→  border-radius: 2px;
+   510→}
+   511→.sidebar-item:hover {
+   512→  background: rgba(255,255,255,0.03);
+   513→}
+   514→.sidebar-item.active {
+   515→  background: rgba(255,255,255,0.04);
+   516→}
+   517→
+   518→.sidebar-dot {
+   519→  width: 6px;
+   520→  height: 6px;
+   521→  border-radius: 50%;
+   522→  flex-shrink: 0;
+   523→  transition: all 0.3s ease;
+   524→}
+   525→
+   526→.sidebar-item-name {
+   527→  font-size: 11px;
+   528→  letter-spacing: 0.1em;
+   529→  text-transform: uppercase;
+   530→  color: var(--text-primary);
+   531→  display: block;
+   532→  line-height: 1.2;
+   533→}
+   534→.sidebar-item.active .sidebar-item-name {
+   535→  color: var(--district-color, var(--text-primary));
+   536→}
+   537→
+   538→.sidebar-item-sub {
+   539→  font-size: 9px;
+   540→  letter-spacing: 0.15em;
+   541→  color: var(--text-dim);
+   542→  display: block;
+   543→  line-height: 1.2;
+   544→  margin-top: 1px;
+   545→}
+   546→.sidebar-item.active .sidebar-item-sub {
+   547→  color: var(--text-muted);
+   548→}
+   549→
+   550→.sidebar-footer {
+   551→  padding: 0 20px 0;
+   552→}
+   553→.sidebar-footer-text {
+   554→  font-size: 9px;
+   555→  letter-spacing: 0.15em;
+   556→  color: var(--text-dim);
+   557→  font-style: italic;
+   558→  margin-top: 12px;
+   559→}
+   560→
+   561→/* ── Main Content Area ── */
+   562→.cantina-main {
+   563→  flex: 1;
+   564→  margin-left: 220px;
+   565→  min-height: 100vh;
+   566→  position: relative;
+   567→  overflow-y: auto;
+   568→  overflow-x: hidden;
+   569→}
+   570→
+   571→/* ── District Scene (full scene per district) ── */
+   572→.district-scene {
+   573→  position: relative;
+   574→  min-height: 100vh;
+   575→  display: flex;
+   576→  flex-direction: column;
+   577→}
+   578→
+   579→.district-scene-bg {
+   580→  position: fixed;
+   581→  top: 0;
+   582→  left: 220px;
+   583→  right: 0;
+   584→  bottom: 0;
+   585→  background-size: cover;
+   586→  background-position: center;
+   587→  opacity: 0.12;
+   588→  transition: opacity 1.2s ease;
+   589→  z-index: 0;
+   590→}
+   591→
+   592→.district-scene-overlay {
+   593→  position: fixed;
+   594→  top: 0;
+   595→  left: 220px;
+   596→  right: 0;
+   597→  bottom: 0;
+   598→  background: linear-gradient(
+   599→    to bottom,
+   600→    rgba(10,14,23,0.7) 0%,
+   601→    rgba(10,14,23,0.5) 30%,
+   602→    rgba(10,14,23,0.6) 60%,
+   603→    rgba(10,14,23,0.92) 100%
+   604→  );
+   605→  z-index: 1;
+   606→  pointer-events: none;
+   607→}
+   608→
+   609→.district-scene-content {
+   610→  position: relative;
+   611→  z-index: 2;
+   612→  flex: 1;
+   613→  display: flex;
+   614→  flex-direction: column;
+   615→  padding: 60px 40px 40px;
+   616→  max-width: 900px;
+   617→}
+   618→
+   619→/* ── District Header ── */
+   620→.district-header {
+   621→  margin-bottom: 48px;
+   622→}
+   623→
+   624→.district-subtitle {
+   625→  font-size: 10px;
+   626→  letter-spacing: 0.4em;
+   627→  text-transform: uppercase;
+   628→  margin-bottom: 8px;
+   629→}
+   630→
+   631→.district-name {
+   632→  font-size: 28px;
+   633→  letter-spacing: 0.12em;
+   634→  text-transform: uppercase;
+   635→  font-weight: 400;
+   636→  line-height: 1.2;
+   637→  margin-bottom: 16px;
+   638→}
+   639→
+   640→.district-divider {
+   641→  width: 80px;
+   642→  margin-bottom: 16px;
+   643→}
+   644→
+   645→.district-description {
+   646→  font-size: 13px;
+   647→  line-height: 1.8;
+   648→  max-width: 480px;
+   649→}
+   650→
+   651→/* ── District Encounters ── */
+   652→.district-encounters {
+   653→  display: grid;
+   654→  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+   655→  gap: 20px;
+   656→  flex: 1;
+   657→  align-content: start;
+   658→}
+   659→
+   660→.district-empty {
+   661→  font-size: 12px;
+   662→  letter-spacing: 0.2em;
+   663→  text-transform: uppercase;
+   664→  color: var(--text-dim);
+   665→  font-style: italic;
+   666→  padding: 40px 0;
+   667→}
+   668→
+   669→/* ── Nectar Teaser (bottom of scene) ── */
+   670→.district-nectar-teaser {
+   671→  position: relative;
+   672→  z-index: 2;
+   673→  display: flex;
+   674→  align-items: center;
+   675→  gap: 10px;
+   676→  padding: 32px 40px 16px;
+   677→  border-top: 1px solid rgba(255,255,255,0.03);
+   678→}
+   679→
+   680→/* ── District Footer ── */
+   681→.district-footer {
+   682→  position: relative;
+   683→  z-index: 2;
+   684→  display: flex;
+   685→  align-items: center;
+   686→  justify-content: space-between;
+   687→  padding: 12px 40px 20px;
+   688→}
+   689→.district-footer-left {
+   690→  flex: 1;
+   691→}
+   692→
+   693→/* ── Compliance Footer ── */
+   694→.compliance-footer {
+   695→  position: relative;
+   696→  z-index: 2;
+   697→  display: flex;
+   698→  align-items: center;
+   699→  justify-content: space-between;
+   700→  padding: 14px 40px 20px;
+   701→  border-top: 1px solid rgba(255,255,255,0.03);
+   702→}
+   703→
+   704→.compliance-brand {
+   705→  font-size: 9px;
+   706→  letter-spacing: 0.2em;
+   707→  text-transform: uppercase;
+   708→  color: var(--text-dim);
+   709→  white-space: nowrap;
+   710→}
+   711→
+   712→.compliance-nav {
+   713→  display: flex;
+   714→  gap: 16px;
+   715→  flex-wrap: wrap;
+   716→  justify-content: flex-end;
+   717→}
+   718→
+   719→.compliance-link {
+   720→  font-size: 9px;
+   721→  letter-spacing: 0.05em;
+   722→  color: var(--text-dim);
+   723→  text-decoration: none;
+   724→  transition: color 0.3s ease;
+   725→  white-space: nowrap;
+   726→}
+   727→
+   728→.compliance-link:hover {
+   729→  color: var(--text-muted);
+   730→}
+   731→
+   732→/* ═══════════════════════════════════════════════════════════════
+   733→   ARRIVAL SCENE — Cinematic Entrance
+   734→   ═══════════════════════════════════════════════════════════════ */
+   735→
+   736→/* ── Scene Shell ── */
+   737→.arrival-scene {
+   738→  position: relative;
+   739→  width: 100vw;
+   740→  height: 100vh;
+   741→  overflow: hidden;
+   742→}
+   743→
+   744→.arrival-bg {
+   745→  position: absolute;
+   746→  inset: -10px;
+   747→  background: url('/cantina-arrival.png') center/cover no-repeat;
+   748→  filter: blur(2px) brightness(0.85);
+   749→  animation: arrivalBgBreath 20s ease-in-out infinite;
+   750→  z-index: 0;
+   751→}
+   752→
+   753→@keyframes arrivalBgBreath {
+   754→  0%, 100% { transform: scale(1.05); }
+   755→  50% { transform: scale(1.08); }
+   756→}
+   757→
+   758→.arrival-dim {
+   759→  position: absolute;
+   760→  inset: 0;
+   761→  background: rgba(0, 0, 0, 0.2);
+   762→  z-index: 1;
+   763→}
+   764→
+   765→/* ── Fog Layers ── */
+   766→.arrival-fog {
+   767→  position: absolute;
+   768→  width: 250%;
+   769→  height: 60%;
+   770→  pointer-events: none;
+   771→  z-index: 2;
+   772→  opacity: 0.6;
+   773→}
+   774→
+   775→.arrival-fog-1 {
+   776→  top: 10%;
+   777→  left: -75%;
+   778→  background: linear-gradient(90deg, transparent 0%, rgba(180,160,140,0.04) 20%, rgba(200,180,160,0.06) 40%, transparent 60%, rgba(180,160,140,0.03) 80%, transparent 100%);
+   779→  filter: blur(60px);
+   780→  animation: fogDriftRight 28s ease-in-out infinite;
+   781→}
+   782→
+   783→.arrival-fog-2 {
+   784→  top: 40%;
+   785→  left: -100%;
+   786→  background: linear-gradient(90deg, transparent 0%, rgba(160,140,120,0.05) 30%, transparent 50%, rgba(180,160,140,0.04) 70%, transparent 100%);
+   787→  filter: blur(80px);
+   788→  animation: fogDriftLeft 35s ease-in-out infinite;
+   789→}
+   790→
+   791→.arrival-fog-3 {
+   792→  bottom: 5%;
+   793→  left: -50%;
+   794→  width: 200%;
+   795→  height: 40%;
+   796→  background: linear-gradient(90deg, transparent 0%, rgba(212,160,23,0.03) 25%, transparent 50%, rgba(233,30,140,0.02) 75%, transparent 100%);
+   797→  filter: blur(50px);
+   798→  animation: fogDriftRight 22s ease-in-out infinite reverse;
+   799→}
+   800→
+   801→@keyframes fogDriftRight {
+   802→  0%, 100% { transform: translateX(0); }
+   803→  50% { transform: translateX(20%); }
+   804→}
+   805→
+   806→@keyframes fogDriftLeft {
+   807→  0%, 100% { transform: translateX(0); }
+   808→  50% { transform: translateX(-15%); }
+   809→}
+   810→
+   811→/* ── Warm Light Glows ── */
+   812→.arrival-glow {
+   813→  position: absolute;
+   814→  border-radius: 50%;
+   815→  pointer-events: none;
+   816→  z-index: 2;
+   817→}
+   818→
+   819→.arrival-glow-amber {
+   820→  top: 15%;
+   821→  left: 25%;
+   822→  width: 500px;
+   823→  height: 500px;
+   824→  background: radial-gradient(circle, rgba(212,160,23,0.07) 0%, transparent 70%);
+   825→  filter: blur(60px);
+   826→  animation: glowPulse 10s ease-in-out infinite;
+   827→}
+   828→
+   829→.arrival-glow-magenta {
+   830→  bottom: 20%;
+   831→  right: 15%;
+   832→  width: 400px;
+   833→  height: 400px;
+   834→  background: radial-gradient(circle, rgba(233,30,140,0.05) 0%, transparent 70%);
+   835→  filter: blur(50px);
+   836→  animation: glowPulse 12s ease-in-out infinite 3s;
+   837→}
+   838→
+   839→@keyframes glowPulse {
+   840→  0%, 100% { opacity: 1; transform: scale(1); }
+   841→  50% { opacity: 0.6; transform: scale(1.1); }
+   842→}
+   843→
+   844→/* ── Dust Particles ── */
+   845→.arrival-dust-container {
+   846→  position: absolute;
+   847→  inset: 0;
+   848→  pointer-events: none;
+   849→  z-index: 3;
+   850→}
+   851→
+   852→.arrival-dust {
+   853→  position: absolute;
+   854→  bottom: -10px;
+   855→  border-radius: 50%;
+   856→  background: rgba(212,180,120,0.6);
+   857→  animation: dustFloat linear infinite;
+   858→}
+   859→
+   860→@keyframes dustFloat {
+   861→  0% { transform: translateY(0) translateX(0); opacity: 0; }
+   862→  10% { opacity: 1; }
+   863→  90% { opacity: 1; }
+   864→  100% { transform: translateY(-100vh) translateX(30px); opacity: 0; }
+   865→}
+   866→
+   867→/* ── Silhouette ── */
+   868→.arrival-silhouette {
+   869→  position: absolute;
+   870→  bottom: 0;
+   871→  left: 50%;
+   872→  transform: translateX(-50%);
+   873→  width: 180px;
+   874→  height: 280px;
+   875→  background: linear-gradient(to top, rgba(10,14,23,0.4) 0%, rgba(10,14,23,0.15) 40%, transparent 70%);
+   876→  border-radius: 45% 45% 0 0;
+   877→  filter: blur(25px);
+   878→  z-index: 2;
+   879→  animation: silhouetteFade 15s ease-in-out infinite;
+   880→  opacity: 0;
+   881→  pointer-events: none;
+   882→}
+   883→
+   884→@keyframes silhouetteFade {
+   885→  0%, 60%, 100% { opacity: 0; transform: translateX(-50%) scaleY(0.95); }
+   886→  65% { opacity: 0.12; }
+   887→  75% { opacity: 0.08; transform: translateX(-48%) scaleY(1); }
+   888→  85% { opacity: 0; }
+   889→}
+   890→
+   891→/* ── Reflection (wet bar surface) ── */
+   892→.arrival-reflection {
+   893→  position: absolute;
+   894→  bottom: 0;
+   895→  left: 0;
+   896→  right: 0;
+   897→  height: 25%;
+   898→  background: linear-gradient(to top, rgba(212,160,23,0.02) 0%, transparent 100%);
+   899→  pointer-events: none;
+   900→  z-index: 2;
+   901→}
+   902→
+   903→/* ── Vignette ── */
+   904→.arrival-vignette {
+   905→  position: absolute;
+   906→  inset: 0;
+   907→  background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.4) 100%);
+   908→  pointer-events: none;
+   909→  z-index: 3;
+   910→}
+   911→
+   912→/* ── Content ── */
+   913→.arrival-content {
+   914→  position: relative;
+   915→  z-index: 10;
+   916→  display: flex;
+   917→  flex-direction: column;
+   918→  align-items: center;
+   919→  justify-content: center;
+   920→  width: 100%;
+   921→  height: 100%;
+   922→}
+   923→
+   924→/* ── Age Gate ── */
+   925→.age-gate {
+   926→  display: flex;
+   927→  flex-direction: column;
+   928→  align-items: center;
+   929→  animation: ageGateIn 1.5s ease forwards;
+   930→  opacity: 0;
+   931→}
+   932→
+   933→@keyframes ageGateIn {
+   934→  0% { opacity: 0; transform: translateY(10px); }
+   935→  100% { opacity: 1; transform: translateY(0); }
+   936→}
+   937→
+   938→.age-gate-butterfly {
+   939→  margin-bottom: 24px;
+   940→}
+   941→
+   942→.age-gate-title {
+   943→  display: flex;
+   944→  flex-direction: column;
+   945→  align-items: center;
+   946→  gap: 2px;
+   947→  margin-bottom: 20px;
+   948→}
+   949→
+   950→.age-gate-title-cantina {
+   951→  font-size: 2.2rem;
+   952→  letter-spacing: 0.35em;
+   953→  text-transform: uppercase;
+   954→  color: var(--amber);
+   955→  text-shadow: 0 0 20px rgba(212,160,23,0.4), 0 0 40px rgba(212,160,23,0.15);
+   956→  line-height: 1.1;
+   957→}
+   958→
+   959→.age-gate-title-virtual {
+   960→  font-size: 1rem;
+   961→  letter-spacing: 0.6em;
+   962→  text-transform: uppercase;
+   963→  color: var(--text-muted);
+   964→  text-shadow: 0 0 10px rgba(233,30,140,0.3);
+   965→}
+   966→
+   967→.age-gate-divider {
+   968→  width: 60px;
+   969→  height: 1px;
+   970→  background: linear-gradient(90deg, transparent, var(--amber), rgba(233,30,140,0.5), transparent);
+   971→  opacity: 0.4;
+   972→  margin-bottom: 24px;
+   973→}
+   974→
+   975→.age-gate-legal {
+   976→  max-width: 380px;
+   977→  text-align: center;
+   978→  font-size: 10px;
+   979→  line-height: 1.8;
+   980→  color: var(--text-dim);
+   981→  letter-spacing: 0.05em;
+   982→  margin-bottom: 32px;
+   983→  padding: 0 20px;
+   984→}
+   985→
+   986→.age-gate-actions {
+   987→  display: flex;
+   988→  flex-direction: column;
+   989→  gap: 12px;
+   990→  align-items: center;
+   991→}
+   992→
+   993→.age-gate-btn {
+   994→  display: flex;
+   995→  flex-direction: column;
+   996→  align-items: center;
+   997→  gap: 4px;
+   998→  padding: 14px 48px;
+   999→  background: transparent;
+  1000→  border: 1px solid rgba(212,160,23,0.2);
+  1001→  cursor: pointer;
+  1002→  font-family: inherit;
+  1003→  transition: all 0.4s ease;
+  1004→  min-width: 200px;
+  1005→}
+  1006→
+  1007→.age-gate-btn-enter:hover {
+  1008→  border-color: var(--amber);
+  1009→  background: rgba(212,160,23,0.08);
+  1010→  box-shadow: 0 0 20px rgba(212,160,23,0.15);
+  1011→}
+  1012→
+  1013→.age-gate-btn-leave {
+  1014→  border-color: rgba(255,255,255,0.06);
+  1015→}
+  1016→
+  1017→.age-gate-btn-leave:hover {
+  1018→  border-color: rgba(255,255,255,0.15);
+  1019→  background: rgba(255,255,255,0.02);
+  1020→}
+  1021→
+  1022→.age-gate-btn-label {
+  1023→  font-size: 13px;
+  1024→  letter-spacing: 0.3em;
+  1025→  text-transform: uppercase;
+  1026→  color: var(--amber);
+  1027→}
+  1028→
+  1029→.age-gate-btn-leave .age-gate-btn-label {
+  1030→  color: var(--text-dim);
+  1031→}
+  1032→
+  1033→.age-gate-btn-sub {
+  1034→  font-size: 9px;
+  1035→  letter-spacing: 0.15em;
+  1036→  color: var(--text-dim);
+  1037→}
+  1038→
+  1039→/* ── Password Scene (inside arrival) ── */
+  1040→.password-scene {
+  1041→  display: flex;
+  1042→  flex-direction: column;
+  1043→  align-items: center;
+  1044→}
+  1045→
+  1046→.password-butterfly {
+  1047→  margin-bottom: 24px;
+  1048→  transform: scale(0.7);
+  1049→}
+  1050→
+  1051→.password-atmosphere {
+  1052→  margin-bottom: 8px;
+  1053→}
+  1054→
+  1055→.password-form {
+  1056→  display: flex;
+  1057→  flex-direction: column;
+  1058→  align-items: center;
+  1059→  gap: 16px;
+  1060→}
+  1061→
+  1062→.password-label {
+  1063→  font-size: 10px;
+  1064→  letter-spacing: 0.3em;
+  1065→  text-transform: uppercase;
+  1066→  color: var(--text-muted);
+  1067→}
+  1068→
+  1069→.password-input {
+  1070→  width: 220px;
+  1071→  text-align: center;
+  1072→  padding: 10px 16px;
+  1073→  background: rgba(0,0,0,0.3);
+  1074→  backdrop-filter: blur(8px);
+  1075→  -webkit-backdrop-filter: blur(8px);
+  1076→  border: 1px solid rgba(212,160,23,0.15);
+  1077→  color: var(--text-primary);
+  1078→  font-family: inherit;
+  1079→  font-size: 14px;
+  1080→  letter-spacing: 0.2em;
+  1081→  outline: none;
+  1082→  transition: all 0.3s ease;
+  1083→}
+  1084→
+  1085→.password-input:focus {
+  1086→  border-color: rgba(212,160,23,0.4);
+  1087→  box-shadow: 0 0 20px rgba(212,160,23,0.1);
+  1088→}
+  1089→
+  1090→.password-input::placeholder {
+  1091→  color: var(--text-dim);
+  1092→  letter-spacing: 0.3em;
+  1093→}
+  1094→
+  1095→.password-btn {
+  1096→  padding: 10px 32px;
+  1097→  background: transparent;
+  1098→  border: 1px solid rgba(212,160,23,0.25);
+  1099→  color: var(--amber);
+  1100→  font-family: inherit;
+  1101→  font-size: 11px;
+  1102→  letter-spacing: 0.25em;
+  1103→  text-transform: uppercase;
+  1104→  cursor: pointer;
+  1105→  transition: all 0.4s ease;
+  1106→}
+  1107→
+  1108→.password-btn:hover {
+  1109→  background: rgba(212,160,23,0.12);
+  1110→  border-color: var(--amber);
+  1111→  box-shadow: 0 0 16px rgba(212,160,23,0.2);
+  1112→}
+  1113→
+  1114→.password-reject {
+  1115→  margin-top: 24px;
+  1116→  font-size: 13px;
+  1117→  color: var(--sale-red);
+  1118→  text-shadow: 0 0 10px rgba(255,59,59,0.3);
+  1119→}
+  1120→
+  1121→/* ── Mobile Sidebar → Bottom Bar ── */
+  1122→@media (max-width: 768px) {
+  1123→  .sidebar-hub {
+  1124→    position: fixed;
+  1125→    top: auto;
+  1126→    bottom: 0;
+  1127→    left: 0;
+  1128→    right: 0;
+  1129→    width: 100%;
+  1130→    height: auto;
+  1131→    flex-direction: row;
+  1132→  align-items: center;
+  1133→  padding: 0;
+  1134→  border-right: none;
+  1135→  border-top: 1px solid rgba(255,255,255,0.06);
+  1136→  z-index: 40;
+  1137→  }
+  1138→
+  1139→  .sidebar-brand,
+  1140→  .sidebar-divider,
+  1141→  .sidebar-footer {
+  1142→    display: none;
+  1143→  }
+  1144→
+  1145→  .sidebar-nav {
+  1146→    flex-direction: row;
+  1147→    gap: 0;
+  1148→    padding: 0;
+  1149→    width: 100%;
+  1150→    overflow-x: auto;
+  1151→  }
+  1152→
+  1153→  .sidebar-item {
+  1154→    flex-direction: column;
+  1155→  align-items: center;
+  1156→  gap: 4px;
+  1157→  padding: 10px 8px 12px;
+  1158→    flex: 1;
+  1159→  min-width: 0;
+  1160→    border-radius: 0;
+  1161→  }
+  1162→
+  1163→  .sidebar-item-sub {
+  1164→  font-size: 7px;
+  1165→    letter-spacing: 0.05em;
+  1166→    white-space: nowrap;
+  1167→    overflow: hidden;
+  1168→    text-overflow: ellipsis;
+  1169→    max-width: 60px;
+  1170→  }
+  1171→
+  1172→  .sidebar-item-name {
+  1173→    font-size: 8px;
+  1174→    letter-spacing: 0.05em;
+  1175→    white-space: nowrap;
+  1176→  overflow: hidden;
+  1177→    text-overflow: ellipsis;
+  1178→    max-width: 70px;
+  1179→  }
+  1180→
+  1181→  .cantina-main {
+  1182→    margin-left: 0;
+  1183→    margin-bottom: 72px;
+  1184→  }
+  1185→
+  1186→  .district-scene-bg {
+  1187→    left: 0;
+  1188→  }
+  1189→
+  1190→  .district-scene-overlay {
+  1191→    left: 0;
+  1192→  }
+  1193→
+  1194→  .district-scene-content {
+  1195→    padding: 32px 20px 20px;
+  1196→  }
+  1197→
+  1198→  .district-name {
+  1199→    font-size: 20px;
+  1200→  }
+  1201→
+  1202→  .district-encounters {
+  1203→    grid-template-columns: 1fr;
+  1204→    gap: 16px;
+  1205→  }
+  1206→
+  1207→  .district-nectar-teaser {
+  1208→    padding: 20px 20px 12px;
+  1209→    flex-wrap: wrap;
+  1210→  }
+  1211→
+  1212→  .district-footer {
+  1213→    flex-direction: column-reverse;
+  1214→    gap: 12px;
+  1215→    padding: 12px 20px 80px;
+  1216→    align-items: center;
+  1217→    text-align: center;
+  1218→  }
+  1219→
+  1220→  /* Arrival mobile */
+  1221→  .arrival-glow-amber { width: 300px; height: 300px; }
+  1222→  .arrival-glow-magenta { width: 250px; height: 250px; }
+  1223→  .age-gate-title-cantina { font-size: 1.5rem; letter-spacing: 0.25em; }
+  1224→  .age-gate-title-virtual { font-size: 0.8rem; letter-spacing: 0.4em; }
+  1225→  .age-gate-legal { max-width: 260px; font-size: 9px; }
+  1226→  .age-gate-btn { padding: 12px 36px; min-width: 170px; }
+  1227→  .arrival-silhouette { width: 120px; height: 200px; }
+  1228→  .password-input { width: 200px; }
+  1229→
+  1230→  .compliance-footer {
+  1231→    flex-direction: column;
+  1232→    gap: 10px;
+  1233→    padding: 12px 20px 80px;
+  1234→    align-items: center;
+  1235→  }
+  1236→
+  1237→  .compliance-nav {
+  1238→    justify-content: center;
+  1239→  }
+  1240→}
