@@ -690,6 +690,45 @@ body {
   flex: 1;
 }
 
+/* ── Compliance Footer ── */
+.compliance-footer {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 40px 20px;
+  border-top: 1px solid rgba(255,255,255,0.03);
+}
+
+.compliance-brand {
+  font-size: 9px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+
+.compliance-nav {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.compliance-link {
+  font-size: 9px;
+  letter-spacing: 0.05em;
+  color: var(--text-dim);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  white-space: nowrap;
+}
+
+.compliance-link:hover {
+  color: var(--text-muted);
+}
+
 /* ═══════════════════════════════════════════════════════════════
    ARRIVAL SCENE — Cinematic Entrance
    ═══════════════════════════════════════════════════════════════ */
@@ -1187,4 +1226,15 @@ body {
   .age-gate-btn { padding: 12px 36px; min-width: 170px; }
   .arrival-silhouette { width: 120px; height: 200px; }
   .password-input { width: 200px; }
+
+  .compliance-footer {
+    flex-direction: column;
+    gap: 10px;
+    padding: 12px 20px 80px;
+    align-items: center;
+  }
+
+  .compliance-nav {
+    justify-content: center;
+  }
 }

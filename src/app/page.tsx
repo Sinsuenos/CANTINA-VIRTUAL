@@ -8,8 +8,6 @@ import { SidebarHub } from '@/components/cantina/SidebarHub';
 import { DistrictScene } from '@/components/cantina/DistrictScene';
 import { NectarHUD } from '@/components/cantina/NectarHUD';
 
-const HERO_BG = 'https://sfile.chatglm.cn/images-ppt/b4e9051f97b1.jpg';
-
 /* ─── Arrival Dust Particles ─── */
 function ArrivalDust() {
   const particles = useMemo(
@@ -250,28 +248,16 @@ function Cantina() {
           </span>
         </div>
 
-        {/* Discord — bottom bar */}
-        <footer className="district-footer">
-          <div className="district-footer-left">
-            <p
-              className="text-[9px] tracking-[0.3em] uppercase"
-              style={{ color: 'var(--text-dim)' }}
-            >
-              Cantina Virtual &middot; Pacific Coast &middot; 2025
-            </p>
-          </div>
-          <a
-            href="https://discord.gg/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="cta-bordered no-underline"
-            style={{
-              border: '1px solid var(--amber)',
-              color: 'var(--amber)',
-            }}
-          >
-            Enter the Discord
-          </a>
+        <footer className="compliance-footer">
+          <span className="compliance-brand">Cantina Virtual</span>
+          <nav className="compliance-nav">
+            <a href="#" className="compliance-link">18+ Adults Only</a>
+            <a href="#" className="compliance-link">2257</a>
+            <a href="#" className="compliance-link">DMCA</a>
+            <a href="#" className="compliance-link">Privacy</a>
+            <a href="#" className="compliance-link">Terms</a>
+            <a href="#" className="compliance-link">Contact</a>
+          </nav>
         </footer>
       </main>
     </div>

@@ -1,5 +1,4 @@
 import type { Resident } from '@/data/rooms';
-import { resolveOfferLink } from '@/data/rooms';
 
 interface EncounterCardProps {
   resident: Resident;
@@ -7,15 +6,12 @@ interface EncounterCardProps {
 }
 
 export function EncounterCard({ resident, ctaColor }: EncounterCardProps) {
-  const link = resolveOfferLink(resident.id);
-
   return (
     <a
-      href={link}
-      target="_blank"
-      rel="noopener noreferrer"
+      href="#"
       className="encounter-card no-underline"
     >
+      {/* IMAGE SLOT — portrait: swap resident.image with Cantina artwork URL */}
       <div
         className="encounter-card-image"
         style={{ backgroundImage: `url('${resident.image}')` }}
