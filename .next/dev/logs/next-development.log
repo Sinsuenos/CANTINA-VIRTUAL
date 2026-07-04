@@ -1,16 +1,1 @@
-{"timestamp":"00:00:00.824","source":"Server","level":"LOG","message":""}
-{"timestamp":"00:00:03.850","source":"Server","level":"LOG","message":"○ Compiling / ..."}
-{"timestamp":"03:17:27.883","source":"Server","level":"LOG","message":"✓ Compiled in 319ms"}
-{"timestamp":"03:20:10.454","source":"Server","level":"LOG","message":"✓ Compiled in 185ms"}
-{"timestamp":"03:20:15.016","source":"Server","level":"LOG","message":"✓ Compiled in 147ms"}
-{"timestamp":"03:22:07.345","source":"Server","level":"LOG","message":"✓ Compiled in 221ms"}
-{"timestamp":"03:24:29.147","source":"Server","level":"LOG","message":"✓ Compiled in 317ms"}
-{"timestamp":"03:39:32.626","source":"Server","level":"LOG","message":"✓ Compiled in 349ms"}
-{"timestamp":"03:39:32.817","source":"Server","level":"LOG","message":"✓ Compiled in 96ms"}
-{"timestamp":"03:39:47.207","source":"Server","level":"LOG","message":"✓ Compiled in 194ms"}
-{"timestamp":"03:40:15.942","source":"Server","level":"LOG","message":"✓ Compiled in 257ms"}
-{"timestamp":"03:40:26.114","source":"Server","level":"LOG","message":"✓ Compiled in 186ms"}
-{"timestamp":"03:40:33.291","source":"Server","level":"LOG","message":"✓ Compiled in 180ms"}
-{"timestamp":"03:40:44.133","source":"Server","level":"LOG","message":"✓ Compiled in 93ms"}
-{"timestamp":"03:40:44.365","source":"Server","level":"LOG","message":"✓ Compiled in 94ms"}
-{"timestamp":"03:40:51.902","source":"Server","level":"LOG","message":"✓ Compiled in 237ms"}
+{"timestamp":"00:00:01.162","source":"Server","level":"LOG","message":""}
