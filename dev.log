@@ -36,3 +36,6 @@ https://nextjs.org/telemetry
  GET / 200 in 54ms (next.js: 5ms, application-code: 50ms)
  GET / 200 in 26ms (next.js: 2ms, application-code: 23ms)
  GET / 200 in 37ms (next.js: 3ms, application-code: 34ms)
+ GET / 200 in 72ms (next.js: 3ms, application-code: 69ms)
+ GET / 200 in 41ms (next.js: 3ms, application-code: 38ms)
+ GET / 200 in 29ms (next.js: 1771µs, application-code: 27ms)
