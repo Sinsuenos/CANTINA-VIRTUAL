@@ -80,13 +80,13 @@ function AgeGate({ onConfirm, onLeave }: { onConfirm: () => void; onLeave: () =>
               className="age-gate-btn age-gate-btn-enter"
               onClick={onConfirm}
             >
-              <span className="age-gate-btn-label">Yes</span>
+              <span className="age-gate-btn-label">I am 18 or older</span>
             </button>
             <button
               className="age-gate-btn age-gate-btn-leave"
-              onClick={() => setStep('landing')}
+              onClick={onLeave}
             >
-              <span className="age-gate-btn-label">No</span>
+              <span className="age-gate-btn-label">Leave</span>
             </button>
           </div>
         </div>
@@ -104,6 +104,17 @@ function AgeGate({ onConfirm, onLeave }: { onConfirm: () => void; onLeave: () =>
           <span className="age-gate-title-cantina">CANTINA</span>
           <span className="age-gate-title-virtual">VIRTUAL</span>
         </h1>
+        <p className="arrival-copy">
+          Some evenings begin with a destination.
+          <br />
+          The unforgettable ones begin with a feeling.
+        </p>
+        <p className="arrival-copy arrival-copy-body">
+          Behind these lanterns are warm conversations, genuine companionship, playful chemistry, beautiful people, and stories that unfold one encounter at a time.
+        </p>
+        <p className="arrival-copy arrival-copy-closing">
+          Tonight is yours to discover.
+        </p>
         <div className="age-gate-actions">
           <button
             className="age-gate-btn age-gate-btn-enter"
@@ -118,80 +129,6 @@ function AgeGate({ onConfirm, onLeave }: { onConfirm: () => void; onLeave: () =>
             <span className="age-gate-btn-label">LEAVE</span>
           </button>
         </div>
-      </div>
-    </ArrivalScene>
-  );
-}
-
-/* ─── Password Screen ─── */
-function PasswordScreen({ onUnlock }: { onUnlock: () => void }) {
-  const [input, setInput] = useState('');
-  const [shaking, setShaking] = useState(false);
-  const [mariposaDead, setMariposaDead] = useState(false);
-  const [showReject, setShowReject] = useState(false);
-  const inputRef = useRef<HTMLInputElement>(null);
-
-  useEffect(() => {
-    inputRef.current?.focus();
-  }, []);
-
-  const handleSubmit = useCallback(
-    (e: React.FormEvent) => {
-      e.preventDefault();
-      if (input.toLowerCase().trim() === 'mariposa') {
-        onUnlock();
-      } else {
-        setShaking(true);
-        setMariposaDead(true);
-        setTimeout(() => {
-          setShaking(false);
-          setMariposaDead(false);
-          setShowReject(false);
-          setInput('');
-          inputRef.current?.focus();
-        }, 2000);
-        setShowReject(true);
-      }
-    },
-    [input, onUnlock],
-  );
-
-  return (
-    <ArrivalScene>
-      <div className={`password-scene ${shaking ? 'shake' : ''}`}>
-        <div className="password-butterfly">
-          <MariposaCenterpiece dead={mariposaDead} />
-        </div>
-        <div className="password-atmosphere">
-          <div className="h-7 overflow-hidden">
-            <span
-              className="typewriter-text text-lg tracking-widest"
-              style={{ color: 'var(--amber)' }}
-            >
-              The cantina is listening...
-            </span>
-          </div>
-        </div>
-        <form onSubmit={handleSubmit} className="password-form">
-          <label className="password-label">Whisper the password</label>
-          <input
-            ref={inputRef}
-            type="text"
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            className="password-input"
-            placeholder="..."
-            autoComplete="off"
-            autoCapitalize="off"
-            spellCheck={false}
-          />
-          <button type="submit" className="password-btn">
-            Enter
-          </button>
-        </form>
-        {showReject && (
-          <p className="password-reject fade-in">Not tonight, forastero.</p>
-        )}
       </div>
     </ArrivalScene>
   );
@@ -288,7 +225,6 @@ function Cantina() {
 export default function Home() {
   const [ageConfirmed, setAgeConfirmed] = useState(false);
   const [ageChecked, setAgeChecked] = useState(false);
-  const [state, setState] = useState<'locked' | 'exiting' | 'unlocked'>('locked');
 
   useEffect(() => {
     const confirmed = localStorage.getItem('cv-age-confirmed');
@@ -304,38 +240,13 @@ export default function Home() {
     setAgeConfirmed(true);
   }, []);
 
-  const handleUnlock = useCallback(() => {
-    setState('exiting');
-    setTimeout(() => setState('unlocked'), 500);
-  }, []);
-
   if (!ageChecked) return null;
 
   return (
     <>
       <NectarHUD />
       {!ageConfirmed && <AgeGate onConfirm={handleAgeConfirm} onLeave={() => { window.location.href = 'https://google.com'; }} />}
-      {ageConfirmed && state === 'locked' && (
-        <PasswordScreen onUnlock={handleUnlock} />
-      )}
-      {state === 'exiting' && (
-        <div
-          className="scene-exit"
-          style={{
-            position: 'fixed',
-            inset: 0,
-            zIndex: 20,
-            overflow: 'hidden',
-          }}
-        >
-          <div className="arrival-bg" />
-          <div className="arrival-dim" />
-          <div className="arrival-vignette" />
-        </div>
-      )}
-      {state === 'unlocked' && (
-        <Cantina />
-      )}
+      {ageConfirmed && <Cantina />}
     </>
   );
 }

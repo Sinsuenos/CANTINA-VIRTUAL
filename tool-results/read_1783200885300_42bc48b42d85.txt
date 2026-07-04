@@ -1,0 +1,2002 @@
+     1→@import "tailwindcss";
+     2→
+     3→/* ── Cantina Virtual Design System ── */
+     4→:root {
+     5→  --bg-deep: #0a0e17;
+     6→  --bg-card: #0f1520;
+     7→  --bg-card-hover: #151d2e;
+     8→  --amber: #d4a017;
+     9→  --amber-dim: #a67c12;
+    10→  --purple: #7b2d8e;
+    11→  --purple-dim: #5a1f6a;
+    12→  --cyan: #00f5ff;
+    13→  --cyan-dim: #00b8bf;
+    14→  --text-primary: #e8e0d4;
+    15→  --text-muted: #6b6560;
+    16→  --text-dim: #3d3a37;
+    17→  --sale-red: #ff3b3b;
+    18→  --sale-green: #00e676;
+    19→  --emerald: #00ff88;
+    20→  --emerald-dim: #00b860;
+    21→  --rose: #e91e8c;
+    22→  --rose-dim: #b0156a;
+    23→  --card-radius: 4px;
+    24→}
+    25→
+    26→* { margin: 0; padding: 0; box-sizing: border-box; }
+    27→
+    28→html {
+    29→  scroll-behavior: smooth;
+    30→  scrollbar-width: thin;
+    31→  scrollbar-color: var(--amber-dim) var(--bg-deep);
+    32→}
+    33→
+    34→body {
+    35→  background: var(--bg-deep);
+    36→  color: var(--text-primary);
+    37→  font-family: 'Courier New', 'Lucida Console', monospace;
+    38→  overflow-x: hidden;
+    39→  min-height: 100vh;
+    40→}
+    41→
+    42→/* ── Custom Scrollbar ── */
+    43→::-webkit-scrollbar { width: 6px; }
+    44→::-webkit-scrollbar-track { background: var(--bg-deep); }
+    45→::-webkit-scrollbar-thumb { background: var(--amber-dim); border-radius: 3px; }
+    46→
+    47→/* ── Mariposa Centerpiece (replaces lantern) ── */
+    48→@keyframes mariposaGlow {
+    49→  0%, 100% { filter: drop-shadow(0 0 12px rgba(255,105,180,0.6)) drop-shadow(0 0 30px rgba(255,105,180,0.2)); }
+    50→  50% { filter: drop-shadow(0 0 6px rgba(255,105,180,0.4)) drop-shadow(0 0 15px rgba(255,105,180,0.1)); }
+    51→}
+    52→@keyframes nectarDrip {
+    53→  0% { transform: translateY(-4px) scaleY(0.3); opacity: 0.9; }
+    54→  40% { transform: translateY(8px) scaleY(1); opacity: 1; }
+    55→  100% { transform: translateY(22px) scaleY(0.6); opacity: 0; }
+    56→}
+    57→@keyframes nectarShimmer {
+    58→  0%, 100% { opacity: 0.7; }
+    59→  50% { opacity: 1; }
+    60→}
+    61→.mariposa-center {
+    62→  position: relative;
+    63→  display: inline-flex;
+    64→  flex-direction: column;
+    65→  align-items: center;
+    66→  animation: mariposaGlow 3s ease-in-out infinite;
+    67→}
+    68→.mariposa-center .butterfly {
+    69→  font-size: 4.2rem;
+    70→  color: #ff69b4;
+    71→  position: relative;
+    72→  z-index: 2;
+    73→}
+    74→.nectar-drips {
+    75→  position: absolute;
+    76→  top: 100%;
+    77→  left: 50%;
+    78→  transform: translateX(-50%);
+    79→  display: flex;
+    80→  gap: 6px;
+    81→  z-index: 1;
+    82→}
+    83→.nectar-drip {
+    84→  width: 4px;
+    85→  height: 12px;
+    86→  border-radius: 0 0 50% 50%;
+    87→ background: linear-gradient(to bottom, var(--amber), var(--amber-dim));
+    88→ animation: nectarDrip 2s ease-in infinite;
+    89→}
+    90→.nectar-drip:nth-child(2) { animation-delay: 0.7s; height: 10px; }
+    91→.nectar-drip:nth-child(3) { animation-delay: 1.3s; height: 14px; }
+    92→.nectar-pool {
+    93→  width: 36px;
+    94→  height: 8px;
+    95→  border-radius: 50%;
+    96→  background: radial-gradient(ellipse, rgba(212,160,23,0.5) 0%, transparent 70%);
+    97→ animation: nectarShimmer 2s ease-in-out infinite;
+    98→  margin-top: -2px;
+    99→}
+   100→
+   101→/* ── Typewriter ── */
+   102→@keyframes typewriter {
+   103→  from { width: 0; }
+   104→  to { width: 100%; }
+   105→}
+   106→@keyframes blinkCaret {
+   107→  0%, 100% { border-color: var(--amber); }
+   108→  50% { border-color: transparent; }
+   109→}
+   110→.typewriter-text {
+   111→  overflow: hidden;
+   112→  white-space: nowrap;
+   113→  border-right: 2px solid var(--amber);
+   114→  animation: typewriter 2.5s steps(28) 0.5s forwards, blinkCaret 0.8s step-end infinite;
+   115→  width: 0;
+   116→}
+   117→
+   118→/* ── Neon Glow Pulse ── */
+   119→@keyframes neonPulse {
+   120→  0%, 100% { text-shadow: 0 0 5px currentColor, 0 0 10px currentColor, 0 0 20px currentColor; }
+   121→  50% { text-shadow: 0 0 2px currentColor, 0 0 5px currentColor, 0 0 10px currentColor; }
+   122→}
+   123→.neon-amber { color: var(--amber); animation: neonPulse 2s ease-in-out infinite; }
+   124→.neon-purple { color: var(--purple); animation: neonPulse 2.5s ease-in-out infinite 0.3s; }
+   125→.neon-cyan { color: var(--cyan); animation: neonPulse 2s ease-in-out infinite 0.6s; }
+   126→.neon-emerald { color: var(--emerald); animation: neonPulse 2s ease-in-out infinite 0.9s; }
+   127→.neon-rose { color: var(--rose); animation: neonPulse 2.5s ease-in-out infinite 1.2s; }
+   128→
+   129→/* ── Floating Butterflies ── */
+   130→@keyframes butterflyFloat {
+   131→  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+   132→  25% { transform: translate(15px, -20px) rotate(5deg); }
+   133→  50% { transform: translate(-10px, -35px) rotate(-3deg); }
+   134→  75% { transform: translate(20px, -15px) rotate(7deg); }
+   135→}
+   136→@keyframes wingFlap {
+   137→  0%, 100% { transform: scaleX(1); }
+   138→  50% { transform: scaleX(0.3); }
+   139→}
+   140→.mariposa {
+   141→  position: absolute;
+   142→  font-size: 1.5rem;
+   143→  animation: butterflyFloat 8s ease-in-out infinite;
+   144→  pointer-events: none;
+   145→  z-index: 5;
+   146→}
+   147→.mariposa-wing {
+   148→  display: inline-block;
+   149→  animation: wingFlap 0.4s ease-in-out infinite;
+   150→}
+   151→
+   152→/* ── Smoke Particles ── */
+   153→@keyframes smokeRise {
+   154→  0% { transform: translateY(0) scale(1); opacity: 0.15; }
+   155→  50% { opacity: 0.08; }
+   156→  100% { transform: translateY(-120px) scale(2.5); opacity: 0; }
+   157→}
+   158→.smoke-container {
+   159→  position: absolute;
+   160→  inset: 0;
+   161→  overflow: hidden;
+   162→  pointer-events: none;
+   163→  z-index: 1;
+   164→}
+   165→.smoke-particle {
+   166→  position: absolute;
+   167→  bottom: 0;
+   168→  width: 60px;
+   169→  height: 60px;
+   170→  border-radius: 50%;
+   171→  background: radial-gradient(circle, rgba(212,160,23,0.1) 0%, transparent 70%);
+   172→  animation: smokeRise 6s ease-out infinite;
+   173→}
+   174→
+   175→/* ── Scroll Reveal ── */
+   176→.reveal {
+   177→  opacity: 0;
+   178→  transform: translateY(30px);
+   179→  transition: opacity 0.8s ease, transform 0.8s ease;
+   180→}
+   181→.reveal.visible {
+   182→  opacity: 1;
+   183→  transform: translateY(0);
+   184→}
+   185→.reveal-delay-1 { transition-delay: 0.15s; }
+   186→.reveal-delay-2 { transition-delay: 0.3s; }
+   187→.reveal-delay-3 { transition-delay: 0.45s; }
+   188→
+   189→/* ── Sale Countdown Pulse ── */
+   190→@keyframes salePulse {
+   191→  0%, 100% { box-shadow: 0 0 5px rgba(255,59,59,0.3), inset 0 0 5px rgba(255,59,59,0.1); }
+   192→  50% { box-shadow: 0 0 20px rgba(255,59,59,0.6), inset 0 0 10px rgba(255,59,59,0.2); }
+   193→}
+   194→.sale-card { animation: salePulse 2s ease-in-out infinite; }
+   195→
+   196→/* ── Password Screen ── */
+   197→@keyframes screenShake {
+   198→  0%, 100% { transform: translateX(0); }
+   199→  20% { transform: translateX(-8px); }
+   200→  40% { transform: translateX(8px); }
+   201→  60% { transform: translateX(-4px); }
+   202→  80% { transform: translateX(4px); }
+   203→}
+   204→.shake { animation: screenShake 0.4s ease-in-out; }
+   205→
+   206→/* ── Room Card Hover ── */
+   207→.room-card {
+   208→  transition: all 0.4s ease;
+   209→  border: 1px solid var(--room-border, rgba(255,255,255,0.05));
+   210→  position: relative;
+   211→  overflow: hidden;
+   212→}
+   213→.room-card:hover {
+   214→  transform: translateY(-4px) scale(1.02);
+   215→  border-color: var(--room-border-hover, rgba(255,255,255,0.15));
+   216→}
+   217→
+   218→/* ── Room Card Background Layer ── */
+   219→.room-card-bg {
+   220→  position: absolute;
+   221→  inset: 0;
+   222→  background-size: cover;
+   223→  background-position: center;
+   224→  opacity: 0.12;
+   225→  transition: opacity 0.6s ease, transform 0.6s ease;
+   226→  z-index: 0;
+   227→}
+   228→.room-card:hover .room-card-bg {
+   229→  opacity: 0.25;
+   230→  transform: scale(1.08);
+   231→}
+   232→.room-card > * {
+   233→  position: relative;
+   234→  z-index: 1;
+   235→}
+   236→
+   237→/* ── Card Radius Normalization ── */
+   238→.room-card,
+   239→.sale-card {
+   240→  border-radius: var(--card-radius);
+   241→}
+   242→
+   243→/* ── Room Card Image Overlay ── */
+   244→.room-card-bg::after {
+   245→  content: '';
+   246→  position: absolute;
+   247→  inset: 0;
+   248→  background: linear-gradient(
+   249→    to bottom,
+   250→    rgba(15,21,32,0.2) 0%,
+   251→    rgba(15,21,32,0.55) 50%,
+   252→    rgba(15,21,32,0.88) 100%
+   253→  );
+   254→  z-index: 0;
+   255→}
+   256→
+   257→/* ── CTA Shared Treatment ── */
+   258→.cta-bordered {
+   259→  display: inline-block;
+   260→  text-align: center;
+   261→  padding: 6px 24px;
+   262→  font-size: 10px;
+   263→  letter-spacing: 0.15em;
+   264→  text-transform: uppercase;
+   265→  text-decoration: none;
+   266→  border-radius: 2px;
+   267→  transition: all 0.4s ease;
+   268→  cursor: pointer;
+   269→  background: transparent;
+   270→}
+   271→.cta-bordered:hover {
+   272→  filter: brightness(1.3);
+   273→  box-shadow: 0 0 14px currentColor;
+   274→}
+   275→
+   276→/* ── Scene Transitions ── */
+   277→@keyframes sceneFadeOut {
+   278→  from { opacity: 1; filter: blur(0); }
+   279→  to { opacity: 0; filter: blur(8px); }
+   280→}
+   281→@keyframes sceneFadeIn {
+   282→  from { opacity: 0; filter: blur(8px); }
+   283→  to { opacity: 1; filter: blur(0); }
+   284→}
+   285→.scene-exit {
+   286→  animation: sceneFadeOut 500ms ease forwards;
+   287→}
+   288→.scene-transition {
+   289→  animation: sceneFadeIn 800ms ease forwards;
+   290→}
+   291→
+   292→/* ── Hero Drift ── */
+   293→@keyframes heroDrift {
+   294→  0%, 100% { background-position: center 40%; }
+   295→  50% { background-position: center 45%; }
+   296→}
+   297→.hero-bg {
+   298→  animation: heroDrift 20s ease-in-out infinite;
+   299→}
+   300→
+   301→/* ── Fade In ── */
+   302→@keyframes fadeIn {
+   303→  from { opacity: 0; }
+   304→  to { opacity: 1; }
+   305→}
+   306→.fade-in { animation: fadeIn 1s ease forwards; }
+   307→
+   308→/* ── Gradient Dividers ── */
+   309→.divider-amber {
+   310→  height: 1px;
+   311→  background: linear-gradient(90deg, transparent, var(--amber), transparent);
+   312→  opacity: 0.3;
+   313→}
+   314→.divider-purple {
+   315→  height: 1px;
+   316→  background: linear-gradient(90deg, transparent, var(--purple), transparent);
+   317→  opacity: 0.3;
+   318→}
+   319→.divider-cyan {
+   320→  height: 1px;
+   321→  background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+   322→  opacity: 0.3;
+   323→}
+   324→.divider-emerald {
+   325→  height: 1px;
+   326→  background: linear-gradient(90deg, transparent, var(--emerald), transparent);
+   327→  opacity: 0.3;
+   328→}
+   329→.divider-rose {
+   330→  height: 1px;
+   331→  background: linear-gradient(90deg, transparent, var(--rose), transparent);
+   332→  opacity: 0.3;
+   333→}
+   334→
+   335→/* ── Encounter Card (image-first) ── */
+   336→.encounter-card {
+   337→  display: flex;
+   338→  flex-direction: column;
+   339→  border-radius: var(--card-radius);
+   340→  overflow: hidden;
+   341→  border: 1px solid rgba(255,255,255,0.05);
+   342→  transition: all 0.4s ease;
+   343→  text-decoration: none;
+   344→  color: inherit;
+   345→}
+   346→.encounter-card:hover {
+   347→  border-color: rgba(255,255,255,0.15);
+   348→  transform: translateY(-2px);
+   349→  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+   350→}
+   351→.encounter-card-image {
+   352→  width: 100%;
+   353→  aspect-ratio: 3/2;
+   354→  background-size: cover;
+   355→  background-position: center 30%;
+   356→  position: relative;
+   357→}
+   358→.encounter-card-image::after {
+   359→  content: '';
+   360→  position: absolute;
+   361→  inset: 0;
+   362→  background: linear-gradient(to bottom, rgba(15,21,32,0.1) 0%, rgba(15,21,32,0.4) 40%, var(--bg-card) 100%);
+   363→}
+   364→.encounter-card-body {
+   365→  padding: 12px 14px 14px;
+   366→  background: var(--bg-card);
+   367→  display: flex;
+   368→  flex-direction: column;
+   369→  gap: 4px;
+   370→  text-align: left;
+   371→}
+   372→.encounter-card-name {
+   373→  font-size: 12px;
+   374→  letter-spacing: 0.15em;
+   375→  text-transform: uppercase;
+   376→  color: var(--text-primary);
+   377→}
+   378→.encounter-card-subtitle {
+   379→  font-size: 10px;
+   380→  letter-spacing: 0.3em;
+   381→  color: var(--text-dim);
+   382→}
+   383→.encounter-card-desc {
+   384→  font-size: 12px;
+   385→  color: var(--text-muted);
+   386→  line-height: 1.6;
+   387→  margin: 2px 0;
+   388→}
+   389→
+   390→/* ── Nectar HUD ── */
+   391→@keyframes nectarHudPulse {
+   392→  0%, 100% { box-shadow: 0 0 8px rgba(212,160,23,0.2), inset 0 0 4px rgba(212,160,23,0.05); }
+   393→  50% { box-shadow: 0 0 16px rgba(212,160,23,0.5), inset 0 0 8px rgba(212,160,23,0.1); }
+   394→}
+   395→@keyframes nectarCountPulse {
+   396→  0% { opacity: 0.6; }
+   397→  50% { opacity: 1; }
+   398→  100% { opacity: 0.6; }
+   399→}
+   400→.nectar-hud {
+   401→  position: fixed;
+   402→  bottom: 20px;
+   403→  right: 20px;
+   404→  display: flex;
+   405→  align-items: center;
+   406→  gap: 8px;
+   407→  padding: 6px 14px;
+   408→  border-radius: var(--card-radius);
+   409→  background: rgba(10,14,23,0.85);
+   410→  border: 1px solid rgba(212,160,23,0.15);
+   411→  z-index: 50;
+   412→  animation: nectarHudPulse 4s ease-in-out infinite;
+   413→  backdrop-filter: blur(8px);
+   414→}
+   415→.nectar-hud-icon {
+   416→  font-size: 0.85rem;
+   417→}
+   418→.nectar-hud-label {
+   419→  font-size: 9px;
+   420→  letter-spacing: 0.15em;
+   421→  color: var(--text-dim);
+   422→  text-transform: uppercase;
+   423→}
+   424→.nectar-hud-count {
+   425→  font-size: 11px;
+   426→  letter-spacing: 0.15em;
+   427→  color: var(--amber);
+   428→  font-family: inherit;
+   429→  min-width: 16px;
+   430→  text-align: right;
+   431→}
+   432→.nectar-hud-count.pulse {
+   433→  animation: nectarCountPulse 0.6s ease;
+   434→}
+   435→
+   436→/* ═══════════════════════════════════════════════════════════════
+   437→   CANTINA LAYOUT — Sidebar + District Scene
+   438→   ═══════════════════════════════════════════════════════════════ */
+   439→
+   440→/* ── Cantina Layout Shell ── */
+   441→.cantina-layout {
+   442→  display: flex;
+   443→  min-height: 100vh;
+   444→  width: 100%;
+   445→}
+   446→
+   447→/* ── Sidebar Hub ── */
+   448→.sidebar-hub {
+   449→  position: fixed;
+   450→  top: 0;
+   451→  left: 0;
+   452→  bottom: 0;
+   453→  width: 220px;
+   454→  background: var(--bg-deep);
+   455→  border-right: 1px solid rgba(255,255,255,0.04);
+   456→  display: flex;
+   457→  flex-direction: column;
+   458→  z-index: 40;
+   459→  padding: 24px 0;
+   460→  flex-shrink: 0;
+   461→}
+   462→
+   463→.sidebar-brand {
+   464→  padding: 0 20px 16px;
+   465→  display: flex;
+   466→  flex-direction: column;
+   467→  gap: 2px;
+   468→}
+   469→.sidebar-brand-name {
+   470→  font-size: 14px;
+   471→  letter-spacing: 0.2em;
+   472→  text-transform: uppercase;
+   473→  color: var(--amber);
+   474→}
+   475→.sidebar-brand-sub {
+   476→  font-size: 10px;
+   477→  letter-spacing: 0.35em;
+   478→  text-transform: uppercase;
+   479→  color: var(--text-dim);
+   480→}
+   481→
+   482→.sidebar-divider {
+   483→  height: 1px;
+   484→  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+   485→  margin: 8px 16px 16px;
+   486→}
+   487→
+   488→.sidebar-nav {
+   489→  list-style: none;
+   490→  flex: 1;
+   491→  display: flex;
+   492→  flex-direction: column;
+   493→  gap: 2px;
+   494→  padding: 0 8px;
+   495→}
+   496→
+   497→.sidebar-item {
+   498→  display: flex;
+   499→  align-items: center;
+   500→  gap: 10px;
+   501→  width: 100%;
+   502→  padding: 10px 12px;
+   503→  border: none;
+   504→  background: transparent;
+   505→  cursor: pointer;
+   506→  text-align: left;
+   507→  font-family: inherit;
+   508→  transition: all 0.3s ease;
+   509→  border-radius: 2px;
+   510→}
+   511→.sidebar-item:hover {
+   512→  background: rgba(255,255,255,0.03);
+   513→}
+   514→.sidebar-item.active {
+   515→  background: rgba(255,255,255,0.04);
+   516→}
+   517→
+   518→.sidebar-dot {
+   519→  width: 6px;
+   520→  height: 6px;
+   521→  border-radius: 50%;
+   522→  flex-shrink: 0;
+   523→  transition: all 0.3s ease;
+   524→}
+   525→
+   526→.sidebar-item-name {
+   527→  font-size: 11px;
+   528→  letter-spacing: 0.1em;
+   529→  text-transform: uppercase;
+   530→  color: var(--text-primary);
+   531→  display: block;
+   532→  line-height: 1.2;
+   533→}
+   534→.sidebar-item.active .sidebar-item-name {
+   535→  color: var(--district-color, var(--text-primary));
+   536→}
+   537→
+   538→.sidebar-item-sub {
+   539→  font-size: 9px;
+   540→  letter-spacing: 0.15em;
+   541→  color: var(--text-dim);
+   542→  display: block;
+   543→  line-height: 1.2;
+   544→  margin-top: 1px;
+   545→}
+   546→.sidebar-item.active .sidebar-item-sub {
+   547→  color: var(--text-muted);
+   548→}
+   549→
+   550→.sidebar-footer {
+   551→  padding: 0 20px 0;
+   552→}
+   553→.sidebar-footer-text {
+   554→  font-size: 9px;
+   555→  letter-spacing: 0.15em;
+   556→  color: var(--text-dim);
+   557→  font-style: italic;
+   558→  margin-top: 12px;
+   559→}
+   560→
+   561→/* ── Main Content Area ── */
+   562→.cantina-main {
+   563→  flex: 1;
+   564→  margin-left: 220px;
+   565→  min-height: 100vh;
+   566→  position: relative;
+   567→  overflow-y: auto;
+   568→  overflow-x: hidden;
+   569→}
+   570→
+   571→/* ── District Scene (full scene per district) ── */
+   572→.district-scene {
+   573→  position: relative;
+   574→  min-height: 100vh;
+   575→  display: flex;
+   576→  flex-direction: column;
+   577→}
+   578→
+   579→.district-scene-bg {
+   580→  position: fixed;
+   581→  top: 0;
+   582→  left: 220px;
+   583→  right: 0;
+   584→  bottom: 0;
+   585→  background-size: cover;
+   586→  background-position: center;
+   587→  opacity: 0.12;
+   588→  transition: opacity 1.2s ease;
+   589→  z-index: 0;
+   590→}
+   591→
+   592→.district-scene-overlay {
+   593→  position: fixed;
+   594→  top: 0;
+   595→  left: 220px;
+   596→  right: 0;
+   597→  bottom: 0;
+   598→  background: linear-gradient(
+   599→    to bottom,
+   600→    rgba(10,14,23,0.7) 0%,
+   601→    rgba(10,14,23,0.5) 30%,
+   602→    rgba(10,14,23,0.6) 60%,
+   603→    rgba(10,14,23,0.92) 100%
+   604→  );
+   605→  z-index: 1;
+   606→  pointer-events: none;
+   607→}
+   608→
+   609→.district-scene-content {
+   610→  position: relative;
+   611→  z-index: 2;
+   612→  flex: 1;
+   613→  display: flex;
+   614→  flex-direction: column;
+   615→  padding: 60px 40px 40px;
+   616→  max-width: 900px;
+   617→}
+   618→
+   619→/* ── District Header ── */
+   620→.district-header {
+   621→  margin-bottom: 48px;
+   622→}
+   623→
+   624→.district-subtitle {
+   625→  font-size: 10px;
+   626→  letter-spacing: 0.4em;
+   627→  text-transform: uppercase;
+   628→  margin-bottom: 8px;
+   629→}
+   630→
+   631→.district-name {
+   632→  font-size: 28px;
+   633→  letter-spacing: 0.12em;
+   634→  text-transform: uppercase;
+   635→  font-weight: 400;
+   636→  line-height: 1.2;
+   637→  margin-bottom: 16px;
+   638→}
+   639→
+   640→.district-divider {
+   641→  width: 80px;
+   642→  margin-bottom: 16px;
+   643→}
+   644→
+   645→.district-description {
+   646→  font-size: 13px;
+   647→  line-height: 1.8;
+   648→  max-width: 480px;
+   649→}
+   650→
+   651→/* ── District Encounters ── */
+   652→.district-encounters {
+   653→  display: grid;
+   654→  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+   655→  gap: 20px;
+   656→  flex: 1;
+   657→  align-content: start;
+   658→}
+   659→
+   660→.district-empty {
+   661→  font-size: 12px;
+   662→  letter-spacing: 0.2em;
+   663→  text-transform: uppercase;
+   664→  color: var(--text-dim);
+   665→  font-style: italic;
+   666→  padding: 40px 0;
+   667→}
+   668→
+   669→/* ── Nectar Teaser (bottom of scene) ── */
+   670→.district-nectar-teaser {
+   671→  position: relative;
+   672→  z-index: 2;
+   673→  display: flex;
+   674→  align-items: center;
+   675→  gap: 10px;
+   676→  padding: 32px 40px 16px;
+   677→  border-top: 1px solid rgba(255,255,255,0.03);
+   678→}
+   679→
+   680→/* ── District Footer ── */
+   681→.district-footer {
+   682→  position: relative;
+   683→  z-index: 2;
+   684→  display: flex;
+   685→  align-items: center;
+   686→  justify-content: space-between;
+   687→  padding: 12px 40px 20px;
+   688→}
+   689→.district-footer-left {
+   690→  flex: 1;
+   691→}
+   692→
+   693→/* ── Compliance Footer ── */
+   694→.compliance-footer {
+   695→  position: relative;
+   696→  z-index: 2;
+   697→  display: flex;
+   698→  align-items: center;
+   699→  justify-content: space-between;
+   700→  padding: 14px 40px 20px;
+   701→  border-top: 1px solid rgba(255,255,255,0.03);
+   702→}
+   703→
+   704→.compliance-brand {
+   705→  font-size: 9px;
+   706→  letter-spacing: 0.2em;
+   707→  text-transform: uppercase;
+   708→  color: var(--text-dim);
+   709→  white-space: nowrap;
+   710→}
+   711→
+   712→.compliance-nav {
+   713→  display: flex;
+   714→  gap: 16px;
+   715→  flex-wrap: wrap;
+   716→  justify-content: flex-end;
+   717→}
+   718→
+   719→.compliance-link {
+   720→  font-size: 9px;
+   721→  letter-spacing: 0.05em;
+   722→  color: var(--text-dim);
+   723→  text-decoration: none;
+   724→  transition: color 0.3s ease;
+   725→  white-space: nowrap;
+   726→}
+   727→
+   728→.compliance-link:hover {
+   729→  color: var(--text-muted);
+   730→}
+   731→
+   732→/* ═══════════════════════════════════════════════════════════════
+   733→   ARRIVAL SCENE — Cinematic Entrance
+   734→   ═══════════════════════════════════════════════════════════════ */
+   735→
+   736→/* ── Scene Shell ── */
+   737→.arrival-scene {
+   738→  position: relative;
+   739→  width: 100vw;
+   740→  height: 100vh;
+   741→  overflow: hidden;
+   742→}
+   743→
+   744→.arrival-bg {
+   745→  position: absolute;
+   746→  inset: -10px;
+   747→  background: url('/cantina-arrival.png') center/cover no-repeat;
+   748→  filter: blur(1.5px) brightness(0.9);
+   749→  animation: arrivalBgBreath 20s ease-in-out infinite;
+   750→  z-index: 0;
+   751→}
+   752→
+   753→@keyframes arrivalBgBreath {
+   754→  0%, 100% { transform: scale(1.05); }
+   755→  50% { transform: scale(1.08); }
+   756→}
+   757→
+   758→.arrival-dim {
+   759→  position: absolute;
+   760→  inset: 0;
+   761→  background: rgba(0, 0, 0, 0.2);
+   762→  z-index: 1;
+   763→}
+   764→
+   765→/* ── Fog Layers ── */
+   766→.arrival-fog {
+   767→  position: absolute;
+   768→  width: 250%;
+   769→  height: 60%;
+   770→  pointer-events: none;
+   771→  z-index: 2;
+   772→  opacity: 0.6;
+   773→}
+   774→
+   775→.arrival-fog-1 {
+   776→  top: 10%;
+   777→  left: -75%;
+   778→  background: linear-gradient(90deg, transparent 0%, rgba(180,160,140,0.04) 20%, rgba(200,180,160,0.06) 40%, transparent 60%, rgba(180,160,140,0.03) 80%, transparent 100%);
+   779→  filter: blur(60px);
+   780→  animation: fogDriftRight 28s ease-in-out infinite;
+   781→}
+   782→
+   783→.arrival-fog-2 {
+   784→  top: 40%;
+   785→  left: -100%;
+   786→  background: linear-gradient(90deg, transparent 0%, rgba(160,140,120,0.05) 30%, transparent 50%, rgba(180,160,140,0.04) 70%, transparent 100%);
+   787→  filter: blur(80px);
+   788→  animation: fogDriftLeft 35s ease-in-out infinite;
+   789→}
+   790→
+   791→.arrival-fog-3 {
+   792→  bottom: 5%;
+   793→  left: -50%;
+   794→  width: 200%;
+   795→  height: 40%;
+   796→  background: linear-gradient(90deg, transparent 0%, rgba(212,160,23,0.03) 25%, transparent 50%, rgba(233,30,140,0.02) 75%, transparent 100%);
+   797→  filter: blur(50px);
+   798→  animation: fogDriftRight 22s ease-in-out infinite reverse;
+   799→}
+   800→
+   801→@keyframes fogDriftRight {
+   802→  0%, 100% { transform: translateX(0); }
+   803→  50% { transform: translateX(20%); }
+   804→}
+   805→
+   806→@keyframes fogDriftLeft {
+   807→  0%, 100% { transform: translateX(0); }
+   808→  50% { transform: translateX(-15%); }
+   809→}
+   810→
+   811→/* ── Warm Light Glows ── */
+   812→.arrival-glow {
+   813→  position: absolute;
+   814→  border-radius: 50%;
+   815→  pointer-events: none;
+   816→  z-index: 2;
+   817→}
+   818→
+   819→.arrival-glow-amber {
+   820→  top: 15%;
+   821→  left: 25%;
+   822→  width: 500px;
+   823→  height: 500px;
+   824→  background: radial-gradient(circle, rgba(212,160,23,0.13) 0%, transparent 70%);
+   825→  filter: blur(50px);
+   826→  animation: glowPulse 10s ease-in-out infinite;
+   827→}
+   828→
+   829→.arrival-glow-magenta {
+   830→  bottom: 20%;
+   831→  right: 15%;
+   832→  width: 400px;
+   833→  height: 400px;
+   834→  background: radial-gradient(circle, rgba(233,30,140,0.05) 0%, transparent 70%);
+   835→  filter: blur(50px);
+   836→  animation: glowPulse 12s ease-in-out infinite 3s;
+   837→}
+   838→
+   839→@keyframes glowPulse {
+   840→  0%, 100% { opacity: 1; transform: scale(1); }
+   841→  50% { opacity: 0.6; transform: scale(1.1); }
+   842→}
+   843→
+   844→/* ── Dust Particles ── */
+   845→.arrival-dust-container {
+   846→  position: absolute;
+   847→  inset: 0;
+   848→  pointer-events: none;
+   849→  z-index: 3;
+   850→}
+   851→
+   852→.arrival-dust {
+   853→  position: absolute;
+   854→  bottom: -10px;
+   855→  border-radius: 50%;
+   856→  background: rgba(212,180,120,0.6);
+   857→  animation: dustFloat linear infinite;
+   858→}
+   859→
+   860→@keyframes dustFloat {
+   861→  0% { transform: translateY(0) translateX(0); opacity: 0; }
+   862→  10% { opacity: 1; }
+   863→  90% { opacity: 1; }
+   864→  100% { transform: translateY(-100vh) translateX(30px); opacity: 0; }
+   865→}
+   866→
+   867→/* ── Silhouette ── */
+   868→.arrival-silhouette {
+   869→  position: absolute;
+   870→  bottom: 0;
+   871→  left: 50%;
+   872→  transform: translateX(-50%);
+   873→  width: 180px;
+   874→  height: 280px;
+   875→  background: linear-gradient(to top, rgba(10,14,23,0.4) 0%, rgba(10,14,23,0.15) 40%, transparent 70%);
+   876→  border-radius: 45% 45% 0 0;
+   877→  filter: blur(25px);
+   878→  z-index: 2;
+   879→  animation: silhouetteFade 15s ease-in-out infinite;
+   880→  opacity: 0;
+   881→  pointer-events: none;
+   882→}
+   883→
+   884→@keyframes silhouetteFade {
+   885→  0%, 60%, 100% { opacity: 0; transform: translateX(-50%) scaleY(0.95); }
+   886→  65% { opacity: 0.12; }
+   887→  75% { opacity: 0.08; transform: translateX(-48%) scaleY(1); }
+   888→  85% { opacity: 0; }
+   889→}
+   890→
+   891→/* ── Reflection (wet bar surface) ── */
+   892→.arrival-reflection {
+   893→  position: absolute;
+   894→  bottom: 0;
+   895→  left: 0;
+   896→  right: 0;
+   897→  height: 25%;
+   898→  background: linear-gradient(to top, rgba(212,160,23,0.06) 0%, transparent 100%);
+   899→  pointer-events: none;
+   900→  z-index: 2;
+   901→}
+   902→
+   903→/* ── Vignette ── */
+   904→.arrival-vignette {
+   905→  position: absolute;
+   906→  inset: 0;
+   907→  background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.4) 100%);
+   908→  pointer-events: none;
+   909→  z-index: 3;
+   910→}
+   911→
+   912→/* ── Content ── */
+   913→.arrival-content {
+   914→  position: relative;
+   915→  z-index: 10;
+   916→  display: flex;
+   917→  flex-direction: column;
+   918→  align-items: center;
+   919→  justify-content: center;
+   920→  width: 100%;
+   921→  height: 100%;
+   922→}
+   923→
+   924→/* ── Age Gate ── */
+   925→.age-gate {
+   926→  display: flex;
+   927→  flex-direction: column;
+   928→  align-items: center;
+   929→  animation: ageGateIn 1.5s ease forwards;
+   930→  opacity: 0;
+   931→}
+   932→
+   933→@keyframes ageGateIn {
+   934→  0% { opacity: 0; transform: translateY(10px); }
+   935→  100% { opacity: 1; transform: translateY(0); }
+   936→}
+   937→
+   938→.age-gate-butterfly {
+   939→  margin-bottom: 24px;
+   940→}
+   941→
+   942→.age-gate-title {
+   943→  display: flex;
+   944→  flex-direction: column;
+   945→  align-items: center;
+   946→  gap: 2px;
+   947→  margin-bottom: 20px;
+   948→}
+   949→
+   950→.age-gate-title-cantina {
+   951→  font-size: 2.2rem;
+   952→  letter-spacing: 0.35em;
+   953→  text-transform: uppercase;
+   954→  color: var(--amber);
+   955→  text-shadow: 0 0 20px rgba(212,160,23,0.4), 0 0 40px rgba(212,160,23,0.15);
+   956→  line-height: 1.1;
+   957→}
+   958→
+   959→.age-gate-title-virtual {
+   960→  font-size: 1rem;
+   961→  letter-spacing: 0.6em;
+   962→  text-transform: uppercase;
+   963→  color: var(--text-muted);
+   964→  text-shadow: 0 0 10px rgba(233,30,140,0.3);
+   965→}
+   966→
+   967→.age-gate-divider {
+   968→  width: 60px;
+   969→  height: 1px;
+   970→  background: linear-gradient(90deg, transparent, var(--amber), rgba(233,30,140,0.5), transparent);
+   971→  opacity: 0.4;
+   972→  margin-bottom: 24px;
+   973→}
+   974→
+   975→.age-gate-legal {
+   976→  max-width: 380px;
+   977→  text-align: center;
+   978→  font-size: 10px;
+   979→  line-height: 1.8;
+   980→  color: var(--text-dim);
+   981→  letter-spacing: 0.05em;
+   982→  margin-bottom: 32px;
+   983→  padding: 0 20px;
+   984→}
+   985→
+   986→.age-gate-actions {
+   987→  display: flex;
+   988→  flex-direction: column;
+   989→  gap: 12px;
+   990→  align-items: center;
+   991→}
+   992→
+   993→.age-gate-btn {
+   994→  display: flex;
+   995→  flex-direction: column;
+   996→  align-items: center;
+   997→  gap: 4px;
+   998→  padding: 14px 48px;
+   999→  background: transparent;
+  1000→  border: 1px solid rgba(212,160,23,0.2);
+  1001→  cursor: pointer;
+  1002→  font-family: inherit;
+  1003→  transition: all 0.4s ease;
+  1004→  min-width: 200px;
+  1005→}
+  1006→
+  1007→.age-gate-btn-enter:hover {
+  1008→  border-color: var(--amber);
+  1009→  background: rgba(212,160,23,0.08);
+  1010→  box-shadow: 0 0 20px rgba(212,160,23,0.15);
+  1011→}
+  1012→
+  1013→.age-gate-btn-leave {
+  1014→  border-color: rgba(255,255,255,0.06);
+  1015→}
+  1016→
+  1017→.age-gate-btn-leave:hover {
+  1018→  border-color: rgba(255,255,255,0.15);
+  1019→  background: rgba(255,255,255,0.02);
+  1020→}
+  1021→
+  1022→.age-gate-btn-label {
+  1023→  font-size: 13px;
+  1024→  letter-spacing: 0.3em;
+  1025→  text-transform: uppercase;
+  1026→  color: var(--amber);
+  1027→}
+  1028→
+  1029→.age-gate-btn-leave .age-gate-btn-label {
+  1030→  color: var(--text-dim);
+  1031→}
+  1032→
+  1033→.age-gate-btn-sub {
+  1034→  font-size: 9px;
+  1035→  letter-spacing: 0.15em;
+  1036→  color: var(--text-dim);
+  1037→}
+  1038→
+  1039→/* ── 18+ Quick Confirm ── */
+  1040→.age-confirm {
+  1041→  gap: 28px;
+  1042→}
+  1043→.age-confirm-question {
+  1044→  font-size: 13px;
+  1045→  letter-spacing: 0.25em;
+  1046→  text-transform: uppercase;
+  1047→  color: var(--text-primary);
+  1048→  text-shadow: 0 0 15px rgba(212,160,23,0.2);
+  1049→}
+  1050→.age-confirm-actions {
+  1051→  display: flex;
+  1052→  gap: 16px;
+  1053→}
+  1054→.age-confirm-actions .age-gate-btn {
+  1055→  min-width: 120px;
+  1056→  padding: 12px 36px;
+  1057→}
+  1058→
+  1059→/* ── Password Scene (inside arrival) ── */
+  1060→.password-scene {
+  1061→  display: flex;
+  1062→  flex-direction: column;
+  1063→  align-items: center;
+  1064→}
+  1065→
+  1066→.password-butterfly {
+  1067→  margin-bottom: 24px;
+  1068→  transform: scale(0.7);
+  1069→}
+  1070→
+  1071→.password-atmosphere {
+  1072→  margin-bottom: 8px;
+  1073→}
+  1074→
+  1075→.password-form {
+  1076→  display: flex;
+  1077→  flex-direction: column;
+  1078→  align-items: center;
+  1079→  gap: 16px;
+  1080→}
+  1081→
+  1082→.password-label {
+  1083→  font-size: 10px;
+  1084→  letter-spacing: 0.3em;
+  1085→  text-transform: uppercase;
+  1086→  color: var(--text-muted);
+  1087→}
+  1088→
+  1089→.password-input {
+  1090→  width: 220px;
+  1091→  text-align: center;
+  1092→  padding: 10px 16px;
+  1093→  background: rgba(0,0,0,0.3);
+  1094→  backdrop-filter: blur(8px);
+  1095→  -webkit-backdrop-filter: blur(8px);
+  1096→  border: 1px solid rgba(212,160,23,0.15);
+  1097→  color: var(--text-primary);
+  1098→  font-family: inherit;
+  1099→  font-size: 14px;
+  1100→  letter-spacing: 0.2em;
+  1101→  outline: none;
+  1102→  transition: all 0.3s ease;
+  1103→}
+  1104→
+  1105→.password-input:focus {
+  1106→  border-color: rgba(212,160,23,0.4);
+  1107→  box-shadow: 0 0 20px rgba(212,160,23,0.1);
+  1108→}
+  1109→
+  1110→.password-input::placeholder {
+  1111→  color: var(--text-dim);
+  1112→  letter-spacing: 0.3em;
+  1113→}
+  1114→
+  1115→.password-btn {
+  1116→  padding: 10px 32px;
+  1117→  background: transparent;
+  1118→  border: 1px solid rgba(212,160,23,0.25);
+  1119→  color: var(--amber);
+  1120→  font-family: inherit;
+  1121→  font-size: 11px;
+  1122→  letter-spacing: 0.25em;
+  1123→  text-transform: uppercase;
+  1124→  cursor: pointer;
+  1125→  transition: all 0.4s ease;
+  1126→}
+  1127→
+  1128→.password-btn:hover {
+  1129→  background: rgba(212,160,23,0.12);
+  1130→  border-color: var(--amber);
+  1131→  box-shadow: 0 0 16px rgba(212,160,23,0.2);
+  1132→}
+  1133→
+  1134→.password-reject {
+  1135→  margin-top: 24px;
+  1136→  font-size: 13px;
+  1137→  color: var(--sale-red);
+  1138→  text-shadow: 0 0 10px rgba(255,59,59,0.3);
+  1139→}
+  1140→
+  1141→/* ═══════════════════════════════════════════════════════════════
+  1142→   IMMERSIVE ROOMS — Dating & Live Cams
+  1143→   ═══════════════════════════════════════════════════════════════ */
+  1144→
+  1145→/* ── Shared: Room Atmosphere Background ── */
+  1146→.room-atmosphere-bg {
+  1147→  position: fixed;
+  1148→  top: 0;
+  1149→  left: 220px;
+  1150→  right: 0;
+  1151→  bottom: 0;
+  1152→  z-index: 0;
+  1153→  overflow: hidden;
+  1154→}
+  1155→
+  1156→/* ══════════════════════════════════════════════════════════════
+  1157→   DATING ROOM
+  1158→   ══════════════════════════════════════════════════════════════ */
+  1159→
+  1160→.dating-room {
+  1161→  position: relative;
+  1162→  min-height: 100vh;
+  1163→  display: flex;
+  1164→  flex-direction: column;
+  1165→}
+  1166→
+  1167→/* Background image */
+  1168→.dating-room-bg-image {
+  1169→  position: absolute;
+  1170→  inset: 0;
+  1171→  background-size: cover;
+  1172→  background-position: center;
+  1173→  opacity: 0.15;
+  1174→  animation: roomBgBreathe 25s ease-in-out infinite alternate;
+  1175→}
+  1176→
+  1177→@keyframes roomBgBreathe {
+  1178→  0% { transform: scale(1); }
+  1179→  100% { transform: scale(1.05); }
+  1180→}
+  1181→
+  1182→/* Gradient overlay — warm amber tones */
+  1183→.dating-room-overlay {
+  1184→  position: fixed;
+  1185→  top: 0;
+  1186→  left: 220px;
+  1187→  right: 0;
+  1188→  bottom: 0;
+  1189→  background: linear-gradient(
+  1190→    160deg,
+  1191→    rgba(10,14,23,0.82) 0%,
+  1192→    rgba(18,14,10,0.65) 25%,
+  1193→    rgba(10,14,23,0.55) 50%,
+  1194→    rgba(10,14,23,0.75) 75%,
+  1195→    rgba(10,14,23,0.94) 100%
+  1196→  );
+  1197→  z-index: 1;
+  1198→  pointer-events: none;
+  1199→}
+  1200→
+  1201→/* Glows */
+  1202→.dating-glow {
+  1203→  position: fixed;
+  1204→  border-radius: 50%;
+  1205→  filter: blur(100px);
+  1206→  pointer-events: none;
+  1207→  z-index: 1;
+  1208→}
+  1209→.dating-glow-warm {
+  1210→  top: -10%;
+  1211→  left: 15%;
+  1212→  width: 500px;
+  1213→  height: 500px;
+  1214→  background: radial-gradient(circle, rgba(212,160,23,0.10) 0%, transparent 70%);
+  1215→  animation: datingGlowPulse 8s ease-in-out infinite;
+  1216→}
+  1217→.dating-glow-candle {
+  1218→  bottom: 10%;
+  1219→  right: 5%;
+  1220→  width: 350px;
+  1221→  height: 350px;
+  1222→  background: radial-gradient(circle, rgba(180,120,20,0.06) 0%, transparent 70%);
+  1223→  animation: datingGlowPulse 12s ease-in-out infinite reverse;
+  1224→}
+  1225→@keyframes datingGlowPulse {
+  1226→  0%, 100% { transform: scale(1); opacity: 1; }
+  1227→  50% { transform: scale(1.15); opacity: 0.7; }
+  1228→}
+  1229→
+  1230→/* Dust particles */
+  1231→.dating-dust-container {
+  1232→  position: fixed;
+  1233→  inset: 0;
+  1234→  z-index: 1;
+  1235→  pointer-events: none;
+  1236→  overflow: hidden;
+  1237→}
+  1238→.dating-dust {
+  1239→  position: absolute;
+  1240→  bottom: -10px;
+  1241→  background: rgba(212,160,23,0.6);
+  1242→  border-radius: 50%;
+  1243→  animation: datingDustFloat linear infinite;
+  1244→}
+  1245→@keyframes datingDustFloat {
+  1246→  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  1247→  10% { opacity: 1; }
+  1248→  90% { opacity: 1; }
+  1249→  100% { transform: translateY(-110vh) translateX(30px); opacity: 0; }
+  1250→}
+  1251→
+  1252→/* Room content wrapper */
+  1253→.dating-room-content {
+  1254→  position: relative;
+  1255→  z-index: 2;
+  1256→  flex: 1;
+  1257→  display: flex;
+  1258→  flex-direction: column;
+  1259→  padding: 60px 40px 40px;
+  1260→  max-width: 960px;
+  1261→}
+  1262→
+  1263→/* Header */
+  1264→.dating-room-header {
+  1265→  margin-bottom: 40px;
+  1266→}
+  1267→.dating-room-locale {
+  1268→  font-size: 10px;
+  1269→  letter-spacing: 0.4em;
+  1270→  text-transform: uppercase;
+  1271→  color: var(--text-muted);
+  1272→  margin-bottom: 8px;
+  1273→}
+  1274→.dating-room-title {
+  1275→  font-size: 28px;
+  1276→  letter-spacing: 0.12em;
+  1277→  text-transform: uppercase;
+  1278→  font-weight: 400;
+  1279→  line-height: 1.2;
+  1280→  margin-bottom: 16px;
+  1281→}
+  1282→.dating-room-divider {
+  1283→  width: 80px;
+  1284→  margin-bottom: 16px;
+  1285→}
+  1286→.dating-room-prose {
+  1287→  font-size: 13px;
+  1288→  line-height: 1.8;
+  1289→  color: var(--text-muted);
+  1290→  max-width: 480px;
+  1291→}
+  1292→
+  1293→/* Featured Offer Hero */
+  1294→.dating-hero-offer {
+  1295→  display: flex;
+  1296→  gap: 24px;
+  1297→  margin-bottom: 40px;
+  1298→  border: 1px solid rgba(212,160,23,0.12);
+  1299→  border-radius: var(--card-radius);
+  1300→  overflow: hidden;
+  1301→  background: rgba(15,21,32,0.5);
+  1302→  backdrop-filter: blur(4px);
+  1303→  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+  1304→}
+  1305→.dating-hero-offer:hover {
+  1306→  border-color: rgba(212,160,23,0.25);
+  1307→  box-shadow: 0 0 30px rgba(212,160,23,0.06);
+  1308→}
+  1309→.dating-hero-image {
+  1310→  flex: 0 0 320px;
+  1311→  aspect-ratio: 16/10;
+  1312→  position: relative;
+  1313→  overflow: hidden;
+  1314→}
+  1315→.dating-hero-image-placeholder {
+  1316→  position: absolute;
+  1317→  inset: 0;
+  1318→  display: flex;
+  1319→  flex-direction: column;
+  1320→  align-items: center;
+  1321→  justify-content: center;
+  1322→  background: rgba(212,160,23,0.04);
+  1323→  border-right: 1px solid rgba(212,160,23,0.08);
+  1324→  gap: 6px;
+  1325→}
+  1326→.dating-hero-image-placeholder span {
+  1327→  font-size: 11px;
+  1328→  letter-spacing: 0.3em;
+  1329→  text-transform: uppercase;
+  1330→  color: var(--text-dim);
+  1331→}
+  1332→.dating-hero-image-sub {
+  1333→  font-size: 9px !important;
+  1334→  color: rgba(212,160,23,0.3) !important;
+  1335→  letter-spacing: 0.15em !important;
+  1336→}
+  1337→.dating-hero-body {
+  1338→  flex: 1;
+  1339→  display: flex;
+  1340→  flex-direction: column;
+  1341→  justify-content: center;
+  1342→  padding: 24px 24px 24px 0;
+  1343→  gap: 8px;
+  1344→}
+  1345→.dating-hero-tag {
+  1346→  font-size: 9px;
+  1347→  letter-spacing: 0.3em;
+  1348→  text-transform: uppercase;
+  1349→  color: var(--amber);
+  1350→  opacity: 0.7;
+  1351→}
+  1352→.dating-hero-name {
+  1353→  font-size: 18px;
+  1354→  letter-spacing: 0.08em;
+  1355→  color: var(--text-primary);
+  1356→  font-weight: 400;
+  1357→  line-height: 1.3;
+  1358→}
+  1359→.dating-hero-desc {
+  1360→  font-size: 12px;
+  1361→  line-height: 1.7;
+  1362→  color: var(--text-muted);
+  1363→  max-width: 320px;
+  1364→}
+  1365→.dating-hero-cta {
+  1366→  display: inline-flex;
+  1367→  align-items: center;
+  1368→  gap: 8px;
+  1369→  margin-top: 8px;
+  1370→  padding: 8px 20px;
+  1371→  border: 1px solid rgba(212,160,23,0.3);
+  1372→  border-radius: 2px;
+  1373→  font-size: 10px;
+  1374→  letter-spacing: 0.2em;
+  1375→  text-transform: uppercase;
+  1376→  color: var(--amber);
+  1377→  text-decoration: none;
+  1378→  transition: all 0.3s ease;
+  1379→  width: fit-content;
+  1380→}
+  1381→.dating-hero-cta:hover {
+  1382→  background: rgba(212,160,23,0.08);
+  1383→  border-color: rgba(212,160,23,0.5);
+  1384→  box-shadow: 0 0 12px rgba(212,160,23,0.12);
+  1385→}
+  1386→
+  1387→/* Encounter Cards */
+  1388→.dating-encounters {
+  1389→  display: grid;
+  1390→  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  1391→  gap: 20px;
+  1392→  margin-bottom: 40px;
+  1393→}
+  1394→.dating-encounter-card {
+  1395→  display: flex;
+  1396→  flex-direction: column;
+  1397→  border-radius: var(--card-radius);
+  1398→  overflow: hidden;
+  1399→  border: 1px solid rgba(255,255,255,0.05);
+  1400→  transition: all 0.4s ease;
+  1401→  text-decoration: none;
+  1402→  color: inherit;
+  1403→}
+  1404→.dating-encounter-card:hover {
+  1405→  border-color: rgba(212,160,23,0.2);
+  1406→  transform: translateY(-2px);
+  1407→  box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 20px rgba(212,160,23,0.05);
+  1408→}
+  1409→.dating-encounter-image {
+  1410→  width: 100%;
+  1411→  aspect-ratio: 3/2;
+  1412→  background-size: cover;
+  1413→  background-position: center 30%;
+  1414→  position: relative;
+  1415→}
+  1416→.dating-encounter-image::after {
+  1417→  content: '';
+  1418→  position: absolute;
+  1419→  inset: 0;
+  1420→  background: linear-gradient(to bottom, rgba(15,21,32,0.1) 0%, rgba(15,21,32,0.4) 40%, var(--bg-card) 100%);
+  1421→}
+  1422→.dating-encounter-body {
+  1423→  padding: 12px 14px 14px;
+  1424→  background: var(--bg-card);
+  1425→  display: flex;
+  1426→  flex-direction: column;
+  1427→  gap: 4px;
+  1428→}
+  1429→.dating-encounter-name {
+  1430→  font-size: 12px;
+  1431→  letter-spacing: 0.15em;
+  1432→  text-transform: uppercase;
+  1433→  color: var(--text-primary);
+  1434→}
+  1435→.dating-encounter-role {
+  1436→  font-size: 10px;
+  1437→  letter-spacing: 0.3em;
+  1438→  color: var(--text-dim);
+  1439→}
+  1440→.dating-encounter-desc {
+  1441→  font-size: 12px;
+  1442→  color: var(--text-muted);
+  1443→  line-height: 1.6;
+  1444→  margin: 2px 0;
+  1445→}
+  1446→.dating-encounter-cta {
+  1447→  display: inline-flex;
+  1448→  align-items: center;
+  1449→  padding: 5px 14px;
+  1450→  border: 1px solid;
+  1451→  border-radius: 2px;
+  1452→  font-size: 9px;
+  1453→  letter-spacing: 0.2em;
+  1454→  text-transform: uppercase;
+  1455→  margin-top: 4px;
+  1456→  width: fit-content;
+  1457→  transition: all 0.3s ease;
+  1458→  cursor: pointer;
+  1459→}
+  1460→.dating-encounter-cta:hover {
+  1461→  background: rgba(212,160,23,0.08);
+  1462→}
+  1463→
+  1464→/* Offer Grid */
+  1465→.dating-offer-grid {
+  1466→  display: grid;
+  1467→  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  1468→  gap: 16px;
+  1469→  margin-bottom: 40px;
+  1470→}
+  1471→.dating-offer-card {
+  1472→  display: flex;
+  1473→  flex-direction: column;
+  1474→  border-radius: var(--card-radius);
+  1475→  overflow: hidden;
+  1476→  border: 1px solid rgba(255,255,255,0.04);
+  1477→  background: rgba(15,21,32,0.4);
+  1478→  backdrop-filter: blur(2px);
+  1479→  transition: all 0.4s ease;
+  1480→  text-decoration: none;
+  1481→  color: inherit;
+  1482→}
+  1483→.dating-offer-card:hover {
+  1484→  border-color: rgba(212,160,23,0.15);
+  1485→  transform: translateY(-1px);
+  1486→  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  1487→}
+  1488→.dating-offer-image {
+  1489→  width: 100%;
+  1490→  aspect-ratio: 4/3;
+  1491→  position: relative;
+  1492→  background: rgba(212,160,23,0.02);
+  1493→}
+  1494→.dating-offer-image-placeholder {
+  1495→  position: absolute;
+  1496→  inset: 0;
+  1497→  display: flex;
+  1498→  align-items: center;
+  1499→  justify-content: center;
+  1500→  font-size: 9px;
+  1501→  letter-spacing: 0.25em;
+  1502→  text-transform: uppercase;
+  1503→  color: rgba(212,160,23,0.2);
+  1504→  border-bottom: 1px solid rgba(255,255,255,0.03);
+  1505→}
+  1506→.dating-offer-body {
+  1507→  padding: 10px 12px 12px;
+  1508→  display: flex;
+  1509→  flex-direction: column;
+  1510→  gap: 3px;
+  1511→}
+  1512→.dating-offer-label {
+  1513→  font-size: 11px;
+  1514→  letter-spacing: 0.1em;
+  1515→  color: var(--text-primary);
+  1516→}
+  1517→.dating-offer-teaser {
+  1518→  font-size: 11px;
+  1519→  line-height: 1.5;
+  1520→  color: var(--text-muted);
+  1521→}
+  1522→.dating-offer-action {
+  1523→  display: inline-flex;
+  1524→  align-items: center;
+  1525→  padding: 4px 12px;
+  1526→  border: 1px solid rgba(212,160,23,0.2);
+  1527→  border-radius: 2px;
+  1528→  font-size: 9px;
+  1529→  letter-spacing: 0.2em;
+  1530→  text-transform: uppercase;
+  1531→  color: var(--amber);
+  1532→  margin-top: 6px;
+  1533→  width: fit-content;
+  1534→  transition: all 0.3s ease;
+  1535→  cursor: pointer;
+  1536→}
+  1537→.dating-offer-action:hover {
+  1538→  background: rgba(212,160,23,0.08);
+  1539→  border-color: rgba(212,160,23,0.4);
+  1540→}
+  1541→
+  1542→/* Room Signature */
+  1543→.dating-room-signature {
+  1544→  display: flex;
+  1545→  align-items: center;
+  1546→  gap: 16px;
+  1547→  padding: 8px 0 0;
+  1548→}
+  1549→.dating-signature-line {
+  1550→  flex: 1;
+  1551→  height: 1px;
+  1552→  background: linear-gradient(90deg, transparent, rgba(212,160,23,0.15), transparent);
+  1553→}
+  1554→.dating-signature-text {
+  1555→  font-size: 9px;
+  1556→  letter-spacing: 0.35em;
+  1557→  text-transform: uppercase;
+  1558→  color: var(--text-dim);
+  1559→  font-style: italic;
+  1560→}
+  1561→
+  1562→/* ══════════════════════════════════════════════════════════════
+  1563→   LIVE CAMS ROOM
+  1564→   ══════════════════════════════════════════════════════════════ */
+  1565→
+  1566→.livecams-room {
+  1567→  position: relative;
+  1568→  min-height: 100vh;
+  1569→  display: flex;
+  1570→  flex-direction: column;
+  1571→}
+  1572→
+  1573→/* Background image */
+  1574→.livecams-room-bg-image {
+  1575→  position: absolute;
+  1576→  inset: 0;
+  1577→  background-size: cover;
+  1578→  background-position: center;
+  1579→  opacity: 0.12;
+  1580→  animation: roomBgBreathe 30s ease-in-out infinite alternate-reverse;
+  1581→}
+  1582→
+  1583→/* Gradient overlay — deep purple/crimson tones */
+  1584→.livecams-room-overlay {
+  1585→  position: fixed;
+  1586→  top: 0;
+  1587→  left: 220px;
+  1588→  right: 0;
+  1589→  bottom: 0;
+  1590→  background: linear-gradient(
+  1591→    200deg,
+  1592→    rgba(10,14,23,0.88) 0%,
+  1593→    rgba(18,10,20,0.65) 20%,
+  1594→    rgba(10,14,23,0.50) 45%,
+  1595→    rgba(14,8,18,0.60) 70%,
+  1596→    rgba(10,14,23,0.95) 100%
+  1597→  );
+  1598→  z-index: 1;
+  1599→  pointer-events: none;
+  1600→}
+  1601→
+  1602→/* Glows */
+  1603→.livecams-glow {
+  1604→  position: fixed;
+  1605→  border-radius: 50%;
+  1606→  filter: blur(110px);
+  1607→  pointer-events: none;
+  1608→  z-index: 1;
+  1609→}
+  1610→.livecams-glow-deep {
+  1611→  top: -5%;
+  1612→  right: 10%;
+  1613→  width: 450px;
+  1614→  height: 450px;
+  1615→  background: radial-gradient(circle, rgba(123,45,142,0.10) 0%, transparent 70%);
+  1616→  animation: livecamsGlowPulse 10s ease-in-out infinite;
+  1617→}
+  1618→.livecams-glow-crimson {
+  1619→  bottom: 5%;
+  1620→  left: 20%;
+  1621→  width: 300px;
+  1622→  height: 300px;
+  1623→  background: radial-gradient(circle, rgba(140,30,60,0.06) 0%, transparent 70%);
+  1624→  animation: livecamsGlowPulse 14s ease-in-out infinite reverse;
+  1625→}
+  1626→@keyframes livecamsGlowPulse {
+  1627→  0%, 100% { transform: scale(1); opacity: 1; }
+  1628→  50% { transform: scale(1.12); opacity: 0.65; }
+  1629→}
+  1630→
+  1631→/* Frosted glass strip */
+  1632→.livecams-glass-strip {
+  1633→  position: fixed;
+  1634→  top: 38%;
+  1635→  left: 220px;
+  1636→  right: 0;
+  1637→  height: 2px;
+  1638→  background: linear-gradient(90deg,
+  1639→    transparent 0%,
+  1640→    rgba(123,45,142,0.12) 20%,
+  1641→    rgba(123,45,142,0.06) 50%,
+  1642→    rgba(140,30,60,0.08) 80%,
+  1643→    transparent 100%
+  1644→  );
+  1645→  z-index: 2;
+  1646→  pointer-events: none;
+  1647→  filter: blur(1px);
+  1648→}
+  1649→
+  1650→/* Dust particles — violet */
+  1651→.livecams-dust-container {
+  1652→  position: fixed;
+  1653→  inset: 0;
+  1654→  z-index: 1;
+  1655→  pointer-events: none;
+  1656→  overflow: hidden;
+  1657→}
+  1658→.livecams-dust {
+  1659→  position: absolute;
+  1660→  bottom: -10px;
+  1661→  background: rgba(160,80,200,0.5);
+  1662→  border-radius: 50%;
+  1663→  animation: livecamsDustFloat linear infinite;
+  1664→}
+  1665→@keyframes livecamsDustFloat {
+  1666→  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  1667→  10% { opacity: 1; }
+  1668→  90% { opacity: 1; }
+  1669→  100% { transform: translateY(-110vh) translateX(-25px); opacity: 0; }
+  1670→}
+  1671→
+  1672→/* Room content wrapper */
+  1673→.livecams-room-content {
+  1674→  position: relative;
+  1675→  z-index: 2;
+  1676→  flex: 1;
+  1677→  display: flex;
+  1678→  flex-direction: column;
+  1679→  padding: 60px 40px 40px;
+  1680→  max-width: 960px;
+  1681→}
+  1682→
+  1683→/* Header */
+  1684→.livecams-room-header {
+  1685→  margin-bottom: 40px;
+  1686→}
+  1687→.livecams-room-locale {
+  1688→  font-size: 10px;
+  1689→  letter-spacing: 0.4em;
+  1690→  text-transform: uppercase;
+  1691→  color: var(--text-muted);
+  1692→  margin-bottom: 8px;
+  1693→}
+  1694→.livecams-room-title {
+  1695→  font-size: 28px;
+  1696→  letter-spacing: 0.12em;
+  1697→  text-transform: uppercase;
+  1698→  font-weight: 400;
+  1699→  line-height: 1.2;
+  1700→  margin-bottom: 16px;
+  1701→}
+  1702→.livecams-room-divider {
+  1703→  width: 80px;
+  1704→  margin-bottom: 16px;
+  1705→}
+  1706→.livecams-room-prose {
+  1707→  font-size: 13px;
+  1708→  line-height: 1.8;
+  1709→  color: var(--text-muted);
+  1710→  max-width: 480px;
+  1711→}
+  1712→
+  1713→/* Featured Performer Hero */
+  1714→.livecams-hero-offer {
+  1715→  display: flex;
+  1716→  gap: 24px;
+  1717→  margin-bottom: 40px;
+  1718→  border: 1px solid rgba(123,45,142,0.12);
+  1719→  border-radius: var(--card-radius);
+  1720→  overflow: hidden;
+  1721→  background: rgba(15,21,32,0.5);
+  1722→  backdrop-filter: blur(4px);
+  1723→  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+  1724→}
+  1725→.livecams-hero-offer:hover {
+  1726→  border-color: rgba(123,45,142,0.25);
+  1727→  box-shadow: 0 0 30px rgba(123,45,142,0.06);
+  1728→}
+  1729→.livecams-hero-image {
+  1730→  flex: 0 0 320px;
+  1731→  aspect-ratio: 16/10;
+  1732→  position: relative;
+  1733→  overflow: hidden;
+  1734→}
+  1735→.livecams-hero-image-placeholder {
+  1736→  position: absolute;
+  1737→  inset: 0;
+  1738→  display: flex;
+  1739→  flex-direction: column;
+  1740→  align-items: center;
+  1741→  justify-content: center;
+  1742→  background: rgba(123,45,142,0.04);
+  1743→  border-right: 1px solid rgba(123,45,142,0.08);
+  1744→  gap: 6px;
+  1745→}
+  1746→.livecams-hero-image-placeholder span {
+  1747→  font-size: 11px;
+  1748→  letter-spacing: 0.3em;
+  1749→  text-transform: uppercase;
+  1750→  color: var(--text-dim);
+  1751→}
+  1752→.livecams-hero-image-sub {
+  1753→  font-size: 9px !important;
+  1754→  color: rgba(123,45,142,0.3) !important;
+  1755→  letter-spacing: 0.15em !important;
+  1756→}
+  1757→.livecams-hero-body {
+  1758→  flex: 1;
+  1759→  display: flex;
+  1760→  flex-direction: column;
+  1761→  justify-content: center;
+  1762→  padding: 24px 24px 24px 0;
+  1763→  gap: 8px;
+  1764→}
+  1765→.livecams-hero-tag {
+  1766→  font-size: 9px;
+  1767→  letter-spacing: 0.3em;
+  1768→  text-transform: uppercase;
+  1769→  color: var(--purple);
+  1770→  opacity: 0.7;
+  1771→}
+  1772→.livecams-hero-name {
+  1773→  font-size: 18px;
+  1774→  letter-spacing: 0.08em;
+  1775→  color: var(--text-primary);
+  1776→  font-weight: 400;
+  1777→  line-height: 1.3;
+  1778→}
+  1779→.livecams-hero-desc {
+  1780→  font-size: 12px;
+  1781→  line-height: 1.7;
+  1782→  color: var(--text-muted);
+  1783→  max-width: 320px;
+  1784→}
+  1785→.livecams-hero-cta {
+  1786→  display: inline-flex;
+  1787→  align-items: center;
+  1788→  gap: 8px;
+  1789→  margin-top: 8px;
+  1790→  padding: 8px 20px;
+  1791→  border: 1px solid rgba(123,45,142,0.3);
+  1792→  border-radius: 2px;
+  1793→  font-size: 10px;
+  1794→  letter-spacing: 0.2em;
+  1795→  text-transform: uppercase;
+  1796→  color: var(--purple);
+  1797→  text-decoration: none;
+  1798→  transition: all 0.3s ease;
+  1799→  width: fit-content;
+  1800→}
+  1801→.livecams-hero-cta:hover {
+  1802→  background: rgba(123,45,142,0.08);
+  1803→  border-color: rgba(123,45,142,0.5);
+  1804→  box-shadow: 0 0 12px rgba(123,45,142,0.12);
+  1805→}
+  1806→
+  1807→/* Encounter Cards */
+  1808→.livecams-encounters {
+  1809→  display: grid;
+  1810→  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  1811→  gap: 20px;
+  1812→  margin-bottom: 40px;
+  1813→}
+  1814→.livecams-encounter-card {
+  1815→  display: flex;
+  1816→  flex-direction: column;
+  1817→  border-radius: var(--card-radius);
+  1818→  overflow: hidden;
+  1819→  border: 1px solid rgba(255,255,255,0.05);
+  1820→  transition: all 0.4s ease;
+  1821→  text-decoration: none;
+  1822→  color: inherit;
+  1823→}
+  1824→.livecams-encounter-card:hover {
+  1825→  border-color: rgba(123,45,142,0.2);
+  1826→  transform: translateY(-2px);
+  1827→  box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 20px rgba(123,45,142,0.05);
+  1828→}
+  1829→.livecams-encounter-image {
+  1830→  width: 100%;
+  1831→  aspect-ratio: 3/2;
+  1832→  background-size: cover;
+  1833→  background-position: center 30%;
+  1834→  position: relative;
+  1835→}
+  1836→.livecams-encounter-image::after {
+  1837→  content: '';
+  1838→  position: absolute;
+  1839→  inset: 0;
+  1840→  background: linear-gradient(to bottom, rgba(15,21,32,0.1) 0%, rgba(15,21,32,0.4) 40%, var(--bg-card) 100%);
+  1841→}
+  1842→.livecams-encounter-body {
+  1843→  padding: 12px 14px 14px;
+  1844→  background: var(--bg-card);
+  1845→  display: flex;
+  1846→  flex-direction: column;
+  1847→  gap: 4px;
+  1848→}
+  1849→.livecams-encounter-name {
+  1850→  font-size: 12px;
+  1851→  letter-spacing: 0.15em;
+  1852→  text-transform: uppercase;
+  1853→  color: var(--text-primary);
+  1854→}
+  1855→.livecams-encounter-role {
+  1856→  font-size: 10px;
+  1857→  letter-spacing: 0.3em;
+  1858→  color: var(--text-dim);
+  1859→}
+  1860→.livecams-encounter-desc {
+  1861→  font-size: 12px;
+  1862→  color: var(--text-muted);
+  1863→  line-height: 1.6;
+  1864→  margin: 2px 0;
+  1865→}
+  1866→.livecams-encounter-cta {
+  1867→  display: inline-flex;
+  1868→  align-items: center;
+  1869→  padding: 5px 14px;
+  1870→  border: 1px solid;
+  1871→  border-radius: 2px;
+  1872→  font-size: 9px;
+  1873→  letter-spacing: 0.2em;
+  1874→  text-transform: uppercase;
+  1875→  margin-top: 4px;
+  1876→  width: fit-content;
+  1877→  transition: all 0.3s ease;
+  1878→  cursor: pointer;
+  1879→}
+  1880→.livecams-encounter-cta:hover {
+  1881→  background: rgba(123,45,142,0.08);
+  1882→}
+  1883→
+  1884→/* Offer Grid */
+  1885→.livecams-offer-grid {
+  1886→  display: grid;
+  1887→  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  1888→  gap: 16px;
+  1889→  margin-bottom: 40px;
+  1890→}
+  1891→.livecams-offer-card {
+  1892→  display: flex;
+  1893→  flex-direction: column;
+  1894→  border-radius: var(--card-radius);
+  1895→  overflow: hidden;
+  1896→  border: 1px solid rgba(255,255,255,0.04);
+  1897→  background: rgba(15,21,32,0.4);
+  1898→  backdrop-filter: blur(2px);
+  1899→  transition: all 0.4s ease;
+  1900→  text-decoration: none;
+  1901→  color: inherit;
+  1902→}
+  1903→.livecams-offer-card:hover {
+  1904→  border-color: rgba(123,45,142,0.15);
+  1905→  transform: translateY(-1px);
+  1906→  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+  1907→}
+  1908→.livecams-offer-image {
+  1909→  width: 100%;
+  1910→  aspect-ratio: 4/3;
+  1911→  position: relative;
+  1912→  background: rgba(123,45,142,0.02);
+  1913→}
+  1914→.livecams-offer-image-placeholder {
+  1915→  position: absolute;
+  1916→  inset: 0;
+  1917→  display: flex;
+  1918→  align-items: center;
+  1919→  justify-content: center;
+  1920→  font-size: 9px;
+  1921→  letter-spacing: 0.25em;
+  1922→  text-transform: uppercase;
+  1923→  color: rgba(123,45,142,0.2);
+  1924→  border-bottom: 1px solid rgba(255,255,255,0.03);
+  1925→}
+  1926→.livecams-offer-body {
+  1927→  padding: 10px 12px 12px;
+  1928→  display: flex;
+  1929→  flex-direction: column;
+  1930→  gap: 3px;
+  1931→}
+  1932→.livecams-offer-label {
+  1933→  font-size: 11px;
+  1934→  letter-spacing: 0.1em;
+  1935→  color: var(--text-primary);
+  1936→}
+  1937→.livecams-offer-teaser {
+  1938→  font-size: 11px;
+  1939→  line-height: 1.5;
+  1940→  color: var(--text-muted);
+  1941→}
+  1942→.livecams-offer-action {
+  1943→  display: inline-flex;
+  1944→  align-items: center;
+  1945→  padding: 4px 12px;
+  1946→  border: 1px solid rgba(123,45,142,0.2);
+  1947→  border-radius: 2px;
+  1948→  font-size: 9px;
+  1949→  letter-spacing: 0.2em;
+  1950→  text-transform: uppercase;
+  1951→  color: var(--purple);
+  1952→  margin-top: 6px;
+  1953→  width: fit-content;
+  1954→  transition: all 0.3s ease;
+  1955→  cursor: pointer;
+  1956→}
+  1957→.livecams-offer-action:hover {
+  1958→  background: rgba(123,45,142,0.08);
+  1959→  border-color: rgba(123,45,142,0.4);
+  1960→}
+  1961→
+  1962→/* Room Signature */
+  1963→.livecams-room-signature {
+  1964→  display: flex;
+  1965→  align-items: center;
+  1966→  gap: 16px;
+  1967→  padding: 8px 0 0;
+  1968→}
+  1969→.livecams-signature-line {
+  1970→  flex: 1;
+  1971→  height: 1px;
+  1972→  background: linear-gradient(90deg, transparent, rgba(123,45,142,0.15), transparent);
+  1973→}
+  1974→.livecams-signature-text {
+  1975→  font-size: 9px;
+  1976→  letter-spacing: 0.35em;
+  1977→  text-transform: uppercase;
+  1978→  color: var(--text-dim);
+  1979→  font-style: italic;
+  1980→}
+  1981→
+  1982→/* ═══════════════════════════════════════════════════════════════
+  1983→   MOBILE — Immersive Rooms Responsive
+  1984→   ═══════════════════════════════════════════════════════════════ */
+  1985→
+  1986→/* ── Mobile Sidebar → Bottom Bar ── */
+  1987→@media (max-width: 768px) {
+  1988→  .sidebar-hub {
+  1989→    position: fixed;
+  1990→    top: auto;
+  1991→    bottom: 0;
+  1992→    left: 0;
+  1993→    right: 0;
+  1994→    width: 100%;
+  1995→    height: auto;
+  1996→    flex-direction: row;
+  1997→  align-items: center;
+  1998→  padding: 0;
+  1999→  border-right: none;
+  2000→  border-top: 1px solid rgba(255,255,255,0.06);
+
+[showing lines 1-2000 of 2133; use offset=2001 with limit to continue reading]
