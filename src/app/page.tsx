@@ -64,7 +64,36 @@ function ArrivalScene({ children }: { children: React.ReactNode }) {
 }
 
 /* ─── Age Gate ─── */
-function AgeGate({ onConfirm }: { onConfirm: () => void }) {
+function AgeGate({ onConfirm, onLeave }: { onConfirm: () => void; onLeave: () => void }) {
+  const [step, setStep] = useState<'landing' | 'confirm'>('landing');
+
+  if (step === 'confirm') {
+    return (
+      <ArrivalScene>
+        <div className="age-gate age-confirm">
+          <div className="age-gate-butterfly">
+            <MariposaCenterpiece />
+          </div>
+          <p className="age-confirm-question">Are you 18 or older?</p>
+          <div className="age-confirm-actions">
+            <button
+              className="age-gate-btn age-gate-btn-enter"
+              onClick={onConfirm}
+            >
+              <span className="age-gate-btn-label">Yes</span>
+            </button>
+            <button
+              className="age-gate-btn age-gate-btn-leave"
+              onClick={() => setStep('landing')}
+            >
+              <span className="age-gate-btn-label">No</span>
+            </button>
+          </div>
+        </div>
+      </ArrivalScene>
+    );
+  }
+
   return (
     <ArrivalScene>
       <div className="age-gate">
@@ -75,27 +104,18 @@ function AgeGate({ onConfirm }: { onConfirm: () => void }) {
           <span className="age-gate-title-cantina">CANTINA</span>
           <span className="age-gate-title-virtual">VIRTUAL</span>
         </h1>
-        <div className="age-gate-divider" />
-        <p className="age-gate-legal">
-          This destination is intended only for adults 18 years of age or older. By
-          entering, you confirm you meet the age of majority in your jurisdiction.
-        </p>
         <div className="age-gate-actions">
           <button
             className="age-gate-btn age-gate-btn-enter"
-            onClick={onConfirm}
+            onClick={() => setStep('confirm')}
           >
             <span className="age-gate-btn-label">ENTER</span>
-            <span className="age-gate-btn-sub">I am 18 or older.</span>
           </button>
           <button
             className="age-gate-btn age-gate-btn-leave"
-            onClick={() => {
-              window.location.href = 'https://google.com';
-            }}
+            onClick={onLeave}
           >
             <span className="age-gate-btn-label">LEAVE</span>
-            <span className="age-gate-btn-sub">Not tonight.</span>
           </button>
         </div>
       </div>
@@ -294,7 +314,7 @@ export default function Home() {
   return (
     <>
       <NectarHUD />
-      {!ageConfirmed && <AgeGate onConfirm={handleAgeConfirm} />}
+      {!ageConfirmed && <AgeGate onConfirm={handleAgeConfirm} onLeave={() => { window.location.href = 'https://google.com'; }} />}
       {ageConfirmed && state === 'locked' && (
         <PasswordScreen onUnlock={handleUnlock} />
       )}
