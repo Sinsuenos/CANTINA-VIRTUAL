@@ -169,6 +169,7 @@ function Cantina() {
 
   return (
     <div className="cantina-layout">
+      <NectarHUD />
       <SidebarHub
         activeDistrict={activeDistrict}
         onDistrictChange={handleDistrictChange}
@@ -244,7 +245,6 @@ export default function Home() {
 
   return (
     <>
-      <NectarHUD />
       {!ageConfirmed && <AgeGate onConfirm={handleAgeConfirm} onLeave={() => { window.location.href = 'https://google.com'; }} />}
       {ageConfirmed && <Cantina />}
     </>

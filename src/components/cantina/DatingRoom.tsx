@@ -106,7 +106,7 @@ export function DatingRoom({ district }: DatingRoomProps) {
           ))}
         </div>
 
-        {/* Offer Grid — affiliate placement slots */}
+        {/* Offer Grid */}
         <div className="dating-offer-grid">
           {/* IMAGE SLOT — Offer 1: thumbnail + body content */}
           <div className="dating-offer-card" />
