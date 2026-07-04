@@ -50,7 +50,7 @@ const DISTRICTS = [
         description: 'Faint guitar. Tequila slides across the bar. Someone is always watching from the corner.',
         borderColor: 'rgba(212,160,23,0.3)',
         textColor: 'var(--amber)',
-        /** IMAGE SLOT — background URL. Currently: /dating-room.jpg */ bgImage: '/dating-room.jpg',
+        bgImage: '/dating-room.jpg',
         encounters: [
             {
                 residentId: 'lina-rose'
@@ -69,7 +69,7 @@ const DISTRICTS = [
         description: 'The deep alcove. Red lights behind frosted glass. You know what you want.',
         borderColor: 'rgba(123,45,142,0.3)',
         textColor: 'var(--purple)',
-        /** IMAGE SLOT — background URL. Currently: /livecams-room.png */ bgImage: '/livecams-room.png',
+        bgImage: '/livecams-room.png',
         encounters: [
             {
                 residentId: 'isla-king'
@@ -436,7 +436,7 @@ function EncounterCard({ resident, ctaColor }) {
                 }
             }, void 0, false, {
                 fileName: "[project]/src/components/cantina/EncounterCard.tsx",
-                lineNumber: 15,
+                lineNumber: 14,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -447,7 +447,7 @@ function EncounterCard({ resident, ctaColor }) {
                         children: resident.name
                     }, void 0, false, {
                         fileName: "[project]/src/components/cantina/EncounterCard.tsx",
-                        lineNumber: 20,
+                        lineNumber: 19,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -455,7 +455,7 @@ function EncounterCard({ resident, ctaColor }) {
                         children: resident.subtitle
                     }, void 0, false, {
                         fileName: "[project]/src/components/cantina/EncounterCard.tsx",
-                        lineNumber: 21,
+                        lineNumber: 20,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -463,7 +463,7 @@ function EncounterCard({ resident, ctaColor }) {
                         children: resident.description
                     }, void 0, false, {
                         fileName: "[project]/src/components/cantina/EncounterCard.tsx",
-                        lineNumber: 22,
+                        lineNumber: 21,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -475,13 +475,13 @@ function EncounterCard({ resident, ctaColor }) {
                         children: "Send a Drink"
                     }, void 0, false, {
                         fileName: "[project]/src/components/cantina/EncounterCard.tsx",
-                        lineNumber: 23,
+                        lineNumber: 22,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/cantina/EncounterCard.tsx",
-                lineNumber: 19,
+                lineNumber: 18,
                 columnNumber: 7
             }, this)
         ]
@@ -542,33 +542,33 @@ function DatingRoom({ district }) {
                     }
                 }, void 0, false, {
                     fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                    lineNumber: 39,
+                    lineNumber: 34,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                lineNumber: 37,
+                lineNumber: 32,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "dating-room-overlay"
             }, void 0, false, {
                 fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                lineNumber: 45,
+                lineNumber: 40,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "dating-glow dating-glow-warm"
             }, void 0, false, {
                 fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                lineNumber: 48,
+                lineNumber: 43,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "dating-glow dating-glow-candle"
             }, void 0, false, {
                 fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                lineNumber: 50,
+                lineNumber: 45,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -585,12 +585,12 @@ function DatingRoom({ district }) {
                         }
                     }, p.id, false, {
                         fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                        lineNumber: 55,
+                        lineNumber: 50,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                lineNumber: 53,
+                lineNumber: 48,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -604,7 +604,7 @@ function DatingRoom({ district }) {
                                 children: district.subtitle
                             }, void 0, false, {
                                 fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                lineNumber: 74,
+                                lineNumber: 69,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -612,14 +612,14 @@ function DatingRoom({ district }) {
                                 children: district.name
                             }, void 0, false, {
                                 fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                lineNumber: 75,
+                                lineNumber: 70,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: `dating-room-divider ${district.dividerClass}`
                             }, void 0, false, {
                                 fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                lineNumber: 78,
+                                lineNumber: 73,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -627,101 +627,36 @@ function DatingRoom({ district }) {
                                 children: district.description
                             }, void 0, false, {
                                 fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                lineNumber: 79,
+                                lineNumber: 74,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                        lineNumber: 73,
+                        lineNumber: 68,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "dating-hero-offer",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "dating-hero-image",
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "dating-hero-image-placeholder",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            children: "FEATURED OFFER"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                            lineNumber: 88,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            className: "dating-hero-image-sub",
-                                            children: "IMAGE SLOT — Hero Banner"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                            lineNumber: 89,
-                                            columnNumber: 15
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                    lineNumber: 87,
-                                    columnNumber: 13
-                                }, this)
+                                className: "dating-hero-image"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                lineNumber: 85,
+                                lineNumber: 80,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "dating-hero-body",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "dating-hero-tag",
-                                        children: "Sinaloa Sueños Selection"
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                        lineNumber: 93,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                        className: "dating-hero-name",
-                                        children: "Tonight's Featured Encounter"
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                        lineNumber: 94,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "dating-hero-desc",
-                                        children: "A handpicked connection from the warmest corner of the cantina."
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                        lineNumber: 98,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                        href: "#",
-                                        className: "dating-hero-cta",
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            children: "Enter the Encounter"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                            lineNumber: 104,
-                                            columnNumber: 15
-                                        }, this)
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                        lineNumber: 103,
-                                        columnNumber: 13
-                                    }, this)
-                                ]
-                            }, void 0, true, {
+                                className: "dating-hero-body"
+                            }, void 0, false, {
                                 fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                lineNumber: 92,
+                                lineNumber: 82,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                        lineNumber: 83,
+                        lineNumber: 78,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -737,7 +672,7 @@ function DatingRoom({ district }) {
                                         }
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                        lineNumber: 114,
+                                        lineNumber: 90,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -748,7 +683,7 @@ function DatingRoom({ district }) {
                                                 children: resident.name
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                                lineNumber: 119,
+                                                lineNumber: 95,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -756,7 +691,7 @@ function DatingRoom({ district }) {
                                                 children: resident.subtitle
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                                lineNumber: 120,
+                                                lineNumber: 96,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -764,7 +699,7 @@ function DatingRoom({ district }) {
                                                 children: resident.description
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                                lineNumber: 121,
+                                                lineNumber: 97,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -776,265 +711,61 @@ function DatingRoom({ district }) {
                                                 children: "Send a Drink"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                                lineNumber: 123,
+                                                lineNumber: 98,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                        lineNumber: 118,
+                                        lineNumber: 94,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, resident.id, true, {
                                 fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                lineNumber: 112,
+                                lineNumber: 88,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                        lineNumber: 110,
+                        lineNumber: 86,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "dating-offer-grid",
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                href: "#",
-                                className: "dating-offer-card no-underline",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "dating-offer-image",
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "dating-offer-image-placeholder",
-                                            children: "IMAGE SLOT"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                            lineNumber: 140,
-                                            columnNumber: 15
-                                        }, this)
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                        lineNumber: 139,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "dating-offer-body",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "dating-offer-label",
-                                                children: "PLACEHOLDER — Offer Name"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                                lineNumber: 143,
-                                                columnNumber: 15
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "dating-offer-teaser",
-                                                children: "PLACEHOLDER — Short offer description"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                                lineNumber: 144,
-                                                columnNumber: 15
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "dating-offer-action",
-                                                children: "Visit"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                                lineNumber: 145,
-                                                columnNumber: 15
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                        lineNumber: 142,
-                                        columnNumber: 13
-                                    }, this)
-                                ]
-                            }, void 0, true, {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "dating-offer-card"
+                            }, void 0, false, {
                                 fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                lineNumber: 137,
+                                lineNumber: 112,
                                 columnNumber: 11
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                href: "#",
-                                className: "dating-offer-card no-underline",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "dating-offer-image",
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "dating-offer-image-placeholder",
-                                            children: "IMAGE SLOT"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                            lineNumber: 153,
-                                            columnNumber: 15
-                                        }, this)
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                        lineNumber: 152,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "dating-offer-body",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "dating-offer-label",
-                                                children: "PLACEHOLDER — Offer Name"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                                lineNumber: 156,
-                                                columnNumber: 15
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "dating-offer-teaser",
-                                                children: "PLACEHOLDER — Short offer description"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                                lineNumber: 157,
-                                                columnNumber: 15
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "dating-offer-action",
-                                                children: "Visit"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                                lineNumber: 158,
-                                                columnNumber: 15
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                        lineNumber: 155,
-                                        columnNumber: 13
-                                    }, this)
-                                ]
-                            }, void 0, true, {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "dating-offer-card"
+                            }, void 0, false, {
                                 fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                lineNumber: 150,
+                                lineNumber: 115,
                                 columnNumber: 11
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                href: "#",
-                                className: "dating-offer-card no-underline",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "dating-offer-image",
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "dating-offer-image-placeholder",
-                                            children: "IMAGE SLOT"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                            lineNumber: 166,
-                                            columnNumber: 15
-                                        }, this)
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                        lineNumber: 165,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "dating-offer-body",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "dating-offer-label",
-                                                children: "PLACEHOLDER — Offer Name"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                                lineNumber: 169,
-                                                columnNumber: 15
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "dating-offer-teaser",
-                                                children: "PLACEHOLDER — Short offer description"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                                lineNumber: 170,
-                                                columnNumber: 15
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "dating-offer-action",
-                                                children: "Visit"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                                lineNumber: 171,
-                                                columnNumber: 15
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                        lineNumber: 168,
-                                        columnNumber: 13
-                                    }, this)
-                                ]
-                            }, void 0, true, {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "dating-offer-card"
+                            }, void 0, false, {
                                 fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                lineNumber: 163,
+                                lineNumber: 118,
                                 columnNumber: 11
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                href: "#",
-                                className: "dating-offer-card no-underline",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "dating-offer-image",
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "dating-offer-image-placeholder",
-                                            children: "IMAGE SLOT"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                            lineNumber: 179,
-                                            columnNumber: 15
-                                        }, this)
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                        lineNumber: 178,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "dating-offer-body",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "dating-offer-label",
-                                                children: "PLACEHOLDER — Offer Name"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                                lineNumber: 182,
-                                                columnNumber: 15
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "dating-offer-teaser",
-                                                children: "PLACEHOLDER — Short offer description"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                                lineNumber: 183,
-                                                columnNumber: 15
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "dating-offer-action",
-                                                children: "Visit"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                                lineNumber: 184,
-                                                columnNumber: 15
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                        lineNumber: 181,
-                                        columnNumber: 13
-                                    }, this)
-                                ]
-                            }, void 0, true, {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "dating-offer-card"
+                            }, void 0, false, {
                                 fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                lineNumber: 176,
+                                lineNumber: 121,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                        lineNumber: 135,
+                        lineNumber: 110,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1044,7 +775,7 @@ function DatingRoom({ district }) {
                                 className: "dating-signature-line"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                lineNumber: 192,
+                                lineNumber: 127,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1052,32 +783,32 @@ function DatingRoom({ district }) {
                                 children: "Sinaloa Sueños"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                lineNumber: 193,
+                                lineNumber: 128,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "dating-signature-line"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                                lineNumber: 194,
+                                lineNumber: 129,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                        lineNumber: 190,
+                        lineNumber: 125,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-                lineNumber: 71,
+                lineNumber: 66,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/cantina/DatingRoom.tsx",
-        lineNumber: 35,
+        lineNumber: 30,
         columnNumber: 5
     }, this);
 }
@@ -1106,7 +837,7 @@ var _s = __turbopack_context__.k.signature();
 ;
 function LiveCamsRoom({ district }) {
     _s();
-    /* Ambient particles — deep violet, slower drift */ const particles = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
+    const particles = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useMemo"])({
         "LiveCamsRoom.useMemo[particles]": ()=>Array.from({
                 length: 12
             }, {
@@ -1133,33 +864,33 @@ function LiveCamsRoom({ district }) {
                     }
                 }, void 0, false, {
                     fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                    lineNumber: 39,
+                    lineNumber: 32,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                lineNumber: 37,
+                lineNumber: 30,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "livecams-room-overlay"
             }, void 0, false, {
                 fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                lineNumber: 45,
+                lineNumber: 38,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "livecams-glow livecams-glow-deep"
             }, void 0, false, {
                 fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                lineNumber: 48,
+                lineNumber: 40,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "livecams-glow livecams-glow-crimson"
             }, void 0, false, {
                 fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                lineNumber: 50,
+                lineNumber: 41,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1176,19 +907,19 @@ function LiveCamsRoom({ district }) {
                         }
                     }, p.id, false, {
                         fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                        lineNumber: 55,
+                        lineNumber: 45,
                         columnNumber: 11
                     }, this))
             }, void 0, false, {
                 fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                lineNumber: 53,
+                lineNumber: 43,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "livecams-glass-strip"
             }, void 0, false, {
                 fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                lineNumber: 71,
+                lineNumber: 60,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1202,7 +933,7 @@ function LiveCamsRoom({ district }) {
                                 children: district.subtitle
                             }, void 0, false, {
                                 fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                lineNumber: 77,
+                                lineNumber: 64,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
@@ -1210,14 +941,14 @@ function LiveCamsRoom({ district }) {
                                 children: district.name
                             }, void 0, false, {
                                 fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                lineNumber: 78,
+                                lineNumber: 65,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: `livecams-room-divider ${district.dividerClass}`
                             }, void 0, false, {
                                 fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                lineNumber: 81,
+                                lineNumber: 68,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1225,101 +956,36 @@ function LiveCamsRoom({ district }) {
                                 children: district.description
                             }, void 0, false, {
                                 fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                lineNumber: 82,
+                                lineNumber: 69,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                        lineNumber: 76,
+                        lineNumber: 63,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "livecams-hero-offer",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "livecams-hero-image",
-                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "livecams-hero-image-placeholder",
-                                    children: [
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            children: "LIVE NOW"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                            lineNumber: 91,
-                                            columnNumber: 15
-                                        }, this),
-                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            className: "livecams-hero-image-sub",
-                                            children: "IMAGE SLOT — Performer Banner"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                            lineNumber: 92,
-                                            columnNumber: 15
-                                        }, this)
-                                    ]
-                                }, void 0, true, {
-                                    fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                    lineNumber: 90,
-                                    columnNumber: 13
-                                }, this)
+                                className: "livecams-hero-image"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                lineNumber: 88,
+                                lineNumber: 74,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "livecams-hero-body",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "livecams-hero-tag",
-                                        children: "Golfo Privado Exclusive"
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                        lineNumber: 96,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
-                                        className: "livecams-hero-name",
-                                        children: "Tonight's Featured Stage"
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                        lineNumber: 97,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "livecams-hero-desc",
-                                        children: "Behind frosted glass, the show never stops."
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                        lineNumber: 101,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                        href: "#",
-                                        className: "livecams-hero-cta",
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                            children: "Watch Live"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                            lineNumber: 107,
-                                            columnNumber: 15
-                                        }, this)
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                        lineNumber: 106,
-                                        columnNumber: 13
-                                    }, this)
-                                ]
-                            }, void 0, true, {
+                                className: "livecams-hero-body"
+                            }, void 0, false, {
                                 fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                lineNumber: 95,
+                                lineNumber: 76,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                        lineNumber: 86,
+                        lineNumber: 72,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1335,7 +1001,7 @@ function LiveCamsRoom({ district }) {
                                         }
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                        lineNumber: 117,
+                                        lineNumber: 83,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1346,7 +1012,7 @@ function LiveCamsRoom({ district }) {
                                                 children: resident.name
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                                lineNumber: 122,
+                                                lineNumber: 88,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1354,7 +1020,7 @@ function LiveCamsRoom({ district }) {
                                                 children: resident.subtitle
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                                lineNumber: 123,
+                                                lineNumber: 89,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -1362,7 +1028,7 @@ function LiveCamsRoom({ district }) {
                                                 children: resident.description
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                                lineNumber: 124,
+                                                lineNumber: 90,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1374,265 +1040,61 @@ function LiveCamsRoom({ district }) {
                                                 children: "Request Private"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                                lineNumber: 126,
+                                                lineNumber: 91,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                        lineNumber: 121,
+                                        lineNumber: 87,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, resident.id, true, {
                                 fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                lineNumber: 115,
+                                lineNumber: 81,
                                 columnNumber: 13
                             }, this))
                     }, void 0, false, {
                         fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                        lineNumber: 113,
+                        lineNumber: 79,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "livecams-offer-grid",
                         children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                href: "#",
-                                className: "livecams-offer-card no-underline",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "livecams-offer-image",
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "livecams-offer-image-placeholder",
-                                            children: "IMAGE SLOT"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                            lineNumber: 143,
-                                            columnNumber: 15
-                                        }, this)
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                        lineNumber: 142,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "livecams-offer-body",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "livecams-offer-label",
-                                                children: "PLACEHOLDER — Offer Name"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                                lineNumber: 146,
-                                                columnNumber: 15
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "livecams-offer-teaser",
-                                                children: "PLACEHOLDER — Short offer description"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                                lineNumber: 147,
-                                                columnNumber: 15
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "livecams-offer-action",
-                                                children: "Go Live"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                                lineNumber: 148,
-                                                columnNumber: 15
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                        lineNumber: 145,
-                                        columnNumber: 13
-                                    }, this)
-                                ]
-                            }, void 0, true, {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "livecams-offer-card"
+                            }, void 0, false, {
                                 fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                lineNumber: 140,
+                                lineNumber: 104,
                                 columnNumber: 11
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                href: "#",
-                                className: "livecams-offer-card no-underline",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "livecams-offer-image",
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "livecams-offer-image-placeholder",
-                                            children: "IMAGE SLOT"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                            lineNumber: 156,
-                                            columnNumber: 15
-                                        }, this)
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                        lineNumber: 155,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "livecams-offer-body",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "livecams-offer-label",
-                                                children: "PLACEHOLDER — Offer Name"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                                lineNumber: 159,
-                                                columnNumber: 15
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "livecams-offer-teaser",
-                                                children: "PLACEHOLDER — Short offer description"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                                lineNumber: 160,
-                                                columnNumber: 15
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "livecams-offer-action",
-                                                children: "Go Live"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                                lineNumber: 161,
-                                                columnNumber: 15
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                        lineNumber: 158,
-                                        columnNumber: 13
-                                    }, this)
-                                ]
-                            }, void 0, true, {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "livecams-offer-card"
+                            }, void 0, false, {
                                 fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                lineNumber: 153,
+                                lineNumber: 107,
                                 columnNumber: 11
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                href: "#",
-                                className: "livecams-offer-card no-underline",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "livecams-offer-image",
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "livecams-offer-image-placeholder",
-                                            children: "IMAGE SLOT"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                            lineNumber: 169,
-                                            columnNumber: 15
-                                        }, this)
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                        lineNumber: 168,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "livecams-offer-body",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "livecams-offer-label",
-                                                children: "PLACEHOLDER — Offer Name"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                                lineNumber: 172,
-                                                columnNumber: 15
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "livecams-offer-teaser",
-                                                children: "PLACEHOLDER — Short offer description"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                                lineNumber: 173,
-                                                columnNumber: 15
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "livecams-offer-action",
-                                                children: "Go Live"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                                lineNumber: 174,
-                                                columnNumber: 15
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                        lineNumber: 171,
-                                        columnNumber: 13
-                                    }, this)
-                                ]
-                            }, void 0, true, {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "livecams-offer-card"
+                            }, void 0, false, {
                                 fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                lineNumber: 166,
+                                lineNumber: 110,
                                 columnNumber: 11
                             }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                href: "#",
-                                className: "livecams-offer-card no-underline",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "livecams-offer-image",
-                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                            className: "livecams-offer-image-placeholder",
-                                            children: "IMAGE SLOT"
-                                        }, void 0, false, {
-                                            fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                            lineNumber: 182,
-                                            columnNumber: 15
-                                        }, this)
-                                    }, void 0, false, {
-                                        fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                        lineNumber: 181,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "livecams-offer-body",
-                                        children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "livecams-offer-label",
-                                                children: "PLACEHOLDER — Offer Name"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                                lineNumber: 185,
-                                                columnNumber: 15
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                className: "livecams-offer-teaser",
-                                                children: "PLACEHOLDER — Short offer description"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                                lineNumber: 186,
-                                                columnNumber: 15
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                className: "livecams-offer-action",
-                                                children: "Go Live"
-                                            }, void 0, false, {
-                                                fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                                lineNumber: 187,
-                                                columnNumber: 15
-                                            }, this)
-                                        ]
-                                    }, void 0, true, {
-                                        fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                        lineNumber: 184,
-                                        columnNumber: 13
-                                    }, this)
-                                ]
-                            }, void 0, true, {
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "livecams-offer-card"
+                            }, void 0, false, {
                                 fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                lineNumber: 179,
+                                lineNumber: 113,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                        lineNumber: 138,
+                        lineNumber: 102,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1642,7 +1104,7 @@ function LiveCamsRoom({ district }) {
                                 className: "livecams-signature-line"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                lineNumber: 195,
+                                lineNumber: 117,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -1650,32 +1112,32 @@ function LiveCamsRoom({ district }) {
                                 children: "Golfo Privado"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                lineNumber: 196,
+                                lineNumber: 118,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                 className: "livecams-signature-line"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                                lineNumber: 197,
+                                lineNumber: 119,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                        lineNumber: 193,
+                        lineNumber: 116,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-                lineNumber: 74,
+                lineNumber: 62,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/cantina/LiveCamsRoom.tsx",
-        lineNumber: 35,
+        lineNumber: 29,
         columnNumber: 5
     }, this);
 }

@@ -8,7 +8,6 @@ export interface Resident {
   name: string;
   subtitle: string;
   description: string;
-  /** IMAGE SLOT — portrait URL. Swap with Cantina artwork from Google Drive. */
   image: string;
 }
 
@@ -53,7 +52,6 @@ export interface District {
   description: string;
   borderColor: string;
   textColor: string;
-  /** IMAGE SLOT — background URL. Swap with Cantina artwork from Google Drive. */
   bgImage: string;
   encounters: DistrictEncounter[];
 }
@@ -72,7 +70,6 @@ export const DISTRICTS: District[] = [
     description: 'Faint guitar. Tequila slides across the bar. Someone is always watching from the corner.',
     borderColor: 'rgba(212,160,23,0.3)',
     textColor: 'var(--amber)',
-    /** IMAGE SLOT — background URL. Currently: /dating-room.jpg */
     bgImage: '/dating-room.jpg',
     encounters: [
       { residentId: 'lina-rose' },
@@ -88,7 +85,6 @@ export const DISTRICTS: District[] = [
     description: 'The deep alcove. Red lights behind frosted glass. You know what you want.',
     borderColor: 'rgba(123,45,142,0.3)',
     textColor: 'var(--purple)',
-    /** IMAGE SLOT — background URL. Currently: /livecams-room.png */
     bgImage: '/livecams-room.png',
     encounters: [
       { residentId: 'isla-king' },

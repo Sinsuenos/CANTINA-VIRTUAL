@@ -11,7 +11,6 @@ export function EncounterCard({ resident, ctaColor }: EncounterCardProps) {
       href="#"
       className="encounter-card no-underline"
     >
-      {/* IMAGE SLOT — portrait: swap resident.image with Cantina artwork URL */}
       <div
         className="encounter-card-image"
         style={{ backgroundImage: `url('${resident.image}')` }}

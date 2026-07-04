@@ -3,11 +3,6 @@
 import { useMemo } from 'react';
 import { RESIDENTS, type District } from '@/data/rooms';
 
-/* ═══════════════════════════════════════════════════════════════
-   DATING ROOM — Sinaloa Sueños
-   Immersive district experience with affiliate offer layout
-   ═══════════════════════════════════════════════════════════════ */
-
 interface DatingRoomProps {
   district: District;
 }
@@ -82,28 +77,9 @@ export function DatingRoom({ district }: DatingRoomProps) {
         {/* Featured Offer Hero — large cinematic banner slot */}
         <div className="dating-hero-offer">
           {/* IMAGE SLOT — featured dating offer hero banner (landscape, ~16:9) */}
-          <div className="dating-hero-image">
-            {/* Replace this div's background-image with your featured offer artwork */}
-            <div className="dating-hero-image-placeholder">
-              <span>FEATURED OFFER</span>
-              <span className="dating-hero-image-sub">IMAGE SLOT — Hero Banner</span>
-            </div>
-          </div>
-          <div className="dating-hero-body">
-            <p className="dating-hero-tag">Sinaloa Sueños Selection</p>
-            <h3 className="dating-hero-name">
-              {/* IMAGE SLOT — Offer brand name goes here */}
-              Tonight&apos;s Featured Encounter
-            </h3>
-            <p className="dating-hero-desc">
-              A handpicked connection from the warmest corner of the cantina.
-              {/* PLACEHOLDER — affiliate offer description */}
-            </p>
-            {/* PLACEHOLDER — affiliate offer CTA link */}
-            <a href="#" className="dating-hero-cta">
-              <span>Enter the Encounter</span>
-            </a>
-          </div>
+          <div className="dating-hero-image" />
+          {/* IMAGE SLOT — hero offer body content: tag, name, description, CTA */}
+          <div className="dating-hero-body" />
         </div>
 
         {/* Encounter Cards — residents of this room */}
@@ -119,7 +95,6 @@ export function DatingRoom({ district }: DatingRoomProps) {
                 <span className="dating-encounter-name">{resident.name}</span>
                 <span className="dating-encounter-role">{resident.subtitle}</span>
                 <p className="dating-encounter-desc">{resident.description}</p>
-                {/* PLACEHOLDER — affiliate offer link per resident */}
                 <span
                   className="dating-encounter-cta"
                   style={{ borderColor: 'var(--amber)', color: 'var(--amber)' }}
@@ -133,57 +108,17 @@ export function DatingRoom({ district }: DatingRoomProps) {
 
         {/* Offer Grid — affiliate placement slots */}
         <div className="dating-offer-grid">
-          {/* Offer Slot 1 */}
-          <a href="#" className="dating-offer-card no-underline">
-            {/* IMAGE SLOT — dating offer thumbnail (portrait or square) */}
-            <div className="dating-offer-image">
-              <div className="dating-offer-image-placeholder">IMAGE SLOT</div>
-            </div>
-            <div className="dating-offer-body">
-              <span className="dating-offer-label">PLACEHOLDER — Offer Name</span>
-              <p className="dating-offer-teaser">PLACEHOLDER — Short offer description</p>
-              <span className="dating-offer-action">Visit</span>
-            </div>
-          </a>
+          {/* IMAGE SLOT — Offer 1: thumbnail + body content */}
+          <div className="dating-offer-card" />
 
-          {/* Offer Slot 2 */}
-          <a href="#" className="dating-offer-card no-underline">
-            {/* IMAGE SLOT — dating offer thumbnail (portrait or square) */}
-            <div className="dating-offer-image">
-              <div className="dating-offer-image-placeholder">IMAGE SLOT</div>
-            </div>
-            <div className="dating-offer-body">
-              <span className="dating-offer-label">PLACEHOLDER — Offer Name</span>
-              <p className="dating-offer-teaser">PLACEHOLDER — Short offer description</p>
-              <span className="dating-offer-action">Visit</span>
-            </div>
-          </a>
+          {/* IMAGE SLOT — Offer 2: thumbnail + body content */}
+          <div className="dating-offer-card" />
 
-          {/* Offer Slot 3 */}
-          <a href="#" className="dating-offer-card no-underline">
-            {/* IMAGE SLOT — dating offer thumbnail (portrait or square) */}
-            <div className="dating-offer-image">
-              <div className="dating-offer-image-placeholder">IMAGE SLOT</div>
-            </div>
-            <div className="dating-offer-body">
-              <span className="dating-offer-label">PLACEHOLDER — Offer Name</span>
-              <p className="dating-offer-teaser">PLACEHOLDER — Short offer description</p>
-              <span className="dating-offer-action">Visit</span>
-            </div>
-          </a>
+          {/* IMAGE SLOT — Offer 3: thumbnail + body content */}
+          <div className="dating-offer-card" />
 
-          {/* Offer Slot 4 */}
-          <a href="#" className="dating-offer-card no-underline">
-            {/* IMAGE SLOT — dating offer thumbnail (portrait or square) */}
-            <div className="dating-offer-image">
-              <div className="dating-offer-image-placeholder">IMAGE SLOT</div>
-            </div>
-            <div className="dating-offer-body">
-              <span className="dating-offer-label">PLACEHOLDER — Offer Name</span>
-              <p className="dating-offer-teaser">PLACEHOLDER — Short offer description</p>
-              <span className="dating-offer-action">Visit</span>
-            </div>
-          </a>
+          {/* IMAGE SLOT — Offer 4: thumbnail + body content */}
+          <div className="dating-offer-card" />
         </div>
 
         {/* Bottom ambient strip — room signature */}
