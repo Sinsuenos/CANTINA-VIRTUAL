@@ -80,12 +80,11 @@ export function LiveCamsRoom({ district }: LiveCamsRoomProps) {
             href="https://t.camsk1.com/413627/9776/37445?aff_sub=CAMS&source=CANTINA&po=6533&aff_sub5=SF_006OG000004lmDN"
             target="_blank"
             rel="noopener noreferrer"
-            className="livecams-encounter-card no-underline"
+            className="livecams-encounter-card no-underline banner-jerkmate"
           >
             <img
               src="https://www.imglnkx.com/9776/PCAM-244_DESIGN-24826_300250_2_EN.gif"
               alt="LIVE CAMS"
-              style={{ width: '100%', height: 'auto', objectFit: 'contain', display: 'block' }}
             />
           </a>
           {encounters.length > 0 ? (

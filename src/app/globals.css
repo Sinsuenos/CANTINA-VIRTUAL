@@ -1814,6 +1814,15 @@ body {
   color: inherit;
   background: #0a0e17;
 }
+.banner-jerkmate {
+  aspect-ratio: 3/1;
+}
+.banner-jerkmate img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
 .livecams-encounter-card:hover {
   border-color: rgba(123,45,142,0.2);
   transform: translateY(-2px);
