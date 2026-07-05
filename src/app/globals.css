@@ -995,39 +995,44 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 4px;
-  padding: 14px 48px;
+  padding: 18px 52px;
   background: transparent;
   border: 1px solid rgba(212,160,23,0.2);
   cursor: pointer;
   font-family: inherit;
   transition: all 0.4s ease;
-  min-width: 200px;
+  min-width: 220px;
+}
+
+.age-gate-btn-enter {
+  border-color: rgba(212,160,23,0.5);
+  background: rgba(212,160,23,0.06);
 }
 
 .age-gate-btn-enter:hover {
   border-color: var(--amber);
-  background: rgba(212,160,23,0.08);
-  box-shadow: 0 0 20px rgba(212,160,23,0.15);
+  background: rgba(212,160,23,0.15);
+  box-shadow: 0 0 24px rgba(212,160,23,0.2), 0 0 48px rgba(212,160,23,0.08);
 }
 
 .age-gate-btn-leave {
-  border-color: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.2);
 }
 
 .age-gate-btn-leave:hover {
-  border-color: rgba(255,255,255,0.15);
-  background: rgba(255,255,255,0.02);
+  border-color: rgba(255,255,255,0.35);
+  background: rgba(255,255,255,0.04);
 }
 
 .age-gate-btn-label {
-  font-size: 13px;
-  letter-spacing: 0.3em;
+  font-size: 14px;
+  letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--amber);
 }
 
 .age-gate-btn-leave .age-gate-btn-label {
-  color: var(--text-dim);
+  color: rgba(232,224,212,0.7);
 }
 
 .age-gate-btn-sub {
@@ -1040,11 +1045,11 @@ body {
 .arrival-copy {
   max-width: 520px;
   text-align: center;
-  font-size: 14px;
-  line-height: 1.8;
+  font-size: 18px;
+  line-height: 2;
   color: #F5ECD8;
   letter-spacing: 0.03em;
-  margin-bottom: 8px;
+  margin-bottom: 10px;
   text-shadow:
     0 1px 3px rgba(10,14,23,0.95),
     0 2px 8px rgba(10,14,23,0.8),
@@ -1053,12 +1058,13 @@ body {
 }
 
 .arrival-copy-body {
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .arrival-copy-closing {
   font-style: italic;
-  margin-bottom: 28px;
+  margin-bottom: 36px;
+  font-size: 17px;
 }
 
 /* ── 18+ Quick Confirm ── */
@@ -1077,8 +1083,8 @@ body {
   gap: 16px;
 }
 .age-confirm-actions .age-gate-btn {
-  min-width: 160px;
-  padding: 12px 28px;
+  min-width: 180px;
+  padding: 16px 28px;
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -2030,9 +2036,10 @@ body {
   .arrival-glow-magenta { width: 250px; height: 250px; }
   .age-gate-title-cantina { font-size: 1.5rem; letter-spacing: 0.25em; }
   .age-gate-title-virtual { font-size: 0.8rem; letter-spacing: 0.4em; }
-  .age-gate-btn { padding: 12px 36px; min-width: 170px; }
+  .age-gate-btn { padding: 14px 36px; min-width: 180px; }
   .arrival-silhouette { width: 120px; height: 200px; }
-  .arrival-copy { font-size: 13px; padding: 0 16px; }
+  .arrival-copy { font-size: 15px; padding: 0 16px; line-height: 1.9; }
+  .arrival-copy-closing { font-size: 14px; }
 
   .compliance-footer {
     flex-direction: column;
