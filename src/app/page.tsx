@@ -75,7 +75,7 @@ function AgeGate({
   onLeave: () => void;
 }) {
   const [step, setStep] = useState<'landing' | 'confirm'>('landing');
-  const { t } = useLang();
+  const { t, lang, onToggleLang } = useLang();
 
   if (step === 'confirm') {
     return (
