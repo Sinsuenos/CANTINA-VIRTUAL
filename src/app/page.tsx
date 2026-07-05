@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect, useRef, useCallback, useMemo } from 'react';
+import { useState, useRef, useCallback, useMemo } from 'react';
 import { DISTRICTS } from '@/data/rooms';
 import { MariposaCenterpiece } from '@/components/cantina/MariposaCenterpiece';
 import { SmokeParticles } from '@/components/cantina/SmokeParticles';
@@ -225,23 +225,10 @@ function Cantina() {
 /* ─── HOME (Entry Point) ─── */
 export default function Home() {
   const [ageConfirmed, setAgeConfirmed] = useState(false);
-  const [ageChecked, setAgeChecked] = useState(false);
-
-  useEffect(() => {
-    const confirmed = localStorage.getItem('cv-age-confirmed');
-    if (confirmed === 'true') {
-      // eslint-disable-next-line react-hooks/set-state-in-effect -- SSR-safe localStorage read
-      setAgeConfirmed(true);
-    }
-    setAgeChecked(true);
-  }, []);
 
   const handleAgeConfirm = useCallback(() => {
-    localStorage.setItem('cv-age-confirmed', 'true');
     setAgeConfirmed(true);
   }, []);
-
-  if (!ageChecked) return null;
 
   return (
     <>
