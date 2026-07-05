@@ -106,7 +106,7 @@ export const DISTRICTS: District[] = [
   },
   {
     id: 'fan-sites',
-    name: 'Fan Sites',
+    name: 'Fansites',
     subtitle: 'Calles Ocultas',
     neonClass: 'neon-rose',
     dividerClass: 'divider-rose',
@@ -118,7 +118,7 @@ export const DISTRICTS: District[] = [
   },
   {
     id: 'pay-sites',
-    name: 'Pay Sites',
+    name: 'Paysites',
     subtitle: 'Terraza VIP',
     neonClass: 'neon-emerald',
     dividerClass: 'divider-emerald',

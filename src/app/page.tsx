@@ -1,13 +1,12 @@
 'use client';
 
-import { useState, useRef, useCallback, useMemo } from 'react';
+import { useState, useRef, useCallback, useMemo, useEffect } from 'react';
 import { DISTRICTS } from '@/data/rooms';
 import { LangProvider, useLang } from '@/lib/i18n';
 import { MariposaCenterpiece } from '@/components/cantina/MariposaCenterpiece';
 import { SmokeParticles } from '@/components/cantina/SmokeParticles';
 import { SidebarHub } from '@/components/cantina/SidebarHub';
 import { DistrictScene } from '@/components/cantina/DistrictScene';
-import { NectarHUD } from '@/components/cantina/NectarHUD';
 import type { Lang } from '@/lib/i18n';
 
 /* ─── Arrival Dust Particles ─── */
@@ -206,8 +205,6 @@ function HubScreen({
               key={district.id}
               className="hub-card"
               style={{
-                '--hub-color': district.textColor,
-                '--hub-border': district.borderColor,
                 animationDelay: `${index * 0.07}s`,
               } as React.CSSProperties}
               onClick={() => onCategorySelect(district.id)}
@@ -281,7 +278,6 @@ function Cantina({
 
   return (
     <div className="cantina-layout">
-      <NectarHUD />
       <SidebarHub
         activeDistrict={activeDistrict}
         onDistrictChange={handleDistrictChange}
@@ -345,14 +341,32 @@ function Cantina({
 /* ═══════════════════════════════════════════════════════════════
    HOME — Entry Point
    Flow: Landing → 18+ Confirm → HUB → Category
+   Uses browser history API for real back navigation
    ═══════════════════════════════════════════════════════════════ */
 export default function Home() {
   const [ageConfirmed, setAgeConfirmed] = useState(false);
   const [activeDistrict, setActiveDistrict] = useState<string | null>(null);
-  const [lang, setLang] = useState<Lang>('en');
+  const [lang, setLang] = useState<Lang>('es');
+
+  /* ── Browser history integration ── */
+  useEffect(() => {
+    const handlePopState = (e: PopStateEvent) => {
+      const state = e.state as { screen?: string } | null;
+      if (!state || !state.screen || state.screen === 'landing') {
+        setAgeConfirmed(false);
+        setActiveDistrict(null);
+      } else if (state.screen === 'hub') {
+        setAgeConfirmed(true);
+        setActiveDistrict(null);
+      }
+    };
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
 
   const handleAgeConfirm = useCallback(() => {
     setAgeConfirmed(true);
+    window.history.pushState({ screen: 'hub' }, '');
   }, []);
 
   const handleToggleLang = useCallback(() => {
@@ -361,14 +375,16 @@ export default function Home() {
 
   const handleCategorySelect = useCallback((id: string) => {
     setActiveDistrict(id);
+    window.history.pushState({ screen: 'category', id }, '');
   }, []);
 
   const handleBackToHub = useCallback(() => {
     setActiveDistrict(null);
+    window.history.pushState({ screen: 'hub' }, '');
   }, []);
 
   const handleBackToLanding = useCallback(() => {
-    setAgeConfirmed(false);
+    window.history.back();
   }, []);
 
   return (

@@ -2,6 +2,7 @@
 
 import { DISTRICTS, type District } from '@/data/rooms';
 import { useLang } from '@/lib/i18n';
+import { NectarHUD } from './NectarHUD';
 
 interface SidebarHubProps {
   activeDistrict: string;
@@ -14,6 +15,11 @@ export function SidebarHub({ activeDistrict, onDistrictChange, onBackToHub }: Si
 
   return (
     <nav className="sidebar-hub">
+      {/* Nectar counter at top */}
+      <div className="sidebar-nectar-wrap">
+        <NectarHUD />
+      </div>
+
       <div className="sidebar-brand">
         <span className="sidebar-brand-name">Cantina</span>
         <span className="sidebar-brand-sub">Virtual</span>
@@ -40,21 +46,10 @@ export function SidebarHub({ activeDistrict, onDistrictChange, onBackToHub }: Si
               <button
                 onClick={() => onDistrictChange(district.id)}
                 className={`sidebar-item${isActive ? ' active' : ''}`}
-                style={{
-                  '--district-color': district.textColor,
-                } as React.CSSProperties}
               >
-                <span
-                  className="sidebar-dot"
-                  style={{
-                    background: isActive ? district.textColor : 'var(--text-dim)',
-                    boxShadow: isActive ? `0 0 8px ${district.borderColor}` : 'none',
-                  }}
-                />
                 <span className="sidebar-item-name">
                   {t[`district.${district.id}.name`] || district.name}
                 </span>
-                <span className="sidebar-item-sub">{district.subtitle}</span>
               </button>
             </li>
           );
