@@ -721,7 +721,8 @@ body {
   position: relative;
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .arrival-bg {
@@ -905,13 +906,12 @@ body {
 
 /* ── Language Toggle ── */
 .lang-toggle {
-  position: relative;
+  position: absolute;
   z-index: 20;
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 6px;
-  padding: 6px 12px;
+  gap: 8px;
+  padding: 8px 14px;
   background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
@@ -921,8 +921,6 @@ body {
   cursor: pointer;
   transition: color 0.3s ease, border-color 0.3s ease, background 0.3s ease;
   font-family: inherit;
-  margin-bottom: 20px;
-  width: fit-content;
 }
 
 .lang-toggle:hover {
@@ -2019,6 +2017,9 @@ body {
 }
 
 .hub-lang-toggle {
+  position: absolute;
+  top: 24px;
+  right: 28px;
   z-index: 20;
 }
 
