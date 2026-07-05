@@ -1814,6 +1814,11 @@ body {
   color: inherit;
   background: #0a0e17;
 }
+.banner-jerkmate {
+  height: 100%;
+  width: 100%;
+  aspect-ratio: 3/1;
+}
 .banner-jerkmate img {
   width: 100%;
   height: 100%;
