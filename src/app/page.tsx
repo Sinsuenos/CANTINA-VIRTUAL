@@ -61,19 +61,21 @@ function ArrivalScene({ children }: { children: React.ReactNode }) {
       <div className="arrival-silhouette" />
       <div className="arrival-reflection" />
       <div className="arrival-vignette" />
-      <button
-        className="lang-toggle"
-        onClick={onToggleLang}
-        aria-label={lang === 'en' ? 'Cambiar a español' : 'Switch to English'}
-      >
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="12" cy="12" r="10" />
-          <path d="M2 12h20" />
-          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-        </svg>
-        <span className="lang-toggle-label">{lang === 'en' ? 'ES' : 'EN'}</span>
-      </button>
-      <div className="arrival-content">{children}</div>
+      <div className="arrival-content">
+        <button
+          className="lang-toggle"
+          onClick={onToggleLang}
+          aria-label={lang === 'en' ? 'Cambiar a español' : 'Switch to English'}
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M2 12h20" />
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+          </svg>
+          <span className="lang-toggle-label">{lang === 'en' ? 'EN' : 'ES'}</span>
+        </button>
+        {children}
+      </div>
     </div>
   );
 }
@@ -176,20 +178,20 @@ function HubScreen({
       <div className="hub-glow hub-glow-magenta" />
       <div className="hub-vignette" />
 
-      <button
-        className="lang-toggle hub-lang-toggle"
-        onClick={onToggleLang}
-        aria-label={lang === 'en' ? 'Cambiar a español' : 'Switch to English'}
-      >
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="12" cy="12" r="10" />
-          <path d="M2 12h20" />
-          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-        </svg>
-        <span className="lang-toggle-label">{lang === 'en' ? 'ES' : 'EN'}</span>
-      </button>
-
       <div className="hub-content">
+        <button
+          className="lang-toggle hub-lang-toggle"
+          onClick={onToggleLang}
+          aria-label={lang === 'en' ? 'Cambiar a español' : 'Switch to English'}
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M2 12h20" />
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+          </svg>
+          <span className="lang-toggle-label">{lang === 'en' ? 'EN' : 'ES'}</span>
+        </button>
+
         <div className="hub-brand">
           <span className="hub-brand-main">CANTINA</span>
           <span className="hub-brand-sub">VIRTUAL</span>

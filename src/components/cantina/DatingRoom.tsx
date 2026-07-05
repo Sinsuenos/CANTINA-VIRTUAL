@@ -68,7 +68,6 @@ export function DatingRoom({ district }: DatingRoomProps) {
       <div className="dating-room-content">
         {/* Header */}
         <div className="dating-room-header">
-          <p className="dating-room-locale">{district.subtitle}</p>
           <h2 className={`dating-room-title ${district.neonClass}`}>
             {t[`district.${district.id}.name`] || district.name}
           </h2>
@@ -94,9 +93,6 @@ export function DatingRoom({ district }: DatingRoomProps) {
               />
               <div className="dating-encounter-body">
                 <span className="dating-encounter-name">{resident.name}</span>
-                <span className="dating-encounter-role">
-                  {t[`resident.${resident.id}.subtitle`] || resident.subtitle}
-                </span>
                 <p className="dating-encounter-desc">
                   {t[`resident.${resident.id}.desc`] || resident.description}
                 </p>
@@ -117,13 +113,6 @@ export function DatingRoom({ district }: DatingRoomProps) {
           <div className="dating-offer-card" />
           <div className="dating-offer-card" />
           <div className="dating-offer-card" />
-        </div>
-
-        {/* Bottom ambient strip — room signature */}
-        <div className="dating-room-signature">
-          <div className="dating-signature-line" />
-          <span className="dating-signature-text">Sinaloa Sueños</span>
-          <div className="dating-signature-line" />
         </div>
       </div>
     </div>

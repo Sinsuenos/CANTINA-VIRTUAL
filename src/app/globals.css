@@ -120,11 +120,11 @@ body {
   0%, 100% { text-shadow: 0 1px 4px rgba(10,14,23,0.9), 0 0 6px currentColor, 0 0 16px currentColor, 0 0 32px currentColor; }
   50% { text-shadow: 0 1px 4px rgba(10,14,23,0.9), 0 0 3px currentColor, 0 0 8px currentColor, 0 0 18px currentColor; }
 }
-.neon-amber { color: var(--amber); animation: neonPulse 2s ease-in-out infinite; }
-.neon-purple { color: var(--purple); animation: neonPulse 2.5s ease-in-out infinite 0.3s; }
-.neon-cyan { color: var(--cyan); animation: neonPulse 2s ease-in-out infinite 0.6s; }
-.neon-emerald { color: var(--emerald); animation: neonPulse 2s ease-in-out infinite 0.9s; }
-.neon-rose { color: var(--rose); animation: neonPulse 2.5s ease-in-out infinite 1.2s; }
+.neon-amber { color: var(--amber); }
+.neon-purple { color: var(--purple); }
+.neon-cyan { color: var(--cyan); }
+.neon-emerald { color: var(--emerald); }
+.neon-rose { color: var(--rose); }
 
 /* ── Floating Butterflies ── */
 @keyframes butterflyFloat {
@@ -726,10 +726,9 @@ body {
 
 .arrival-bg {
   position: absolute;
-  inset: -10px;
+  inset: 0;
   background: url('/cantina-arrival.png') center center / cover no-repeat;
   filter: brightness(1.0);
-  animation: arrivalBgBreath 25s ease-in-out infinite;
   z-index: 0;
 }
 
@@ -906,14 +905,13 @@ body {
 
 /* ── Language Toggle ── */
 .lang-toggle {
-  position: absolute;
-  top: 24px;
-  right: 28px;
+  position: relative;
   z-index: 20;
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 8px 14px;
+  justify-content: center;
+  gap: 6px;
+  padding: 6px 12px;
   background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
@@ -923,6 +921,8 @@ body {
   cursor: pointer;
   transition: color 0.3s ease, border-color 0.3s ease, background 0.3s ease;
   font-family: inherit;
+  margin-bottom: 20px;
+  width: fit-content;
 }
 
 .lang-toggle:hover {
@@ -1142,7 +1142,6 @@ body {
   background-size: cover;
   background-position: center;
   opacity: 0.15;
-  animation: roomBgBreathe 25s ease-in-out infinite alternate;
 }
 
 @keyframes roomBgBreathe {
@@ -1550,7 +1549,6 @@ body {
   background-size: cover;
   background-position: center;
   opacity: 0.12;
-  animation: roomBgBreathe 30s ease-in-out infinite alternate-reverse;
 }
 
 /* Gradient overlay — deep purple/crimson tones */
@@ -1967,10 +1965,9 @@ body {
 
 .hub-bg {
   position: absolute;
-  inset: -10px;
+  inset: 0;
   background: url('/hub-bg.png') center center / cover no-repeat;
   filter: brightness(1.0) contrast(1.05);
-  animation: hubBgBreath 25s ease-in-out infinite;
   z-index: 0;
 }
 
@@ -2022,9 +2019,6 @@ body {
 }
 
 .hub-lang-toggle {
-  position: absolute;
-  top: 24px;
-  right: 28px;
   z-index: 20;
 }
 
@@ -2111,8 +2105,6 @@ body {
   cursor: pointer;
   font-family: inherit;
   transition: all 0.4s ease;
-  animation: hubCardIn 0.5s ease forwards;
-  opacity: 0;
   min-height: 100px;
 }
 
@@ -2357,7 +2349,7 @@ body {
   .livecams-glow-deep { width: 220px; height: 220px; }
   .livecams-glow-crimson { width: 150px; height: 150px; }
 
-  .lang-toggle { top: 16px; right: 16px; padding: 6px 10px; gap: 6px; }
+  .lang-toggle { padding: 5px 10px; gap: 5px; margin-bottom: 12px; }
   .lang-toggle svg { width: 16px; height: 16px; }
   .lang-toggle-label { font-size: 10px; }
 

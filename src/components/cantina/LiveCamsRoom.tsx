@@ -63,7 +63,6 @@ export function LiveCamsRoom({ district }: LiveCamsRoomProps) {
 
       <div className="livecams-room-content">
         <div className="livecams-room-header">
-          <p className="livecams-room-locale">{district.subtitle}</p>
           <h2 className={`livecams-room-title ${district.neonClass}`}>
             {t[`district.${district.id}.name`] || district.name}
           </h2>
@@ -87,9 +86,6 @@ export function LiveCamsRoom({ district }: LiveCamsRoomProps) {
               />
               <div className="livecams-encounter-body">
                 <span className="livecams-encounter-name">{resident.name}</span>
-                <span className="livecams-encounter-role">
-                  {t[`resident.${resident.id}.subtitle`] || resident.subtitle}
-                </span>
                 <p className="livecams-encounter-desc">
                   {t[`resident.${resident.id}.desc`] || resident.description}
                 </p>
@@ -109,12 +105,6 @@ export function LiveCamsRoom({ district }: LiveCamsRoomProps) {
           <div className="livecams-offer-card" />
           <div className="livecams-offer-card" />
           <div className="livecams-offer-card" />
-        </div>
-
-        <div className="livecams-room-signature">
-          <div className="livecams-signature-line" />
-          <span className="livecams-signature-text">Golfo Privado</span>
-          <div className="livecams-signature-line" />
         </div>
       </div>
     </div>

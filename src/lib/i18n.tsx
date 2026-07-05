@@ -31,13 +31,13 @@ export const T: Record<Lang, Record<string, string>> = {
     nectarTeaser: 'Earn nectar. Spend it. Come back for more.',
 
     /* ── District names ── */
-    'district.dating.name': 'Dating',
+    'district.dating.name': 'Dates',
     'district.live-cams.name': 'Live Cams',
-    'district.ai-companions.name': 'AI Companions',
+    'district.ai-companions.name': 'AI Partners',
     'district.fan-sites.name': 'Fansites',
     'district.pay-sites.name': 'Paysites',
     'district.niche.name': 'Niche',
-    'district.gaming.name': 'Gaming',
+    'district.gaming.name': 'Video Games',
     'district.our-mission.name': 'Our Mission',
 
     /* ── District descriptions ── */
@@ -59,16 +59,10 @@ export const T: Record<Lang, Record<string, string>> = {
       'Why the cantina exists. What it stands for. The honest version.',
 
     /* ── Resident subtitles ── */
-    'resident.lina-rose.subtitle': 'Resident of Sinaloa Sueños',
-    'resident.ava-harrington.subtitle': 'Evening residency, warm light',
-    'resident.girlfriendgpt.subtitle': 'Summer residency, Perla Puente',
-    'resident.isla-king.subtitle': 'Private residency, Golfo Privado',
+    'resident.girlfriendgpt.subtitle': '',
+    'resident.isla-king.subtitle': '',
 
     /* ── Resident descriptions ── */
-    'resident.lina-rose.desc':
-      'She plays guitar by the window. The tequila is already poured.',
-    'resident.ava-harrington.desc':
-      'The bar stool closest to the candle. Always reserved.',
     'resident.girlfriendgpt.desc':
       'She remembers every conversation. Every name.',
     'resident.isla-king.desc': 'The back booth. Knock twice.',
@@ -110,14 +104,14 @@ export const T: Record<Lang, Record<string, string>> = {
     nectarTeaser: 'Gana néctar. Gástalo. Regresa por más.',
 
     /* ── District names ── */
-    'district.dating.name': 'Citas',
-    'district.live-cams.name': 'Cámaras en Vivo',
-    'district.ai-companions.name': 'Compañeras IA',
+    'district.dating.name': 'Dates',
+    'district.live-cams.name': 'Live Cams',
+    'district.ai-companions.name': 'AI Partners',
     'district.fan-sites.name': 'Fansites',
     'district.pay-sites.name': 'Paysites',
-    'district.niche.name': 'Categorías Especiales',
-    'district.gaming.name': 'Videojuegos',
-    'district.our-mission.name': 'Nuestra Misión',
+    'district.niche.name': 'Niche',
+    'district.gaming.name': 'Video Games',
+    'district.our-mission.name': 'Our Mission',
 
     /* ── District descriptions ── */
     'district.dating.desc':
@@ -138,16 +132,10 @@ export const T: Record<Lang, Record<string, string>> = {
       'Por qué existe la cantina. Lo que representa. La versión honesta.',
 
     /* ── Resident subtitles ── */
-    'resident.lina-rose.subtitle': 'Residente de Sinaloa Sueños',
-    'resident.ava-harrington.subtitle': 'Residencia nocturna, luz cálida',
-    'resident.girlfriendgpt.subtitle': 'Residencia de verano, Perla Puente',
-    'resident.isla-king.subtitle': 'Residencia privada, Golfo Privado',
+    'resident.girlfriendgpt.subtitle': '',
+    'resident.isla-king.subtitle': '',
 
     /* ── Resident descriptions ── */
-    'resident.lina-rose.desc':
-      'Toca guitarra junto a la ventana. El tequila ya está servido.',
-    'resident.ava-harrington.desc':
-      'El taburete más cerca de la vela. Siempre reservado.',
     'resident.girlfriendgpt.desc':
       'Recuerda cada conversación. Cada nombre.',
     'resident.isla-king.desc': 'La mesa de atrás. Toca dos veces.',

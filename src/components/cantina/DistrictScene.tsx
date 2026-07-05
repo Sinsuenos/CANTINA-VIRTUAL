@@ -38,12 +38,6 @@ export function DistrictScene({ district }: DistrictSceneProps) {
       <div className="district-scene-content">
         {/* District header */}
         <div className="district-header">
-          <p
-            className="district-subtitle"
-            style={{ color: 'var(--text-muted)' }}
-          >
-            {district.subtitle}
-          </p>
           <h2 className={`district-name ${district.neonClass}`}>
             {t[`district.${district.id}.name`] || district.name}
           </h2>

@@ -12,31 +12,17 @@ export interface Resident {
 }
 
 export const RESIDENTS: Record<string, Resident> = {
-  'lina-rose': {
-    id: 'lina-rose',
-    name: 'Lina Rose',
-    subtitle: 'Resident of Sinaloa Sueños',
-    description: 'She plays guitar by the window. The tequila is already poured.',
-    image: 'https://sfile.chatglm.cn/images-ppt/efdf6cbf206b.jpg',
-  },
-  'ava-harrington': {
-    id: 'ava-harrington',
-    name: 'Ava Harrington',
-    subtitle: 'Evening residency, warm light',
-    description: 'The bar stool closest to the candle. Always reserved.',
-    image: 'https://sfile.chatglm.cn/images-ppt/8c23e2c5aa19.jpg',
-  },
   'girlfriendgpt': {
     id: 'girlfriendgpt',
     name: 'GirlfriendGPT',
-    subtitle: 'Summer residency, Perla Puente',
+    subtitle: '',
     description: 'She remembers every conversation. Every name.',
     image: 'https://sfile.chatglm.cn/images-ppt/45b22e591c90.png',
   },
   'isla-king': {
     id: 'isla-king',
     name: 'Isla King',
-    subtitle: 'Private residency, Golfo Privado',
+    subtitle: '',
     description: 'The back booth. Knock twice.',
     image: 'https://sfile.chatglm.cn/images-ppt/8e81418a549d.jpg',
   },
@@ -63,23 +49,20 @@ export interface DistrictEncounter {
 export const DISTRICTS: District[] = [
   {
     id: 'dating',
-    name: 'Dating',
-    subtitle: 'Sinaloa Sueños',
+    name: 'Dates',
+    subtitle: '',
     neonClass: 'neon-amber',
     dividerClass: 'divider-amber',
     description: 'Faint guitar. Tequila slides across the bar. Someone is always watching from the corner.',
     borderColor: 'rgba(212,160,23,0.3)',
     textColor: 'var(--amber)',
     bgImage: '/dating-room.jpg',
-    encounters: [
-      { residentId: 'lina-rose' },
-      { residentId: 'ava-harrington' },
-    ],
+    encounters: [],
   },
   {
     id: 'live-cams',
     name: 'Live Cams',
-    subtitle: 'Golfo Privado',
+    subtitle: '',
     neonClass: 'neon-purple',
     dividerClass: 'divider-purple',
     description: 'The deep alcove. Red lights behind frosted glass. You know what you want.',
@@ -92,8 +75,8 @@ export const DISTRICTS: District[] = [
   },
   {
     id: 'ai-companions',
-    name: 'AI Companions',
-    subtitle: 'Perla Puente',
+    name: 'AI Partners',
+    subtitle: '',
     neonClass: 'neon-cyan',
     dividerClass: 'divider-cyan',
     description: 'Where the cantina meets the coast. Neon hums behind every screen.',
@@ -107,7 +90,7 @@ export const DISTRICTS: District[] = [
   {
     id: 'fan-sites',
     name: 'Fansites',
-    subtitle: 'Calles Ocultas',
+    subtitle: '',
     neonClass: 'neon-rose',
     dividerClass: 'divider-rose',
     description: 'The creators have their own corner. Autographs optional.',
@@ -119,7 +102,7 @@ export const DISTRICTS: District[] = [
   {
     id: 'pay-sites',
     name: 'Paysites',
-    subtitle: 'Terraza VIP',
+    subtitle: '',
     neonClass: 'neon-emerald',
     dividerClass: 'divider-emerald',
     description: 'The velvet rope. Beyond it, the night costs a little more.',
@@ -131,7 +114,7 @@ export const DISTRICTS: District[] = [
   {
     id: 'niche',
     name: 'Niche',
-    subtitle: 'Salas Escondidas',
+    subtitle: '',
     neonClass: 'neon-amber',
     dividerClass: 'divider-amber',
     description: 'The back rooms. The hidden tables. Where the regulars know each other\'s names.',
@@ -142,8 +125,8 @@ export const DISTRICTS: District[] = [
   },
   {
     id: 'gaming',
-    name: 'Gaming',
-    subtitle: 'Arcade Nocturno',
+    name: 'Video Games',
+    subtitle: '',
     neonClass: 'neon-cyan',
     dividerClass: 'divider-cyan',
     description: 'The cabinets glow in the dark. Someone is already on the high score screen.',
@@ -155,7 +138,7 @@ export const DISTRICTS: District[] = [
   {
     id: 'our-mission',
     name: 'Our Mission',
-    subtitle: 'La Verdad',
+    subtitle: '',
     neonClass: 'neon-purple',
     dividerClass: 'divider-purple',
     description: 'Why the cantina exists. What it stands for. The honest version.',
