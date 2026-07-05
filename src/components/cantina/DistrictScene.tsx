@@ -24,7 +24,7 @@ export function DistrictScene({ district }: DistrictSceneProps) {
 
   /* ── Default generic scene (unchanged for all other districts) ── */
   return (
-    <div className="district-scene" key={district.id}>
+    <div className="district-scene" key={district.id} data-district={district.id}>
       {/* Atmospheric background */}
       <div
         className="district-scene-bg"
