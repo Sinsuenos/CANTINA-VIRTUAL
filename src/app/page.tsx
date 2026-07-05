@@ -224,7 +224,7 @@ function Cantina() {
           <div className="nectar-hud-icon">🍯</div>
           <span
             className="text-xs tracking-[0.15em] uppercase"
-            style={{ color: 'var(--text-dim)' }}
+            style={{ color: 'var(--text-muted)' }}
           >
             {t.nectarTeaser}
           </span>
