@@ -4,14 +4,17 @@ import { useLang } from '@/lib/i18n';
 interface EncounterCardProps {
   resident: Resident;
   ctaColor: string;
+  href?: string;
 }
 
-export function EncounterCard({ resident, ctaColor }: EncounterCardProps) {
+export function EncounterCard({ resident, ctaColor, href }: EncounterCardProps) {
   const { t } = useLang();
 
   return (
     <a
-      href="#"
+      href={href || '#'}
+      target={href ? '_blank' : undefined}
+      rel={href ? 'noopener noreferrer' : undefined}
       className="encounter-card no-underline"
     >
       <div

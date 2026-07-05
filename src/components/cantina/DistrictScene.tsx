@@ -61,6 +61,7 @@ export function DistrictScene({ district }: DistrictSceneProps) {
                   key={encounter.residentId}
                   resident={resident}
                   ctaColor={district.textColor}
+                  href={encounter.href}
                 />
               );
             })

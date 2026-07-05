@@ -44,6 +44,7 @@ export interface District {
 
 export interface DistrictEncounter {
   residentId: string;
+  href?: string;
 }
 
 export const DISTRICTS: District[] = [
@@ -84,7 +85,10 @@ export const DISTRICTS: District[] = [
     textColor: 'var(--cyan)',
     bgImage: 'https://sfile.chatglm.cn/images-ppt/0eb8607628ce.jpg',
     encounters: [
-      { residentId: 'girlfriendgpt' },
+      {
+        residentId: 'girlfriendgpt',
+        href: 'https://t.vlmai-1.com/413627/10046/38605?aff_sub=AI&source=Cantina&aff_sub5=SF_006OG000004lmDN',
+      },
     ],
   },
   {
