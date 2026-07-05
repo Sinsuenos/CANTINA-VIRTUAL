@@ -72,39 +72,25 @@ export function LiveCamsRoom({ district }: LiveCamsRoomProps) {
           </p>
         </div>
 
-        <div className="livecams-hero-offer">
-          <div className="livecams-hero-image" />
-          <div className="livecams-hero-body" />
-        </div>
-
         <div className="livecams-encounters">
-          {residents.map((resident) => (
-            <a href="#" key={resident.id} className="livecams-encounter-card no-underline">
-              <div
-                className="livecams-encounter-image"
-                style={{ backgroundImage: `url('${resident.image}')` }}
-              />
-              <div className="livecams-encounter-body">
-                <span className="livecams-encounter-name">{resident.name}</span>
-                <p className="livecams-encounter-desc">
-                  {t[`resident.${resident.id}.desc`] || resident.description}
-                </p>
-                <span
-                  className="livecams-encounter-cta"
-                  style={{ borderColor: 'var(--purple)', color: 'var(--purple)' }}
-                >
-                  {t.ctaPrivate}
-                </span>
-              </div>
-            </a>
-          ))}
-        </div>
-
-        <div className="livecams-offer-grid">
-          <div className="livecams-offer-card" />
-          <div className="livecams-offer-card" />
-          <div className="livecams-offer-card" />
-          <div className="livecams-offer-card" />
+          {residents.length > 0 ? (
+            residents.map((resident) => (
+              <a href="#" key={resident.id} className="livecams-encounter-card no-underline">
+                <div
+                  className="livecams-encounter-image"
+                  style={{ backgroundImage: `url('${resident.image}')` }}
+                />
+                <div className="livecams-encounter-body">
+                  <span className="livecams-encounter-name">{resident.name}</span>
+                  <p className="livecams-encounter-desc">
+                    {t[`resident.${resident.id}.desc`] || resident.description}
+                  </p>
+                </div>
+              </a>
+            ))
+          ) : (
+            <p className="district-empty">{t.emptyResidents}</p>
+          )}
         </div>
       </div>
     </div>

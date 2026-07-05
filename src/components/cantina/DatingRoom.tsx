@@ -77,42 +77,26 @@ export function DatingRoom({ district }: DatingRoomProps) {
           </p>
         </div>
 
-        {/* Featured Offer Hero — large cinematic banner slot */}
-        <div className="dating-hero-offer">
-          <div className="dating-hero-image" />
-          <div className="dating-hero-body" />
-        </div>
-
         {/* Encounter Cards — residents of this room */}
         <div className="dating-encounters">
-          {residents.map((resident) => (
-            <a href="#" key={resident.id} className="dating-encounter-card no-underline">
-              <div
-                className="dating-encounter-image"
-                style={{ backgroundImage: `url('${resident.image}')` }}
-              />
-              <div className="dating-encounter-body">
-                <span className="dating-encounter-name">{resident.name}</span>
-                <p className="dating-encounter-desc">
-                  {t[`resident.${resident.id}.desc`] || resident.description}
-                </p>
-                <span
-                  className="dating-encounter-cta"
-                  style={{ borderColor: 'var(--amber)', color: 'var(--amber)' }}
-                >
-                  {t.ctaDrink}
-                </span>
-              </div>
-            </a>
-          ))}
-        </div>
-
-        {/* Offer Grid */}
-        <div className="dating-offer-grid">
-          <div className="dating-offer-card" />
-          <div className="dating-offer-card" />
-          <div className="dating-offer-card" />
-          <div className="dating-offer-card" />
+          {residents.length > 0 ? (
+            residents.map((resident) => (
+              <a href="#" key={resident.id} className="dating-encounter-card no-underline">
+                <div
+                  className="dating-encounter-image"
+                  style={{ backgroundImage: `url('${resident.image}')` }}
+                />
+                <div className="dating-encounter-body">
+                  <span className="dating-encounter-name">{resident.name}</span>
+                  <p className="dating-encounter-desc">
+                    {t[`resident.${resident.id}.desc`] || resident.description}
+                  </p>
+                </div>
+              </a>
+            ))
+          ) : (
+            <p className="district-empty">{t.emptyResidents}</p>
+          )}
         </div>
       </div>
     </div>

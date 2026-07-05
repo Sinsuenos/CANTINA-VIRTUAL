@@ -23,12 +23,6 @@ export function EncounterCard({ resident, ctaColor }: EncounterCardProps) {
         <p className="encounter-card-desc">
           {t[`resident.${resident.id}.desc`] || resident.description}
         </p>
-        <span
-          className="cta-bordered"
-          style={{ border: `1px solid ${ctaColor}`, color: ctaColor }}
-        >
-          {t.ctaDrink}
-        </span>
       </div>
     </a>
   );
