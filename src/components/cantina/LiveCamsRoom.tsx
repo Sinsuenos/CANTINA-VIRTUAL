@@ -89,12 +89,6 @@ export function LiveCamsRoom({ district }: LiveCamsRoomProps) {
                   className="livecams-encounter-image"
                   style={{ backgroundImage: `url('${resident.image}')` }}
                 />
-                <div className="livecams-encounter-body">
-                  <span className="livecams-encounter-name">{resident.name}</span>
-                  <p className="livecams-encounter-desc">
-                    {t[`resident.${resident.id}.desc`] || resident.description}
-                  </p>
-                </div>
               </a>
             ))
           ) : (
