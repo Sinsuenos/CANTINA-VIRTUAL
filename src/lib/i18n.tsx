@@ -60,12 +60,9 @@ export const T: Record<Lang, Record<string, string>> = {
 
     /* ── Resident subtitles ── */
     'resident.girlfriendgpt.subtitle': '',
-    'resident.isla-king.subtitle': '',
-
     /* ── Resident descriptions ── */
     'resident.girlfriendgpt.desc':
       'She remembers every conversation. Every name.',
-    'resident.isla-king.desc': 'The back booth. Knock twice.',
     'resident.dating-encounter.desc':
       'Someone is waiting. The bar is open.',
     'resident.cams-banner.desc':
@@ -137,12 +134,9 @@ export const T: Record<Lang, Record<string, string>> = {
 
     /* ── Resident subtitles ── */
     'resident.girlfriendgpt.subtitle': '',
-    'resident.isla-king.subtitle': '',
-
     /* ── Resident descriptions ── */
     'resident.girlfriendgpt.desc':
       'Recuerda cada conversación. Cada nombre.',
-    'resident.isla-king.desc': 'La mesa de atrás. Toca dos veces.',
     'resident.dating-encounter.desc':
       'Alguien te espera. La barra está abierta.',
     'resident.cams-banner.desc':

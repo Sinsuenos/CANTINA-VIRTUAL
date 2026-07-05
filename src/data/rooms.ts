@@ -19,13 +19,6 @@ export const RESIDENTS: Record<string, Resident> = {
     description: 'She remembers every conversation. Every name.',
     image: 'https://sfile.chatglm.cn/images-ppt/45b22e591c90.png',
   },
-  'isla-king': {
-    id: 'isla-king',
-    name: 'Isla King',
-    subtitle: '',
-    description: 'The back booth. Knock twice.',
-    image: 'https://sfile.chatglm.cn/images-ppt/8e81418a549d.jpg',
-  },
   'dating-encounter': {
     id: 'dating-encounter',
     name: 'Real Connections',
@@ -90,8 +83,10 @@ export const DISTRICTS: District[] = [
     textColor: 'var(--purple)',
     bgImage: '/livecams-room.png',
     encounters: [
-      { residentId: 'isla-king' },
-      { residentId: 'cams-banner' },
+      {
+        residentId: 'cams-banner',
+        href: 'https://t.mbjrkmms.com/413627/8780/32514?aff_sub=CAMS&source=CANTINA&po=6533&aff_sub5=SF_006OG000004lmDN',
+      },
     ],
   },
   {
