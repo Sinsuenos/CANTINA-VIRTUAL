@@ -52,3 +52,29 @@ Stage Summary:
 - Affiliate URL preserved exactly: https://t.vlmai-1.com/413627/10046/38605?aff_sub=AI&source=Cantina&aff_sub5=SF_006OG000004lmDN
 - Card opens in new tab with noopener noreferrer
 - No routing, layout, styling, translations, backgrounds, or navigation modified
+
+---
+Task ID: 2
+Agent: main
+Task: Add dating offer card with affiliate link and cinematic artwork
+
+Work Log:
+- Generated cinematic couple artwork (1024x1024) via z-ai image generation
+- Added 'dating-encounter' resident to RESIDENTS with new artwork
+- Added encounter with exact affiliate URL to dating district
+- Updated DatingRoom to read href from encounters (same pattern as EncounterCard)
+- Added EN/ES i18n translations for dating resident description
+- Build succeeded with zero errors
+- Committed and pushed to GitHub main (2275ac8)
+- Vercel auto-deploy triggered
+- Production verified:
+  - EN "DATES": card shows "REAL CONNECTIONS / Someone is waiting. The bar is open." with correct affiliate URL
+  - ES "CITAS": card shows "REAL CONNECTIONS / Alguien te espera. La barra está abierta." with identical URL
+  - Affiliate URL preserved exactly in both languages
+  - No white nav text, no layout/styling regressions
+
+Stage Summary:
+- 4 files changed: rooms.ts, DatingRoom.tsx, i18n.tsx, dating-offer.png (new)
+- Affiliate URL: https://t.acust-7.com/413627/3785/0?po=6456&aff_sub5=SF_006OG000004lmDN
+- Card template consistent with AI Partners wing (same encounter/href pattern)
+- No routing, layout, navigation, styling, backgrounds, or overall visual design modified
