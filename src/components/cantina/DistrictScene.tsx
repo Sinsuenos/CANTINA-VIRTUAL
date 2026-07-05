@@ -1,6 +1,7 @@
 'use client';
 
 import { RESIDENTS, type District } from '@/data/rooms';
+import { useLang } from '@/lib/i18n';
 import { EncounterCard } from './EncounterCard';
 import { DatingRoom } from './DatingRoom';
 import { LiveCamsRoom } from './LiveCamsRoom';
@@ -10,6 +11,8 @@ interface DistrictSceneProps {
 }
 
 export function DistrictScene({ district }: DistrictSceneProps) {
+  const { t } = useLang();
+
   /* ── Immersive room overrides ── */
   if (district.id === 'dating') {
     return <DatingRoom district={district} />;
@@ -42,14 +45,14 @@ export function DistrictScene({ district }: DistrictSceneProps) {
             {district.subtitle}
           </p>
           <h2 className={`district-name ${district.neonClass}`}>
-            {district.name}
+            {t[`district.${district.id}.name`] || district.name}
           </h2>
           <div className={`district-divider ${district.dividerClass}`} />
           <p
             className="district-description"
             style={{ color: 'var(--text-muted)' }}
           >
-            {district.description}
+            {t[`district.${district.id}.desc`] || district.description}
           </p>
         </div>
 
@@ -68,7 +71,7 @@ export function DistrictScene({ district }: DistrictSceneProps) {
               );
             })
           ) : (
-            <p className="district-empty">Residents arriving soon.</p>
+            <p className="district-empty">{t.emptyResidents}</p>
           )}
         </div>
       </div>

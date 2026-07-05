@@ -2,12 +2,15 @@
 
 import { useMemo } from 'react';
 import { RESIDENTS, type District } from '@/data/rooms';
+import { useLang } from '@/lib/i18n';
 
 interface LiveCamsRoomProps {
   district: District;
 }
 
 export function LiveCamsRoom({ district }: LiveCamsRoomProps) {
+  const { t } = useLang();
+
   const particles = useMemo(
     () =>
       Array.from({ length: 12 }, (_, i) => ({
@@ -28,7 +31,6 @@ export function LiveCamsRoom({ district }: LiveCamsRoomProps) {
   return (
     <div className="livecams-room">
       <div className="room-atmosphere-bg">
-        {/* IMAGE SLOT — room background: currently /livecams-room.png via district.bgImage */}
         <div
           className="livecams-room-bg-image"
           style={{ backgroundImage: `url('${district.bgImage}')` }}
@@ -63,36 +65,39 @@ export function LiveCamsRoom({ district }: LiveCamsRoomProps) {
         <div className="livecams-room-header">
           <p className="livecams-room-locale">{district.subtitle}</p>
           <h2 className={`livecams-room-title ${district.neonClass}`}>
-            {district.name}
+            {t[`district.${district.id}.name`] || district.name}
           </h2>
           <div className={`livecams-room-divider ${district.dividerClass}`} />
-          <p className="livecams-room-prose">{district.description}</p>
+          <p className="livecams-room-prose">
+            {t[`district.${district.id}.desc`] || district.description}
+          </p>
         </div>
 
         <div className="livecams-hero-offer">
-          {/* IMAGE SLOT — featured performer banner (landscape, ~16:9) */}
           <div className="livecams-hero-image" />
-          {/* IMAGE SLOT — hero offer body content: tag, name, description, CTA */}
           <div className="livecams-hero-body" />
         </div>
 
         <div className="livecams-encounters">
           {residents.map((resident) => (
             <a href="#" key={resident.id} className="livecams-encounter-card no-underline">
-              {/* IMAGE SLOT — resident portrait: swap resident.image with Cantina artwork */}
               <div
                 className="livecams-encounter-image"
                 style={{ backgroundImage: `url('${resident.image}')` }}
               />
               <div className="livecams-encounter-body">
                 <span className="livecams-encounter-name">{resident.name}</span>
-                <span className="livecams-encounter-role">{resident.subtitle}</span>
-                <p className="livecams-encounter-desc">{resident.description}</p>
+                <span className="livecams-encounter-role">
+                  {t[`resident.${resident.id}.subtitle`] || resident.subtitle}
+                </span>
+                <p className="livecams-encounter-desc">
+                  {t[`resident.${resident.id}.desc`] || resident.description}
+                </p>
                 <span
                   className="livecams-encounter-cta"
                   style={{ borderColor: 'var(--purple)', color: 'var(--purple)' }}
                 >
-                  Request Private
+                  {t.ctaPrivate}
                 </span>
               </div>
             </a>
@@ -100,16 +105,9 @@ export function LiveCamsRoom({ district }: LiveCamsRoomProps) {
         </div>
 
         <div className="livecams-offer-grid">
-          {/* IMAGE SLOT — Offer 1: thumbnail + body content */}
           <div className="livecams-offer-card" />
-
-          {/* IMAGE SLOT — Offer 2: thumbnail + body content */}
           <div className="livecams-offer-card" />
-
-          {/* IMAGE SLOT — Offer 3: thumbnail + body content */}
           <div className="livecams-offer-card" />
-
-          {/* IMAGE SLOT — Offer 4: thumbnail + body content */}
           <div className="livecams-offer-card" />
         </div>
 

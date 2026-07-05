@@ -2,12 +2,15 @@
 
 import { useMemo } from 'react';
 import { RESIDENTS, type District } from '@/data/rooms';
+import { useLang } from '@/lib/i18n';
 
 interface DatingRoomProps {
   district: District;
 }
 
 export function DatingRoom({ district }: DatingRoomProps) {
+  const { t } = useLang();
+
   /* Ambient dust particles — warm amber tones */
   const particles = useMemo(
     () =>
@@ -30,7 +33,6 @@ export function DatingRoom({ district }: DatingRoomProps) {
     <div className="dating-room">
       {/* Room atmospheric layers */}
       <div className="room-atmosphere-bg">
-        {/* IMAGE SLOT — room hero background: currently /dating-room.jpg via district.bgImage */}
         <div
           className="dating-room-bg-image"
           style={{ backgroundImage: `url('${district.bgImage}')` }}
@@ -68,17 +70,17 @@ export function DatingRoom({ district }: DatingRoomProps) {
         <div className="dating-room-header">
           <p className="dating-room-locale">{district.subtitle}</p>
           <h2 className={`dating-room-title ${district.neonClass}`}>
-            {district.name}
+            {t[`district.${district.id}.name`] || district.name}
           </h2>
           <div className={`dating-room-divider ${district.dividerClass}`} />
-          <p className="dating-room-prose">{district.description}</p>
+          <p className="dating-room-prose">
+            {t[`district.${district.id}.desc`] || district.description}
+          </p>
         </div>
 
         {/* Featured Offer Hero — large cinematic banner slot */}
         <div className="dating-hero-offer">
-          {/* IMAGE SLOT — featured dating offer hero banner (landscape, ~16:9) */}
           <div className="dating-hero-image" />
-          {/* IMAGE SLOT — hero offer body content: tag, name, description, CTA */}
           <div className="dating-hero-body" />
         </div>
 
@@ -86,20 +88,23 @@ export function DatingRoom({ district }: DatingRoomProps) {
         <div className="dating-encounters">
           {residents.map((resident) => (
             <a href="#" key={resident.id} className="dating-encounter-card no-underline">
-              {/* IMAGE SLOT — resident portrait: swap resident.image with Cantina artwork */}
               <div
                 className="dating-encounter-image"
                 style={{ backgroundImage: `url('${resident.image}')` }}
               />
               <div className="dating-encounter-body">
                 <span className="dating-encounter-name">{resident.name}</span>
-                <span className="dating-encounter-role">{resident.subtitle}</span>
-                <p className="dating-encounter-desc">{resident.description}</p>
+                <span className="dating-encounter-role">
+                  {t[`resident.${resident.id}.subtitle`] || resident.subtitle}
+                </span>
+                <p className="dating-encounter-desc">
+                  {t[`resident.${resident.id}.desc`] || resident.description}
+                </p>
                 <span
                   className="dating-encounter-cta"
                   style={{ borderColor: 'var(--amber)', color: 'var(--amber)' }}
                 >
-                  Send a Drink
+                  {t.ctaDrink}
                 </span>
               </div>
             </a>
@@ -108,22 +113,14 @@ export function DatingRoom({ district }: DatingRoomProps) {
 
         {/* Offer Grid */}
         <div className="dating-offer-grid">
-          {/* IMAGE SLOT — Offer 1: thumbnail + body content */}
           <div className="dating-offer-card" />
-
-          {/* IMAGE SLOT — Offer 2: thumbnail + body content */}
           <div className="dating-offer-card" />
-
-          {/* IMAGE SLOT — Offer 3: thumbnail + body content */}
           <div className="dating-offer-card" />
-
-          {/* IMAGE SLOT — Offer 4: thumbnail + body content */}
           <div className="dating-offer-card" />
         </div>
 
         {/* Bottom ambient strip — room signature */}
         <div className="dating-room-signature">
-          {/* IMAGE SLOT — optional: small room signature artwork or icon */}
           <div className="dating-signature-line" />
           <span className="dating-signature-text">Sinaloa Sueños</span>
           <div className="dating-signature-line" />

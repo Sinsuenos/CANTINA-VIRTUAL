@@ -1,6 +1,7 @@
 'use client';
 
 import { DISTRICTS, type District } from '@/data/rooms';
+import { useLang } from '@/lib/i18n';
 
 interface SidebarHubProps {
   activeDistrict: string;
@@ -8,6 +9,8 @@ interface SidebarHubProps {
 }
 
 export function SidebarHub({ activeDistrict, onDistrictChange }: SidebarHubProps) {
+  const { t } = useLang();
+
   return (
     <nav className="sidebar-hub">
       <div className="sidebar-brand">
@@ -36,7 +39,9 @@ export function SidebarHub({ activeDistrict, onDistrictChange }: SidebarHubProps
                     boxShadow: isActive ? `0 0 8px ${district.borderColor}` : 'none',
                   }}
                 />
-                <span className="sidebar-item-name">{district.name}</span>
+                <span className="sidebar-item-name">
+                  {t[`district.${district.id}.name`] || district.name}
+                </span>
                 <span className="sidebar-item-sub">{district.subtitle}</span>
               </button>
             </li>
@@ -46,7 +51,7 @@ export function SidebarHub({ activeDistrict, onDistrictChange }: SidebarHubProps
 
       <div className="sidebar-footer">
         <div className="sidebar-divider" />
-        <p className="sidebar-footer-text">Pacific coast. After dark.</p>
+        <p className="sidebar-footer-text">{t.sidebarFooter}</p>
       </div>
     </nav>
   );

@@ -2,41 +2,13 @@
 
 import { useState, useRef, useCallback, useMemo } from 'react';
 import { DISTRICTS } from '@/data/rooms';
+import { LangProvider, useLang } from '@/lib/i18n';
 import { MariposaCenterpiece } from '@/components/cantina/MariposaCenterpiece';
 import { SmokeParticles } from '@/components/cantina/SmokeParticles';
 import { SidebarHub } from '@/components/cantina/SidebarHub';
 import { DistrictScene } from '@/components/cantina/DistrictScene';
 import { NectarHUD } from '@/components/cantina/NectarHUD';
-
-/* ─── i18n ─── */
-type Lang = 'en' | 'es';
-
-const T: Record<Lang, Record<string, string>> = {
-  en: {
-    copyLine1: 'Some evenings begin with a destination.',
-    copyLine2: 'The unforgettable ones begin with a feeling.',
-    copyBody:
-      'Behind these lanterns are warm conversations, genuine companionship, playful chemistry, beautiful people, and stories that unfold one encounter at a time.',
-    copyClosing: 'Tonight is yours to discover.',
-    enter: 'ENTER',
-    leave: 'LEAVE',
-    confirmQ: 'Are you 18 or older?',
-    confirmEnter: 'I am 18 or older',
-    confirmLeave: 'Leave',
-  },
-  es: {
-    copyLine1: 'Algunas noches empiezan con un destino.',
-    copyLine2: 'Las inolvidables empiezan con una sensación.',
-    copyBody:
-      'Detrás de estas linternas hay conversaciones cálidas, compañía genuina, química divertida, gente hermosa e historias que se van tejiendo encuentro a encuentro.',
-    copyClosing: 'Esta noche es tuya para descubrir.',
-    enter: 'ENTRAR',
-    leave: 'SALIR',
-    confirmQ: '¿Tienes 18 años o más?',
-    confirmEnter: 'Tengo 18 años o más',
-    confirmLeave: 'Salir',
-  },
-};
+import type { Lang } from '@/lib/i18n';
 
 /* ─── Arrival Dust Particles ─── */
 function ArrivalDust() {
@@ -74,15 +46,9 @@ function ArrivalDust() {
 }
 
 /* ─── Arrival Scene (cinematic background wrapper) ─── */
-function ArrivalScene({
-  children,
-  lang,
-  onToggleLang,
-}: {
-  children: React.ReactNode;
-  lang: Lang;
-  onToggleLang: () => void;
-}) {
+function ArrivalScene({ children }: { children: React.ReactNode }) {
+  const { lang, onToggleLang } = useLang();
+
   return (
     <div className="arrival-scene">
       <div className="arrival-bg" />
@@ -117,20 +83,16 @@ function ArrivalScene({
 function AgeGate({
   onConfirm,
   onLeave,
-  lang,
-  onToggleLang,
 }: {
   onConfirm: () => void;
   onLeave: () => void;
-  lang: Lang;
-  onToggleLang: () => void;
 }) {
   const [step, setStep] = useState<'landing' | 'confirm'>('landing');
-  const t = T[lang];
+  const { t } = useLang();
 
   if (step === 'confirm') {
     return (
-      <ArrivalScene lang={lang} onToggleLang={onToggleLang}>
+      <ArrivalScene>
         <div className="age-gate age-confirm">
           <div className="age-gate-butterfly">
             <MariposaCenterpiece />
@@ -156,7 +118,7 @@ function AgeGate({
   }
 
   return (
-    <ArrivalScene lang={lang} onToggleLang={onToggleLang}>
+    <ArrivalScene>
       <div className="age-gate">
         <div className="age-gate-butterfly">
           <MariposaCenterpiece />
@@ -197,6 +159,7 @@ function AgeGate({
 
 /* ─── Main Cantina ─── */
 function Cantina() {
+  const { t } = useLang();
   const [activeDistrict, setActiveDistrict] = useState(DISTRICTS[0].id);
   const [transitioning, setTransitioning] = useState(false);
   const [displayedDistrict, setDisplayedDistrict] = useState(DISTRICTS[0].id);
@@ -263,19 +226,19 @@ function Cantina() {
             className="text-xs tracking-[0.15em] uppercase"
             style={{ color: 'var(--text-dim)' }}
           >
-            Earn nectar. Spend it. Come back for more.
+            {t.nectarTeaser}
           </span>
         </div>
 
         <footer className="compliance-footer">
           <span className="compliance-brand">Cantina Virtual</span>
           <nav className="compliance-nav">
-            <a href="#" className="compliance-link">18+ Adults Only</a>
+            <a href="#" className="compliance-link">{t.adultsOnly}</a>
             <a href="#" className="compliance-link">2257</a>
             <a href="#" className="compliance-link">DMCA</a>
-            <a href="#" className="compliance-link">Privacy</a>
-            <a href="#" className="compliance-link">Terms</a>
-            <a href="#" className="compliance-link">Contact</a>
+            <a href="#" className="compliance-link">{t.privacy}</a>
+            <a href="#" className="compliance-link">{t.terms}</a>
+            <a href="#" className="compliance-link">{t.contact}</a>
           </nav>
         </footer>
       </main>
@@ -297,16 +260,14 @@ export default function Home() {
   }, []);
 
   return (
-    <>
+    <LangProvider lang={lang} onToggleLang={handleToggleLang}>
       {!ageConfirmed && (
         <AgeGate
           onConfirm={handleAgeConfirm}
           onLeave={() => { window.location.href = 'https://google.com'; }}
-          lang={lang}
-          onToggleLang={handleToggleLang}
         />
       )}
       {ageConfirmed && <Cantina />}
-    </>
+    </LangProvider>
   );
 }
