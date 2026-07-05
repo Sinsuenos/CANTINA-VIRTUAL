@@ -1808,22 +1808,10 @@ body {
   flex-direction: column;
   border-radius: var(--card-radius);
   overflow: hidden;
-  border: 1px solid rgba(212,160,23,0.25);
+  border: 1px solid rgba(255,255,255,0.05);
   transition: all 0.4s ease;
   text-decoration: none;
   color: inherit;
-  background: #0a0e17;
-}
-.banner-jerkmate {
-  height: 100%;
-  width: 100%;
-  aspect-ratio: 3/1;
-}
-.banner-jerkmate img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
 }
 .livecams-encounter-card:hover {
   border-color: rgba(123,45,142,0.2);
