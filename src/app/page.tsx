@@ -12,15 +12,17 @@ import type { Lang } from '@/lib/i18n';
 /* ─── Arrival Dust Particles ─── */
 function ArrivalDust() {
   const particles = useMemo(
-    () =>
-      Array.from({ length: 24 }, (_, i) => ({
+    () => {
+      const s = (n: number) => ((n * 1103515245 + 12345) & 0x7fffffff) / 0x7fffffff;
+      return Array.from({ length: 24 }, (_, i) => ({
         id: i,
-        left: Math.random() * 100,
-        delay: Math.random() * 10,
-        duration: 7 + Math.random() * 8,
-        size: 1 + Math.random() * 2,
-        opacity: 0.15 + Math.random() * 0.25,
-      })),
+        left: s(i) * 100,
+        delay: s(i + 50) * 10,
+        duration: 7 + s(i + 100) * 8,
+        size: 1 + s(i + 150) * 2,
+        opacity: 0.15 + s(i + 200) * 0.25,
+      }));
+    },
     [],
   );
 
