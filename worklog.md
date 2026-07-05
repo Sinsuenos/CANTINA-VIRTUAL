@@ -26,3 +26,29 @@ Stage Summary:
 - Hub uses cinematic background (same image, different framing, lighter overlay)
 - i18n fully supported on Hub screen
 - Files modified: page.tsx, SidebarHub.tsx, i18n.tsx, globals.css
+---
+Task ID: 1
+Agent: main
+Task: Wire affiliate link to AI Partners offer card
+
+Work Log:
+- Read DistrictScene, EncounterCard, rooms.ts to understand data flow
+- Added optional `href` field to DistrictEncounter interface in rooms.ts
+- Set exact affiliate URL on girlfriendgpt encounter in ai-companions district
+- Updated DistrictScene to pass encounter.href to EncounterCard
+- Updated EncounterCard to accept href prop, open external links in new tab
+- Ran build — compiled successfully, zero errors
+- Grep confirmed no white nav text introduced
+- Committed and pushed to GitHub main (336a8fc)
+- Vercel auto-deploy triggered via GitHub push
+- Visually verified on production:
+  - EN: GirlfriendGPT card shows as link with correct href
+  - ES: Same card, same href, Spanish description text
+  - Affiliate URL identical in both languages
+  - No layout/styling/navigation regressions
+
+Stage Summary:
+- 3 files changed: rooms.ts, DistrictScene.tsx, EncounterCard.tsx
+- Affiliate URL preserved exactly: https://t.vlmai-1.com/413627/10046/38605?aff_sub=AI&source=Cantina&aff_sub5=SF_006OG000004lmDN
+- Card opens in new tab with noopener noreferrer
+- No routing, layout, styling, translations, backgrounds, or navigation modified
