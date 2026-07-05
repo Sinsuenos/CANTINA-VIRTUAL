@@ -98,7 +98,7 @@ export const DISTRICTS: District[] = [
     description: 'Where the cantina meets the coast. Neon hums behind every screen.',
     borderColor: 'rgba(0,245,255,0.3)',
     textColor: 'var(--cyan)',
-    bgImage: 'https://sfile.chatglm.cn/images-ppt/0eb8607628ce.jpg',
+    bgImage: '/ai-partners-bg.png',
     encounters: [
       {
         residentId: 'girlfriendgpt',
