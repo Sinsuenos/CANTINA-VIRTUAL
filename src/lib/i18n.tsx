@@ -78,6 +78,11 @@ export const T: Record<Lang, Record<string, string>> = {
     ctaPrivate: 'Request Private',
     emptyResidents: 'Residents arriving soon.',
 
+    /* ── Hub ── */
+    hubSubtitle: 'Choose your destination.',
+    hubBack: 'Back',
+    backToHub: 'Back to Hub',
+
     /* ── Compliance footer ── */
     adultsOnly: '18+ Adults Only',
     privacy: 'Privacy',
@@ -151,6 +156,11 @@ export const T: Record<Lang, Record<string, string>> = {
     ctaDrink: 'Invitar un Trago',
     ctaPrivate: 'Pedir Privado',
     emptyResidents: 'Los residentes están por llegar.',
+
+    /* ── Hub ── */
+    hubSubtitle: 'Elige tu destino.',
+    hubBack: 'Volver',
+    backToHub: 'Volver al Hub',
 
     /* ── Compliance footer ── */
     adultsOnly: 'Solo +18',

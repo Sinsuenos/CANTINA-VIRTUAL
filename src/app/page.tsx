@@ -157,12 +157,100 @@ function AgeGate({
   );
 }
 
-/* ─── Main Cantina ─── */
-function Cantina() {
+/* ═══════════════════════════════════════════════════════════════
+   HUB SCREEN — Category Selection (first screen after 18+)
+   ═══════════════════════════════════════════════════════════════ */
+function HubScreen({
+  onCategorySelect,
+  onBack,
+}: {
+  onCategorySelect: (id: string) => void;
+  onBack: () => void;
+}) {
+  const { t, lang, onToggleLang } = useLang();
+
+  return (
+    <div className="hub-scene">
+      <div className="hub-bg" />
+      <div className="hub-overlay" />
+      <div className="hub-glow hub-glow-amber" />
+      <div className="hub-glow hub-glow-magenta" />
+      <div className="hub-vignette" />
+
+      <button
+        className="lang-toggle hub-lang-toggle"
+        onClick={onToggleLang}
+        aria-label={lang === 'en' ? 'Cambiar a español' : 'Switch to English'}
+      >
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="12" r="10" />
+          <path d="M2 12h20" />
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+        </svg>
+        <span className="lang-toggle-label">{lang === 'en' ? 'ES' : 'EN'}</span>
+      </button>
+
+      <div className="hub-content">
+        <div className="hub-brand">
+          <span className="hub-brand-main">CANTINA</span>
+          <span className="hub-brand-sub">VIRTUAL</span>
+        </div>
+
+        <div className="hub-divider" />
+
+        <p className="hub-subtitle">{t.hubSubtitle}</p>
+
+        <div className="hub-grid">
+          {DISTRICTS.map((district, index) => (
+            <button
+              key={district.id}
+              className="hub-card"
+              style={{
+                '--hub-color': district.textColor,
+                '--hub-border': district.borderColor,
+                animationDelay: `${index * 0.07}s`,
+              } as React.CSSProperties}
+              onClick={() => onCategorySelect(district.id)}
+            >
+              <span className="hub-card-name">
+                {t[`district.${district.id}.name`] || district.name}
+              </span>
+            </button>
+          ))}
+        </div>
+
+        <button className="hub-back" onClick={onBack}>
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            className="hub-back-icon"
+          >
+            <path d="M19 12H5" />
+            <path d="M12 19l-7-7 7-7" />
+          </svg>
+          {t.hubBack}
+        </button>
+      </div>
+    </div>
+  );
+}
+
+/* ─── Main Cantina (only shown after explicit category selection) ─── */
+function Cantina({
+  initialDistrict,
+  onBackToHub,
+}: {
+  initialDistrict: string;
+  onBackToHub: () => void;
+}) {
   const { t } = useLang();
-  const [activeDistrict, setActiveDistrict] = useState(DISTRICTS[0].id);
+  const [activeDistrict, setActiveDistrict] = useState(initialDistrict);
   const [transitioning, setTransitioning] = useState(false);
-  const [displayedDistrict, setDisplayedDistrict] = useState(DISTRICTS[0].id);
+  const [displayedDistrict, setDisplayedDistrict] = useState(initialDistrict);
   const mainRef = useRef<HTMLDivElement>(null);
 
   const handleDistrictChange = useCallback(
@@ -197,9 +285,17 @@ function Cantina() {
       <SidebarHub
         activeDistrict={activeDistrict}
         onDistrictChange={handleDistrictChange}
+        onBackToHub={onBackToHub}
       />
 
       <main ref={mainRef} className="cantina-main scene-transition">
+        <button className="mobile-back-hub" onClick={onBackToHub} aria-label="Back to Hub">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M19 12H5" />
+            <path d="M12 19l-7-7 7-7" />
+          </svg>
+        </button>
+
         <div
           className="mariposa"
           style={{ top: '12%', right: '8%', color: '#ff69b4' }}
@@ -246,9 +342,13 @@ function Cantina() {
   );
 }
 
-/* ─── HOME (Entry Point) ─── */
+/* ═══════════════════════════════════════════════════════════════
+   HOME — Entry Point
+   Flow: Landing → 18+ Confirm → HUB → Category
+   ═══════════════════════════════════════════════════════════════ */
 export default function Home() {
   const [ageConfirmed, setAgeConfirmed] = useState(false);
+  const [activeDistrict, setActiveDistrict] = useState<string | null>(null);
   const [lang, setLang] = useState<Lang>('en');
 
   const handleAgeConfirm = useCallback(() => {
@@ -259,6 +359,18 @@ export default function Home() {
     setLang((prev) => (prev === 'en' ? 'es' : 'en'));
   }, []);
 
+  const handleCategorySelect = useCallback((id: string) => {
+    setActiveDistrict(id);
+  }, []);
+
+  const handleBackToHub = useCallback(() => {
+    setActiveDistrict(null);
+  }, []);
+
+  const handleBackToLanding = useCallback(() => {
+    setAgeConfirmed(false);
+  }, []);
+
   return (
     <LangProvider lang={lang} onToggleLang={handleToggleLang}>
       {!ageConfirmed && (
@@ -267,7 +379,18 @@ export default function Home() {
           onLeave={() => { window.location.href = 'https://google.com'; }}
         />
       )}
-      {ageConfirmed && <Cantina />}
+      {ageConfirmed && !activeDistrict && (
+        <HubScreen
+          onCategorySelect={handleCategorySelect}
+          onBack={handleBackToLanding}
+        />
+      )}
+      {ageConfirmed && activeDistrict && (
+        <Cantina
+          initialDistrict={activeDistrict}
+          onBackToHub={handleBackToHub}
+        />
+      )}
     </LangProvider>
   );
 }

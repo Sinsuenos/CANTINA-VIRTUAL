@@ -6,9 +6,10 @@ import { useLang } from '@/lib/i18n';
 interface SidebarHubProps {
   activeDistrict: string;
   onDistrictChange: (id: string) => void;
+  onBackToHub: () => void;
 }
 
-export function SidebarHub({ activeDistrict, onDistrictChange }: SidebarHubProps) {
+export function SidebarHub({ activeDistrict, onDistrictChange, onBackToHub }: SidebarHubProps) {
   const { t } = useLang();
 
   return (
@@ -17,6 +18,17 @@ export function SidebarHub({ activeDistrict, onDistrictChange }: SidebarHubProps
         <span className="sidebar-brand-name">Cantina</span>
         <span className="sidebar-brand-sub">Virtual</span>
       </div>
+
+      <div className="sidebar-divider" />
+
+      {/* Back to Hub */}
+      <button className="sidebar-back-hub" onClick={onBackToHub}>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M19 12H5" />
+          <path d="M12 19l-7-7 7-7" />
+        </svg>
+        <span>{t.backToHub}</span>
+      </button>
 
       <div className="sidebar-divider" />
 
