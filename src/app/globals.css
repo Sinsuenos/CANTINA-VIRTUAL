@@ -721,7 +721,7 @@ body {
 .arrival-scene {
   position: relative;
   width: 100vw;
-  height: 100vh;
+  min-height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -1090,7 +1090,6 @@ body {
 .arrival-copy-closing {
   font-style: italic;
   margin-bottom: 32px;
-  font-size: 19px;
 }
 
 /* ── 18+ Quick Confirm ── */
@@ -2308,7 +2307,6 @@ body {
   .age-gate-btn { padding: 14px 36px; min-width: 180px; }
   .arrival-silhouette { width: 120px; height: 200px; }
   .arrival-copy { font-size: 17px; padding: 0 16px; line-height: 1.9; }
-  .arrival-copy-closing { font-size: 16px; }
 
   .compliance-footer {
     flex-direction: column;
