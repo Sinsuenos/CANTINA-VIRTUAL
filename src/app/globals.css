@@ -1807,23 +1807,17 @@ body {
 }
 .livecams-encounter-image {
   width: 100%;
+  aspect-ratio: 3/1;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
 }
 .livecams-encounter-image::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to bottom, rgba(15,21,32,0.1) 0%, rgba(15,21,32,0.4) 40%, var(--bg-card) 100%);
+  display: none;
 }
 .livecams-encounter-body {
-  padding: 12px 14px 14px;
-  background: var(--bg-card);
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+  display: none;
 }
 .livecams-encounter-name {
   font-size: 12px;
