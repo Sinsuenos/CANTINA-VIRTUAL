@@ -68,6 +68,8 @@ export const T: Record<Lang, Record<string, string>> = {
     'resident.isla-king.desc': 'The back booth. Knock twice.',
     'resident.dating-encounter.desc':
       'Someone is waiting. The bar is open.',
+    'resident.cams-banner.desc':
+      'Red lights. Frosted glass. They are already waiting.',
 
     /* ── UI strings ── */
     ctaDrink: 'Send a Drink',
@@ -143,6 +145,8 @@ export const T: Record<Lang, Record<string, string>> = {
     'resident.isla-king.desc': 'La mesa de atrás. Toca dos veces.',
     'resident.dating-encounter.desc':
       'Alguien te espera. La barra está abierta.',
+    'resident.cams-banner.desc':
+      'Luces rojas. Cristal esmerilado. Ya están esperando.',
 
     /* ── UI strings ── */
     ctaDrink: 'Invitar un Trago',

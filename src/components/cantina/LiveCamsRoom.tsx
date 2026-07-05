@@ -24,9 +24,12 @@ export function LiveCamsRoom({ district }: LiveCamsRoomProps) {
     [],
   );
 
-  const residents = district.encounters
-    .map((e) => RESIDENTS[e.residentId])
-    .filter(Boolean);
+  const encounters = district.encounters
+    .map((e) => ({
+      resident: RESIDENTS[e.residentId],
+      href: e.href,
+    }))
+    .filter((e) => e.resident);
 
   return (
     <div className="livecams-room">
@@ -73,9 +76,15 @@ export function LiveCamsRoom({ district }: LiveCamsRoomProps) {
         </div>
 
         <div className="livecams-encounters">
-          {residents.length > 0 ? (
-            residents.map((resident) => (
-              <a href="#" key={resident.id} className="livecams-encounter-card no-underline">
+          {encounters.length > 0 ? (
+            encounters.map(({ resident, href }) => (
+              <a
+                href={href || '#'}
+                key={resident.id}
+                target={href ? '_blank' : undefined}
+                rel={href ? 'noopener noreferrer' : undefined}
+                className="livecams-encounter-card no-underline"
+              >
                 <div
                   className="livecams-encounter-image"
                   style={{ backgroundImage: `url('${resident.image}')` }}

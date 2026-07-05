@@ -33,6 +33,13 @@ export const RESIDENTS: Record<string, Resident> = {
     description: 'Someone is waiting. The bar is open.',
     image: '/dating-offer.png',
   },
+  'cams-banner': {
+    id: 'cams-banner',
+    name: 'Live Performers',
+    subtitle: '',
+    description: 'Red lights. Frosted glass. They are already waiting.',
+    image: 'https://www.imglnkx.com/8780/PMKT-1110_DESIGN-17951_PinkGreen.gif',
+  },
 };
 
 /* ─── District ─── */
@@ -84,6 +91,7 @@ export const DISTRICTS: District[] = [
     bgImage: '/livecams-room.png',
     encounters: [
       { residentId: 'isla-king' },
+      { residentId: 'cams-banner' },
     ],
   },
   {
