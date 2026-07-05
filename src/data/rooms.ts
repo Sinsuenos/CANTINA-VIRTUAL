@@ -26,6 +26,13 @@ export const RESIDENTS: Record<string, Resident> = {
     description: 'The back booth. Knock twice.',
     image: 'https://sfile.chatglm.cn/images-ppt/8e81418a549d.jpg',
   },
+  'dating-encounter': {
+    id: 'dating-encounter',
+    name: 'Real Connections',
+    subtitle: '',
+    description: 'Someone is waiting. The bar is open.',
+    image: '/dating-offer.png',
+  },
 };
 
 /* ─── District ─── */
@@ -58,7 +65,12 @@ export const DISTRICTS: District[] = [
     borderColor: 'rgba(212,160,23,0.3)',
     textColor: 'var(--amber)',
     bgImage: '/dating-room.jpg',
-    encounters: [],
+    encounters: [
+      {
+        residentId: 'dating-encounter',
+        href: 'https://t.acust-7.com/413627/3785/0?po=6456&aff_sub5=SF_006OG000004lmDN',
+      },
+    ],
   },
   {
     id: 'live-cams',

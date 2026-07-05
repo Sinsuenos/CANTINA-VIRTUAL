@@ -66,6 +66,8 @@ export const T: Record<Lang, Record<string, string>> = {
     'resident.girlfriendgpt.desc':
       'She remembers every conversation. Every name.',
     'resident.isla-king.desc': 'The back booth. Knock twice.',
+    'resident.dating-encounter.desc':
+      'Someone is waiting. The bar is open.',
 
     /* ── UI strings ── */
     ctaDrink: 'Send a Drink',
@@ -139,6 +141,8 @@ export const T: Record<Lang, Record<string, string>> = {
     'resident.girlfriendgpt.desc':
       'Recuerda cada conversación. Cada nombre.',
     'resident.isla-king.desc': 'La mesa de atrás. Toca dos veces.',
+    'resident.dating-encounter.desc':
+      'Alguien te espera. La barra está abierta.',
 
     /* ── UI strings ── */
     ctaDrink: 'Invitar un Trago',

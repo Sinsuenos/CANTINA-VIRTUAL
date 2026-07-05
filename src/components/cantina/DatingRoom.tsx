@@ -25,9 +25,12 @@ export function DatingRoom({ district }: DatingRoomProps) {
     [],
   );
 
-  const residents = district.encounters
-    .map((e) => RESIDENTS[e.residentId])
-    .filter(Boolean);
+  const encounters = district.encounters
+    .map((e) => ({
+      resident: RESIDENTS[e.residentId],
+      href: e.href,
+    }))
+    .filter((e) => e.resident);
 
   return (
     <div className="dating-room">
@@ -79,9 +82,15 @@ export function DatingRoom({ district }: DatingRoomProps) {
 
         {/* Encounter Cards — residents of this room */}
         <div className="dating-encounters">
-          {residents.length > 0 ? (
-            residents.map((resident) => (
-              <a href="#" key={resident.id} className="dating-encounter-card no-underline">
+          {encounters.length > 0 ? (
+            encounters.map(({ resident, href }) => (
+              <a
+                href={href || '#'}
+                key={resident.id}
+                target={href ? '_blank' : undefined}
+                rel={href ? 'noopener noreferrer' : undefined}
+                className="dating-encounter-card no-underline"
+              >
                 <div
                   className="dating-encounter-image"
                   style={{ backgroundImage: `url('${resident.image}')` }}
