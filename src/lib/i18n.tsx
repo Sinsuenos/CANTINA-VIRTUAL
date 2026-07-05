@@ -104,14 +104,14 @@ export const T: Record<Lang, Record<string, string>> = {
     nectarTeaser: 'Gana néctar. Gástalo. Regresa por más.',
 
     /* ── District names ── */
-    'district.dating.name': 'Dates',
-    'district.live-cams.name': 'Live Cams',
-    'district.ai-companions.name': 'AI Partners',
-    'district.fan-sites.name': 'Fansites',
-    'district.pay-sites.name': 'Paysites',
-    'district.niche.name': 'Niche',
-    'district.gaming.name': 'Video Games',
-    'district.our-mission.name': 'Our Mission',
+    'district.dating.name': 'Citas',
+    'district.live-cams.name': 'Cámaras en Vivo',
+    'district.ai-companions.name': 'Compañeros IA',
+    'district.fan-sites.name': 'Sitios de Fans',
+    'district.pay-sites.name': 'Sitios de Pago',
+    'district.niche.name': 'Nichos',
+    'district.gaming.name': 'Videojuegos',
+    'district.our-mission.name': 'Nuestra Misión',
 
     /* ── District descriptions ── */
     'district.dating.desc':
