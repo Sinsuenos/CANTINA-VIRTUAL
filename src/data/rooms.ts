@@ -115,7 +115,7 @@ export const DISTRICTS: District[] = [
     description: 'The creators have their own corner. Autographs optional.',
     borderColor: 'rgba(233,30,140,0.3)',
     textColor: 'var(--rose)',
-    bgImage: 'https://sfile.chatglm.cn/images-ppt/508f8158b122.jpg',
+    bgImage: '/fan-sites-bg.png',
     encounters: [],
   },
   {
