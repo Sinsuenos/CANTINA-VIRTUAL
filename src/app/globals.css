@@ -5,8 +5,8 @@
   --bg-deep: #0a0e17;
   --bg-card: #0f1520;
   --bg-card-hover: #151d2e;
-  --amber: #d4a017;
-  --amber-dim: #a67c12;
+  --amber: #dab12a;
+  --amber-dim: #b08a1a;
   --purple: #7b2d8e;
   --purple-dim: #5a1f6a;
   --cyan: #00f5ff;
@@ -899,7 +899,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   width: 100%;
   height: 100%;
 }
@@ -930,15 +929,20 @@ body {
 }
 
 .lang-toggle svg {
-  width: 18px;
-  height: 18px;
+  width: 20px;
+  height: 20px;
   flex-shrink: 0;
 }
 
 .lang-toggle-label {
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.12em;
   font-weight: 500;
+}
+
+.landing-lang-toggle {
+  position: relative;
+  margin-bottom: 28px;
 }
 
 /* ── Age Gate ── */
@@ -946,6 +950,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  margin: auto 0;
   animation: ageGateIn 1.5s ease forwards;
   opacity: 0;
 }
@@ -1015,7 +1020,7 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 4px;
-  padding: 18px 52px;
+  padding: 20px 56px;
   background: transparent;
   border: 1px solid rgba(212,160,23,0.2);
   cursor: pointer;
@@ -1045,7 +1050,7 @@ body {
 }
 
 .age-gate-btn-label {
-  font-size: 14px;
+  font-size: 15px;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--amber);
@@ -1065,7 +1070,7 @@ body {
 .arrival-copy {
   max-width: 520px;
   text-align: center;
-  font-size: 18px;
+  font-size: 20px;
   line-height: 2;
   color: #F5ECD8;
   letter-spacing: 0.03em;
@@ -1083,8 +1088,8 @@ body {
 
 .arrival-copy-closing {
   font-style: italic;
-  margin-bottom: 36px;
-  font-size: 17px;
+  margin-bottom: 32px;
+  font-size: 19px;
 }
 
 /* ── 18+ Quick Confirm ── */
@@ -2308,8 +2313,8 @@ body {
   .age-gate-title-virtual { font-size: 0.8rem; letter-spacing: 0.4em; }
   .age-gate-btn { padding: 14px 36px; min-width: 180px; }
   .arrival-silhouette { width: 120px; height: 200px; }
-  .arrival-copy { font-size: 15px; padding: 0 16px; line-height: 1.9; }
-  .arrival-copy-closing { font-size: 14px; }
+  .arrival-copy { font-size: 17px; padding: 0 16px; line-height: 1.9; }
+  .arrival-copy-closing { font-size: 16px; }
 
   .compliance-footer {
     flex-direction: column;

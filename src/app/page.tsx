@@ -61,19 +61,6 @@ function ArrivalScene({ children }: { children: React.ReactNode }) {
       <div className="arrival-silhouette" />
       <div className="arrival-reflection" />
       <div className="arrival-vignette" />
-      <button
-        className="lang-toggle"
-        onClick={onToggleLang}
-        aria-label={lang === 'en' ? 'Cambiar a español' : 'Switch to English'}
-        style={{ position: 'absolute', bottom: '12%', left: '50%', transform: 'translateX(-50%)' }}
-      >
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
-          <circle cx="12" cy="12" r="10" />
-          <path d="M2 12h20" />
-          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-        </svg>
-        <span className="lang-toggle-label">{lang === 'en' ? 'EN' : 'ES'}</span>
-      </button>
       <div className="arrival-content">{children}</div>
     </div>
   );
@@ -138,6 +125,18 @@ function AgeGate({
         <p className="arrival-copy arrival-copy-closing">
           {t.copyClosing}
         </p>
+        <button
+          className="lang-toggle landing-lang-toggle"
+          onClick={onToggleLang}
+          aria-label={lang === 'en' ? 'Cambiar a español' : 'Switch to English'}
+        >
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+            <circle cx="12" cy="12" r="10" />
+            <path d="M2 12h20" />
+            <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+          </svg>
+          <span className="lang-toggle-label">{lang === 'en' ? 'ES' : 'EN'}</span>
+        </button>
         <div className="age-gate-actions">
           <button
             className="age-gate-btn age-gate-btn-enter"
@@ -188,7 +187,7 @@ function HubScreen({
             <path d="M2 12h20" />
             <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
           </svg>
-          <span className="lang-toggle-label">{lang === 'en' ? 'EN' : 'ES'}</span>
+          <span className="lang-toggle-label">{lang === 'en' ? 'ES' : 'EN'}</span>
         </button>
 
         <div className="hub-brand">
@@ -347,7 +346,7 @@ function Cantina({
 export default function Home() {
   const [ageConfirmed, setAgeConfirmed] = useState(false);
   const [activeDistrict, setActiveDistrict] = useState<string | null>(null);
-  const [lang, setLang] = useState<Lang>('es');
+  const [lang, setLang] = useState<Lang>('en');
 
   /* ── Browser history integration ── */
   useEffect(() => {
