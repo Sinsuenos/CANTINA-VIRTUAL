@@ -8,6 +8,36 @@ import { SidebarHub } from '@/components/cantina/SidebarHub';
 import { DistrictScene } from '@/components/cantina/DistrictScene';
 import { NectarHUD } from '@/components/cantina/NectarHUD';
 
+/* ─── i18n ─── */
+type Lang = 'en' | 'es';
+
+const T: Record<Lang, Record<string, string>> = {
+  en: {
+    copyLine1: 'Some evenings begin with a destination.',
+    copyLine2: 'The unforgettable ones begin with a feeling.',
+    copyBody:
+      'Behind these lanterns are warm conversations, genuine companionship, playful chemistry, beautiful people, and stories that unfold one encounter at a time.',
+    copyClosing: 'Tonight is yours to discover.',
+    enter: 'ENTER',
+    leave: 'LEAVE',
+    confirmQ: 'Are you 18 or older?',
+    confirmEnter: 'I am 18 or older',
+    confirmLeave: 'Leave',
+  },
+  es: {
+    copyLine1: 'Algunas noches empiezan con un destino.',
+    copyLine2: 'Las inolvidables empiezan con una sensación.',
+    copyBody:
+      'Detrás de estas linternas hay conversaciones cálidas, compañía genuina, química divertida, gente hermosa e historias que se van tejiendo encuentro a encuentro.',
+    copyClosing: 'Esta noche es tuya para descubrir.',
+    enter: 'ENTRAR',
+    leave: 'SALIR',
+    confirmQ: '¿Tienes 18 años o más?',
+    confirmEnter: 'Tengo 18 años o más',
+    confirmLeave: 'Salir',
+  },
+};
+
 /* ─── Arrival Dust Particles ─── */
 function ArrivalDust() {
   const particles = useMemo(
@@ -44,7 +74,15 @@ function ArrivalDust() {
 }
 
 /* ─── Arrival Scene (cinematic background wrapper) ─── */
-function ArrivalScene({ children }: { children: React.ReactNode }) {
+function ArrivalScene({
+  children,
+  lang,
+  onToggleLang,
+}: {
+  children: React.ReactNode;
+  lang: Lang;
+  onToggleLang: () => void;
+}) {
   return (
     <div className="arrival-scene">
       <div className="arrival-bg" />
@@ -58,35 +96,58 @@ function ArrivalScene({ children }: { children: React.ReactNode }) {
       <div className="arrival-silhouette" />
       <div className="arrival-reflection" />
       <div className="arrival-vignette" />
+      <button
+        className="lang-toggle"
+        onClick={onToggleLang}
+        aria-label={lang === 'en' ? 'Cambiar a español' : 'Switch to English'}
+      >
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round">
+          <circle cx="12" cy="12" r="10" />
+          <path d="M2 12h20" />
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+        </svg>
+        <span className="lang-toggle-label">{lang === 'en' ? 'ES' : 'EN'}</span>
+      </button>
       <div className="arrival-content">{children}</div>
     </div>
   );
 }
 
 /* ─── Age Gate ─── */
-function AgeGate({ onConfirm, onLeave }: { onConfirm: () => void; onLeave: () => void }) {
+function AgeGate({
+  onConfirm,
+  onLeave,
+  lang,
+  onToggleLang,
+}: {
+  onConfirm: () => void;
+  onLeave: () => void;
+  lang: Lang;
+  onToggleLang: () => void;
+}) {
   const [step, setStep] = useState<'landing' | 'confirm'>('landing');
+  const t = T[lang];
 
   if (step === 'confirm') {
     return (
-      <ArrivalScene>
+      <ArrivalScene lang={lang} onToggleLang={onToggleLang}>
         <div className="age-gate age-confirm">
           <div className="age-gate-butterfly">
             <MariposaCenterpiece />
           </div>
-          <p className="age-confirm-question">Are you 18 or older?</p>
+          <p className="age-confirm-question">{t.confirmQ}</p>
           <div className="age-confirm-actions">
             <button
               className="age-gate-btn age-gate-btn-enter"
               onClick={onConfirm}
             >
-              <span className="age-gate-btn-label">I am 18 or older</span>
+              <span className="age-gate-btn-label">{t.confirmEnter}</span>
             </button>
             <button
               className="age-gate-btn age-gate-btn-leave"
               onClick={onLeave}
             >
-              <span className="age-gate-btn-label">Leave</span>
+              <span className="age-gate-btn-label">{t.confirmLeave}</span>
             </button>
           </div>
         </div>
@@ -95,7 +156,7 @@ function AgeGate({ onConfirm, onLeave }: { onConfirm: () => void; onLeave: () =>
   }
 
   return (
-    <ArrivalScene>
+    <ArrivalScene lang={lang} onToggleLang={onToggleLang}>
       <div className="age-gate">
         <div className="age-gate-butterfly">
           <MariposaCenterpiece />
@@ -105,28 +166,28 @@ function AgeGate({ onConfirm, onLeave }: { onConfirm: () => void; onLeave: () =>
           <span className="age-gate-title-virtual">VIRTUAL</span>
         </h1>
         <p className="arrival-copy">
-          Some evenings begin with a destination.
+          {t.copyLine1}
           <br />
-          The unforgettable ones begin with a feeling.
+          {t.copyLine2}
         </p>
         <p className="arrival-copy arrival-copy-body">
-          Behind these lanterns are warm conversations, genuine companionship, playful chemistry, beautiful people, and stories that unfold one encounter at a time.
+          {t.copyBody}
         </p>
         <p className="arrival-copy arrival-copy-closing">
-          Tonight is yours to discover.
+          {t.copyClosing}
         </p>
         <div className="age-gate-actions">
           <button
             className="age-gate-btn age-gate-btn-enter"
             onClick={() => setStep('confirm')}
           >
-            <span className="age-gate-btn-label">ENTER</span>
+            <span className="age-gate-btn-label">{t.enter}</span>
           </button>
           <button
             className="age-gate-btn age-gate-btn-leave"
             onClick={onLeave}
           >
-            <span className="age-gate-btn-label">LEAVE</span>
+            <span className="age-gate-btn-label">{t.leave}</span>
           </button>
         </div>
       </div>
@@ -225,14 +286,26 @@ function Cantina() {
 /* ─── HOME (Entry Point) ─── */
 export default function Home() {
   const [ageConfirmed, setAgeConfirmed] = useState(false);
+  const [lang, setLang] = useState<Lang>('en');
 
   const handleAgeConfirm = useCallback(() => {
     setAgeConfirmed(true);
   }, []);
 
+  const handleToggleLang = useCallback(() => {
+    setLang((prev) => (prev === 'en' ? 'es' : 'en'));
+  }, []);
+
   return (
     <>
-      {!ageConfirmed && <AgeGate onConfirm={handleAgeConfirm} onLeave={() => { window.location.href = 'https://google.com'; }} />}
+      {!ageConfirmed && (
+        <AgeGate
+          onConfirm={handleAgeConfirm}
+          onLeave={() => { window.location.href = 'https://google.com'; }}
+          lang={lang}
+          onToggleLang={handleToggleLang}
+        />
+      )}
       {ageConfirmed && <Cantina />}
     </>
   );
