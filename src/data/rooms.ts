@@ -33,6 +33,13 @@ export const RESIDENTS: Record<string, Resident> = {
     description: 'Red lights. Frosted glass. They are already waiting.',
     image: 'https://www.imglnkx.com/9776/PCAM-244_DESIGN-23232_300250.gif',
   },
+  'gay-offer': {
+    id: 'gay-offer',
+    name: 'Gay',
+    subtitle: '',
+    description: 'The back rooms. The hidden tables.',
+    image: '/gay-offer.png',
+  },
 };
 
 /* ─── District ─── */
@@ -140,7 +147,12 @@ export const DISTRICTS: District[] = [
     borderColor: 'rgba(212,160,23,0.3)',
     textColor: 'var(--amber)',
     bgImage: 'https://sfile.chatglm.cn/images-ppt/91b93c38ff40.jpg',
-    encounters: [],
+    encounters: [
+      {
+        residentId: 'gay-offer',
+        href: 'https://t.acust-7.com/413627/4080/0?aff_sub=GAY&source=Cantina&po=6456&aff_sub5=SF_006OG000004lmDN',
+      },
+    ],
   },
   {
     id: 'gaming',
