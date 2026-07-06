@@ -36,9 +36,9 @@ export const T: Record<Lang, Record<string, string>> = {
     'district.ai-companions.name': 'AI Partners',
     'district.fan-sites.name': 'Fansites',
     'district.pay-sites.name': 'Paysites',
-    'district.niche.name': 'Niche',
+    'district.niche.name': 'GAY',
     'district.gaming.name': 'Video Games',
-    'district.our-mission.name': 'Our Mission',
+    'district.our-mission.name': 'TRANSGENDER',
 
     /* ── District descriptions ── */
     'district.dating.desc':
@@ -110,9 +110,9 @@ export const T: Record<Lang, Record<string, string>> = {
     'district.ai-companions.name': 'Compañeros IA',
     'district.fan-sites.name': 'Sitios de Fans',
     'district.pay-sites.name': 'Sitios de Pago',
-    'district.niche.name': 'Nichos',
+    'district.niche.name': 'GAY',
     'district.gaming.name': 'Videojuegos',
-    'district.our-mission.name': 'Nuestra Misión',
+    'district.our-mission.name': 'TRANSGENDER',
 
     /* ── District descriptions ── */
     'district.dating.desc':

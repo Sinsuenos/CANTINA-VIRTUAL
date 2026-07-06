@@ -132,7 +132,7 @@ export const DISTRICTS: District[] = [
   },
   {
     id: 'niche',
-    name: 'Niche',
+    name: 'GAY',
     subtitle: '',
     neonClass: 'neon-amber',
     dividerClass: 'divider-amber',
@@ -156,7 +156,7 @@ export const DISTRICTS: District[] = [
   },
   {
     id: 'our-mission',
-    name: 'Our Mission',
+    name: 'TRANSGENDER',
     subtitle: '',
     neonClass: 'neon-purple',
     dividerClass: 'divider-purple',
