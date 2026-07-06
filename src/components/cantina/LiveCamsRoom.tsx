@@ -76,17 +76,6 @@ export function LiveCamsRoom({ district }: LiveCamsRoomProps) {
         </div>
 
         <div className="livecams-encounters">
-          <a
-            href="https://t.camsk1.com/413627/9776/37445?aff_sub=CAMS&source=CANTINA&po=6533&aff_sub5=SF_006OG000004lmDN"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="livecams-encounter-card no-underline"
-          >
-            <div
-              className="livecams-encounter-image"
-              style={{ backgroundImage: `url('https://www.imglnkx.com/8780/JM-885_DESIGN-23079_contenu-hayley_banner_01_300250.jpg')` }}
-            />
-          </a>
           {encounters.length > 0 ? (
             encounters.map(({ resident, href }) => (
               <a
@@ -105,6 +94,17 @@ export function LiveCamsRoom({ district }: LiveCamsRoomProps) {
           ) : (
             <p className="district-empty">{t.emptyResidents}</p>
           )}
+          <a
+            href="https://t.mbjrkmms.com/413627/8780/0?file_id=644338&po=6533&aff_sub5=SF_006OG000004lmDN&aff_sub4=AT_0002"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="livecams-encounter-card no-underline"
+          >
+            <div
+              className="livecams-encounter-image"
+              style={{ backgroundImage: `url('https://www.imglnkx.com/8780/JM-885_DESIGN-23079_contenu-hayley_banner_01_300250.jpg')` }}
+            />
+          </a>
         </div>
       </div>
     </div>
