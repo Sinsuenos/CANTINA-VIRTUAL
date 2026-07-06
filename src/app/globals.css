@@ -1054,6 +1054,7 @@ body {
 }
 
 .age-gate-btn-enter {
+  padding: 24px 72px;
   border-color: rgba(212,160,23,0.5);
   background: rgba(212,160,23,0.06);
 }
@@ -1074,10 +1075,11 @@ body {
 }
 
 .age-gate-btn-label {
-  font-size: 15px;
+  font-size: 20px;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--amber);
+  font-weight: 600;
 }
 
 .age-gate-btn-leave .age-gate-btn-label {

@@ -121,9 +121,6 @@ function AgeGate({
           <br />
           {t.copyLine2}
         </p>
-        <p className="arrival-copy arrival-copy-body">
-          {t.copyBody}
-        </p>
         <p className="arrival-copy arrival-copy-closing">
           {t.copyClosing}
         </p>
