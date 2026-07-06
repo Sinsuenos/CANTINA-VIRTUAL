@@ -84,7 +84,7 @@ export function LiveCamsRoom({ district }: LiveCamsRoomProps) {
           >
             <div
               className="livecams-encounter-image"
-              style={{ backgroundImage: `url('https://www.imglnkx.com/9776/PCAM-244_DESIGN-24826_300250_2_EN.gif')` }}
+              style={{ backgroundImage: `url('https://www.imglnkx.com/8780/JM-885_DESIGN-23079_contenu-hayley_banner_01_300250.jpg')` }}
             />
           </a>
           {encounters.length > 0 ? (
