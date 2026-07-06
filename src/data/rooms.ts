@@ -85,7 +85,7 @@ export const DISTRICTS: District[] = [
     encounters: [
       {
         residentId: 'cams-banner',
-        href: 'https://t.mbjrkmms.com/413627/8780/32514?aff_sub=CAMS&source=CANTINA&po=6533&aff_sub5=SF_006OG000004lmDN',
+        href: 'https://t.camsk1.com/413627/9776/0?aff_sub=CAMS2&source=CANTINA&po=6533&aff_sub5=SF_006OG000004lmDN',
       },
     ],
   },
