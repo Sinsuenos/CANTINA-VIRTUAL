@@ -19,10 +19,10 @@ export const T: Record<Lang, Record<string, string>> = {
       'Behind these lanterns are warm conversations, genuine companionship, playful chemistry, beautiful people, and stories that unfold one encounter at a time.',
     copyClosing: 'Tonight is yours to discover.',
     enter: 'ENTER',
-    leave: 'LEAVE',
+    leave: 'EXIT',
     confirmQ: 'Are you 18 or older?',
     confirmEnter: 'I am 18 or older',
-    confirmLeave: 'Leave',
+    confirmLeave: 'Exit',
 
     /* ── Sidebar ── */
     sidebarFooter: 'Pacific coast. After dark.',
