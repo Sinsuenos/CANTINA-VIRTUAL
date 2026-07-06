@@ -31,7 +31,7 @@ export const RESIDENTS: Record<string, Resident> = {
     name: 'Live Performers',
     subtitle: '',
     description: 'Red lights. Frosted glass. They are already waiting.',
-    image: 'https://www.imglnkx.com/8780/PMKT-1110_DESIGN-17951_PinkGreen.gif',
+    image: 'https://www.imglnkx.com/9776/PCAM-244_DESIGN-23232_300250.gif',
   },
 };
 
