@@ -40,6 +40,13 @@ export const RESIDENTS: Record<string, Resident> = {
     description: 'The back rooms. The hidden tables.',
     image: '/gay-offer.png',
   },
+  'trans-offer': {
+    id: 'trans-offer',
+    name: 'TRANS PORNSTAR HAREM',
+    subtitle: '',
+    description: '',
+    image: '/trans-offer.png',
+  },
 };
 
 /* ─── District ─── */
@@ -176,6 +183,11 @@ export const DISTRICTS: District[] = [
     borderColor: 'rgba(123,45,142,0.3)',
     textColor: 'var(--purple)',
     bgImage: 'https://sfile.chatglm.cn/images-ppt/310a4b1925d7.jpg',
-    encounters: [],
+    encounters: [
+      {
+        residentId: 'trans-offer',
+        href: 'https://t.mbagm.link/413627/8663/0?aff_sub=TRANS&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
+      },
+    ],
   },
 ];

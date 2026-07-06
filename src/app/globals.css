@@ -584,6 +584,15 @@ body {
   );
 }
 
+/* ── TRANSGENDER wing: title above banner ── */
+[data-district="our-mission"] .encounter-card {
+  flex-direction: column;
+}
+[data-district="our-mission"] .encounter-card-body {
+  order: -1;
+  text-align: center;
+}
+
 .district-scene-overlay {
   position: fixed;
   top: 0;
