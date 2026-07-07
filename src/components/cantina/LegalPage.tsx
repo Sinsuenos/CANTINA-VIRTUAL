@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 type Lang = 'en' | 'es';
 
@@ -13,6 +13,19 @@ interface LegalPageProps {
 
 export function LegalPage({ titleEn, titleEs, en, es }: LegalPageProps) {
   const [lang, setLang] = useState<Lang>('en');
+
+  useEffect(() => {
+    const savedLang = sessionStorage.getItem('cv_lang');
+    if (savedLang === 'en' || savedLang === 'es') {
+      setLang(savedLang);
+    }
+  }, []);
+
+  const handleToggle = () => {
+    const next = lang === 'en' ? 'es' : 'en';
+    setLang(next);
+    sessionStorage.setItem('cv_lang', next);
+  };
   const content = lang === 'en' ? en : es;
   const title = lang === 'en' ? titleEn : titleEs;
 
@@ -37,7 +50,7 @@ export function LegalPage({ titleEn, titleEs, en, es }: LegalPageProps) {
           &larr; Cantina Virtual
         </a>
         <button
-          onClick={() => setLang(lang === 'en' ? 'es' : 'en')}
+          onClick={handleToggle}
           style={{
             background: 'transparent',
             border: '1px solid rgba(255,255,255,0.08)',

@@ -324,7 +324,7 @@ function Cantina({
         <footer className="compliance-footer">
           <span className="compliance-brand">Cantina Virtual</span>
           <nav className="compliance-nav">
-            <a href="#" className="compliance-link">{t.adultsOnly}</a>
+            <span className="compliance-link">{t.adultsOnly}</span>
             <a href="#" className="compliance-link">2257</a>
             <a href="/dmca" className="compliance-link">DMCA</a>
             <a href="/privacy" className="compliance-link">{t.privacy}</a>
@@ -347,10 +347,14 @@ export default function Home() {
   const [activeDistrict, setActiveDistrict] = useState<string | null>(null);
   const [lang, setLang] = useState<Lang>('en');
 
-  /* ── Persist age confirmation across navigations ── */
+  /* ── Persist age confirmation and lang across navigations ── */
   useEffect(() => {
     if (sessionStorage.getItem('cv_age') === '1') {
       setAgeConfirmed(true);
+    }
+    const savedLang = sessionStorage.getItem('cv_lang');
+    if (savedLang === 'en' || savedLang === 'es') {
+      setLang(savedLang);
     }
   }, []);
 
@@ -377,7 +381,11 @@ export default function Home() {
   }, []);
 
   const handleToggleLang = useCallback(() => {
-    setLang((prev) => (prev === 'en' ? 'es' : 'en'));
+    setLang((prev) => {
+      const next = prev === 'en' ? 'es' : 'en';
+      sessionStorage.setItem('cv_lang', next);
+      return next;
+    });
   }, []);
 
   const handleCategorySelect = useCallback((id: string) => {
