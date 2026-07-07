@@ -103,19 +103,19 @@ export const RESIDENTS: Record<string, Resident> = {
     description: 'BUILD YOUR GUILD\nBEGIN THE ADVENTURE',
     image: '/manga-rpg-300x250.png',
   },
-  'college-harem-1': {
-    id: 'college-harem-1',
-    name: 'COLLEGE × HAREM',
+  'comix-harem-1': {
+    id: 'comix-harem-1',
+    name: 'COMIX HAREM',
     subtitle: '',
-    description: 'BUILD YOUR HAREM\nCHOOSE YOUR PATH',
-    image: '/FSX-300x250.gif',
-  },
-  'college-harem-2': {
-    id: 'college-harem-2',
-    name: 'COLLEGE × HAREM',
-    subtitle: '',
-    description: 'EVERY CHOICE MATTERS\nEVERY ROMANCE COUNTS',
+    description: 'BUILD YOUR HAREM\nCREATE YOUR STORY',
     image: '/CxH-SQ1-13_300x250_EN.gif',
+  },
+  'comix-harem-2': {
+    id: 'comix-harem-2',
+    name: 'COMIX HAREM',
+    subtitle: '',
+    description: 'YOUR CHOICES MATTER\nEVERY PATH CHANGES',
+    image: '/010679A_CXHR_18_ALL_EN_71_L.gif',
   },
   'trans-offer': {
     id: 'trans-offer',
@@ -288,11 +288,11 @@ export const DISTRICTS: District[] = [
         href: 'https://t.acust-9.com/413627/6621?aff_sub=GAMES&aff_sub2=MNGRPG&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
       },
       {
-        residentId: 'college-harem-1',
+        residentId: 'comix-harem-1',
         href: 'https://t.aagm.link/413627/7930/27132?aff_sub=GAMES&aff_sub2=CMXHRM&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
       },
       {
-        residentId: 'college-harem-2',
+        residentId: 'comix-harem-2',
         href: 'https://t.aagm.link/413627/7930/27132?aff_sub=GAMES&aff_sub2=CMXHRM&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
       },
     ],

@@ -72,11 +72,11 @@ export const T: Record<Lang, Record<string, string>> = {
     'resident.cams-banner.desc':
       'Red lights. Frosted glass. They are already waiting.',
     'resident.manga-rpg.desc':
-      'CONSTRUYE TU GUILD\nCOMIENZA LA AVENTURA',
-    'resident.college-harem-1.desc':
-      'CONSTRUYE TU HAREM\nELIGE TU CAMINO',
-    'resident.college-harem-2.desc':
-      'CADA ELECCIÓN IMPORTA\nCADA ROMANCE CUENTA',
+      'BUILD YOUR GUILD\nBEGIN THE ADVENTURE',
+    'resident.comix-harem-1.desc':
+      'BUILD YOUR HAREM\nCREATE YOUR STORY',
+    'resident.comix-harem-2.desc':
+      'YOUR CHOICES MATTER\nEVERY PATH CHANGES',
 
     /* ── UI strings ── */
     ctaDrink: 'Send a Drink',
@@ -155,6 +155,12 @@ export const T: Record<Lang, Record<string, string>> = {
       'Alguien te espera. La barra está abierta.',
     'resident.cams-banner.desc':
       'Luces rojas. Cristal esmerilado. Ya están esperando.',
+    'resident.manga-rpg.desc':
+      'CONSTRUYE TU GUILD\nCOMIENZA LA AVENTURA',
+    'resident.comix-harem-1.desc':
+      'CONSTRUYE TU HAREM\nCREA TU HISTORIA',
+    'resident.comix-harem-2.desc':
+      'CADA ELECCIÓN IMPORTA\nCADA CAMBIO CUENTA',
 
     /* ── UI strings ── */
     ctaDrink: 'Invitar un Trago',
