@@ -33,6 +33,13 @@ export const RESIDENTS: Record<string, Resident> = {
     description: 'Red lights. Frosted glass. They are already waiting.',
     image: 'https://www.imglnkx.com/9776/PCAM-244_DESIGN-23232_300250.gif',
   },
+  'fanvue-talia': {
+    id: 'fanvue-talia',
+    name: '',
+    subtitle: '',
+    description: '',
+    image: 'https://www.imglnkx.com/10398/TaliaBanner300x100-2.png',
+  },
   'fanvue-ava': {
     id: 'fanvue-ava',
     name: '',
@@ -148,6 +155,10 @@ export const DISTRICTS: District[] = [
       {
         residentId: 'fanvue-ava',
         href: 'https://t.acust-9.com/413627/10397/0?aff_sub=FAN&aff_sub2=AVAH&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
+      },
+      {
+        residentId: 'fanvue-talia',
+        href: 'https://t.acust-9.com/413627/10398/0?aff_sub=FAN&aff_sub2=TALIAR&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
       },
     ],
   },
