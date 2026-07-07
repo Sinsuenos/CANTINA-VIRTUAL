@@ -124,6 +124,13 @@ export const RESIDENTS: Record<string, Resident> = {
     description: '',
     image: '/trans-offer.png',
   },
+  'xlovegay-cams': {
+    id: 'xlovegay-cams',
+    name: 'XLOVEGAY CAMS',
+    subtitle: '',
+    description: '',
+    image: '/xlovegay-cams-300x250.png',
+  },
 };
 
 /* ─── District ─── */
@@ -269,6 +276,10 @@ export const DISTRICTS: District[] = [
       {
         residentId: 'gay-offer',
         href: 'https://t.acust-7.com/413627/4080/0?aff_sub=GAY&source=Cantina&po=6456&aff_sub5=SF_006OG000004lmDN',
+      },
+      {
+        residentId: 'xlovegay-cams',
+        href: 'https://t.camsk1.com/413627/2494/0?aff_sub=GAY&aff_sub2=CAMS&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
       },
     ],
   },

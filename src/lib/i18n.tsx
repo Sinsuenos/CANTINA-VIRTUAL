@@ -77,6 +77,8 @@ export const T: Record<Lang, Record<string, string>> = {
       'BUILD YOUR HAREM\nCREATE YOUR STORY',
     'resident.comix-harem-2.desc':
       'YOUR CHOICES MATTER\nEVERY PATH CHANGES',
+    'resident.xlovegay-cams.desc':
+      'Large selection of models',
 
     /* ── UI strings ── */
     ctaDrink: 'Send a Drink',
@@ -161,6 +163,8 @@ export const T: Record<Lang, Record<string, string>> = {
       'CONSTRUYE TU HAREM\nCREA TU HISTORIA',
     'resident.comix-harem-2.desc':
       'CADA ELECCIÓN IMPORTA\nCADA CAMBIO CUENTA',
+    'resident.xlovegay-cams.desc':
+      'Gran selección de modelos',
 
     /* ── UI strings ── */
     ctaDrink: 'Invitar un Trago',
