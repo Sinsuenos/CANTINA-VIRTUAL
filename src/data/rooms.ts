@@ -182,7 +182,7 @@ export const DISTRICTS: District[] = [
     description: 'Why the cantina exists. What it stands for. The honest version.',
     borderColor: 'rgba(123,45,142,0.3)',
     textColor: 'var(--purple)',
-    bgImage: 'https://sfile.chatglm.cn/images-ppt/310a4b1925d7.jpg',
+    bgImage: '/trans-bg.jpg',
     encounters: [
       {
         residentId: 'trans-offer',
