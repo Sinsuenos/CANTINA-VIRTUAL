@@ -326,10 +326,10 @@ function Cantina({
           <nav className="compliance-nav">
             <a href="#" className="compliance-link">{t.adultsOnly}</a>
             <a href="#" className="compliance-link">2257</a>
-            <a href="#" className="compliance-link">DMCA</a>
-            <a href="#" className="compliance-link">{t.privacy}</a>
-            <a href="#" className="compliance-link">{t.terms}</a>
-            <a href="#" className="compliance-link">{t.contact}</a>
+            <a href="/dmca" className="compliance-link">DMCA</a>
+            <a href="/privacy" className="compliance-link">{t.privacy}</a>
+            <a href="/terms" className="compliance-link">{t.terms}</a>
+            <a href="/contact" className="compliance-link">{t.contact}</a>
           </nav>
         </footer>
       </main>
