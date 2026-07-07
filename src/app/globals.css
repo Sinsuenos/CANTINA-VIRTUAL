@@ -374,6 +374,7 @@ body {
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--amber);
+  white-space: pre-line;
 }
 .encounter-card-subtitle {
   font-size: 10px;
