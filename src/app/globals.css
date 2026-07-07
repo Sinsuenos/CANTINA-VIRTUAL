@@ -664,6 +664,20 @@ body {
   white-space: pre-line;
 }
 
+[data-district="niche"] .district-name {
+  white-space: pre-line;
+  color: var(--amber);
+  text-shadow: 0 0 20px rgba(212,160,23,0.4), 0 0 40px rgba(212,160,23,0.15);
+  font-size: 32px;
+}
+
+[data-district="niche"] .district-description {
+  color: var(--amber);
+  text-shadow: 0 0 15px rgba(212,160,23,0.3);
+  white-space: pre-line;
+  font-size: 15px;
+}
+
 /* ── District Encounters ── */
 .district-encounters {
   display: grid;

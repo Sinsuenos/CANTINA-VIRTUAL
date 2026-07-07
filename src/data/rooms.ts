@@ -35,7 +35,7 @@ export const RESIDENTS: Record<string, Resident> = {
   },
   'gay-offer': {
     id: 'gay-offer',
-    name: 'Gay',
+    name: 'STEAMY ENCOUNTERS\nFOR THOSE WHO KNOW',
     subtitle: '',
     description: 'The back rooms. The hidden tables.',
     image: '/gay-offer.png',
