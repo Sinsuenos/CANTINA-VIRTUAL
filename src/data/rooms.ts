@@ -147,7 +147,7 @@ export const DISTRICTS: District[] = [
     encounters: [
       {
         residentId: 'fanvue-ava',
-        href: 'https://t.acust-9.com/413627/10397/0?aff_sub=FAN&aff_sub2=ISLAK&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
+        href: 'https://t.acust-9.com/413627/10397/0?aff_sub=FAN&aff_sub2=AVAH&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
       },
     ],
   },
