@@ -16,6 +16,7 @@ export function EncounterCard({ resident, ctaColor, href }: EncounterCardProps) 
       target={href ? '_blank' : undefined}
       rel={href ? 'noopener noreferrer' : undefined}
       className="encounter-card no-underline"
+      data-resident={resident.id}
     >
       <div
         className="encounter-card-image"
@@ -23,9 +24,11 @@ export function EncounterCard({ resident, ctaColor, href }: EncounterCardProps) 
       />
       <div className="encounter-card-body">
         <span className="encounter-card-name">{resident.name}</span>
-        <p className="encounter-card-desc">
-          {t[`resident.${resident.id}.desc`] || resident.description}
-        </p>
+        {(t[`resident.${resident.id}.desc`] || resident.description) && (
+          <p className="encounter-card-desc">
+            {t[`resident.${resident.id}.desc`] || resident.description}
+          </p>
+        )}
       </div>
     </a>
   );

@@ -89,6 +89,13 @@ export const RESIDENTS: Record<string, Resident> = {
     description: '',
     image: 'https://www.imglnkx.com/9976/BellesaPlus_20250307_300250.jpeg',
   },
+  'sextpanther': {
+    id: 'sextpanther',
+    name: 'SEXT PANTHER',
+    subtitle: '',
+    description: '',
+    image: '/sext-panther-300x250.png',
+  },
   'trans-offer': {
     id: 'trans-offer',
     name: 'TRANS PORNSTAR HAREM',
@@ -220,6 +227,10 @@ export const DISTRICTS: District[] = [
       {
         residentId: 'bellesa-plus',
         href: 'https://t.bbwafx.com/413627/7378?aff_sub=PAY&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
+      },
+      {
+        residentId: 'sextpanther',
+        href: 'https://t.acust-9.com/413627/9927/38131?aff_sub=PAY&aff_sub2=LATINA&aff_sub3=SEXTPANTHR&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
       },
     ],
   },
