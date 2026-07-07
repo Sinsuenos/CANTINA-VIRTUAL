@@ -347,6 +347,13 @@ export default function Home() {
   const [activeDistrict, setActiveDistrict] = useState<string | null>(null);
   const [lang, setLang] = useState<Lang>('en');
 
+  /* ── Persist age confirmation across navigations ── */
+  useEffect(() => {
+    if (sessionStorage.getItem('cv_age') === '1') {
+      setAgeConfirmed(true);
+    }
+  }, []);
+
   /* ── Browser history integration ── */
   useEffect(() => {
     const handlePopState = (e: PopStateEvent) => {
@@ -365,6 +372,7 @@ export default function Home() {
 
   const handleAgeConfirm = useCallback(() => {
     setAgeConfirmed(true);
+    sessionStorage.setItem('cv_age', '1');
     window.history.pushState({ screen: 'hub' }, '');
   }, []);
 
