@@ -63,6 +63,10 @@ export const T: Record<Lang, Record<string, string>> = {
     /* ── Resident descriptions ── */
     'resident.girlfriendgpt.desc':
       'She remembers every conversation. Every name.',
+    'resident.darlink-ai.desc':
+      'CREA A TU COMPAÑERO\nTU HISTORIA EVOLUCIONA',
+    'resident.candy-ai-male.desc':
+      'TU COMPAÑERO IA\nDISEÑADO PARA CONECTAR',
     'resident.dating-encounter.desc':
       'Someone is waiting. The bar is open.',
     'resident.cams-banner.desc':
@@ -137,6 +141,10 @@ export const T: Record<Lang, Record<string, string>> = {
     /* ── Resident descriptions ── */
     'resident.girlfriendgpt.desc':
       'Recuerda cada conversación. Cada nombre.',
+    'resident.darlink-ai.desc':
+      'CREA A TU COMPAÑERO\nTU HISTORIA EVOLUCIONA',
+    'resident.candy-ai-male.desc':
+      'TU COMPAÑERO IA\nDISEÑADO PARA CONECTAR',
     'resident.dating-encounter.desc':
       'Alguien te espera. La barra está abierta.',
     'resident.cams-banner.desc':

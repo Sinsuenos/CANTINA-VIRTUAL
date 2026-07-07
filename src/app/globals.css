@@ -689,6 +689,59 @@ body {
   display: none;
 }
 
+/* ── AI Partners — title above card, caption below ── */
+[data-district="ai-companions"] .encounter-card {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 10px;
+  border: none;
+  background: none;
+  overflow: visible;
+  padding: 0;
+  border-radius: 0;
+}
+[data-district="ai-companions"] .encounter-card:hover {
+  border-color: transparent;
+  transform: none;
+  box-shadow: none;
+}
+[data-district="ai-companions"] .encounter-card-body {
+  display: contents;
+}
+[data-district="ai-companions"] .encounter-card-name {
+  order: 1;
+  font-size: 16px;
+  letter-spacing: 0.2em;
+  text-align: center;
+}
+[data-district="ai-companions"] .encounter-card-image {
+  order: 2;
+  aspect-ratio: 6/5;
+  border: 1px solid rgba(0,245,255,0.15);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+[data-district="ai-companions"] .encounter-card-image::after {
+  background: none;
+}
+[data-district="ai-companions"] .encounter-card:hover .encounter-card-image {
+  border-color: rgba(0,245,255,0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 12px rgba(0,245,255,0.06);
+}
+[data-district="ai-companions"] .encounter-card-desc {
+  order: 3;
+  text-align: center;
+  color: var(--text-primary);
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  line-height: 1.6;
+  white-space: pre-line;
+  margin: 0;
+}
+
 /* ── District Encounters ── */
 .district-encounters {
   display: grid;

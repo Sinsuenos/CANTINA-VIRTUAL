@@ -14,23 +14,23 @@ export interface Resident {
 export const RESIDENTS: Record<string, Resident> = {
   'girlfriendgpt': {
     id: 'girlfriendgpt',
-    name: 'GirlfriendGPT',
+    name: 'GIRLFRIEND GPT',
     subtitle: '',
     description: 'She remembers every conversation. Every name.',
     image: 'https://sfile.chatglm.cn/images-ppt/45b22e591c90.png',
   },
   'candy-ai-male': {
     id: 'candy-ai-male',
-    name: 'AI PARTNER',
+    name: 'CANDY AI MALE',
     subtitle: '',
-    description: '',
+    description: 'YOUR AI COMPANION\nBUILT FOR CONNECTION',
     image: 'https://www.imglnkx.com/10022/01_realistic_male_nsfw_300x250_candy_banner.gif',
   },
   'darlink-ai': {
     id: 'darlink-ai',
-    name: 'AI PARTNER',
+    name: 'DARLINK AI',
     subtitle: '',
-    description: '',
+    description: 'CREATE YOUR COMPANION\nYOUR STORY EVOLVES',
     image: 'https://www.imglnkx.com/10345/300x250a.png',
   },
   'dating-encounter': {
