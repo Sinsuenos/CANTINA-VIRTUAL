@@ -826,6 +826,70 @@ body {
   white-space: pre-line;
 }
 
+/* ── College × Harem variants — title above banner, description below, gold/amber ── */
+[data-resident="college-harem-1"],
+[data-resident="college-harem-2"] {
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+  gap: 8px;
+  border: none;
+  background: none;
+  overflow: visible;
+  padding: 0;
+  border-radius: 0;
+}
+[data-resident="college-harem-1"]:hover,
+[data-resident="college-harem-2"]:hover {
+  border-color: transparent;
+  transform: none;
+  box-shadow: none;
+}
+[data-resident="college-harem-1"] .encounter-card-body,
+[data-resident="college-harem-2"] .encounter-card-body {
+  display: contents;
+}
+[data-resident="college-harem-1"] .encounter-card-name,
+[data-resident="college-harem-2"] .encounter-card-name {
+  order: 1;
+  font-size: 16px;
+  letter-spacing: 0.22em;
+  text-align: center;
+  color: var(--amber);
+  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
+}
+[data-resident="college-harem-1"] .encounter-card-image,
+[data-resident="college-harem-2"] .encounter-card-image {
+  order: 2;
+  aspect-ratio: 300/250;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid rgba(212,160,23,0.15);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+[data-resident="college-harem-1"] .encounter-card-image::after,
+[data-resident="college-harem-2"] .encounter-card-image::after {
+  background: none;
+}
+[data-resident="college-harem-1"]:hover .encounter-card-image,
+[data-resident="college-harem-2"]:hover .encounter-card-image {
+  border-color: rgba(212,160,23,0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 12px rgba(212,160,23,0.08);
+}
+[data-resident="college-harem-1"] .encounter-card-desc,
+[data-resident="college-harem-2"] .encounter-card-desc {
+  order: 3;
+  text-align: center;
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  color: var(--amber);
+  text-shadow: 0 0 12px rgba(212,160,23,0.3);
+  white-space: pre-line;
+}
+
 /* ── AI Partners — title above card, caption below ── */
 [data-district="ai-companions"] .encounter-card {
   display: grid;

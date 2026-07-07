@@ -73,6 +73,10 @@ export const T: Record<Lang, Record<string, string>> = {
       'Red lights. Frosted glass. They are already waiting.',
     'resident.manga-rpg.desc':
       'CONSTRUYE TU GUILD\nCOMIENZA LA AVENTURA',
+    'resident.college-harem-1.desc':
+      'CONSTRUYE TU HAREM\nELIGE TU CAMINO',
+    'resident.college-harem-2.desc':
+      'CADA ELECCIÓN IMPORTA\nCADA ROMANCE CUENTA',
 
     /* ── UI strings ── */
     ctaDrink: 'Send a Drink',
