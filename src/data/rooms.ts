@@ -19,6 +19,13 @@ export const RESIDENTS: Record<string, Resident> = {
     description: 'She remembers every conversation. Every name.',
     image: 'https://sfile.chatglm.cn/images-ppt/45b22e591c90.png',
   },
+  'darlink-ai': {
+    id: 'darlink-ai',
+    name: 'AI PARTNER',
+    subtitle: '',
+    description: '',
+    image: 'https://www.imglnkx.com/10345/300x250a.png',
+  },
   'dating-encounter': {
     id: 'dating-encounter',
     name: 'Real Connections',
@@ -156,6 +163,10 @@ export const DISTRICTS: District[] = [
       {
         residentId: 'girlfriendgpt',
         href: 'https://t.vlmai-1.com/413627/10046/38605?aff_sub=AI&source=Cantina&aff_sub5=SF_006OG000004lmDN',
+      },
+      {
+        residentId: 'darlink-ai',
+        href: 'https://t.vlmai-1.com/413627/10345/0?aff_sub=AI&aff_sub2=DARLINK&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
       },
     ],
   },
