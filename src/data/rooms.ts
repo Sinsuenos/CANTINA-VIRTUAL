@@ -63,9 +63,9 @@ export const RESIDENTS: Record<string, Resident> = {
   },
   'gay-offer': {
     id: 'gay-offer',
-    name: 'STEAMY ENCOUNTERS\nFOR THOSE WHO KNOW',
+    name: 'PREMIUM\nGAY ENTERTAINMENT',
     subtitle: '',
-    description: 'The back rooms. The hidden tables.',
+    description: '',
     image: '/gay-offer.png',
   },
   'bellesa-plus': {
@@ -207,7 +207,7 @@ export const DISTRICTS: District[] = [
     subtitle: '',
     neonClass: 'neon-amber',
     dividerClass: 'divider-amber',
-    description: 'The back rooms. The hidden tables. Where the regulars know each other\'s names.',
+    description: 'A premium corner of the cantina. Open, welcoming, and always alive.',
     borderColor: 'rgba(212,160,23,0.3)',
     textColor: 'var(--amber)',
     bgImage: '/gay-bg.png',

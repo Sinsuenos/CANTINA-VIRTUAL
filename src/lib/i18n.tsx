@@ -36,7 +36,7 @@ export const T: Record<Lang, Record<string, string>> = {
     'district.ai-companions.name': 'AI Partners',
     'district.fan-sites.name': 'Fansites',
     'district.pay-sites.name': 'Paysites',
-    'district.niche.name': 'PRIVATE DESIRES\nIN THE BACK ROOMS',
+    'district.niche.name': 'GAY',
     'district.gaming.name': 'Video Games',
     'district.our-mission.name': 'TRANSGENDER',
 
@@ -52,7 +52,7 @@ export const T: Record<Lang, Record<string, string>> = {
     'district.pay-sites.desc':
       'BEYOND THE VELVET ROPE\nPREMIUM ENTERTAINMENT AWAITS',
     'district.niche.desc':
-      'Some evenings are quieter.\nSome are louder.\nEveryone belongs.',
+      'A premium corner of the cantina. Open, welcoming, and always alive.',
     'district.gaming.desc':
       'The cabinets glow in the dark. Someone is already on the high score screen.',
     'district.our-mission.desc':
@@ -110,7 +110,7 @@ export const T: Record<Lang, Record<string, string>> = {
     'district.ai-companions.name': 'Compañeros IA',
     'district.fan-sites.name': 'Sitios de Fans',
     'district.pay-sites.name': 'Sitios de Pago',
-    'district.niche.name': 'DESEOS PRIVADOS\nEN LAS SALAS DE ATRÁS',
+    'district.niche.name': 'GAY',
     'district.gaming.name': 'Videojuegos',
     'district.our-mission.name': 'TRANSGENDER',
 
@@ -126,7 +126,7 @@ export const T: Record<Lang, Record<string, string>> = {
     'district.pay-sites.desc':
       'MÁS ALLÁ DE LA CUERDA DE TERCIPELO\nENTRETENIMIENTO PREMIUM TE ESPERA',
     'district.niche.desc':
-      'Algunas noches son más tranquilas.\nOtras son más fuertes.\nTodos son bienvenidos.',
+      'Un rincón premium de la cantina. Abierto, acogedor, siempre vivo.',
     'district.gaming.desc':
       'Las máquinas brillan en la oscuridad. Alguien ya está en la pantalla de récord.',
     'district.our-mission.desc':
