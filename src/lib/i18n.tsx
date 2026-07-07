@@ -50,7 +50,7 @@ export const T: Record<Lang, Record<string, string>> = {
     'district.fan-sites.desc':
       'The creators have their own corner. Autographs optional.',
     'district.pay-sites.desc':
-      'The velvet rope. Beyond it, the night costs a little more.',
+      'BEYOND THE VELVET ROPE\nPREMIUM ENTERTAINMENT AWAITS',
     'district.niche.desc':
       "The back rooms. The hidden tables. Where the regulars know each other's names.",
     'district.gaming.desc':
@@ -124,7 +124,7 @@ export const T: Record<Lang, Record<string, string>> = {
     'district.fan-sites.desc':
       'Las creadoras tienen su propio rincón. Las autografías son opcionales.',
     'district.pay-sites.desc':
-      'La cuerda de terciopelo. Más allá, la noche cuesta un poco más.',
+      'MÁS ALLÁ DE LA CUERDA DE TERCIPELO\nENTRETENIMIENTO PREMIUM TE ESPERA',
     'district.niche.desc':
       'Las salas de atrás. Las mesas escondidas. Donde los habituales se conocen de nombre.',
     'district.gaming.desc':
