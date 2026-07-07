@@ -26,6 +26,13 @@ export const RESIDENTS: Record<string, Resident> = {
     description: 'Someone is waiting. The bar is open.',
     image: '/dating-offer.png',
   },
+  'vicky-milan-dating': {
+    id: 'vicky-milan-dating',
+    name: 'ENJOY A\nDISCREET DATE',
+    subtitle: '',
+    description: '',
+    image: '/vicky-milan-dating.png',
+  },
   'cams-banner': {
     id: 'cams-banner',
     name: 'Live Performers',
@@ -111,6 +118,10 @@ export const DISTRICTS: District[] = [
       {
         residentId: 'dating-encounter',
         href: 'https://t.acust-7.com/413627/3785/0?po=6456&aff_sub5=SF_006OG000004lmDN',
+      },
+      {
+        residentId: 'vicky-milan-dating',
+        href: 'https://t.crdtg3.com/413627/4593/40617?aff_sub=DATING&aff_sub2=VICMILAN&aff_sub3=MILDLP&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
       },
     ],
   },

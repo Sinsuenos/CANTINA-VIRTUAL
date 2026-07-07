@@ -1466,6 +1466,7 @@ body {
   letter-spacing: 0.15em;
   text-transform: uppercase;
   color: var(--amber);
+  white-space: pre-line;
 }
 .dating-encounter-role {
   font-size: 10px;
@@ -1477,6 +1478,13 @@ body {
   color: var(--text-muted);
   line-height: 1.6;
   margin: 2px 0;
+}
+.dating-encounter-desc:empty {
+  display: none;
+}
+.dating-encounter-card:has(.dating-encounter-desc:empty) .dating-encounter-name {
+  font-size: 18px;
+  letter-spacing: 0.2em;
 }
 .dating-encounter-cta {
   display: inline-flex;
