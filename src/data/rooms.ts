@@ -165,7 +165,7 @@ export const DISTRICTS: District[] = [
     description: 'The back rooms. The hidden tables. Where the regulars know each other\'s names.',
     borderColor: 'rgba(212,160,23,0.3)',
     textColor: 'var(--amber)',
-    bgImage: 'https://sfile.chatglm.cn/images-ppt/91b93c38ff40.jpg',
+    bgImage: '/gay-bg.png',
     encounters: [
       {
         residentId: 'gay-offer',
