@@ -33,6 +33,13 @@ export const RESIDENTS: Record<string, Resident> = {
     description: 'Red lights. Frosted glass. They are already waiting.',
     image: 'https://www.imglnkx.com/9776/PCAM-244_DESIGN-23232_300250.gif',
   },
+  'fanvue-ava': {
+    id: 'fanvue-ava',
+    name: '',
+    subtitle: '',
+    description: '',
+    image: 'https://www.imglnkx.com/10397/AvaBanner300x100-2.png',
+  },
   'gay-offer': {
     id: 'gay-offer',
     name: 'STEAMY ENCOUNTERS\nFOR THOSE WHO KNOW',
@@ -137,7 +144,12 @@ export const DISTRICTS: District[] = [
     borderColor: 'rgba(233,30,140,0.3)',
     textColor: 'var(--rose)',
     bgImage: '/fan-sites-bg.png',
-    encounters: [],
+    encounters: [
+      {
+        residentId: 'fanvue-ava',
+        href: 'https://t.acust-9.com/413627/10397/0?aff_sub=FAN&aff_sub2=ISLAK&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
+      },
+    ],
   },
   {
     id: 'pay-sites',

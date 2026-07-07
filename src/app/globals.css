@@ -678,6 +678,17 @@ body {
   font-size: 15px;
 }
 
+[data-district="fan-sites"] .encounter-card-image {
+  aspect-ratio: 3/1;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+[data-district="fan-sites"] .encounter-card-body {
+  display: none;
+}
+
 /* ── District Encounters ── */
 .district-encounters {
   display: grid;
