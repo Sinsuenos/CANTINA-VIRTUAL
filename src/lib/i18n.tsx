@@ -37,7 +37,7 @@ export const T: Record<Lang, Record<string, string>> = {
     'district.fan-sites.name': 'Fansites',
     'district.pay-sites.name': 'Paysites',
     'district.niche.name': 'GAY',
-    'district.gaming.name': 'Video Games',
+    'district.gaming.name': 'Games',
     'district.our-mission.name': 'TRANSGENDER',
 
     /* ── District descriptions ── */
@@ -71,6 +71,8 @@ export const T: Record<Lang, Record<string, string>> = {
       'Someone is waiting. The bar is open.',
     'resident.cams-banner.desc':
       'Red lights. Frosted glass. They are already waiting.',
+    'resident.manga-rpg.desc':
+      'CONSTRUYE TU GUILD\nCOMIENZA LA AVENTURA',
 
     /* ── UI strings ── */
     ctaDrink: 'Send a Drink',
@@ -115,7 +117,7 @@ export const T: Record<Lang, Record<string, string>> = {
     'district.fan-sites.name': 'Sitios de Fans',
     'district.pay-sites.name': 'Sitios de Pago',
     'district.niche.name': 'GAY',
-    'district.gaming.name': 'Videojuegos',
+    'district.gaming.name': 'Juegos',
     'district.our-mission.name': 'TRANSGENDER',
 
     /* ── District descriptions ── */

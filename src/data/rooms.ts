@@ -96,6 +96,13 @@ export const RESIDENTS: Record<string, Resident> = {
     description: '',
     image: '/sext-panther-300x250.png',
   },
+  'manga-rpg': {
+    id: 'manga-rpg',
+    name: 'MANGA RPG',
+    subtitle: '',
+    description: 'BUILD YOUR GUILD\nBEGIN THE ADVENTURE',
+    image: '/manga-rpg-300x250.png',
+  },
   'trans-offer': {
     id: 'trans-offer',
     name: 'TRANS PORNSTAR HAREM',
@@ -253,7 +260,7 @@ export const DISTRICTS: District[] = [
   },
   {
     id: 'gaming',
-    name: 'Video Games',
+    name: 'Games',
     subtitle: '',
     neonClass: 'neon-cyan',
     dividerClass: 'divider-cyan',
@@ -261,7 +268,12 @@ export const DISTRICTS: District[] = [
     borderColor: 'rgba(0,245,255,0.3)',
     textColor: 'var(--cyan)',
     bgImage: 'https://sfile.chatglm.cn/images-ppt/fcef82f7bbdf.png',
-    encounters: [],
+    encounters: [
+      {
+        residentId: 'manga-rpg',
+        href: 'https://t.acust-9.com/413627/6621?aff_sub=GAMES&aff_sub2=MNGRPG&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
+      },
+    ],
   },
   {
     id: 'our-mission',
