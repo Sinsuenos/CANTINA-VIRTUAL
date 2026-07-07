@@ -64,9 +64,9 @@ export const T: Record<Lang, Record<string, string>> = {
     'resident.girlfriendgpt.desc':
       'She remembers every conversation. Every name.',
     'resident.darlink-ai.desc':
-      'CREA A TU COMPAÑERO\nTU HISTORIA EVOLUCIONA',
+      'CREATE YOUR COMPANION\nYOUR STORY EVOLVES',
     'resident.candy-ai-male.desc':
-      'TU COMPAÑERO IA\nDISEÑADO PARA CONECTAR',
+      'YOUR AI COMPANION\nBUILT FOR CONNECTION',
     'resident.dating-encounter.desc':
       'Someone is waiting. The bar is open.',
     'resident.cams-banner.desc':
