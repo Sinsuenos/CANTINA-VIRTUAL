@@ -91,6 +91,19 @@ export function LiveCamsRoom({ district }: LiveCamsRoomProps) {
               style={{ backgroundImage: `url('https://www.imglnkx.com/8780/JM-885_DESIGN-23079_contenu-hayley_banner_01_300250.jpg')` }}
             />
           </a>
+          <a
+            href="https://t.amyfc.link/413627/779/0?aff_sub=CAMS&aff_sub2=MYFREE&source=CANTINA&aff_sub5=SF_006OG000004lmDN"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="livecams-encounter-card no-underline"
+            data-cam="myfreecams"
+          >
+            <span className="livecams-encounter-name">MYFREECAMS</span>
+            <div
+              className="livecams-encounter-image"
+              style={{ backgroundImage: `url('/myfreecams-300x250.png')` }}
+            />
+          </a>
         </div>
       </div>
     </div>
