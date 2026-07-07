@@ -293,7 +293,7 @@ export const DISTRICTS: District[] = [
       },
       {
         residentId: 'comix-harem-2',
-        href: 'https://t.aagm.link/413627/7930/27132?aff_sub=GAMES&aff_sub2=CMXHRM&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
+        href: 'https://t.aagm.link/413627/7930/27128?aff_sub=GAMES&aff_sub2=CMXHRM&aff_sub3=LP5&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
       },
     ],
   },
