@@ -678,15 +678,49 @@ body {
   font-size: 15px;
 }
 
+/* ── Fan Sites — title above banner, no body ── */
+[data-district="fan-sites"] .encounter-card {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 8px;
+  border: none;
+  background: none;
+  overflow: visible;
+  padding: 0;
+  border-radius: 0;
+}
+[data-district="fan-sites"] .encounter-card:hover {
+  border-color: transparent;
+  transform: none;
+  box-shadow: none;
+}
+[data-district="fan-sites"] .encounter-card-body {
+  display: contents;
+}
+[data-district="fan-sites"] .encounter-card-name {
+  order: 1;
+  font-size: 14px;
+  letter-spacing: 0.2em;
+  text-align: center;
+}
 [data-district="fan-sites"] .encounter-card-image {
+  order: 2;
   aspect-ratio: 3/1;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+  border: 1px solid rgba(233,30,140,0.15);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  transition: all 0.4s ease;
 }
-
-[data-district="fan-sites"] .encounter-card-body {
-  display: none;
+[data-district="fan-sites"] .encounter-card-image::after {
+  background: none;
+}
+[data-district="fan-sites"] .encounter-card:hover .encounter-card-image {
+  border-color: rgba(233,30,140,0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 12px rgba(233,30,140,0.06);
 }
 
 /* ── AI Partners — title above card, caption below ── */

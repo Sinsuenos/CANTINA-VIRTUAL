@@ -56,24 +56,24 @@ export const RESIDENTS: Record<string, Resident> = {
   },
   'fanvue-mila': {
     id: 'fanvue-mila',
-    name: '',
+    name: 'MILA LERUE',
     subtitle: '',
     description: '',
     image: 'https://www.imglnkx.com/10395/MilaBanner300x100-2.png',
   },
   'fanvue-talia': {
     id: 'fanvue-talia',
-    name: '',
+    name: 'TALIA ROSE',
     subtitle: '',
     description: '',
     image: 'https://www.imglnkx.com/10398/TaliaBanner300x100-2.png',
   },
-  'fanvue-ava': {
-    id: 'fanvue-ava',
-    name: '',
+  'fanvue-amber': {
+    id: 'fanvue-amber',
+    name: 'AMBER SANTORI',
     subtitle: '',
     description: '',
-    image: 'https://www.imglnkx.com/10397/AvaBanner300x100-2.png',
+    image: 'https://www.imglnkx.com/10394/AmberBanner300x100-1.png',
   },
   'gay-offer': {
     id: 'gay-offer',
@@ -193,8 +193,8 @@ export const DISTRICTS: District[] = [
     bgImage: '/fan-sites-bg.png',
     encounters: [
       {
-        residentId: 'fanvue-ava',
-        href: 'https://t.acust-9.com/413627/10397/0?aff_sub=FAN&aff_sub2=AVAH&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
+        residentId: 'fanvue-amber',
+        href: 'https://t.acust-9.com/413627/10394/0?aff_sub=FAN&aff_sub2=AMBERS&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
       },
       {
         residentId: 'fanvue-talia',
