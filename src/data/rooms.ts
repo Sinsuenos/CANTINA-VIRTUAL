@@ -303,7 +303,7 @@ export const DISTRICTS: District[] = [
     description: 'The cabinets glow in the dark. Someone is already on the high score screen.',
     borderColor: 'rgba(0,245,255,0.3)',
     textColor: 'var(--cyan)',
-    bgImage: 'https://sfile.chatglm.cn/images-ppt/fcef82f7bbdf.png',
+    bgImage: '/games-bg.png',
     encounters: [
       {
         residentId: 'manga-rpg',
