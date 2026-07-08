@@ -84,9 +84,9 @@ export const RESIDENTS: Record<string, Resident> = {
   },
   'gay-offer': {
     id: 'gay-offer',
-    name: 'PREMIUM\nGAY ENTERTAINMENT',
+    name: 'LOCAL DATING',
     subtitle: '',
-    description: '',
+    description: 'FIND YOUR MATCH TONIGHT',
     image: '/gay-offer.png',
   },
   'bellesa-plus': {
@@ -135,7 +135,7 @@ export const RESIDENTS: Record<string, Resident> = {
     id: 'xlovegay-cams',
     name: 'XLOVEGAY CAMS',
     subtitle: '',
-    description: 'LOCAL DATING',
+    description: '',
     image: '/xlovegay-cams-300x250.png',
   },
 };

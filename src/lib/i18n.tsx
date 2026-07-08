@@ -63,6 +63,8 @@ export const T: Record<Lang, Record<string, string>> = {
 
     /* ── Resident subtitles ── */
     'resident.girlfriendgpt.subtitle': '',
+    /* ── Resident names ── */
+    'resident.gay-offer.name': 'LOCAL DATING',
     /* ── Resident descriptions ── */
     'resident.girlfriendgpt.desc':
       'She remembers every conversation. Every name.',
@@ -82,10 +84,10 @@ export const T: Record<Lang, Record<string, string>> = {
       'BUILD YOUR HAREM\nCREATE YOUR STORY',
     'resident.comix-harem-2.desc':
       'YOUR CHOICES MATTER\nEVERY PATH CHANGES',
-    'resident.xlovegay-cams.desc':
-      'LOCAL DATING',
     'resident.trans-offer.desc':
       'BUILD YOUR ROSTER\nCHOOSE YOUR SCENES',
+    'resident.gay-offer.desc':
+      'FIND YOUR MATCH TONIGHT',
 
     /* ── UI strings ── */
     ctaDrink: 'Send a Drink',
@@ -156,6 +158,8 @@ export const T: Record<Lang, Record<string, string>> = {
 
     /* ── Resident subtitles ── */
     'resident.girlfriendgpt.subtitle': '',
+    /* ── Resident names ── */
+    'resident.gay-offer.name': 'CITAS LOCALES',
     /* ── Resident descriptions ── */
     'resident.girlfriendgpt.desc':
       'Recuerda cada conversación. Cada nombre.',
@@ -175,10 +179,10 @@ export const T: Record<Lang, Record<string, string>> = {
       'CONSTRUYE TU HAREM\nCREA TU HISTORIA',
     'resident.comix-harem-2.desc':
       'CADA ELECCIÓN IMPORTA\nCADA CAMBIO CUENTA',
-    'resident.xlovegay-cams.desc':
-      'CITAS LOCALES',
     'resident.trans-offer.desc':
       'ARMA TU ROSTER\nELIGE TUS ESCENAS',
+    'resident.gay-offer.desc':
+      'ENCUENTRA TU PAREJA ESTA NOCHE',
 
     /* ── UI strings ── */
     ctaDrink: 'Invitar un Trago',

@@ -23,7 +23,7 @@ export function EncounterCard({ resident, ctaColor, href }: EncounterCardProps) 
         style={{ backgroundImage: `url('${resident.image}')` }}
       />
       <div className="encounter-card-body">
-        <span className="encounter-card-name">{resident.name}</span>
+        <span className="encounter-card-name">{t[`resident.${resident.id}.name`] || resident.name}</span>
         {(t[`resident.${resident.id}.desc`] || resident.description) && (
           <p className="encounter-card-desc">
             {t[`resident.${resident.id}.desc`] || resident.description}
