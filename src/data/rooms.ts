@@ -38,7 +38,7 @@ export const RESIDENTS: Record<string, Resident> = {
     name: 'Real Connections',
     subtitle: '',
     description: 'Someone is waiting. The bar is open.',
-    image: '/dating-offer.png',
+    image: '/dating-real-connections-banner-v2.jpg',
   },
   'vicky-milan-dating': {
     id: 'vicky-milan-dating',
