@@ -603,6 +603,26 @@ body {
   text-align: center;
 }
 
+/* ── GAY wing: shrink long card titles, rainbow accent ── */
+[data-resident="xlovegay-cams"] .encounter-card-name {
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  position: relative;
+  padding-bottom: 8px;
+}
+[data-resident="xlovegay-cams"] .encounter-card-name::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 2px;
+  background: linear-gradient(90deg, #e40303, #ff8c00, #ffed00, #008026, #24408e, #732982);
+  border-radius: 1px;
+  opacity: 0.85;
+}
+
 .district-scene-overlay {
   position: fixed;
   top: 0;
@@ -1013,24 +1033,24 @@ body {
   margin-bottom: 10px;
 }
 .nectar-teaser-title {
-  font-size: 11px;
+  font-size: 13px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   font-weight: 700;
 }
 .nectar-teaser-soon {
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
 }
 .nectar-teaser-intro {
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.05em;
   line-height: 1.6;
   margin-bottom: 4px;
 }
 .nectar-teaser-list {
-  font-size: 10px;
+  font-size: 12px;
   letter-spacing: 0.05em;
   line-height: 1.7;
   white-space: pre-line;
@@ -1407,14 +1427,15 @@ body {
 
 .age-gate-btn-enter {
   padding: 24px 72px;
-  border-color: rgba(212,160,23,0.5);
-  background: rgba(212,160,23,0.06);
+  border: 2px solid rgba(212,160,23,0.6);
+  background: rgba(212,160,23,0.08);
+  box-shadow: 0 0 20px rgba(212,160,23,0.15), 0 0 40px rgba(212,160,23,0.06);
 }
 
 .age-gate-btn-enter:hover {
   border-color: var(--amber);
-  background: rgba(212,160,23,0.15);
-  box-shadow: 0 0 24px rgba(212,160,23,0.2), 0 0 48px rgba(212,160,23,0.08);
+  background: rgba(212,160,23,0.18);
+  box-shadow: 0 0 28px rgba(212,160,23,0.3), 0 0 56px rgba(212,160,23,0.12);
 }
 
 .age-gate-btn-leave {
