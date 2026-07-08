@@ -917,8 +917,10 @@ body {
   box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 12px rgba(212,160,23,0.08);
 }
 
-/* ── Trans offer — title above banner, no body wrapper ── */
-[data-resident="trans-offer"] {
+/* ── Trans wing cards — title above banner, no body wrapper ── */
+[data-resident="trans-offer"],
+[data-resident="jermate-trans"],
+[data-resident="soda-offer"] {
   display: grid;
   grid-template-rows: auto 1fr auto;
   gap: 8px;
@@ -928,15 +930,21 @@ body {
   padding: 0;
   border-radius: 0;
 }
-[data-resident="trans-offer"]:hover {
+[data-resident="trans-offer"]:hover,
+[data-resident="jermate-trans"]:hover,
+[data-resident="soda-offer"]:hover {
   border-color: transparent;
   transform: none;
   box-shadow: none;
 }
-[data-resident="trans-offer"] .encounter-card-body {
+[data-resident="trans-offer"] .encounter-card-body,
+[data-resident="jermate-trans"] .encounter-card-body,
+[data-resident="soda-offer"] .encounter-card-body {
   display: contents;
 }
-[data-resident="trans-offer"] .encounter-card-name {
+[data-resident="trans-offer"] .encounter-card-name,
+[data-resident="jermate-trans"] .encounter-card-name,
+[data-resident="soda-offer"] .encounter-card-name {
   order: 1;
   font-size: 16px;
   letter-spacing: 0.22em;
@@ -944,7 +952,9 @@ body {
   color: var(--amber);
   text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
 }
-[data-resident="trans-offer"] .encounter-card-image {
+[data-resident="trans-offer"] .encounter-card-image,
+[data-resident="jermate-trans"] .encounter-card-image,
+[data-resident="soda-offer"] .encounter-card-image {
   order: 2;
   aspect-ratio: 300/250;
   background-size: cover;
@@ -955,10 +965,14 @@ body {
   overflow: hidden;
   transition: all 0.4s ease;
 }
-[data-resident="trans-offer"] .encounter-card-image::after {
+[data-resident="trans-offer"] .encounter-card-image::after,
+[data-resident="jermate-trans"] .encounter-card-image::after,
+[data-resident="soda-offer"] .encounter-card-image::after {
   background: none;
 }
-[data-resident="trans-offer"] .encounter-card-desc {
+[data-resident="trans-offer"] .encounter-card-desc,
+[data-resident="jermate-trans"] .encounter-card-desc,
+[data-resident="soda-offer"] .encounter-card-desc {
   order: 3;
   text-align: center;
   color: var(--amber);
@@ -970,7 +984,9 @@ body {
   white-space: pre-line;
   margin: 0;
 }
-[data-resident="trans-offer"]:hover .encounter-card-image {
+[data-resident="trans-offer"]:hover .encounter-card-image,
+[data-resident="jermate-trans"]:hover .encounter-card-image,
+[data-resident="soda-offer"]:hover .encounter-card-image {
   border-color: rgba(212,160,23,0.35);
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 12px rgba(212,160,23,0.08);
