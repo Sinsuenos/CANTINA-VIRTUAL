@@ -193,7 +193,7 @@ export const DISTRICTS: District[] = [
   },
   {
     id: 'ai-companions',
-    name: 'AI Partners',
+    name: 'AI Companions',
     subtitle: '',
     neonClass: 'neon-cyan',
     dividerClass: 'divider-cyan',

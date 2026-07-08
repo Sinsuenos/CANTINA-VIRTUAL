@@ -42,10 +42,7 @@ export function DistrictScene({ district }: DistrictSceneProps) {
             {t[`district.${district.id}.name`] || district.name}
           </h2>
           <div className={`district-divider ${district.dividerClass}`} />
-          <p
-            className="district-description"
-            style={{ color: 'var(--text-muted)' }}
-          >
+          <p className="district-description">
             {t[`district.${district.id}.desc`] || district.description}
           </p>
         </div>
