@@ -129,7 +129,7 @@ export const RESIDENTS: Record<string, Resident> = {
     name: 'TRANS PORNSTAR HAREM',
     subtitle: '',
     description: 'BUILD YOUR ROSTER\nCHOOSE YOUR SCENES',
-    image: '/trans-offer.png',
+    image: '/trans-offer-banner-v2.png',
   },
   'xlovegay-cams': {
     id: 'xlovegay-cams',
