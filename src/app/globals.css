@@ -680,11 +680,11 @@ body {
 }
 
 .district-description {
-  font-size: 13px;
+  font-size: 15px;
   line-height: 1.8;
   max-width: 480px;
-  color: var(--text-muted);
-  text-shadow: 0 1px 4px rgba(10,14,23,0.85), 0 0 12px rgba(10,14,23,0.5);
+  color: var(--amber);
+  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
 }
 
 [data-district="pay-sites"] .district-description {
@@ -1033,24 +1033,24 @@ body {
   margin-bottom: 10px;
 }
 .nectar-teaser-title {
-  font-size: 13px;
+  font-size: 14px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   font-weight: 700;
 }
 .nectar-teaser-soon {
-  font-size: 11px;
+  font-size: 12px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
 }
 .nectar-teaser-intro {
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 0.05em;
   line-height: 1.6;
   margin-bottom: 4px;
 }
 .nectar-teaser-list {
-  font-size: 12px;
+  font-size: 13px;
   letter-spacing: 0.05em;
   line-height: 1.7;
   white-space: pre-line;
@@ -1426,16 +1426,17 @@ body {
 }
 
 .age-gate-btn-enter {
-  padding: 24px 72px;
-  border: 2px solid rgba(212,160,23,0.6);
-  background: rgba(212,160,23,0.08);
-  box-shadow: 0 0 20px rgba(212,160,23,0.15), 0 0 40px rgba(212,160,23,0.06);
+  padding: 26px 80px;
+  border: 2px solid rgba(212,160,23,0.7);
+  background: rgba(212,160,23,0.14);
+  box-shadow: 0 0 24px rgba(212,160,23,0.25), 0 0 48px rgba(212,160,23,0.1), 0 4px 20px rgba(212,160,23,0.1);
 }
 
 .age-gate-btn-enter:hover {
   border-color: var(--amber);
-  background: rgba(212,160,23,0.18);
-  box-shadow: 0 0 28px rgba(212,160,23,0.3), 0 0 56px rgba(212,160,23,0.12);
+  border-width: 2px;
+  background: rgba(212,160,23,0.22);
+  box-shadow: 0 0 32px rgba(212,160,23,0.4), 0 0 64px rgba(212,160,23,0.18), 0 4px 28px rgba(212,160,23,0.15);
 }
 
 .age-gate-btn-leave {
@@ -1448,11 +1449,12 @@ body {
 }
 
 .age-gate-btn-label {
-  font-size: 22px;
+  font-size: 24px;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--amber);
-  font-weight: 600;
+  font-weight: 700;
+  text-shadow: 0 1px 4px rgba(10,14,23,0.8);
 }
 
 .age-gate-btn-leave .age-gate-btn-label {
