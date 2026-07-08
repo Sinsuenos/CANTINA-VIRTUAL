@@ -59,7 +59,7 @@ export const T: Record<Lang, Record<string, string>> = {
     'district.gaming.desc':
       'The cabinets glow in the dark. Someone is already on the high score screen.',
     'district.our-mission.desc':
-      'Why the cantina exists. What it stands for. The honest version.',
+      'Every Body. Every Story. All Are Welcome Here.',
 
     /* ── Resident subtitles ── */
     'resident.girlfriendgpt.subtitle': '',
@@ -180,7 +180,7 @@ export const T: Record<Lang, Record<string, string>> = {
     'district.gaming.desc':
       'Las máquinas brillan en la oscuridad. Alguien ya está en la pantalla de récord.',
     'district.our-mission.desc':
-      'Por qué existe la cantina. Lo que representa. La versión honesta.',
+      'Cada Cuerpo. Cada Historia. Todos Son Bienvenidos Aquí.',
 
     /* ── Resident subtitles ── */
     'resident.girlfriendgpt.subtitle': '',

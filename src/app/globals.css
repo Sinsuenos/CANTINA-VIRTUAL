@@ -595,6 +595,14 @@ body {
 }
 
 /* ── TRANSGENDER wing: title above banner ── */
+[data-district="our-mission"] .district-description {
+  font-size: 18px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--amber);
+  text-shadow: 0 0 20px rgba(212,160,23,0.4), 0 0 40px rgba(212,160,23,0.15);
+  white-space: pre-line;
+}
 [data-district="our-mission"] .encounter-card {
   flex-direction: column;
 }
