@@ -149,14 +149,14 @@ export const RESIDENTS: Record<string, Resident> = {
     id: 'jermate-trans',
     name: 'JERKMATE TRANSGENDER',
     subtitle: '',
-    description: '',
+    description: 'LIVE TRANS PERFORMERS\nREADY TO CHAT',
     image: '/jermate-trans-300x250.gif',
   },
   'soda-offer': {
     id: 'soda-offer',
     name: 'CAMSODA TRANSGENDER',
     subtitle: '',
-    description: '',
+    description: 'TRANS CAM MODELS\nON DEMAND',
     image: '/soda-offer-300x250.jpg',
   },
   'trans-offer': {
