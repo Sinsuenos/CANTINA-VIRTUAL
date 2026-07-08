@@ -97,7 +97,7 @@ export function DatingRoom({ district }: DatingRoomProps) {
                   style={{ backgroundImage: `url('${resident.image}')` }}
                 />
                 <div className="dating-encounter-body">
-                  <span className="dating-encounter-name">{resident.name}</span>
+                  <span className="dating-encounter-name">{t[`resident.${resident.id}.name`] || resident.name}</span>
                   <p className="dating-encounter-desc">
                     {t[`resident.${resident.id}.desc`] || resident.description}
                   </p>
