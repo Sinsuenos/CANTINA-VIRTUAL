@@ -61,12 +61,26 @@ export const RESIDENTS: Record<string, Resident> = {
     description: 'Only available in the USA',
     image: '/hometown-flirt-banner.png',
   },
-  'cams-banner': {
-    id: 'cams-banner',
-    name: 'Live Performers',
+  'camirada': {
+    id: 'camirada',
+    name: 'CAMIRADA',
     subtitle: '',
-    description: 'Red lights. Frosted glass. They are already waiting.',
-    image: 'https://www.imglnkx.com/9776/PCAM-244_DESIGN-23232_300250.gif',
+    description: '',
+    image: 'https://www.imglnkx.com/9776/PCAM-244_DESIGN-24826_300250_2_EN.gif',
+  },
+  'jerkmate-cams': {
+    id: 'jerkmate-cams',
+    name: 'JERKMATE',
+    subtitle: '',
+    description: '',
+    image: 'https://www.imglnkx.com/8780/JM-885_DESIGN-23079_contenu-hayley_banner_01_300250.jpg',
+  },
+  'myfreecams': {
+    id: 'myfreecams',
+    name: 'MYFREECAMS',
+    subtitle: '',
+    description: '',
+    image: '/myfreecams-300x250.png',
   },
   'fanvue-mila': {
     id: 'fanvue-mila',
@@ -222,8 +236,16 @@ export const DISTRICTS: District[] = [
     bgImage: '/livecams-room.png',
     encounters: [
       {
-        residentId: 'cams-banner',
-        href: 'https://t.camsk1.com/413627/9776/0?aff_sub=CAMS2&source=CANTINA&po=6533&aff_sub5=SF_006OG000004lmDN',
+        residentId: 'camirada',
+        href: 'https://t.camsk1.com/413627/9776/37445?aff_sub=CAMS&source=CANTINA&po=6533&aff_sub5=SF_006OG000004lmDN',
+      },
+      {
+        residentId: 'jerkmate-cams',
+        href: 'https://t.mbjrkmms.com/413627/8780/0?file_id=644338&po=6533&aff_sub5=SF_006OG000004lmDN&aff_sub4=AT_0002',
+      },
+      {
+        residentId: 'myfreecams',
+        href: 'https://t.amyfc.link/413627/779/0?aff_sub=CAMS&aff_sub2=MYFREE&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
       },
     ],
   },

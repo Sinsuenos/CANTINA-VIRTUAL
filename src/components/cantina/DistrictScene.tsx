@@ -4,7 +4,7 @@ import { RESIDENTS, type District } from '@/data/rooms';
 import { useLang } from '@/lib/i18n';
 import { EncounterCard } from './EncounterCard';
 import { DatingRoom } from './DatingRoom';
-import { LiveCamsRoom } from './LiveCamsRoom';
+
 
 interface DistrictSceneProps {
   district: District;
@@ -18,11 +18,7 @@ export function DistrictScene({ district }: DistrictSceneProps) {
     return <DatingRoom district={district} />;
   }
 
-  if (district.id === 'live-cams') {
-    return <LiveCamsRoom district={district} />;
-  }
-
-  /* ── Default generic scene (unchanged for all other districts) ── */
+  /* ── Default generic scene (all non-dating districts) ── */
   return (
     <div className="district-scene" key={district.id} data-district={district.id}>
       {/* Atmospheric background */}

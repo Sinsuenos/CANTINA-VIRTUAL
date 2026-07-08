@@ -69,7 +69,9 @@ export const T: Record<Lang, Record<string, string>> = {
     'resident.vicky-milan-dating.name': 'ENJOY A DISCREET DATE',
     'resident.date-player-two.name': 'DATE PLAYER TWO',
     'resident.hometown-flirt.name': 'HOMETOWN FLIRT',
-    'resident.cams-banner.name': 'LIVE PERFORMERS',
+    'resident.camirada.name': 'CAMIRADA',
+    'resident.jerkmate-cams.name': 'JERKMATE',
+    'resident.myfreecams.name': 'MYFREECAMS',
     'resident.girlfriendgpt.name': 'GIRLFRIEND GPT',
     'resident.candy-ai-male.name': 'CANDY AI MALE',
     'resident.darlink-ai.name': 'DARLINK AI',
@@ -96,11 +98,8 @@ export const T: Record<Lang, Record<string, string>> = {
       'Someone is waiting. The bar is open.',
     'resident.date-player-two.desc':
       'FIND YOUR PLAYER TWO',
-    'resident.hometown-flirt.name': 'HOMETOWN FLIRT',
     'resident.hometown-flirt.desc':
       'Only available in the USA',
-    'resident.cams-banner.desc':
-      'Red lights. Frosted glass. They are already waiting.',
     'resident.manga-rpg.desc':
       'BUILD YOUR GUILD\nBEGIN THE ADVENTURE',
     'resident.comix-harem-1.desc':
@@ -187,7 +186,9 @@ export const T: Record<Lang, Record<string, string>> = {
     'resident.vicky-milan-dating.name': 'CITA DISCRETA',
     'resident.date-player-two.name': 'DATE PLAYER TWO',
     'resident.hometown-flirt.name': 'COQUETEO LOCAL',
-    'resident.cams-banner.name': 'PERFORMERS EN VIVO',
+    'resident.camirada.name': 'CAMIRADA',
+    'resident.jerkmate-cams.name': 'JERKMATE',
+    'resident.myfreecams.name': 'MYFREECAMS',
     'resident.girlfriendgpt.name': 'GIRLFRIEND GPT',
     'resident.candy-ai-male.name': 'CANDY AI MASCULINO',
     'resident.darlink-ai.name': 'DARLINK AI',
@@ -214,11 +215,8 @@ export const T: Record<Lang, Record<string, string>> = {
       'Alguien te espera. La barra está abierta.',
     'resident.date-player-two.desc':
       'ENCUENTRA A TU PLAYER TWO',
-    'resident.hometown-flirt.name': 'COQUETEO LOCAL',
     'resident.hometown-flirt.desc':
       'Solo disponible en Estados Unidos',
-    'resident.cams-banner.desc':
-      'Luces rojas. Cristal esmerilado. Ya están esperando.',
     'resident.manga-rpg.desc':
       'CONSTRUYE TU GUILD\nCOMIENZA LA AVENTURA',
     'resident.comix-harem-1.desc':
