@@ -605,8 +605,8 @@ body {
 
 /* ── GAY wing: shrink long card titles, rainbow accent ── */
 [data-resident="xlovegay-cams"] .encounter-card-name {
-  font-size: 13px;
-  letter-spacing: 0.12em;
+  font-size: 11.5px;
+  letter-spacing: 0.06em;
   position: relative;
   padding-bottom: 8px;
 }
@@ -816,6 +816,53 @@ body {
 }
 [data-resident="bellesa-plus"]:hover .encounter-card-image,
 [data-resident="sextpanther"]:hover .encounter-card-image {
+  border-color: rgba(212,160,23,0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 12px rgba(212,160,23,0.08);
+}
+
+/* ── Trans offer — title above banner, no body wrapper ── */
+[data-resident="trans-offer"] {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 8px;
+  border: none;
+  background: none;
+  overflow: visible;
+  padding: 0;
+  border-radius: 0;
+}
+[data-resident="trans-offer"]:hover {
+  border-color: transparent;
+  transform: none;
+  box-shadow: none;
+}
+[data-resident="trans-offer"] .encounter-card-body {
+  display: contents;
+}
+[data-resident="trans-offer"] .encounter-card-name {
+  order: 1;
+  font-size: 16px;
+  letter-spacing: 0.22em;
+  text-align: center;
+  color: var(--amber);
+  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
+}
+[data-resident="trans-offer"] .encounter-card-image {
+  order: 2;
+  aspect-ratio: 300/250;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid rgba(212,160,23,0.15);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+[data-resident="trans-offer"] .encounter-card-image::after {
+  background: none;
+}
+[data-resident="trans-offer"]:hover .encounter-card-image {
   border-color: rgba(212,160,23,0.35);
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 12px rgba(212,160,23,0.08);
@@ -1033,24 +1080,24 @@ body {
   margin-bottom: 10px;
 }
 .nectar-teaser-title {
-  font-size: 14px;
+  font-size: 17px;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   font-weight: 700;
 }
 .nectar-teaser-soon {
-  font-size: 12px;
+  font-size: 14px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
 }
 .nectar-teaser-intro {
-  font-size: 13px;
+  font-size: 16px;
   letter-spacing: 0.05em;
   line-height: 1.6;
   margin-bottom: 4px;
 }
 .nectar-teaser-list {
-  font-size: 13px;
+  font-size: 16px;
   letter-spacing: 0.05em;
   line-height: 1.7;
   white-space: pre-line;
