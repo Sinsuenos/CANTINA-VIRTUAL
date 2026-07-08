@@ -128,14 +128,14 @@ export const RESIDENTS: Record<string, Resident> = {
     id: 'trans-offer',
     name: 'TRANS PORNSTAR HAREM',
     subtitle: '',
-    description: '',
+    description: 'BUILD YOUR ROSTER\nCHOOSE YOUR SCENES',
     image: '/trans-offer.png',
   },
   'xlovegay-cams': {
     id: 'xlovegay-cams',
     name: 'XLOVEGAY CAMS',
     subtitle: '',
-    description: '',
+    description: 'LOCAL DATING',
     image: '/xlovegay-cams-300x250.png',
   },
 };
