@@ -74,7 +74,9 @@ export function LiveCamsRoom({ district }: LiveCamsRoomProps) {
             target="_blank"
             rel="noopener noreferrer"
             className="livecams-encounter-card no-underline"
+            data-cam="camirada"
           >
+            <span className="livecams-encounter-name">CAMIRADA</span>
             <div
               className="livecams-encounter-image"
               style={{ backgroundImage: `url('https://www.imglnkx.com/9776/PCAM-244_DESIGN-24826_300250_2_EN.gif')` }}
@@ -85,7 +87,9 @@ export function LiveCamsRoom({ district }: LiveCamsRoomProps) {
             target="_blank"
             rel="noopener noreferrer"
             className="livecams-encounter-card no-underline"
+            data-cam="jerkmate"
           >
+            <span className="livecams-encounter-name">JERKMATE</span>
             <div
               className="livecams-encounter-image"
               style={{ backgroundImage: `url('https://www.imglnkx.com/8780/JM-885_DESIGN-23079_contenu-hayley_banner_01_300250.jpg')` }}

@@ -406,21 +406,26 @@ body {
 .sidebar-nectar-icon {
   font-size: 0.85rem;
 }
+.sidebar-nectar-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+}
 .sidebar-nectar-label {
-  font-size: 9px;
-  letter-spacing: 0.15em;
+  font-size: 8px;
+  letter-spacing: 0.12em;
   color: var(--amber);
   opacity: 0.7;
   text-transform: uppercase;
 }
 .sidebar-nectar-count {
-  font-size: 11px;
-  letter-spacing: 0.15em;
+  font-size: 8px;
+  letter-spacing: 0.12em;
   color: var(--amber);
+  opacity: 0.5;
   font-family: inherit;
   font-weight: 700;
-  min-width: 16px;
-  text-align: right;
+  text-transform: uppercase;
 }
 
 /* ═══════════════════════════════════════════════════════════════
@@ -727,7 +732,8 @@ body {
   box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 12px rgba(233,30,140,0.06);
 }
 
-/* ── Sext Panther — title above banner, no body, gold/amber ── */
+/* ── Pay Sites — title above banner, gold/amber (Bellesa Plus + Sext Panther) ── */
+[data-resident="bellesa-plus"],
 [data-resident="sextpanther"] {
   display: grid;
   grid-template-rows: auto 1fr;
@@ -738,14 +744,17 @@ body {
   padding: 0;
   border-radius: 0;
 }
+[data-resident="bellesa-plus"]:hover,
 [data-resident="sextpanther"]:hover {
   border-color: transparent;
   transform: none;
   box-shadow: none;
 }
+[data-resident="bellesa-plus"] .encounter-card-body,
 [data-resident="sextpanther"] .encounter-card-body {
   display: contents;
 }
+[data-resident="bellesa-plus"] .encounter-card-name,
 [data-resident="sextpanther"] .encounter-card-name {
   order: 1;
   font-size: 16px;
@@ -754,6 +763,7 @@ body {
   color: var(--amber);
   text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
 }
+[data-resident="bellesa-plus"] .encounter-card-image,
 [data-resident="sextpanther"] .encounter-card-image {
   order: 2;
   aspect-ratio: 300/250;
@@ -765,9 +775,11 @@ body {
   overflow: hidden;
   transition: all 0.4s ease;
 }
+[data-resident="bellesa-plus"] .encounter-card-image::after,
 [data-resident="sextpanther"] .encounter-card-image::after {
   background: none;
 }
+[data-resident="bellesa-plus"]:hover .encounter-card-image,
 [data-resident="sextpanther"]:hover .encounter-card-image {
   border-color: rgba(212,160,23,0.35);
   transform: translateY(-2px);
@@ -972,11 +984,41 @@ body {
 .district-nectar-teaser {
   position: relative;
   z-index: 2;
+  padding: 24px 40px 16px;
+  border-top: 1px solid rgba(255,255,255,0.03);
+}
+.nectar-teaser-content {
+  max-width: 400px;
+}
+.nectar-teaser-header {
   display: flex;
   align-items: center;
-  gap: 10px;
-  padding: 32px 40px 16px;
-  border-top: 1px solid rgba(255,255,255,0.03);
+  gap: 8px;
+  margin-bottom: 10px;
+}
+.nectar-teaser-title {
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.nectar-teaser-soon {
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+.nectar-teaser-intro {
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  line-height: 1.6;
+  margin-bottom: 4px;
+}
+.nectar-teaser-list {
+  font-size: 10px;
+  letter-spacing: 0.05em;
+  line-height: 1.7;
+  white-space: pre-line;
+  margin: 0;
 }
 
 /* ── District Footer ── */
@@ -2150,8 +2192,8 @@ body {
   text-transform: uppercase;
   color: var(--amber);
 }
-/* ── MYFREECAMS card — heading above banner, gold/amber ── */
-[data-cam="myfreecams"] {
+/* ── Live Cams cards — unified title above banner, gold/amber ── */
+.livecams-encounter-card[data-cam] {
   display: grid;
   grid-template-rows: auto 1fr;
   gap: 8px;
@@ -2161,12 +2203,12 @@ body {
   padding: 0;
   border-radius: 0;
 }
-[data-cam="myfreecams"]:hover {
+.livecams-encounter-card[data-cam]:hover {
   border-color: transparent;
   transform: none;
   box-shadow: none;
 }
-[data-cam="myfreecams"] .livecams-encounter-name {
+.livecams-encounter-card[data-cam] .livecams-encounter-name {
   order: 1;
   font-size: 16px;
   letter-spacing: 0.22em;
@@ -2174,7 +2216,7 @@ body {
   color: var(--amber);
   text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
 }
-[data-cam="myfreecams"] .livecams-encounter-image {
+.livecams-encounter-card[data-cam] .livecams-encounter-image {
   order: 2;
   aspect-ratio: 300/250;
   background-size: contain;
@@ -2185,7 +2227,7 @@ body {
   overflow: hidden;
   transition: all 0.4s ease;
 }
-[data-cam="myfreecams"]:hover .livecams-encounter-image {
+.livecams-encounter-card[data-cam]:hover .livecams-encounter-image {
   border-color: rgba(212,160,23,0.35);
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 12px rgba(212,160,23,0.08);
@@ -2653,7 +2695,7 @@ body {
   }
 
   .district-nectar-teaser {
-    padding: 20px 20px 12px;
+    padding: 16px 20px 12px;
     flex-wrap: wrap;
   }
 

@@ -28,7 +28,10 @@ export const T: Record<Lang, Record<string, string>> = {
     sidebarFooter: 'Pacific coast. After dark.',
 
     /* ── Nectar ── */
-    nectarTeaser: 'Earn nectar. Spend it. Come back for more.',
+    nectarTitle: 'NECTAR PROGRAM',
+    nectarComingSoon: 'COMING SOON',
+    nectarFutureIntro: 'Future Nectar opportunities may include:',
+    nectarFutureList: 'Socializing\nConversations\nParticipation\nSupporting creators\nDiscovering offers\nEvents',
 
     /* ── District names ── */
     'district.dating.name': 'Dates',
@@ -114,7 +117,10 @@ export const T: Record<Lang, Record<string, string>> = {
     sidebarFooter: 'Costa del Pacífico. Después del anochecer.',
 
     /* ── Nectar ── */
-    nectarTeaser: 'Gana néctar. Gástalo. Regresa por más.',
+    nectarTitle: 'PROGRAMA NÉCTAR',
+    nectarComingSoon: 'PRÓXIMAMENTE',
+    nectarFutureIntro: 'Las futuras oportunidades de Néctar pueden incluir:',
+    nectarFutureList: 'Socializar\nConversaciones\nParticipación\nApoyar a creadores\nDescubrir ofertas\nEventos',
 
     /* ── District names ── */
     'district.dating.name': 'Citas',

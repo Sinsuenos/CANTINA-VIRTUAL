@@ -84,7 +84,7 @@ export const RESIDENTS: Record<string, Resident> = {
   },
   'bellesa-plus': {
     id: 'bellesa-plus',
-    name: 'ETHICAL\nPREMIUM\nENTERTAINMENT',
+    name: 'BELLESA PLUS',
     subtitle: '',
     description: '',
     image: 'https://www.imglnkx.com/9976/BellesaPlus_20250307_300250.jpeg',

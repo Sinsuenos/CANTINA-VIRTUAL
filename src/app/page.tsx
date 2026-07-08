@@ -312,13 +312,29 @@ function Cantina({
 
         {/* Nectar teaser — bottom of scene */}
         <div className="district-nectar-teaser">
-          <div className="nectar-hud-icon">🍯</div>
-          <span
-            className="text-xs tracking-[0.15em] uppercase"
-            style={{ color: 'var(--text-muted)' }}
-          >
-            {t.nectarTeaser}
-          </span>
+          <div className="nectar-teaser-content">
+            <div className="nectar-teaser-header">
+              <span className="nectar-hud-icon">🍯</span>
+              <span
+                className="nectar-teaser-title"
+                style={{ color: 'var(--amber)' }}
+              >
+                {t.nectarTitle}
+              </span>
+              <span
+                className="nectar-teaser-soon"
+                style={{ color: 'var(--amber)', opacity: 0.7 }}
+              >
+                {t.nectarComingSoon}
+              </span>
+            </div>
+            <p className="nectar-teaser-intro" style={{ color: 'var(--text-muted)' }}>
+              {t.nectarFutureIntro}
+            </p>
+            <p className="nectar-teaser-list" style={{ color: 'var(--text-dim)' }}>
+              {t.nectarFutureList}
+            </p>
+          </div>
         </div>
 
         <footer className="compliance-footer">
