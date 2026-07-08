@@ -131,6 +131,20 @@ export const RESIDENTS: Record<string, Resident> = {
     description: 'YOUR CHOICES MATTER\nEVERY PATH CHANGES',
     image: '/010679A_CXHR_18_ALL_EN_71_L.gif',
   },
+  'jermate-trans': {
+    id: 'jermate-trans',
+    name: 'JERKMATE TRANSGENDER',
+    subtitle: '',
+    description: '',
+    image: '/jermate-trans-300x250.gif',
+  },
+  'soda-offer': {
+    id: 'soda-offer',
+    name: 'CAMSODA TRANSGENDER',
+    subtitle: '',
+    description: '',
+    image: '/soda-offer-300x250.jpg',
+  },
   'trans-offer': {
     id: 'trans-offer',
     name: 'TRANS PORNSTAR HAREM',
@@ -344,6 +358,14 @@ export const DISTRICTS: District[] = [
       {
         residentId: 'trans-offer',
         href: 'https://t.mbagm.link/413627/8663/0?aff_sub=TRANS&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
+      },
+      {
+        residentId: 'jermate-trans',
+        href: '#',
+      },
+      {
+        residentId: 'soda-offer',
+        href: '#',
       },
     ],
   },
