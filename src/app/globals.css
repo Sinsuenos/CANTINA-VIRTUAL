@@ -121,10 +121,10 @@ body {
   50% { text-shadow: 0 1px 4px rgba(10,14,23,0.9), 0 0 3px currentColor, 0 0 8px currentColor, 0 0 18px currentColor; }
 }
 .neon-amber { color: var(--amber); }
-.neon-purple { color: var(--purple); }
-.neon-cyan { color: var(--cyan); }
-.neon-emerald { color: var(--emerald); }
-.neon-rose { color: var(--rose); }
+.neon-purple { color: var(--amber); }
+.neon-cyan { color: var(--amber); }
+.neon-emerald { color: var(--amber); }
+.neon-rose { color: var(--amber); }
 
 /* ── Floating Butterflies ── */
 @keyframes butterflyFloat {
@@ -650,6 +650,8 @@ body {
   font-weight: 400;
   line-height: 1.2;
   margin-bottom: 16px;
+  color: var(--amber);
+  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
 }
 
 .district-divider {
@@ -673,10 +675,18 @@ body {
   white-space: pre-line;
 }
 
+[data-district="ai-companions"] .district-name {
+  font-size: 32px;
+  font-weight: 700;
+}
+[data-district="ai-companions"] .district-description {
+  font-size: 15px;
+}
+
 [data-district="niche"] .district-name {
   white-space: pre-line;
   color: var(--amber);
-  text-shadow: 0 0 20px rgba(212,160,23,0.4), 0 0 40px rgba(212,160,23,0.15);
+  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
   font-size: 32px;
 }
 
@@ -1615,6 +1625,8 @@ body {
   font-weight: 400;
   line-height: 1.2;
   margin-bottom: 16px;
+  color: var(--amber);
+  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
 }
 .dating-room-divider {
   width: 80px;
@@ -1690,7 +1702,8 @@ body {
 .dating-hero-name {
   font-size: 18px;
   letter-spacing: 0.08em;
-  color: var(--text-primary);
+  color: var(--amber);
+  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
   font-weight: 400;
   line-height: 1.3;
 }
@@ -2045,6 +2058,8 @@ body {
   font-weight: 400;
   line-height: 1.2;
   margin-bottom: 16px;
+  color: var(--amber);
+  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
 }
 .livecams-room-divider {
   width: 80px;
@@ -2114,13 +2129,14 @@ body {
   font-size: 9px;
   letter-spacing: 0.3em;
   text-transform: uppercase;
-  color: var(--purple);
+  color: var(--amber);
   opacity: 0.9;
 }
 .livecams-hero-name {
   font-size: 18px;
   letter-spacing: 0.08em;
-  color: var(--text-primary);
+  color: var(--amber);
+  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
   font-weight: 400;
   line-height: 1.3;
 }
