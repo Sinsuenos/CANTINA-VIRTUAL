@@ -76,6 +76,9 @@ export const T: Record<Lang, Record<string, string>> = {
       'Someone is waiting. The bar is open.',
     'resident.date-player-two.desc':
       'FIND YOUR PLAYER TWO',
+    'resident.hometown-flirt.name': 'HOMETOWN FLIRT',
+    'resident.hometown-flirt.desc':
+      'Only available in the USA',
     'resident.cams-banner.desc':
       'Red lights. Frosted glass. They are already waiting.',
     'resident.manga-rpg.desc':
@@ -171,6 +174,9 @@ export const T: Record<Lang, Record<string, string>> = {
       'Alguien te espera. La barra está abierta.',
     'resident.date-player-two.desc':
       'ENCUENTRA A TU PLAYER TWO',
+    'resident.hometown-flirt.name': 'COQUETEO LOCAL',
+    'resident.hometown-flirt.desc':
+      'Solo disponible en Estados Unidos',
     'resident.cams-banner.desc':
       'Luces rojas. Cristal esmerilado. Ya están esperando.',
     'resident.manga-rpg.desc':

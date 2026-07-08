@@ -54,6 +54,13 @@ export const RESIDENTS: Record<string, Resident> = {
     description: 'FIND YOUR PLAYER TWO',
     image: '/date-player-two-banner.png',
   },
+  'hometown-flirt': {
+    id: 'hometown-flirt',
+    name: 'HOMETOWN FLIRT',
+    subtitle: '',
+    description: 'Only available in the USA',
+    image: '/hometown-flirt-banner.png',
+  },
   'cams-banner': {
     id: 'cams-banner',
     name: 'Live Performers',
@@ -182,6 +189,10 @@ export const DISTRICTS: District[] = [
       {
         residentId: 'date-player-two',
         href: 'https://t.crdtg3.com/413627/9702/0?aff_sub=DATING&aff_sub2=DTPLR2&aff_sub3=LPLVLUP&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
+      },
+      {
+        residentId: 'hometown-flirt',
+        href: 'https://t.crdtg3.com/413627/8227?aff_sub=DATING&aff_sub2=HTWNFLRT&aff_sub3=OPTILP&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
       },
     ],
   },
