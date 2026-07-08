@@ -973,6 +973,10 @@ body {
   overflow: hidden;
   transition: all 0.4s ease;
 }
+[data-resident="trans-offer"] .encounter-card-image,
+[data-resident="jermate-trans"] .encounter-card-image {
+  aspect-ratio: 300/270;
+}
 [data-resident="trans-offer"] .encounter-card-image::after,
 [data-resident="jermate-trans"] .encounter-card-image::after,
 [data-resident="soda-offer"] .encounter-card-image::after {
