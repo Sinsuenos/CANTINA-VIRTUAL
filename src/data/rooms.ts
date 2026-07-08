@@ -47,6 +47,13 @@ export const RESIDENTS: Record<string, Resident> = {
     description: '',
     image: '/vicky-milan-dating.png',
   },
+  'date-player-two': {
+    id: 'date-player-two',
+    name: 'DATE PLAYER TWO',
+    subtitle: '',
+    description: 'FIND YOUR PLAYER TWO',
+    image: '/date-player-two-banner.png',
+  },
   'cams-banner': {
     id: 'cams-banner',
     name: 'Live Performers',
@@ -171,6 +178,10 @@ export const DISTRICTS: District[] = [
       {
         residentId: 'vicky-milan-dating',
         href: 'https://t.crdtg3.com/413627/4593/40617?aff_sub=DATING&aff_sub2=VICMILAN&aff_sub3=MILDLP&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
+      },
+      {
+        residentId: 'date-player-two',
+        href: 'https://t.crdtg3.com/413627/9702/0?aff_sub=DATING&aff_sub2=DTPLR2&aff_sub3=LPLVLUP&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
       },
     ],
   },

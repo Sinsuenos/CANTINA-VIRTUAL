@@ -72,6 +72,8 @@ export const T: Record<Lang, Record<string, string>> = {
       'YOUR AI COMPANION\nBUILT FOR CONNECTION',
     'resident.dating-encounter.desc':
       'Someone is waiting. The bar is open.',
+    'resident.date-player-two.desc':
+      'FIND YOUR PLAYER TWO',
     'resident.cams-banner.desc':
       'Red lights. Frosted glass. They are already waiting.',
     'resident.manga-rpg.desc':
@@ -161,6 +163,8 @@ export const T: Record<Lang, Record<string, string>> = {
       'TU COMPAÑERO IA\nDISEÑADO PARA CONECTAR',
     'resident.dating-encounter.desc':
       'Alguien te espera. La barra está abierta.',
+    'resident.date-player-two.desc':
+      'ENCUENTRA A TU PLAYER TWO',
     'resident.cams-banner.desc':
       'Luces rojas. Cristal esmerilado. Ya están esperando.',
     'resident.manga-rpg.desc':

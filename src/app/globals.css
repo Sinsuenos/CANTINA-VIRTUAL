@@ -1845,6 +1845,24 @@ body {
   background: rgba(212,160,23,0.08);
 }
 
+/* ── DATE PLAYER TWO card: 300x250 banner, amber tagline ── */
+[data-resident="date-player-two"] .dating-encounter-image {
+  aspect-ratio: 300/250;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+[data-resident="date-player-two"] .dating-encounter-image::after {
+  background: none;
+}
+[data-resident="date-player-two"] .dating-encounter-desc {
+  color: var(--amber);
+  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
 /* Offer Grid */
 .dating-offer-grid {
   display: grid;

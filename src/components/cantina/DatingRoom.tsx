@@ -90,6 +90,7 @@ export function DatingRoom({ district }: DatingRoomProps) {
                 target={href ? '_blank' : undefined}
                 rel={href ? 'noopener noreferrer' : undefined}
                 className="dating-encounter-card no-underline"
+                data-resident={resident.id}
               >
                 <div
                   className="dating-encounter-image"
