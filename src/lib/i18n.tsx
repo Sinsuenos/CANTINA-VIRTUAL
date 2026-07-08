@@ -36,7 +36,7 @@ export const T: Record<Lang, Record<string, string>> = {
     /* ── District names ── */
     'district.dating.name': 'Dates',
     'district.live-cams.name': 'Live Cams',
-    'district.ai-companions.name': 'AI Partners',
+    'district.ai-companions.name': 'AI Companions',
     'district.fan-sites.name': 'Fansites',
     'district.pay-sites.name': 'Paysites',
     'district.niche.name': 'GAY',

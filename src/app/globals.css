@@ -921,7 +921,7 @@ body {
   white-space: pre-line;
 }
 
-/* ── AI Partners — title above card, caption below ── */
+/* ── AI Companions — title above card, caption below ── */
 [data-district="ai-companions"] .encounter-card {
   display: grid;
   grid-template-rows: auto 1fr auto;
