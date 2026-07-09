@@ -986,6 +986,10 @@ body {
   line-height: 1.6;
   white-space: pre-line;
 }
+/* Compensate for Chromium subpixel rounding on card 3 */
+[data-resident="soda-offer"] .encounter-card-image {
+  margin-top: 10px;
+}
 [data-resident="trans-offer"]:hover .encounter-card-image,
 [data-resident="jermate-trans"]:hover .encounter-card-image,
 [data-resident="soda-offer"]:hover .encounter-card-image {
