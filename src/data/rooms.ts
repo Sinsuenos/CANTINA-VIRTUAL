@@ -103,6 +103,13 @@ export const RESIDENTS: Record<string, Resident> = {
     description: '',
     image: 'https://www.imglnkx.com/10394/AmberBanner300x100-1.png',
   },
+  'sofia-storme': {
+    id: 'sofia-storme',
+    name: 'SOFIA STORME',
+    subtitle: '',
+    description: '',
+    image: 'https://www.imglnkx.com/10393/SofiaBanner300x100-1.png',
+  },
   'gay-offer': {
     id: 'gay-offer',
     name: 'LOCAL DATING',
@@ -302,6 +309,10 @@ export const DISTRICTS: District[] = [
       {
         residentId: 'fanvue-amber',
         href: 'https://t.acust-9.com/413627/10394/0?aff_sub=FAN&aff_sub2=AMBERS&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
+      },
+      {
+        residentId: 'sofia-storme',
+        href: 'https://t.acust-9.com/413627/10393/0?aff_sub=FANSTE&aff_sub2=SOFIASTRM&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
       },
       {
         residentId: 'fanvue-talia',
