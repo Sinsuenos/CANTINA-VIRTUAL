@@ -173,6 +173,13 @@ export const RESIDENTS: Record<string, Resident> = {
     description: '',
     image: '/xlovegay-cams-300x250.png',
   },
+  'royal-cams': {
+    id: 'royal-cams',
+    name: 'ROYAL CAMS',
+    subtitle: '',
+    description: 'LIVE CAMS.\nNO LIMITS.',
+    image: '/royal-cams-300x250.jpg',
+  },
 };
 
 /* ─── District ─── */
@@ -338,6 +345,10 @@ export const DISTRICTS: District[] = [
       {
         residentId: 'xlovegay-cams',
         href: 'https://t.camsk1.com/413627/2494/0?aff_sub=GAY&aff_sub2=CAMS&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
+      },
+      {
+        residentId: 'royal-cams',
+        href: 'https://t.camsk1.com/413627/4533/0?aff_sub=GAY&aff_sub2=RYLCAMS&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
       },
     ],
   },

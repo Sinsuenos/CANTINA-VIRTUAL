@@ -85,6 +85,7 @@ export const T: Record<Lang, Record<string, string>> = {
     'resident.comix-harem-2.name': 'COMIX HAREM',
     'resident.trans-offer.name': 'TRANS PORNSTAR HAREM',
     'resident.xlovegay-cams.name': 'XLOVEGAY CAMS',
+    'resident.royal-cams.name': 'ROYAL CAMS',
     'resident.jermate-trans.name': 'JERKMATE TRANSGENDER',
     'resident.soda-offer.name': 'CAMSODA TRANSGENDER',
     /* ── Resident descriptions ── */
@@ -110,6 +111,8 @@ export const T: Record<Lang, Record<string, string>> = {
       'BUILD YOUR ROSTER\nCHOOSE YOUR SCENES',
     'resident.gay-offer.desc':
       'FIND YOUR MATCH TONIGHT',
+    'resident.royal-cams.desc':
+      'LIVE CAMS.\nNO LIMITS.',
     'resident.jermate-trans.desc':
       'LIVE TRANS PERFORMERS\nREADY TO CHAT',
     'resident.soda-offer.desc':
@@ -214,6 +217,7 @@ export const T: Record<Lang, Record<string, string>> = {
     'resident.comix-harem-2.name': 'COMIX HAREM',
     'resident.trans-offer.name': 'TRANS PORNSTAR HAREM',
     'resident.xlovegay-cams.name': 'XLOVEGAY CAMS',
+    'resident.royal-cams.name': 'ROYAL CAMS',
     'resident.jermate-trans.name': 'JERKMATE TRANSGENDER',
     'resident.soda-offer.name': 'CAMSODA TRANSGENDER',
     /* ── Resident descriptions ── */
@@ -239,6 +243,8 @@ export const T: Record<Lang, Record<string, string>> = {
       'ARMA TU ROSTER\nELIGE TUS ESCENAS',
     'resident.gay-offer.desc':
       'ENCUENTRA TU PAREJA ESTA NOCHE',
+    'resident.royal-cams.desc':
+      'CÁMARAS EN VIVO.\nSIN LÍMITES.',
     'resident.jermate-trans.desc':
       'PERFORMERS TRANS EN VIVO\nLISTAS PARA CHATEAR',
     'resident.soda-offer.desc':

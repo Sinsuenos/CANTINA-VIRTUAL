@@ -279,8 +279,8 @@ body {
   to { opacity: 0; filter: blur(8px); }
 }
 @keyframes sceneFadeIn {
-  from { opacity: 0; filter: blur(8px); }
-  to { opacity: 1; filter: blur(0); }
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 .scene-exit {
   animation: sceneFadeOut 500ms ease forwards;
@@ -574,14 +574,14 @@ body {
   bottom: 0;
   background-size: cover;
   background-position: center;
-  opacity: 0.30;
-  filter: saturate(1.2);
+  opacity: 0.50;
+  filter: saturate(1.2) brightness(1.15);
   transition: opacity 1.2s ease;
   z-index: 0;
 }
 
 [data-district="fan-sites"] .district-scene-bg {
-  opacity: 0.55;
+  opacity: 0.65;
 }
 
 [data-district="fan-sites"] .district-scene-overlay {
@@ -610,9 +610,10 @@ body {
   text-align: center;
 }
 
-/* ── GAY wing: both cards — title above banner, no overlay ── */
+/* ── GAY wing: all cards — title above banner, no overlay ── */
 [data-resident="gay-offer"],
-[data-resident="xlovegay-cams"] {
+[data-resident="xlovegay-cams"],
+[data-resident="royal-cams"] {
   display: grid;
   grid-template-rows: auto 1fr auto;
   gap: 8px;
@@ -623,13 +624,15 @@ body {
   border-radius: 0;
 }
 [data-resident="gay-offer"]:hover,
-[data-resident="xlovegay-cams"]:hover {
+[data-resident="xlovegay-cams"]:hover,
+[data-resident="royal-cams"]:hover {
   border-color: transparent;
   transform: none;
   box-shadow: none;
 }
 [data-resident="gay-offer"] .encounter-card-body,
-[data-resident="xlovegay-cams"] .encounter-card-body {
+[data-resident="xlovegay-cams"] .encounter-card-body,
+[data-resident="royal-cams"] .encounter-card-body {
   display: contents;
 }
 [data-resident="gay-offer"] .encounter-card-name {
@@ -726,6 +729,47 @@ body {
   opacity: 0.85;
 }
 
+/* ── royal-cams: same as xlovegay-cams pattern, no rainbow ── */
+[data-resident="royal-cams"] .encounter-card-name {
+  order: 1;
+  font-size: 14px;
+  letter-spacing: 0.14em;
+  text-align: center;
+  color: var(--amber);
+  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
+}
+[data-resident="royal-cams"] .encounter-card-image {
+  order: 2;
+  aspect-ratio: 300/250;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid rgba(212,160,23,0.15);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+[data-resident="royal-cams"] .encounter-card-image::after {
+  background: none;
+}
+[data-resident="royal-cams"]:hover .encounter-card-image {
+  border-color: rgba(212,160,23,0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 12px rgba(212,160,23,0.08);
+}
+[data-resident="royal-cams"] .encounter-card-desc {
+  order: 3;
+  text-align: center;
+  color: var(--amber);
+  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  line-height: 1.6;
+  white-space: pre-line;
+  margin: 0;
+}
+
 .district-scene-overlay {
   position: fixed;
   top: 0;
@@ -734,10 +778,10 @@ body {
   bottom: 0;
   background: linear-gradient(
     to bottom,
-    rgba(10,14,23,0.55) 0%,
-    rgba(10,14,23,0.35) 30%,
-    rgba(10,14,23,0.40) 60%,
-    rgba(10,14,23,0.75) 100%
+    rgba(10,14,23,0.40) 0%,
+    rgba(10,14,23,0.25) 30%,
+    rgba(10,14,23,0.30) 60%,
+    rgba(10,14,23,0.60) 100%
   );
   z-index: 1;
   pointer-events: none;
@@ -1717,8 +1761,8 @@ body {
   inset: 0;
   background-size: cover;
   background-position: center;
-  opacity: 0.40;
-  filter: saturate(1.4);
+  opacity: 0.55;
+  filter: saturate(1.4) brightness(1.1);
 }
 
 @keyframes roomBgBreathe {
@@ -1735,11 +1779,11 @@ body {
   bottom: 0;
   background: linear-gradient(
     160deg,
-    rgba(10,14,23,0.60) 0%,
-    rgba(18,14,10,0.40) 25%,
-    rgba(10,14,23,0.30) 50%,
-    rgba(10,14,23,0.50) 75%,
-    rgba(10,14,23,0.70) 100%
+    rgba(10,14,23,0.45) 0%,
+    rgba(18,14,10,0.30) 25%,
+    rgba(10,14,23,0.20) 50%,
+    rgba(10,14,23,0.35) 75%,
+    rgba(10,14,23,0.55) 100%
   );
   z-index: 1;
   pointer-events: none;
@@ -2227,8 +2271,8 @@ body {
 }
 
 @keyframes hubContentIn {
-  0% { opacity: 0; transform: translateY(12px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 .hub-brand {
@@ -2327,8 +2371,8 @@ body {
 }
 
 @keyframes hubCardIn {
-  0% { opacity: 0; transform: translateY(10px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 .hub-card:hover {
