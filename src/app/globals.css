@@ -607,7 +607,6 @@ body {
   flex-direction: column;
 }
 [data-district="our-mission"] .encounter-card-body {
-  order: -1;
   text-align: center;
 }
 
