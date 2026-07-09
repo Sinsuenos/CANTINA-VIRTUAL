@@ -1,0 +1,2002 @@
+     1→@import "tailwindcss";
+     2→
+     3→/* ── Cantina Virtual Design System ── */
+     4→:root {
+     5→  --bg-deep: #0a0e17;
+     6→  --bg-card: #0f1520;
+     7→  --bg-card-hover: #151d2e;
+     8→  --amber: #dab12a;
+     9→  --amber-dim: #b08a1a;
+    10→  --purple: #7b2d8e;
+    11→  --purple-dim: #5a1f6a;
+    12→  --cyan: #00f5ff;
+    13→  --cyan-dim: #00b8bf;
+    14→  --text-primary: #e8e0d4;
+    15→  --text-muted: #9a9385;
+    16→  --text-dim: #7a7570;
+    17→  --sale-red: #ff3b3b;
+    18→  --sale-green: #00e676;
+    19→  --emerald: #00ff88;
+    20→  --emerald-dim: #00b860;
+    21→  --rose: #e91e8c;
+    22→  --rose-dim: #b0156a;
+    23→  --card-radius: 4px;
+    24→}
+    25→
+    26→* { margin: 0; padding: 0; box-sizing: border-box; }
+    27→
+    28→html {
+    29→  scroll-behavior: smooth;
+    30→  scrollbar-width: thin;
+    31→  scrollbar-color: var(--amber-dim) var(--bg-deep);
+    32→}
+    33→
+    34→body {
+    35→  background: var(--bg-deep);
+    36→  color: var(--text-primary);
+    37→  font-family: 'Courier New', 'Lucida Console', monospace;
+    38→  overflow-x: hidden;
+    39→  min-height: 100vh;
+    40→}
+    41→
+    42→/* ── Custom Scrollbar ── */
+    43→::-webkit-scrollbar { width: 6px; }
+    44→::-webkit-scrollbar-track { background: var(--bg-deep); }
+    45→::-webkit-scrollbar-thumb { background: var(--amber-dim); border-radius: 3px; }
+    46→
+    47→/* ── Mariposa Centerpiece (replaces lantern) ── */
+    48→@keyframes mariposaGlow {
+    49→  0%, 100% { filter: drop-shadow(0 0 12px rgba(255,105,180,0.6)) drop-shadow(0 0 30px rgba(255,105,180,0.2)); }
+    50→  50% { filter: drop-shadow(0 0 6px rgba(255,105,180,0.4)) drop-shadow(0 0 15px rgba(255,105,180,0.1)); }
+    51→}
+    52→@keyframes nectarDrip {
+    53→  0% { transform: translateY(-4px) scaleY(0.3); opacity: 0.9; }
+    54→  40% { transform: translateY(8px) scaleY(1); opacity: 1; }
+    55→  100% { transform: translateY(22px) scaleY(0.6); opacity: 0; }
+    56→}
+    57→@keyframes nectarShimmer {
+    58→  0%, 100% { opacity: 0.7; }
+    59→  50% { opacity: 1; }
+    60→}
+    61→.mariposa-center {
+    62→  position: relative;
+    63→  display: inline-flex;
+    64→  flex-direction: column;
+    65→  align-items: center;
+    66→  animation: mariposaGlow 3s ease-in-out infinite;
+    67→}
+    68→.mariposa-center .butterfly {
+    69→  font-size: 4.2rem;
+    70→  color: #ff69b4;
+    71→  position: relative;
+    72→  z-index: 2;
+    73→}
+    74→.nectar-drips {
+    75→  position: absolute;
+    76→  top: 100%;
+    77→  left: 50%;
+    78→  transform: translateX(-50%);
+    79→  display: flex;
+    80→  gap: 6px;
+    81→  z-index: 1;
+    82→}
+    83→.nectar-drip {
+    84→  width: 4px;
+    85→  height: 12px;
+    86→  border-radius: 0 0 50% 50%;
+    87→ background: linear-gradient(to bottom, var(--amber), var(--amber-dim));
+    88→ animation: nectarDrip 2s ease-in infinite;
+    89→}
+    90→.nectar-drip:nth-child(2) { animation-delay: 0.7s; height: 10px; }
+    91→.nectar-drip:nth-child(3) { animation-delay: 1.3s; height: 14px; }
+    92→.nectar-pool {
+    93→  width: 36px;
+    94→  height: 8px;
+    95→  border-radius: 50%;
+    96→  background: radial-gradient(ellipse, rgba(212,160,23,0.5) 0%, transparent 70%);
+    97→ animation: nectarShimmer 2s ease-in-out infinite;
+    98→  margin-top: -2px;
+    99→}
+   100→
+   101→/* ── Typewriter ── */
+   102→@keyframes typewriter {
+   103→  from { width: 0; }
+   104→  to { width: 100%; }
+   105→}
+   106→@keyframes blinkCaret {
+   107→  0%, 100% { border-color: var(--amber); }
+   108→  50% { border-color: transparent; }
+   109→}
+   110→.typewriter-text {
+   111→  overflow: hidden;
+   112→  white-space: nowrap;
+   113→  border-right: 2px solid var(--amber);
+   114→  animation: typewriter 2.5s steps(28) 0.5s forwards, blinkCaret 0.8s step-end infinite;
+   115→  width: 0;
+   116→}
+   117→
+   118→/* ── Neon Glow Pulse ── */
+   119→@keyframes neonPulse {
+   120→  0%, 100% { text-shadow: 0 1px 4px rgba(10,14,23,0.9), 0 0 6px currentColor, 0 0 16px currentColor, 0 0 32px currentColor; }
+   121→  50% { text-shadow: 0 1px 4px rgba(10,14,23,0.9), 0 0 3px currentColor, 0 0 8px currentColor, 0 0 18px currentColor; }
+   122→}
+   123→.neon-amber { color: var(--amber); }
+   124→.neon-purple { color: var(--amber); }
+   125→.neon-cyan { color: var(--amber); }
+   126→.neon-emerald { color: var(--amber); }
+   127→.neon-rose { color: var(--amber); }
+   128→
+   129→/* ── Floating Butterflies ── */
+   130→@keyframes butterflyFloat {
+   131→  0%, 100% { transform: translate(0, 0) rotate(0deg); }
+   132→  25% { transform: translate(15px, -20px) rotate(5deg); }
+   133→  50% { transform: translate(-10px, -35px) rotate(-3deg); }
+   134→  75% { transform: translate(20px, -15px) rotate(7deg); }
+   135→}
+   136→@keyframes wingFlap {
+   137→  0%, 100% { transform: scaleX(1); }
+   138→  50% { transform: scaleX(0.3); }
+   139→}
+   140→.mariposa {
+   141→  position: absolute;
+   142→  font-size: 1.5rem;
+   143→  animation: butterflyFloat 8s ease-in-out infinite;
+   144→  pointer-events: none;
+   145→  z-index: 5;
+   146→}
+   147→.mariposa-wing {
+   148→  display: inline-block;
+   149→  animation: wingFlap 0.4s ease-in-out infinite;
+   150→}
+   151→
+   152→/* ── Smoke Particles ── */
+   153→@keyframes smokeRise {
+   154→  0% { transform: translateY(0) scale(1); opacity: 0.15; }
+   155→  50% { opacity: 0.08; }
+   156→  100% { transform: translateY(-120px) scale(2.5); opacity: 0; }
+   157→}
+   158→.smoke-container {
+   159→  position: absolute;
+   160→  inset: 0;
+   161→  overflow: hidden;
+   162→  pointer-events: none;
+   163→  z-index: 1;
+   164→}
+   165→.smoke-particle {
+   166→  position: absolute;
+   167→  bottom: 0;
+   168→  width: 60px;
+   169→  height: 60px;
+   170→  border-radius: 50%;
+   171→  background: radial-gradient(circle, rgba(212,160,23,0.1) 0%, transparent 70%);
+   172→  animation: smokeRise 6s ease-out infinite;
+   173→}
+   174→
+   175→/* ── Scroll Reveal ── */
+   176→.reveal {
+   177→  opacity: 0;
+   178→  transform: translateY(30px);
+   179→  transition: opacity 0.8s ease, transform 0.8s ease;
+   180→}
+   181→.reveal.visible {
+   182→  opacity: 1;
+   183→  transform: translateY(0);
+   184→}
+   185→.reveal-delay-1 { transition-delay: 0.15s; }
+   186→.reveal-delay-2 { transition-delay: 0.3s; }
+   187→.reveal-delay-3 { transition-delay: 0.45s; }
+   188→
+   189→/* ── Sale Countdown Pulse ── */
+   190→@keyframes salePulse {
+   191→  0%, 100% { box-shadow: 0 0 5px rgba(255,59,59,0.3), inset 0 0 5px rgba(255,59,59,0.1); }
+   192→  50% { box-shadow: 0 0 20px rgba(255,59,59,0.6), inset 0 0 10px rgba(255,59,59,0.2); }
+   193→}
+   194→.sale-card { animation: salePulse 2s ease-in-out infinite; }
+   195→
+   196→/* ── Password Screen ── */
+   197→@keyframes screenShake {
+   198→  0%, 100% { transform: translateX(0); }
+   199→  20% { transform: translateX(-8px); }
+   200→  40% { transform: translateX(8px); }
+   201→  60% { transform: translateX(-4px); }
+   202→  80% { transform: translateX(4px); }
+   203→}
+   204→.shake { animation: screenShake 0.4s ease-in-out; }
+   205→
+   206→/* ── Room Card Hover ── */
+   207→.room-card {
+   208→  transition: all 0.4s ease;
+   209→  border: 1px solid var(--room-border, rgba(255,255,255,0.05));
+   210→  position: relative;
+   211→  overflow: hidden;
+   212→}
+   213→.room-card:hover {
+   214→  transform: translateY(-4px) scale(1.02);
+   215→  border-color: var(--room-border-hover, rgba(255,255,255,0.15));
+   216→}
+   217→
+   218→/* ── Room Card Background Layer ── */
+   219→.room-card-bg {
+   220→  position: absolute;
+   221→  inset: 0;
+   222→  background-size: cover;
+   223→  background-position: center;
+   224→  opacity: 0.12;
+   225→  transition: opacity 0.6s ease, transform 0.6s ease;
+   226→  z-index: 0;
+   227→}
+   228→.room-card:hover .room-card-bg {
+   229→  opacity: 0.25;
+   230→  transform: scale(1.08);
+   231→}
+   232→.room-card > * {
+   233→  position: relative;
+   234→  z-index: 1;
+   235→}
+   236→
+   237→/* ── Card Radius Normalization ── */
+   238→.room-card,
+   239→.sale-card {
+   240→  border-radius: var(--card-radius);
+   241→}
+   242→
+   243→/* ── Room Card Image Overlay ── */
+   244→.room-card-bg::after {
+   245→  content: '';
+   246→  position: absolute;
+   247→  inset: 0;
+   248→  background: linear-gradient(
+   249→    to bottom,
+   250→    rgba(15,21,32,0.2) 0%,
+   251→    rgba(15,21,32,0.55) 50%,
+   252→    rgba(15,21,32,0.88) 100%
+   253→  );
+   254→  z-index: 0;
+   255→}
+   256→
+   257→/* ── CTA Shared Treatment ── */
+   258→.cta-bordered {
+   259→  display: inline-block;
+   260→  text-align: center;
+   261→  padding: 6px 24px;
+   262→  font-size: 10px;
+   263→  letter-spacing: 0.15em;
+   264→  text-transform: uppercase;
+   265→  text-decoration: none;
+   266→  border-radius: 2px;
+   267→  transition: all 0.4s ease;
+   268→  cursor: pointer;
+   269→  background: transparent;
+   270→}
+   271→.cta-bordered:hover {
+   272→  filter: brightness(1.3);
+   273→  box-shadow: 0 0 14px currentColor;
+   274→}
+   275→
+   276→/* ── Scene Transitions ── */
+   277→@keyframes sceneFadeOut {
+   278→  from { opacity: 1; filter: blur(0); }
+   279→  to { opacity: 0; filter: blur(8px); }
+   280→}
+   281→@keyframes sceneFadeIn {
+   282→  from { opacity: 0; }
+   283→  to { opacity: 1; }
+   284→}
+   285→.scene-exit {
+   286→  animation: sceneFadeOut 500ms ease forwards;
+   287→}
+   288→.scene-transition {
+   289→  animation: sceneFadeIn 800ms ease forwards;
+   290→}
+   291→
+   292→/* ── Hero Drift ── */
+   293→@keyframes heroDrift {
+   294→  0%, 100% { background-position: center 40%; }
+   295→  50% { background-position: center 45%; }
+   296→}
+   297→.hero-bg {
+   298→  animation: heroDrift 20s ease-in-out infinite;
+   299→}
+   300→
+   301→/* ── Fade In ── */
+   302→@keyframes fadeIn {
+   303→  from { opacity: 0; }
+   304→  to { opacity: 1; }
+   305→}
+   306→.fade-in { animation: fadeIn 1s ease forwards; }
+   307→
+   308→/* ── Gradient Dividers ── */
+   309→.divider-amber {
+   310→  height: 1px;
+   311→  background: linear-gradient(90deg, transparent, var(--amber), transparent);
+   312→  opacity: 0.3;
+   313→}
+   314→.divider-purple {
+   315→  height: 1px;
+   316→  background: linear-gradient(90deg, transparent, var(--purple), transparent);
+   317→  opacity: 0.3;
+   318→}
+   319→.divider-cyan {
+   320→  height: 1px;
+   321→  background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+   322→  opacity: 0.3;
+   323→}
+   324→.divider-emerald {
+   325→  height: 1px;
+   326→  background: linear-gradient(90deg, transparent, var(--emerald), transparent);
+   327→  opacity: 0.3;
+   328→}
+   329→.divider-rose {
+   330→  height: 1px;
+   331→  background: linear-gradient(90deg, transparent, var(--rose), transparent);
+   332→  opacity: 0.3;
+   333→}
+   334→
+   335→/* ── Encounter Card (image-first) ── */
+   336→.encounter-card {
+   337→  display: flex;
+   338→  flex-direction: column;
+   339→  border-radius: var(--card-radius);
+   340→  overflow: hidden;
+   341→  border: 1px solid rgba(255,255,255,0.05);
+   342→  transition: all 0.4s ease;
+   343→  text-decoration: none;
+   344→  color: inherit;
+   345→}
+   346→.encounter-card:hover {
+   347→  border-color: rgba(255,255,255,0.15);
+   348→  transform: translateY(-2px);
+   349→  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+   350→}
+   351→.encounter-card-image {
+   352→  width: 100%;
+   353→  aspect-ratio: 3/2;
+   354→  background-size: cover;
+   355→  background-position: center 30%;
+   356→  position: relative;
+   357→}
+   358→.encounter-card-image::after {
+   359→  content: '';
+   360→  position: absolute;
+   361→  inset: 0;
+   362→  background: linear-gradient(to bottom, rgba(15,21,32,0.1) 0%, rgba(15,21,32,0.4) 40%, var(--bg-card) 100%);
+   363→}
+   364→.encounter-card-body {
+   365→  padding: 12px 14px 14px;
+   366→  background: var(--bg-card);
+   367→  display: flex;
+   368→  flex-direction: column;
+   369→  gap: 4px;
+   370→  text-align: left;
+   371→}
+   372→.encounter-card-name {
+   373→  font-size: 16px;
+   374→  letter-spacing: 0.22em;
+   375→  text-transform: uppercase;
+   376→  text-align: center;
+   377→  color: var(--amber);
+   378→  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
+   379→  white-space: pre-line;
+   380→}
+   381→.encounter-card-subtitle {
+   382→  font-size: 10px;
+   383→  letter-spacing: 0.3em;
+   384→  color: var(--text-dim);
+   385→}
+   386→.encounter-card-desc {
+   387→  font-size: 12px;
+   388→  color: var(--text-muted);
+   389→  line-height: 1.6;
+   390→  margin: 2px 0;
+   391→}
+   392→
+   393→/* ── Nectar HUD (sidebar, inline — not fixed) ── */
+   394→.sidebar-nectar-wrap {
+   395→  padding: 0 16px 8px;
+   396→}
+   397→.sidebar-nectar {
+   398→  display: flex;
+   399→  align-items: center;
+   400→  gap: 8px;
+   401→  padding: 8px 12px;
+   402→  border-radius: var(--card-radius);
+   403→  background: rgba(212,160,23,0.08);
+   404→  border: 1px solid rgba(212,160,23,0.15);
+   405→}
+   406→.sidebar-nectar-icon {
+   407→  font-size: 0.85rem;
+   408→}
+   409→.sidebar-nectar-text {
+   410→  display: flex;
+   411→  flex-direction: column;
+   412→  gap: 1px;
+   413→}
+   414→.sidebar-nectar-label {
+   415→  font-size: 8px;
+   416→  letter-spacing: 0.12em;
+   417→  color: var(--amber);
+   418→  opacity: 0.7;
+   419→  text-transform: uppercase;
+   420→}
+   421→.sidebar-nectar-count {
+   422→  font-size: 8px;
+   423→  letter-spacing: 0.12em;
+   424→  color: var(--amber);
+   425→  opacity: 0.5;
+   426→  font-family: inherit;
+   427→  font-weight: 700;
+   428→  text-transform: uppercase;
+   429→}
+   430→
+   431→/* ═══════════════════════════════════════════════════════════════
+   432→   CANTINA LAYOUT — Sidebar + District Scene
+   433→   ═══════════════════════════════════════════════════════════════ */
+   434→
+   435→/* ── Cantina Layout Shell ── */
+   436→.cantina-layout {
+   437→  display: flex;
+   438→  min-height: 100vh;
+   439→  width: 100%;
+   440→}
+   441→
+   442→/* ── Sidebar Hub ── */
+   443→.sidebar-hub {
+   444→  position: fixed;
+   445→  top: 0;
+   446→  left: 0;
+   447→  bottom: 0;
+   448→  width: 220px;
+   449→  background: var(--bg-deep);
+   450→  border-right: 1px solid rgba(255,255,255,0.04);
+   451→  display: flex;
+   452→  flex-direction: column;
+   453→  z-index: 40;
+   454→  padding: 24px 0;
+   455→  flex-shrink: 0;
+   456→}
+   457→
+   458→.sidebar-brand {
+   459→  padding: 0 20px 16px;
+   460→  display: flex;
+   461→  flex-direction: column;
+   462→  gap: 2px;
+   463→}
+   464→.sidebar-brand-name {
+   465→  font-size: 14px;
+   466→  letter-spacing: 0.2em;
+   467→  text-transform: uppercase;
+   468→  color: var(--amber);
+   469→}
+   470→.sidebar-brand-sub {
+   471→  font-size: 10px;
+   472→  letter-spacing: 0.35em;
+   473→  text-transform: uppercase;
+   474→  color: var(--amber);
+   475→  opacity: 0.7;
+   476→}
+   477→
+   478→.sidebar-divider {
+   479→  height: 1px;
+   480→  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+   481→  margin: 8px 16px 16px;
+   482→}
+   483→
+   484→.sidebar-nav {
+   485→  list-style: none;
+   486→  flex: 1;
+   487→  display: flex;
+   488→  flex-direction: column;
+   489→  gap: 2px;
+   490→  padding: 0 8px;
+   491→  min-height: 0;
+   492→  overflow-y: auto;
+   493→}
+   494→
+   495→.sidebar-item {
+   496→  display: flex;
+   497→  align-items: center;
+   498→  gap: 13px;
+   499→  width: 100%;
+   500→  padding: 13px 16px;
+   501→  border: none;
+   502→  background: transparent;
+   503→  cursor: pointer;
+   504→  text-align: left;
+   505→  font-family: inherit;
+   506→  transition: all 0.3s ease;
+   507→  border-radius: 2px;
+   508→}
+   509→.sidebar-item:hover {
+   510→  background: rgba(212,160,23,0.08);
+   511→}
+   512→.sidebar-item.active {
+   513→  background: rgba(212,160,23,0.22);
+   514→  box-shadow: inset 0 0 12px rgba(212,160,23,0.06);
+   515→}
+   516→
+   517→.sidebar-dot {
+   518→  width: 8px;
+   519→  height: 8px;
+   520→  border-radius: 50%;
+   521→  flex-shrink: 0;
+   522→  transition: all 0.3s ease;
+   523→}
+   524→
+   525→.sidebar-item-name {
+   526→  font-size: 16.5px;
+   527→  letter-spacing: 0.1em;
+   528→  text-transform: uppercase;
+   529→  color: var(--amber);
+   530→  display: block;
+   531→  line-height: 1.2;
+   532→}
+   533→.sidebar-item.active .sidebar-item-name {
+   534→  color: #1a1208;
+   535→  font-weight: 700;
+   536→}
+   537→
+   538→/* .sidebar-item-sub removed — no subtitles in navigation */
+   539→
+   540→.sidebar-footer {
+   541→  padding: 0 20px 0;
+   542→}
+   543→.sidebar-footer-text {
+   544→  font-size: 12px;
+   545→  letter-spacing: 0.15em;
+   546→  color: rgba(212,160,23,0.45);
+   547→  font-style: italic;
+   548→  margin-top: 12px;
+   549→}
+   550→
+   551→/* ── Main Content Area ── */
+   552→.cantina-main {
+   553→  flex: 1;
+   554→  margin-left: 220px;
+   555→  min-height: 100vh;
+   556→  position: relative;
+   557→  overflow-y: auto;
+   558→  overflow-x: hidden;
+   559→}
+   560→
+   561→/* ── District Scene (full scene per district) ── */
+   562→.district-scene {
+   563→  position: relative;
+   564→  min-height: 100vh;
+   565→  display: flex;
+   566→  flex-direction: column;
+   567→}
+   568→
+   569→.district-scene-bg {
+   570→  position: fixed;
+   571→  top: 0;
+   572→  left: 220px;
+   573→  right: 0;
+   574→  bottom: 0;
+   575→  background-size: cover;
+   576→  background-position: center;
+   577→  opacity: 0.50;
+   578→  filter: saturate(1.2) brightness(1.15);
+   579→  transition: opacity 1.2s ease;
+   580→  z-index: 0;
+   581→}
+   582→
+   583→[data-district="fan-sites"] .district-scene-bg {
+   584→  opacity: 0.65;
+   585→}
+   586→
+   587→[data-district="fan-sites"] .district-scene-overlay {
+   588→  background: linear-gradient(
+   589→    to bottom,
+   590→    rgba(10,14,23,0.35) 0%,
+   591→    rgba(10,14,23,0.20) 30%,
+   592→    rgba(10,14,23,0.25) 60%,
+   593→    rgba(10,14,23,0.50) 100%
+   594→  );
+   595→}
+   596→
+   597→/* ── TRANSGENDER wing: title above banner ── */
+   598→[data-district="our-mission"] .district-description {
+   599→  font-size: 18px;
+   600→  letter-spacing: 0.12em;
+   601→  text-transform: uppercase;
+   602→  color: var(--amber);
+   603→  text-shadow: 0 0 20px rgba(212,160,23,0.4), 0 0 40px rgba(212,160,23,0.15);
+   604→  white-space: pre-line;
+   605→}
+   606→[data-district="our-mission"] .encounter-card {
+   607→  flex-direction: column;
+   608→}
+   609→[data-district="our-mission"] .encounter-card-body {
+   610→  text-align: center;
+   611→}
+   612→
+   613→/* ── GAY wing: all cards — title above banner, no overlay ── */
+   614→[data-resident="gay-offer"],
+   615→[data-resident="xlovegay-cams"],
+   616→[data-resident="royal-cams"] {
+   617→  display: grid;
+   618→  grid-template-rows: auto 1fr auto;
+   619→  gap: 8px;
+   620→  border: none;
+   621→  background: none;
+   622→  overflow: visible;
+   623→  padding: 0;
+   624→  border-radius: 0;
+   625→}
+   626→[data-resident="gay-offer"]:hover,
+   627→[data-resident="xlovegay-cams"]:hover,
+   628→[data-resident="royal-cams"]:hover {
+   629→  border-color: transparent;
+   630→  transform: none;
+   631→  box-shadow: none;
+   632→}
+   633→[data-resident="gay-offer"] .encounter-card-body,
+   634→[data-resident="xlovegay-cams"] .encounter-card-body,
+   635→[data-resident="royal-cams"] .encounter-card-body {
+   636→  display: contents;
+   637→}
+   638→[data-resident="gay-offer"] .encounter-card-name {
+   639→  order: 1;
+   640→  font-size: 16px;
+   641→  letter-spacing: 0.22em;
+   642→  text-align: center;
+   643→  color: var(--amber);
+   644→  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
+   645→}
+   646→[data-resident="gay-offer"] .encounter-card-image {
+   647→  order: 2;
+   648→  aspect-ratio: 300/250;
+   649→  background-size: contain;
+   650→  background-position: center;
+   651→  background-repeat: no-repeat;
+   652→  border: 1px solid rgba(212,160,23,0.15);
+   653→  border-radius: var(--card-radius);
+   654→  overflow: hidden;
+   655→  transition: all 0.4s ease;
+   656→}
+   657→[data-resident="gay-offer"] .encounter-card-image::after {
+   658→  background: none;
+   659→}
+   660→[data-resident="gay-offer"]:hover .encounter-card-image {
+   661→  border-color: rgba(212,160,23,0.35);
+   662→  transform: translateY(-2px);
+   663→  box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 12px rgba(212,160,23,0.08);
+   664→}
+   665→[data-resident="gay-offer"] .encounter-card-desc {
+   666→  order: 3;
+   667→  text-align: center;
+   668→  color: var(--amber);
+   669→  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
+   670→  font-size: 13px;
+   671→  letter-spacing: 0.18em;
+   672→  text-transform: uppercase;
+   673→  line-height: 1.6;
+   674→  white-space: pre-line;
+   675→  margin: 0;
+   676→}
+   677→
+   678→[data-resident="xlovegay-cams"] .encounter-card-name {
+   679→  order: 1;
+   680→  font-size: 14px;
+   681→  letter-spacing: 0.14em;
+   682→  position: relative;
+   683→  padding-bottom: 12px;
+   684→  text-align: center;
+   685→  color: var(--amber);
+   686→  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
+   687→}
+   688→[data-resident="xlovegay-cams"] .encounter-card-image {
+   689→  order: 2;
+   690→  aspect-ratio: 300/250;
+   691→  background-size: cover;
+   692→  background-position: center;
+   693→  background-repeat: no-repeat;
+   694→  border: 1px solid rgba(212,160,23,0.15);
+   695→  border-radius: var(--card-radius);
+   696→  overflow: hidden;
+   697→  transition: all 0.4s ease;
+   698→}
+   699→[data-resident="xlovegay-cams"] .encounter-card-image::after {
+   700→  background: none;
+   701→}
+   702→[data-resident="xlovegay-cams"]:hover .encounter-card-image {
+   703→  border-color: rgba(212,160,23,0.35);
+   704→  transform: translateY(-2px);
+   705→  box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 12px rgba(212,160,23,0.08);
+   706→}
+   707→[data-resident="xlovegay-cams"] .encounter-card-desc {
+   708→  order: 3;
+   709→  text-align: center;
+   710→  color: var(--amber);
+   711→  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
+   712→  font-size: 13px;
+   713→  letter-spacing: 0.18em;
+   714→  text-transform: uppercase;
+   715→  line-height: 1.6;
+   716→  white-space: pre-line;
+   717→  margin: 0;
+   718→}
+   719→[data-resident="xlovegay-cams"] .encounter-card-name::after {
+   720→  content: '';
+   721→  position: absolute;
+   722→  bottom: 0;
+   723→  left: 50%;
+   724→  transform: translateX(-50%);
+   725→  width: 70%;
+   726→  height: 2px;
+   727→  background: linear-gradient(90deg, #e40303, #ff8c00, #ffed00, #008026, #24408e, #732982);
+   728→  border-radius: 1px;
+   729→  opacity: 0.85;
+   730→}
+   731→
+   732→/* ── royal-cams: same as xlovegay-cams pattern, no rainbow ── */
+   733→[data-resident="royal-cams"] .encounter-card-name {
+   734→  order: 1;
+   735→  font-size: 14px;
+   736→  letter-spacing: 0.14em;
+   737→  text-align: center;
+   738→  color: var(--amber);
+   739→  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
+   740→}
+   741→[data-resident="royal-cams"] .encounter-card-image {
+   742→  order: 2;
+   743→  aspect-ratio: 300/250;
+   744→  background-size: cover;
+   745→  background-position: center;
+   746→  background-repeat: no-repeat;
+   747→  border: 1px solid rgba(212,160,23,0.15);
+   748→  border-radius: var(--card-radius);
+   749→  overflow: hidden;
+   750→  transition: all 0.4s ease;
+   751→}
+   752→[data-resident="royal-cams"] .encounter-card-image::after {
+   753→  background: none;
+   754→}
+   755→[data-resident="royal-cams"]:hover .encounter-card-image {
+   756→  border-color: rgba(212,160,23,0.35);
+   757→  transform: translateY(-2px);
+   758→  box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 12px rgba(212,160,23,0.08);
+   759→}
+   760→[data-resident="royal-cams"] .encounter-card-desc {
+   761→  order: 3;
+   762→  text-align: center;
+   763→  color: var(--amber);
+   764→  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
+   765→  font-size: 13px;
+   766→  letter-spacing: 0.18em;
+   767→  text-transform: uppercase;
+   768→  line-height: 1.6;
+   769→  white-space: pre-line;
+   770→  margin: 0;
+   771→}
+   772→
+   773→.district-scene-overlay {
+   774→  position: fixed;
+   775→  top: 0;
+   776→  left: 220px;
+   777→  right: 0;
+   778→  bottom: 0;
+   779→  background: linear-gradient(
+   780→    to bottom,
+   781→    rgba(10,14,23,0.40) 0%,
+   782→    rgba(10,14,23,0.25) 30%,
+   783→    rgba(10,14,23,0.30) 60%,
+   784→    rgba(10,14,23,0.60) 100%
+   785→  );
+   786→  z-index: 1;
+   787→  pointer-events: none;
+   788→}
+   789→
+   790→.district-scene-content {
+   791→  position: relative;
+   792→  z-index: 2;
+   793→  flex: 1;
+   794→  display: flex;
+   795→  flex-direction: column;
+   796→  padding: 60px 40px 40px;
+   797→  max-width: 900px;
+   798→}
+   799→
+   800→/* ── District Header ── */
+   801→.district-header {
+   802→  margin-bottom: 48px;
+   803→}
+   804→
+   805→.district-subtitle {
+   806→  font-size: 10px;
+   807→  letter-spacing: 0.4em;
+   808→  text-transform: uppercase;
+   809→  margin-bottom: 8px;
+   810→  text-shadow: 0 1px 4px rgba(10,14,23,0.85), 0 0 12px rgba(10,14,23,0.5);
+   811→}
+   812→
+   813→.district-name {
+   814→  font-size: 28px;
+   815→  letter-spacing: 0.12em;
+   816→  text-transform: uppercase;
+   817→  font-weight: 400;
+   818→  line-height: 1.2;
+   819→  margin-bottom: 16px;
+   820→  color: var(--amber);
+   821→  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
+   822→}
+   823→
+   824→.district-divider {
+   825→  width: 80px;
+   826→  margin-bottom: 16px;
+   827→}
+   828→
+   829→.district-description {
+   830→  font-size: 15px;
+   831→  line-height: 1.8;
+   832→  max-width: 480px;
+   833→  color: var(--amber);
+   834→  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
+   835→}
+   836→
+   837→[data-district="pay-sites"] .district-description {
+   838→  font-size: 18px;
+   839→  letter-spacing: 0.12em;
+   840→  text-transform: uppercase;
+   841→  color: var(--amber);
+   842→  text-shadow: 0 0 20px rgba(212,160,23,0.4), 0 0 40px rgba(212,160,23,0.15);
+   843→  white-space: pre-line;
+   844→}
+   845→
+   846→[data-district="ai-companions"] .district-name {
+   847→  font-size: 32px;
+   848→  font-weight: 700;
+   849→}
+   850→[data-district="ai-companions"] .district-description {
+   851→  font-size: 15px;
+   852→  color: var(--amber);
+   853→  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
+   854→}
+   855→
+   856→[data-district="niche"] .district-name {
+   857→  white-space: pre-line;
+   858→  color: var(--amber);
+   859→  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
+   860→  font-size: 32px;
+   861→}
+   862→
+   863→[data-district="niche"] .district-description {
+   864→  color: var(--amber);
+   865→  text-shadow: 0 0 15px rgba(212,160,23,0.3);
+   866→  white-space: pre-line;
+   867→  font-size: 15px;
+   868→}
+   869→
+   870→/* ── Fan Sites — title above banner, no body ── */
+   871→[data-district="fan-sites"] .encounter-card {
+   872→  display: grid;
+   873→  grid-template-rows: auto 1fr;
+   874→  gap: 8px;
+   875→  border: none;
+   876→  background: none;
+   877→  overflow: visible;
+   878→  padding: 0;
+   879→  border-radius: 0;
+   880→}
+   881→[data-district="fan-sites"] .encounter-card:hover {
+   882→  border-color: transparent;
+   883→  transform: none;
+   884→  box-shadow: none;
+   885→}
+   886→[data-district="fan-sites"] .encounter-card-body {
+   887→  display: contents;
+   888→}
+   889→[data-district="fan-sites"] .encounter-card-name {
+   890→  order: 1;
+   891→  font-size: 16px;
+   892→  letter-spacing: 0.22em;
+   893→  text-align: center;
+   894→  color: var(--amber);
+   895→  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
+   896→}
+   897→[data-district="fan-sites"] .encounter-card-image {
+   898→  order: 2;
+   899→  aspect-ratio: 3/1;
+   900→  background-size: contain;
+   901→  background-position: center;
+   902→  background-repeat: no-repeat;
+   903→  border: 1px solid rgba(233,30,140,0.15);
+   904→  border-radius: var(--card-radius);
+   905→  overflow: hidden;
+   906→  transition: all 0.4s ease;
+   907→}
+   908→[data-district="fan-sites"] .encounter-card-image::after {
+   909→  background: none;
+   910→}
+   911→[data-district="fan-sites"] .encounter-card:hover .encounter-card-image {
+   912→  border-color: rgba(233,30,140,0.35);
+   913→  transform: translateY(-2px);
+   914→  box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 12px rgba(233,30,140,0.06);
+   915→}
+   916→
+   917→/* ── Pay Sites — title above banner, gold/amber (Bellesa Plus + Sext Panther) ── */
+   918→[data-resident="bellesa-plus"],
+   919→[data-resident="sextpanther"] {
+   920→  display: grid;
+   921→  grid-template-rows: auto 1fr;
+   922→  gap: 8px;
+   923→  border: none;
+   924→  background: none;
+   925→  overflow: visible;
+   926→  padding: 0;
+   927→  border-radius: 0;
+   928→}
+   929→[data-resident="bellesa-plus"]:hover,
+   930→[data-resident="sextpanther"]:hover {
+   931→  border-color: transparent;
+   932→  transform: none;
+   933→  box-shadow: none;
+   934→}
+   935→[data-resident="bellesa-plus"] .encounter-card-body,
+   936→[data-resident="sextpanther"] .encounter-card-body {
+   937→  display: contents;
+   938→}
+   939→[data-resident="bellesa-plus"] .encounter-card-name,
+   940→[data-resident="sextpanther"] .encounter-card-name {
+   941→  order: 1;
+   942→  font-size: 16px;
+   943→  letter-spacing: 0.22em;
+   944→  text-align: center;
+   945→  color: var(--amber);
+   946→  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
+   947→}
+   948→[data-resident="bellesa-plus"] .encounter-card-image,
+   949→[data-resident="sextpanther"] .encounter-card-image {
+   950→  order: 2;
+   951→  aspect-ratio: 300/250;
+   952→  background-size: contain;
+   953→  background-position: center;
+   954→  background-repeat: no-repeat;
+   955→  border: 1px solid rgba(212,160,23,0.15);
+   956→  border-radius: var(--card-radius);
+   957→  overflow: hidden;
+   958→  transition: all 0.4s ease;
+   959→}
+   960→[data-resident="bellesa-plus"] .encounter-card-image::after,
+   961→[data-resident="sextpanther"] .encounter-card-image::after {
+   962→  background: none;
+   963→}
+   964→[data-resident="bellesa-plus"]:hover .encounter-card-image,
+   965→[data-resident="sextpanther"]:hover .encounter-card-image {
+   966→  border-color: rgba(212,160,23,0.35);
+   967→  transform: translateY(-2px);
+   968→  box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 12px rgba(212,160,23,0.08);
+   969→}
+   970→
+   971→/* ── Trans wing cards — block layout, no flex/grid subpixel issues ── */
+   972→[data-resident="trans-offer"],
+   973→[data-resident="jermate-trans"],
+   974→[data-resident="soda-offer"] {
+   975→  display: block;
+   976→  border: none;
+   977→  background: none;
+   978→  overflow: visible;
+   979→  padding: 0;
+   980→  border-radius: 0;
+   981→}
+   982→[data-resident="trans-offer"]:hover,
+   983→[data-resident="jermate-trans"]:hover,
+   984→[data-resident="soda-offer"]:hover {
+   985→  border-color: transparent;
+   986→  transform: none;
+   987→  box-shadow: none;
+   988→}
+   989→[data-resident="trans-offer"] .encounter-card-name,
+   990→[data-resident="jermate-trans"] .encounter-card-name,
+   991→[data-resident="soda-offer"] .encounter-card-name {
+   992→  display: block;
+   993→  min-height: 48px;
+   994→  font-size: 16px;
+   995→  letter-spacing: 0.22em;
+   996→  text-align: center;
+   997→  color: var(--amber);
+   998→  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
+   999→}
+  1000→[data-resident="trans-offer"] .encounter-card-image,
+  1001→[data-resident="jermate-trans"] .encounter-card-image,
+  1002→[data-resident="soda-offer"] .encounter-card-image {
+  1003→  display: block;
+  1004→  margin-top: 8px;
+  1005→  flex-shrink: 0;
+  1006→  aspect-ratio: 300/270;
+  1007→  background-size: cover;
+  1008→  background-position: center;
+  1009→  background-repeat: no-repeat;
+  1010→  border: 1px solid rgba(212,160,23,0.15);
+  1011→  border-radius: var(--card-radius);
+  1012→  overflow: hidden;
+  1013→  transition: all 0.4s ease;
+  1014→}
+  1015→[data-resident="trans-offer"] .encounter-card-image::after,
+  1016→[data-resident="jermate-trans"] .encounter-card-image::after,
+  1017→[data-resident="soda-offer"] .encounter-card-image::after {
+  1018→  background: none;
+  1019→}
+  1020→[data-resident="trans-offer"] .encounter-card-desc,
+  1021→[data-resident="jermate-trans"] .encounter-card-desc,
+  1022→[data-resident="soda-offer"] .encounter-card-desc {
+  1023→  margin: 0;
+  1024→  margin-top: 8px;
+  1025→  text-align: center;
+  1026→  color: var(--amber);
+  1027→  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
+  1028→  font-size: 13px;
+  1029→  letter-spacing: 0.18em;
+  1030→  text-transform: uppercase;
+  1031→  line-height: 1.6;
+  1032→  white-space: pre-line;
+  1033→}
+  1034→[data-resident="trans-offer"]:hover .encounter-card-image,
+  1035→[data-resident="jermate-trans"]:hover .encounter-card-image,
+  1036→[data-resident="soda-offer"]:hover .encounter-card-image {
+  1037→  border-color: rgba(212,160,23,0.35);
+  1038→  transform: translateY(-2px);
+  1039→  box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 12px rgba(212,160,23,0.08);
+  1040→}
+  1041→
+  1042→/* ── Manga RPG — title above banner, description below, gold/amber ── */
+  1043→[data-resident="manga-rpg"] {
+  1044→  display: grid;
+  1045→  grid-template-rows: auto 1fr auto;
+  1046→  gap: 8px;
+  1047→  border: none;
+  1048→  background: none;
+  1049→  overflow: visible;
+  1050→  padding: 0;
+  1051→  border-radius: 0;
+  1052→}
+  1053→[data-resident="manga-rpg"]:hover {
+  1054→  border-color: transparent;
+  1055→  transform: none;
+  1056→  box-shadow: none;
+  1057→}
+  1058→[data-resident="manga-rpg"] .encounter-card-body {
+  1059→  display: contents;
+  1060→}
+  1061→[data-resident="manga-rpg"] .encounter-card-name {
+  1062→  order: 1;
+  1063→  font-size: 16px;
+  1064→  letter-spacing: 0.22em;
+  1065→  text-align: center;
+  1066→  color: var(--amber);
+  1067→  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
+  1068→}
+  1069→[data-resident="manga-rpg"] .encounter-card-image {
+  1070→  order: 2;
+  1071→  aspect-ratio: 300/250;
+  1072→  background-size: contain;
+  1073→  background-position: center;
+  1074→  background-repeat: no-repeat;
+  1075→  border: 1px solid rgba(212,160,23,0.15);
+  1076→  border-radius: var(--card-radius);
+  1077→  overflow: hidden;
+  1078→  transition: all 0.4s ease;
+  1079→}
+  1080→[data-resident="manga-rpg"] .encounter-card-image::after {
+  1081→  background: none;
+  1082→}
+  1083→[data-resident="manga-rpg"]:hover .encounter-card-image {
+  1084→  border-color: rgba(212,160,23,0.35);
+  1085→  transform: translateY(-2px);
+  1086→  box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 12px rgba(212,160,23,0.08);
+  1087→}
+  1088→[data-resident="manga-rpg"] .encounter-card-desc {
+  1089→  order: 3;
+  1090→  text-align: center;
+  1091→  font-size: 13px;
+  1092→  letter-spacing: 0.18em;
+  1093→  color: var(--amber);
+  1094→  text-shadow: 0 0 12px rgba(212,160,23,0.3);
+  1095→  white-space: pre-line;
+  1096→}
+  1097→
+  1098→/* ── Comix Harem variants — title above banner, description below, gold/amber ── */
+  1099→[data-resident="comix-harem-1"],
+  1100→[data-resident="comix-harem-2"] {
+  1101→  display: grid;
+  1102→  grid-template-rows: auto 1fr auto;
+  1103→  gap: 8px;
+  1104→  border: none;
+  1105→  background: none;
+  1106→  overflow: visible;
+  1107→  padding: 0;
+  1108→  border-radius: 0;
+  1109→}
+  1110→[data-resident="comix-harem-1"]:hover,
+  1111→[data-resident="comix-harem-2"]:hover {
+  1112→  border-color: transparent;
+  1113→  transform: none;
+  1114→  box-shadow: none;
+  1115→}
+  1116→[data-resident="comix-harem-1"] .encounter-card-body,
+  1117→[data-resident="comix-harem-2"] .encounter-card-body {
+  1118→  display: contents;
+  1119→}
+  1120→[data-resident="comix-harem-1"] .encounter-card-name,
+  1121→[data-resident="comix-harem-2"] .encounter-card-name {
+  1122→  order: 1;
+  1123→  font-size: 16px;
+  1124→  letter-spacing: 0.22em;
+  1125→  text-align: center;
+  1126→  color: var(--amber);
+  1127→  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
+  1128→}
+  1129→[data-resident="comix-harem-1"] .encounter-card-image,
+  1130→[data-resident="comix-harem-2"] .encounter-card-image {
+  1131→  order: 2;
+  1132→  aspect-ratio: 300/250;
+  1133→  background-size: contain;
+  1134→  background-position: center;
+  1135→  background-repeat: no-repeat;
+  1136→  border: 1px solid rgba(212,160,23,0.15);
+  1137→  border-radius: var(--card-radius);
+  1138→  overflow: hidden;
+  1139→  transition: all 0.4s ease;
+  1140→}
+  1141→[data-resident="comix-harem-1"] .encounter-card-image::after,
+  1142→[data-resident="comix-harem-2"] .encounter-card-image::after {
+  1143→  background: none;
+  1144→}
+  1145→[data-resident="comix-harem-1"]:hover .encounter-card-image,
+  1146→[data-resident="comix-harem-2"]:hover .encounter-card-image {
+  1147→  border-color: rgba(212,160,23,0.35);
+  1148→  transform: translateY(-2px);
+  1149→  box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 12px rgba(212,160,23,0.08);
+  1150→}
+  1151→[data-resident="comix-harem-1"] .encounter-card-desc,
+  1152→[data-resident="comix-harem-2"] .encounter-card-desc {
+  1153→  order: 3;
+  1154→  text-align: center;
+  1155→  font-size: 13px;
+  1156→  letter-spacing: 0.18em;
+  1157→  color: var(--amber);
+  1158→  text-shadow: 0 0 12px rgba(212,160,23,0.3);
+  1159→  white-space: pre-line;
+  1160→}
+  1161→
+  1162→/* ── AI Companions — title above card, caption below ── */
+  1163→[data-district="ai-companions"] .encounter-card {
+  1164→  display: grid;
+  1165→  grid-template-rows: auto 1fr auto;
+  1166→  gap: 10px;
+  1167→  border: none;
+  1168→  background: none;
+  1169→  overflow: visible;
+  1170→  padding: 0;
+  1171→  border-radius: 0;
+  1172→}
+  1173→[data-district="ai-companions"] .encounter-card:hover {
+  1174→  border-color: transparent;
+  1175→  transform: none;
+  1176→  box-shadow: none;
+  1177→}
+  1178→[data-district="ai-companions"] .encounter-card-body {
+  1179→  display: contents;
+  1180→}
+  1181→[data-district="ai-companions"] .encounter-card-name {
+  1182→  order: 1;
+  1183→  font-size: 16px;
+  1184→  letter-spacing: 0.22em;
+  1185→  text-align: center;
+  1186→  color: var(--amber);
+  1187→  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
+  1188→}
+  1189→[data-district="ai-companions"] .encounter-card-image {
+  1190→  order: 2;
+  1191→  aspect-ratio: 6/5;
+  1192→  border: 1px solid rgba(0,245,255,0.15);
+  1193→  border-radius: var(--card-radius);
+  1194→  overflow: hidden;
+  1195→  transition: all 0.4s ease;
+  1196→}
+  1197→[data-district="ai-companions"] .encounter-card-image::after {
+  1198→  background: none;
+  1199→}
+  1200→[data-district="ai-companions"] .encounter-card:hover .encounter-card-image {
+  1201→  border-color: rgba(0,245,255,0.35);
+  1202→  transform: translateY(-2px);
+  1203→  box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 12px rgba(0,245,255,0.06);
+  1204→}
+  1205→[data-district="ai-companions"] .encounter-card-desc {
+  1206→  order: 3;
+  1207→  text-align: center;
+  1208→  color: var(--amber);
+  1209→  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
+  1210→  font-size: 13px;
+  1211→  letter-spacing: 0.18em;
+  1212→  text-transform: uppercase;
+  1213→  line-height: 1.6;
+  1214→  white-space: pre-line;
+  1215→  margin: 0;
+  1216→}
+  1217→
+  1218→/* ── District Encounters ── */
+  1219→.district-encounters {
+  1220→  display: grid;
+  1221→  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  1222→  gap: 20px;
+  1223→  flex: 1;
+  1224→  align-content: start;
+  1225→}
+  1226→
+  1227→.district-empty {
+  1228→  font-size: 12px;
+  1229→  letter-spacing: 0.2em;
+  1230→  text-transform: uppercase;
+  1231→  color: var(--text-dim);
+  1232→  font-style: italic;
+  1233→  text-shadow: 0 1px 4px rgba(10,14,23,0.85), 0 0 12px rgba(10,14,23,0.5);
+  1234→  padding: 40px 0;
+  1235→}
+  1236→
+  1237→/* ── Nectar Teaser (bottom of scene) ── */
+  1238→.district-nectar-teaser {
+  1239→  position: relative;
+  1240→  z-index: 2;
+  1241→  padding: 24px 40px 16px;
+  1242→  border-top: 1px solid rgba(255,255,255,0.03);
+  1243→}
+  1244→.nectar-teaser-content {
+  1245→  max-width: 400px;
+  1246→}
+  1247→.nectar-teaser-header {
+  1248→  display: flex;
+  1249→  align-items: center;
+  1250→  gap: 8px;
+  1251→  margin-bottom: 10px;
+  1252→}
+  1253→.nectar-teaser-title {
+  1254→  font-size: 17px;
+  1255→  letter-spacing: 0.2em;
+  1256→  text-transform: uppercase;
+  1257→  font-weight: 700;
+  1258→}
+  1259→.nectar-teaser-soon {
+  1260→  font-size: 14px;
+  1261→  letter-spacing: 0.15em;
+  1262→  text-transform: uppercase;
+  1263→}
+  1264→.nectar-teaser-intro {
+  1265→  font-size: 16px;
+  1266→  letter-spacing: 0.05em;
+  1267→  line-height: 1.6;
+  1268→  margin-bottom: 4px;
+  1269→}
+  1270→.nectar-teaser-list {
+  1271→  font-size: 16px;
+  1272→  letter-spacing: 0.05em;
+  1273→  line-height: 1.7;
+  1274→  white-space: pre-line;
+  1275→  margin: 0;
+  1276→}
+  1277→
+  1278→/* ── District Footer ── */
+  1279→.district-footer {
+  1280→  position: relative;
+  1281→  z-index: 2;
+  1282→  display: flex;
+  1283→  align-items: center;
+  1284→  justify-content: space-between;
+  1285→  padding: 12px 40px 20px;
+  1286→}
+  1287→.district-footer-left {
+  1288→  flex: 1;
+  1289→}
+  1290→
+  1291→/* ── Compliance Footer ── */
+  1292→.compliance-footer {
+  1293→  position: relative;
+  1294→  z-index: 2;
+  1295→  display: flex;
+  1296→  align-items: center;
+  1297→  justify-content: space-between;
+  1298→  padding: 14px 40px 20px;
+  1299→  border-top: 1px solid rgba(255,255,255,0.03);
+  1300→}
+  1301→
+  1302→.compliance-brand {
+  1303→  font-size: 9px;
+  1304→  letter-spacing: 0.2em;
+  1305→  text-transform: uppercase;
+  1306→  color: var(--amber-dim);
+  1307→  white-space: nowrap;
+  1308→}
+  1309→
+  1310→.compliance-nav {
+  1311→  display: flex;
+  1312→  gap: 16px;
+  1313→  flex-wrap: wrap;
+  1314→  justify-content: flex-end;
+  1315→}
+  1316→
+  1317→.compliance-link {
+  1318→  font-size: 9px;
+  1319→  letter-spacing: 0.05em;
+  1320→  color: var(--text-dim);
+  1321→  text-decoration: none;
+  1322→  transition: color 0.3s ease;
+  1323→  white-space: nowrap;
+  1324→}
+  1325→
+  1326→.compliance-link:hover {
+  1327→  color: var(--text-muted);
+  1328→}
+  1329→
+  1330→/* ═══════════════════════════════════════════════════════════════
+  1331→   ARRIVAL SCENE — Cinematic Entrance
+  1332→   ═══════════════════════════════════════════════════════════════ */
+  1333→
+  1334→/* ── Scene Shell ── */
+  1335→.arrival-scene {
+  1336→  position: relative;
+  1337→  width: 100%;
+  1338→  min-height: 100vh;
+  1339→  overflow-x: clip;
+  1340→}
+  1341→
+  1342→.arrival-bg {
+  1343→  position: fixed;
+  1344→  inset: 0;
+  1345→  background: url('/cantina-arrival.png') center center / cover no-repeat;
+  1346→  filter: brightness(1.0);
+  1347→  z-index: 0;
+  1348→}
+  1349→
+  1350→@keyframes arrivalBgBreath {
+  1351→  0%, 100% { transform: scale(1.05); }
+  1352→  50% { transform: scale(1.08); }
+  1353→}
+  1354→
+  1355→.arrival-dim {
+  1356→  position: fixed;
+  1357→  inset: 0;
+  1358→  background: rgba(0, 0, 0, 0.15);
+  1359→  z-index: 1;
+  1360→}
+  1361→
+  1362→/* ── Fog Layers ── */
+  1363→.arrival-fog {
+  1364→  position: absolute;
+  1365→  width: 250%;
+  1366→  height: 60%;
+  1367→  pointer-events: none;
+  1368→  z-index: 2;
+  1369→  opacity: 0.35;
+  1370→}
+  1371→
+  1372→.arrival-fog-1 {
+  1373→  top: 10%;
+  1374→  left: -75%;
+  1375→  background: linear-gradient(90deg, transparent 0%, rgba(180,160,140,0.04) 20%, rgba(200,180,160,0.06) 40%, transparent 60%, rgba(180,160,140,0.03) 80%, transparent 100%);
+  1376→  filter: blur(60px);
+  1377→  animation: fogDriftRight 28s ease-in-out infinite;
+  1378→}
+  1379→
+  1380→.arrival-fog-2 {
+  1381→  top: 40%;
+  1382→  left: -100%;
+  1383→  background: linear-gradient(90deg, transparent 0%, rgba(160,140,120,0.05) 30%, transparent 50%, rgba(180,160,140,0.04) 70%, transparent 100%);
+  1384→  filter: blur(80px);
+  1385→  animation: fogDriftLeft 35s ease-in-out infinite;
+  1386→}
+  1387→
+  1388→.arrival-fog-3 {
+  1389→  bottom: 5%;
+  1390→  left: -50%;
+  1391→  width: 200%;
+  1392→  height: 40%;
+  1393→  background: linear-gradient(90deg, transparent 0%, rgba(212,160,23,0.03) 25%, transparent 50%, rgba(233,30,140,0.02) 75%, transparent 100%);
+  1394→  filter: blur(50px);
+  1395→  animation: fogDriftRight 22s ease-in-out infinite reverse;
+  1396→}
+  1397→
+  1398→@keyframes fogDriftRight {
+  1399→  0%, 100% { transform: translateX(0); }
+  1400→  50% { transform: translateX(20%); }
+  1401→}
+  1402→
+  1403→@keyframes fogDriftLeft {
+  1404→  0%, 100% { transform: translateX(0); }
+  1405→  50% { transform: translateX(-15%); }
+  1406→}
+  1407→
+  1408→/* ── Warm Light Glows ── */
+  1409→.arrival-glow {
+  1410→  position: absolute;
+  1411→  border-radius: 50%;
+  1412→  pointer-events: none;
+  1413→  z-index: 2;
+  1414→}
+  1415→
+  1416→.arrival-glow-amber {
+  1417→  top: 15%;
+  1418→  left: 25%;
+  1419→  width: 500px;
+  1420→  height: 500px;
+  1421→  background: radial-gradient(circle, rgba(212,160,23,0.22) 0%, rgba(212,140,10,0.08) 50%, transparent 70%);
+  1422→  filter: blur(50px);
+  1423→  animation: glowPulse 10s ease-in-out infinite;
+  1424→}
+  1425→
+  1426→.arrival-glow-magenta {
+  1427→  bottom: 20%;
+  1428→  right: 15%;
+  1429→  width: 400px;
+  1430→  height: 400px;
+  1431→  background: radial-gradient(circle, rgba(233,30,140,0.05) 0%, transparent 70%);
+  1432→  filter: blur(50px);
+  1433→  animation: glowPulse 12s ease-in-out infinite 3s;
+  1434→}
+  1435→
+  1436→@keyframes glowPulse {
+  1437→  0%, 100% { opacity: 1; transform: scale(1); }
+  1438→  50% { opacity: 0.6; transform: scale(1.1); }
+  1439→}
+  1440→
+  1441→/* ── Dust Particles ── */
+  1442→.arrival-dust-container {
+  1443→  position: absolute;
+  1444→  inset: 0;
+  1445→  pointer-events: none;
+  1446→  z-index: 3;
+  1447→}
+  1448→
+  1449→.arrival-dust {
+  1450→  position: absolute;
+  1451→  bottom: -10px;
+  1452→  border-radius: 50%;
+  1453→  background: rgba(212,180,120,0.6);
+  1454→  animation: dustFloat linear infinite;
+  1455→}
+  1456→
+  1457→@keyframes dustFloat {
+  1458→  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  1459→  10% { opacity: 1; }
+  1460→  90% { opacity: 1; }
+  1461→  100% { transform: translateY(-100vh) translateX(30px); opacity: 0; }
+  1462→}
+  1463→
+  1464→/* ── Silhouette ── */
+  1465→.arrival-silhouette {
+  1466→  position: absolute;
+  1467→  bottom: 0;
+  1468→  left: 50%;
+  1469→  transform: translateX(-50%);
+  1470→  width: 180px;
+  1471→  height: 280px;
+  1472→  background: linear-gradient(to top, rgba(10,14,23,0.4) 0%, rgba(10,14,23,0.15) 40%, transparent 70%);
+  1473→  border-radius: 45% 45% 0 0;
+  1474→  filter: blur(25px);
+  1475→  z-index: 2;
+  1476→  animation: silhouetteFade 15s ease-in-out infinite;
+  1477→  opacity: 0;
+  1478→  pointer-events: none;
+  1479→}
+  1480→
+  1481→@keyframes silhouetteFade {
+  1482→  0%, 60%, 100% { opacity: 0; transform: translateX(-50%) scaleY(0.95); }
+  1483→  65% { opacity: 0.12; }
+  1484→  75% { opacity: 0.08; transform: translateX(-48%) scaleY(1); }
+  1485→  85% { opacity: 0; }
+  1486→}
+  1487→
+  1488→/* ── Reflection (wet bar surface) ── */
+  1489→.arrival-reflection {
+  1490→  position: absolute;
+  1491→  bottom: 0;
+  1492→  left: 0;
+  1493→  right: 0;
+  1494→  height: 25%;
+  1495→  background: linear-gradient(to top, rgba(212,160,23,0.12) 0%, rgba(180,130,20,0.04) 60%, transparent 100%);
+  1496→  pointer-events: none;
+  1497→  z-index: 2;
+  1498→}
+  1499→
+  1500→/* ── Vignette ── */
+  1501→.arrival-vignette {
+  1502→  position: fixed;
+  1503→  inset: 0;
+  1504→  background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.4) 100%);
+  1505→  pointer-events: none;
+  1506→  z-index: 3;
+  1507→}
+  1508→
+  1509→/* ── Content ── */
+  1510→.arrival-content {
+  1511→  position: relative;
+  1512→  z-index: 10;
+  1513→  display: flex;
+  1514→  flex-direction: column;
+  1515→  align-items: center;
+  1516→  width: 100%;
+  1517→  height: 100%;
+  1518→}
+  1519→
+  1520→/* ── Language Toggle ── */
+  1521→.lang-toggle {
+  1522→  position: absolute;
+  1523→  z-index: 20;
+  1524→  display: flex;
+  1525→  align-items: center;
+  1526→  gap: 8px;
+  1527→  padding: 8px 14px;
+  1528→  background: rgba(0, 0, 0, 0.3);
+  1529→  backdrop-filter: blur(6px);
+  1530→  -webkit-backdrop-filter: blur(6px);
+  1531→  border: 1px solid rgba(212, 160, 23, 0.2);
+  1532→  border-radius: 6px;
+  1533→  color: rgba(232, 224, 212, 0.5);
+  1534→  cursor: pointer;
+  1535→  transition: color 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+  1536→  font-family: inherit;
+  1537→}
+  1538→
+  1539→.lang-toggle:hover {
+  1540→  color: rgba(232, 224, 212, 0.85);
+  1541→  border-color: rgba(212, 160, 23, 0.45);
+  1542→  background: rgba(0, 0, 0, 0.45);
+  1543→}
+  1544→
+  1545→.lang-toggle svg {
+  1546→  width: 20px;
+  1547→  height: 20px;
+  1548→  flex-shrink: 0;
+  1549→}
+  1550→
+  1551→.lang-toggle-label {
+  1552→  font-size: 12px;
+  1553→  letter-spacing: 0.12em;
+  1554→  font-weight: 500;
+  1555→}
+  1556→
+  1557→.landing-lang-toggle {
+  1558→  position: relative;
+  1559→  margin-bottom: 28px;
+  1560→}
+  1561→
+  1562→/* ── Age Gate ── */
+  1563→.age-gate {
+  1564→  display: flex;
+  1565→  flex-direction: column;
+  1566→  align-items: center;
+  1567→  margin: auto 0;
+  1568→  animation: ageGateIn 1.5s ease forwards;
+  1569→  opacity: 0;
+  1570→}
+  1571→
+  1572→@keyframes ageGateIn {
+  1573→  0% { opacity: 0; }
+  1574→  100% { opacity: 1; }
+  1575→}
+  1576→
+  1577→.age-gate-butterfly {
+  1578→  margin-bottom: 24px;
+  1579→}
+  1580→
+  1581→.age-gate-title {
+  1582→  display: flex;
+  1583→  flex-direction: column;
+  1584→  align-items: center;
+  1585→  gap: 2px;
+  1586→  margin-bottom: 20px;
+  1587→}
+  1588→
+  1589→.age-gate-title-cantina {
+  1590→  font-size: 2.42rem;
+  1591→  letter-spacing: 0.35em;
+  1592→  text-transform: uppercase;
+  1593→  color: var(--amber);
+  1594→  text-shadow: 0 0 20px rgba(212,160,23,0.4), 0 0 40px rgba(212,160,23,0.15);
+  1595→  line-height: 1.1;
+  1596→}
+  1597→
+  1598→.age-gate-title-virtual {
+  1599→  font-size: 1.1rem;
+  1600→  letter-spacing: 0.6em;
+  1601→  text-transform: uppercase;
+  1602→  color: var(--text-muted);
+  1603→  text-shadow: 0 0 10px rgba(233,30,140,0.3);
+  1604→}
+  1605→
+  1606→.age-gate-divider {
+  1607→  width: 60px;
+  1608→  height: 1px;
+  1609→  background: linear-gradient(90deg, transparent, var(--amber), rgba(233,30,140,0.5), transparent);
+  1610→  opacity: 0.4;
+  1611→  margin-bottom: 24px;
+  1612→}
+  1613→
+  1614→.age-gate-legal {
+  1615→  max-width: 380px;
+  1616→  text-align: center;
+  1617→  font-size: 10px;
+  1618→  line-height: 1.8;
+  1619→  color: var(--text-dim);
+  1620→  letter-spacing: 0.05em;
+  1621→  margin-bottom: 32px;
+  1622→  padding: 0 20px;
+  1623→}
+  1624→
+  1625→.age-gate-actions {
+  1626→  display: flex;
+  1627→  flex-direction: column;
+  1628→  gap: 12px;
+  1629→  align-items: center;
+  1630→}
+  1631→
+  1632→.age-gate-btn {
+  1633→  display: flex;
+  1634→  flex-direction: column;
+  1635→  align-items: center;
+  1636→  gap: 4px;
+  1637→  padding: 20px 56px;
+  1638→  background: transparent;
+  1639→  border: 1px solid rgba(212,160,23,0.2);
+  1640→  cursor: pointer;
+  1641→  font-family: inherit;
+  1642→  transition: all 0.4s ease;
+  1643→  min-width: 220px;
+  1644→}
+  1645→
+  1646→.age-gate-btn-enter {
+  1647→  padding: 26px 80px;
+  1648→  border: 2px solid rgba(212,160,23,0.7);
+  1649→  background: rgba(212,160,23,0.14);
+  1650→  box-shadow: 0 0 24px rgba(212,160,23,0.25), 0 0 48px rgba(212,160,23,0.1), 0 4px 20px rgba(212,160,23,0.1);
+  1651→}
+  1652→
+  1653→.age-gate-btn-enter:hover {
+  1654→  border-color: var(--amber);
+  1655→  border-width: 2px;
+  1656→  background: rgba(212,160,23,0.22);
+  1657→  box-shadow: 0 0 32px rgba(212,160,23,0.4), 0 0 64px rgba(212,160,23,0.18), 0 4px 28px rgba(212,160,23,0.15);
+  1658→}
+  1659→
+  1660→.age-gate-btn-leave {
+  1661→  border-color: rgba(255,255,255,0.2);
+  1662→}
+  1663→
+  1664→.age-gate-btn-leave:hover {
+  1665→  border-color: rgba(255,255,255,0.35);
+  1666→  background: rgba(255,255,255,0.04);
+  1667→}
+  1668→
+  1669→.age-gate-btn-label {
+  1670→  font-size: 24px;
+  1671→  letter-spacing: 0.25em;
+  1672→  text-transform: uppercase;
+  1673→  color: var(--amber);
+  1674→  font-weight: 700;
+  1675→  text-shadow: 0 1px 4px rgba(10,14,23,0.8);
+  1676→}
+  1677→
+  1678→.age-gate-btn-leave .age-gate-btn-label {
+  1679→  color: rgba(232,224,212,0.7);
+  1680→}
+  1681→
+  1682→.age-gate-btn-sub {
+  1683→  font-size: 9px;
+  1684→  letter-spacing: 0.15em;
+  1685→  color: var(--text-dim);
+  1686→}
+  1687→
+  1688→/* ── Arrival Copy ── */
+  1689→.arrival-copy {
+  1690→  max-width: 520px;
+  1691→  text-align: center;
+  1692→  font-size: 24px;
+  1693→  line-height: 2;
+  1694→  color: #FFFDF7;
+  1695→  letter-spacing: 0.03em;
+  1696→  margin-bottom: 10px;
+  1697→  text-shadow:
+  1698→    0 1px 2px rgba(10,14,23,0.75),
+  1699→    0 0 14px rgba(10,14,23,0.35);
+  1700→  padding: 0 20px;
+  1701→}
+  1702→
+  1703→.arrival-copy-body {
+  1704→  margin-bottom: 14px;
+  1705→}
+  1706→
+  1707→.arrival-copy-closing {
+  1708→  font-style: italic;
+  1709→  margin-bottom: 32px;
+  1710→}
+  1711→
+  1712→/* ── 18+ Quick Confirm ── */
+  1713→.age-confirm {
+  1714→  gap: 28px;
+  1715→}
+  1716→.age-confirm-question {
+  1717→  font-size: 14.3px;
+  1718→  letter-spacing: 0.25em;
+  1719→  text-transform: uppercase;
+  1720→  color: var(--text-primary);
+  1721→  text-shadow: 0 0 15px rgba(212,160,23,0.2);
+  1722→}
+  1723→.age-confirm-actions {
+  1724→  display: flex;
+  1725→  gap: 16px;
+  1726→}
+  1727→.age-confirm-actions .age-gate-btn {
+  1728→  min-width: 180px;
+  1729→  padding: 16px 28px;
+  1730→}
+  1731→
+  1732→/* ═══════════════════════════════════════════════════════════════
+  1733→   IMMERSIVE ROOMS — Dating & Live Cams
+  1734→   ═══════════════════════════════════════════════════════════════ */
+  1735→
+  1736→/* ── Shared: Room Atmosphere Background ── */
+  1737→.room-atmosphere-bg {
+  1738→  position: fixed;
+  1739→  top: 0;
+  1740→  left: 220px;
+  1741→  right: 0;
+  1742→  bottom: 0;
+  1743→  z-index: 0;
+  1744→  overflow: hidden;
+  1745→}
+  1746→
+  1747→/* ══════════════════════════════════════════════════════════════
+  1748→   DATING ROOM
+  1749→   ══════════════════════════════════════════════════════════════ */
+  1750→
+  1751→.dating-room {
+  1752→  position: relative;
+  1753→  min-height: 100vh;
+  1754→  display: flex;
+  1755→  flex-direction: column;
+  1756→}
+  1757→
+  1758→/* Background image */
+  1759→.dating-room-bg-image {
+  1760→  position: absolute;
+  1761→  inset: 0;
+  1762→  background-size: cover;
+  1763→  background-position: center;
+  1764→  opacity: 0.55;
+  1765→  filter: saturate(1.4) brightness(1.1);
+  1766→}
+  1767→
+  1768→@keyframes roomBgBreathe {
+  1769→  0% { transform: scale(1); }
+  1770→  100% { transform: scale(1.05); }
+  1771→}
+  1772→
+  1773→/* Gradient overlay — warm amber tones */
+  1774→.dating-room-overlay {
+  1775→  position: fixed;
+  1776→  top: 0;
+  1777→  left: 220px;
+  1778→  right: 0;
+  1779→  bottom: 0;
+  1780→  background: linear-gradient(
+  1781→    160deg,
+  1782→    rgba(10,14,23,0.45) 0%,
+  1783→    rgba(18,14,10,0.30) 25%,
+  1784→    rgba(10,14,23,0.20) 50%,
+  1785→    rgba(10,14,23,0.35) 75%,
+  1786→    rgba(10,14,23,0.55) 100%
+  1787→  );
+  1788→  z-index: 1;
+  1789→  pointer-events: none;
+  1790→}
+  1791→
+  1792→/* Glows */
+  1793→.dating-glow {
+  1794→  position: fixed;
+  1795→  border-radius: 50%;
+  1796→  filter: blur(100px);
+  1797→  pointer-events: none;
+  1798→  z-index: 1;
+  1799→}
+  1800→.dating-glow-warm {
+  1801→  top: -10%;
+  1802→  left: 15%;
+  1803→  width: 500px;
+  1804→  height: 500px;
+  1805→  background: radial-gradient(circle, rgba(212,160,23,0.10) 0%, transparent 70%);
+  1806→  animation: datingGlowPulse 8s ease-in-out infinite;
+  1807→}
+  1808→.dating-glow-candle {
+  1809→  bottom: 10%;
+  1810→  right: 5%;
+  1811→  width: 350px;
+  1812→  height: 350px;
+  1813→  background: radial-gradient(circle, rgba(180,120,20,0.06) 0%, transparent 70%);
+  1814→  animation: datingGlowPulse 12s ease-in-out infinite reverse;
+  1815→}
+  1816→@keyframes datingGlowPulse {
+  1817→  0%, 100% { transform: scale(1); opacity: 1; }
+  1818→  50% { transform: scale(1.15); opacity: 0.7; }
+  1819→}
+  1820→
+  1821→/* Dust particles */
+  1822→.dating-dust-container {
+  1823→  position: fixed;
+  1824→  inset: 0;
+  1825→  z-index: 1;
+  1826→  pointer-events: none;
+  1827→  overflow: hidden;
+  1828→}
+  1829→.dating-dust {
+  1830→  position: absolute;
+  1831→  bottom: -10px;
+  1832→  background: rgba(212,160,23,0.6);
+  1833→  border-radius: 50%;
+  1834→  animation: datingDustFloat linear infinite;
+  1835→}
+  1836→@keyframes datingDustFloat {
+  1837→  0% { transform: translateY(0) translateX(0); opacity: 0; }
+  1838→  10% { opacity: 1; }
+  1839→  90% { opacity: 1; }
+  1840→  100% { transform: translateY(-110vh) translateX(30px); opacity: 0; }
+  1841→}
+  1842→
+  1843→/* Room content wrapper */
+  1844→.dating-room-content {
+  1845→  position: relative;
+  1846→  z-index: 2;
+  1847→  flex: 1;
+  1848→  display: flex;
+  1849→  flex-direction: column;
+  1850→  padding: 60px 40px 40px;
+  1851→  max-width: 960px;
+  1852→}
+  1853→
+  1854→/* Header */
+  1855→.dating-room-header {
+  1856→  margin-bottom: 40px;
+  1857→}
+  1858→.dating-room-locale {
+  1859→  font-size: 10px;
+  1860→  letter-spacing: 0.4em;
+  1861→  text-transform: uppercase;
+  1862→  color: var(--text-muted);
+  1863→  margin-bottom: 8px;
+  1864→  text-shadow: 0 1px 4px rgba(10,14,23,0.85), 0 0 12px rgba(10,14,23,0.5);
+  1865→}
+  1866→.dating-room-title {
+  1867→  font-size: 28px;
+  1868→  letter-spacing: 0.12em;
+  1869→  text-transform: uppercase;
+  1870→  font-weight: 400;
+  1871→  line-height: 1.2;
+  1872→  margin-bottom: 16px;
+  1873→  color: var(--amber);
+  1874→  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
+  1875→}
+  1876→.dating-room-divider {
+  1877→  width: 80px;
+  1878→  margin-bottom: 16px;
+  1879→}
+  1880→.dating-room-prose {
+  1881→  font-size: 15px;
+  1882→  line-height: 1.8;
+  1883→  color: var(--amber);
+  1884→  max-width: 480px;
+  1885→  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
+  1886→}
+  1887→
+  1888→/* Featured Offer Hero */
+  1889→.dating-hero-offer {
+  1890→  display: flex;
+  1891→  gap: 24px;
+  1892→  margin-bottom: 40px;
+  1893→  border: 1px solid rgba(212,160,23,0.12);
+  1894→  border-radius: var(--card-radius);
+  1895→  overflow: hidden;
+  1896→  background: rgba(15,21,32,0.5);
+  1897→  backdrop-filter: blur(4px);
+  1898→  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+  1899→}
+  1900→.dating-hero-offer:hover {
+  1901→  border-color: rgba(212,160,23,0.25);
+  1902→  box-shadow: 0 0 30px rgba(212,160,23,0.06);
+  1903→}
+  1904→.dating-hero-image {
+  1905→  flex: 0 0 320px;
+  1906→  aspect-ratio: 16/10;
+  1907→  position: relative;
+  1908→  overflow: hidden;
+  1909→}
+  1910→.dating-hero-image-placeholder {
+  1911→  position: absolute;
+  1912→  inset: 0;
+  1913→  display: flex;
+  1914→  flex-direction: column;
+  1915→  align-items: center;
+  1916→  justify-content: center;
+  1917→  background: rgba(212,160,23,0.04);
+  1918→  border-right: 1px solid rgba(212,160,23,0.08);
+  1919→  gap: 6px;
+  1920→}
+  1921→.dating-hero-image-placeholder span {
+  1922→  font-size: 11px;
+  1923→  letter-spacing: 0.3em;
+  1924→  text-transform: uppercase;
+  1925→  color: var(--text-dim);
+  1926→}
+  1927→.dating-hero-image-sub {
+  1928→  font-size: 9px !important;
+  1929→  color: rgba(212,160,23,0.3) !important;
+  1930→  letter-spacing: 0.15em !important;
+  1931→}
+  1932→.dating-hero-body {
+  1933→  flex: 1;
+  1934→  display: flex;
+  1935→  flex-direction: column;
+  1936→  justify-content: center;
+  1937→  padding: 24px 24px 24px 0;
+  1938→  gap: 8px;
+  1939→}
+  1940→.dating-hero-tag {
+  1941→  font-size: 9px;
+  1942→  letter-spacing: 0.3em;
+  1943→  text-transform: uppercase;
+  1944→  color: var(--amber);
+  1945→  opacity: 0.9;
+  1946→}
+  1947→.dating-hero-name {
+  1948→  font-size: 18px;
+  1949→  letter-spacing: 0.08em;
+  1950→  color: var(--amber);
+  1951→  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
+  1952→  font-weight: 400;
+  1953→  line-height: 1.3;
+  1954→}
+  1955→.dating-hero-desc {
+  1956→  font-size: 12px;
+  1957→  line-height: 1.7;
+  1958→  color: var(--text-muted);
+  1959→  max-width: 320px;
+  1960→}
+  1961→.dating-hero-cta {
+  1962→  display: inline-flex;
+  1963→  align-items: center;
+  1964→  gap: 8px;
+  1965→  margin-top: 8px;
+  1966→  padding: 8px 20px;
+  1967→  border: 1px solid rgba(212,160,23,0.3);
+  1968→  border-radius: 2px;
+  1969→  font-size: 10px;
+  1970→  letter-spacing: 0.2em;
+  1971→  text-transform: uppercase;
+  1972→  color: var(--amber);
+  1973→  text-decoration: none;
+  1974→  transition: all 0.3s ease;
+  1975→  width: fit-content;
+  1976→}
+  1977→.dating-hero-cta:hover {
+  1978→  background: rgba(212,160,23,0.08);
+  1979→  border-color: rgba(212,160,23,0.5);
+  1980→  box-shadow: 0 0 12px rgba(212,160,23,0.12);
+  1981→}
+  1982→
+  1983→/* Encounter Cards */
+  1984→.dating-encounters {
+  1985→  display: grid;
+  1986→  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  1987→  gap: 20px;
+  1988→  margin-bottom: 40px;
+  1989→}
+  1990→.dating-encounter-card {
+  1991→  display: grid;
+  1992→  grid-template-rows: auto 1fr auto;
+  1993→  gap: 8px;
+  1994→  border: none;
+  1995→  background: none;
+  1996→  overflow: visible;
+  1997→  padding: 0;
+  1998→  border-radius: 0;
+  1999→  transition: all 0.4s ease;
+  2000→  text-decoration: none;
+
+[showing lines 1-2000 of 2661; use offset=2001 with limit to continue reading]
