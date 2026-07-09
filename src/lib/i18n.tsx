@@ -125,6 +125,14 @@ export const T: Record<Lang, Record<string, string>> = {
     hubBack: 'Back',
     backToHub: 'Back to Hub',
 
+    /* ── Regular Status ── */
+    regularReturn: 'Welcome back.',
+    regularFamiliar: "You know your way around here.",
+    regularVip: "You're a regular now.",
+
+    /* ── Alive Counter ── */
+    aliveText: 'people exploring the cantina right now',
+
     /* ── Compliance footer ── */
     adultsOnly: '18+ Adults Only',
     privacy: 'Privacy',
@@ -245,6 +253,14 @@ export const T: Record<Lang, Record<string, string>> = {
     hubSubtitle: 'Elige tu destino.',
     hubBack: 'Volver',
     backToHub: 'Volver al Hub',
+
+    /* ── Regular Status ── */
+    regularReturn: 'Bienvenido de vuelta.',
+    regularFamiliar: 'Ya conoces el camino.',
+    regularVip: 'Eres un habitual ahora.',
+
+    /* ── Alive Counter ── */
+    aliveText: 'personas explorando la cantina en este momento',
 
     /* ── Compliance footer ── */
     adultsOnly: 'Solo +18',

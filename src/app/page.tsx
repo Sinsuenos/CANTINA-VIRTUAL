@@ -155,6 +155,31 @@ function AgeGate({
   );
 }
 
+/* ─── Regular Status Hook ─── */
+function useVisitCount(): number {
+  const [count, setCount] = useState(() => {
+    if (typeof window === 'undefined') return 0;
+    const current = parseInt(localStorage.getItem('cv_visits') || '0', 10);
+    const next = current + 1;
+    localStorage.setItem('cv_visits', String(next));
+    return next;
+  });
+  return count;
+}
+
+function useAliveCount() {
+  const [count, setCount] = useState(() => Math.floor(Math.random() * 51) + 100);
+  useEffect(() => {
+    const tick = () => {
+      setCount(Math.floor(Math.random() * 51) + 100);
+    };
+    const delay = 30000 + Math.random() * 30000;
+    const id = setInterval(tick, delay);
+    return () => clearInterval(id);
+  }, []);
+  return count;
+}
+
 /* ═══════════════════════════════════════════════════════════════
    HUB SCREEN — Category Selection (first screen after 18+)
    ═══════════════════════════════════════════════════════════════ */
@@ -166,6 +191,15 @@ function HubScreen({
   onBack: () => void;
 }) {
   const { t, lang, onToggleLang } = useLang();
+  const visits = useVisitCount();
+  const aliveCount = useAliveCount();
+
+  const regularMessage = useMemo(() => {
+    if (visits < 2) return null;
+    if (visits < 5) return t.regularReturn;
+    if (visits < 10) return t.regularFamiliar;
+    return t.regularVip;
+  }, [visits, t.regularReturn, t.regularFamiliar, t.regularVip]);
 
   return (
     <div className="hub-scene">
@@ -198,6 +232,10 @@ function HubScreen({
 
         <p className="hub-subtitle">{t.hubSubtitle}</p>
 
+        {regularMessage && (
+          <p className="hub-regular-line">{regularMessage}</p>
+        )}
+
         <div className="hub-grid">
           {DISTRICTS.map((district, index) => (
             <button
@@ -214,6 +252,11 @@ function HubScreen({
             </button>
           ))}
         </div>
+
+        <p className="hub-alive-line">
+          <span className="hub-alive-count">{aliveCount}</span>{' '}
+          {t.aliveText}
+        </p>
 
         <button className="hub-back" onClick={onBack}>
           <svg

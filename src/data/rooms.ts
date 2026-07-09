@@ -383,11 +383,11 @@ export const DISTRICTS: District[] = [
       },
       {
         residentId: 'jermate-trans',
-        href: '#',
+        href: 'https://t.mbjrkmms.com/413627/8780/32491?aff_sub=TRAS&aff_sub2=JMATE&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
       },
       {
         residentId: 'soda-offer',
-        href: '#',
+        href: 'https://t.camsk1.com/413627/5170/29363?aff_sub=TRANS&aff_sub2=CMSODA&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
       },
     ],
   },
