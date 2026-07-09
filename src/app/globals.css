@@ -610,10 +610,9 @@ body {
   text-align: center;
 }
 
-/* ── GAY wing: all cards — title above banner, no overlay ── */
+/* ── GAY wing: gay-offer + xlovegay-cams — title above banner, no overlay ── */
 [data-resident="gay-offer"],
-[data-resident="xlovegay-cams"],
-[data-resident="royal-cams"] {
+[data-resident="xlovegay-cams"] {
   display: grid;
   grid-template-rows: auto 1fr auto;
   gap: 8px;
@@ -624,16 +623,71 @@ body {
   border-radius: 0;
 }
 [data-resident="gay-offer"]:hover,
-[data-resident="xlovegay-cams"]:hover,
-[data-resident="royal-cams"]:hover {
+[data-resident="xlovegay-cams"]:hover {
   border-color: transparent;
   transform: none;
   box-shadow: none;
 }
 [data-resident="gay-offer"] .encounter-card-body,
-[data-resident="xlovegay-cams"] .encounter-card-body,
-[data-resident="royal-cams"] .encounter-card-body {
+[data-resident="xlovegay-cams"] .encounter-card-body {
   display: contents;
+}
+
+/* ── royal-cams: block layout, no flex/grid subpixel issues ── */
+[data-resident="royal-cams"] {
+  display: block;
+  border: none;
+  background: none;
+  overflow: visible;
+  padding: 0;
+  border-radius: 0;
+}
+[data-resident="royal-cams"]:hover {
+  border-color: transparent;
+  transform: none;
+  box-shadow: none;
+}
+[data-resident="royal-cams"] .encounter-card-name {
+  display: block;
+  min-height: 48px;
+  font-size: 14px;
+  letter-spacing: 0.14em;
+  text-align: center;
+  color: var(--amber);
+  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
+}
+[data-resident="royal-cams"] .encounter-card-image {
+  display: block;
+  margin-top: 8px;
+  flex-shrink: 0;
+  aspect-ratio: 300/250;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid rgba(212,160,23,0.15);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+[data-resident="royal-cams"] .encounter-card-image::after {
+  background: none;
+}
+[data-resident="royal-cams"] .encounter-card-desc {
+  margin: 0;
+  margin-top: 8px;
+  text-align: center;
+  color: var(--amber);
+  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
+  font-size: 13px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  line-height: 1.6;
+  white-space: pre-line;
+}
+[data-resident="royal-cams"]:hover .encounter-card-image {
+  border-color: rgba(212,160,23,0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 12px rgba(212,160,23,0.08);
 }
 [data-resident="gay-offer"] .encounter-card-name {
   order: 1;
@@ -727,47 +781,6 @@ body {
   background: linear-gradient(90deg, #e40303, #ff8c00, #ffed00, #008026, #24408e, #732982);
   border-radius: 1px;
   opacity: 0.85;
-}
-
-/* ── royal-cams: same as xlovegay-cams pattern, no rainbow ── */
-[data-resident="royal-cams"] .encounter-card-name {
-  order: 1;
-  font-size: 14px;
-  letter-spacing: 0.14em;
-  text-align: center;
-  color: var(--amber);
-  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
-}
-[data-resident="royal-cams"] .encounter-card-image {
-  order: 2;
-  aspect-ratio: 300/250;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  border: 1px solid rgba(212,160,23,0.15);
-  border-radius: var(--card-radius);
-  overflow: hidden;
-  transition: all 0.4s ease;
-}
-[data-resident="royal-cams"] .encounter-card-image::after {
-  background: none;
-}
-[data-resident="royal-cams"]:hover .encounter-card-image {
-  border-color: rgba(212,160,23,0.35);
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 12px rgba(212,160,23,0.08);
-}
-[data-resident="royal-cams"] .encounter-card-desc {
-  order: 3;
-  text-align: center;
-  color: var(--amber);
-  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
-  font-size: 13px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  line-height: 1.6;
-  white-space: pre-line;
-  margin: 0;
 }
 
 .district-scene-overlay {
@@ -1691,12 +1704,13 @@ body {
   text-align: center;
   font-size: 24px;
   line-height: 2;
-  color: #FFFDF7;
+  color: #FFFFFF;
   letter-spacing: 0.03em;
   margin-bottom: 10px;
   text-shadow:
-    0 1px 2px rgba(10,14,23,0.75),
-    0 0 14px rgba(10,14,23,0.35);
+    0 0 8px rgba(255,255,255,0.35),
+    0 0 20px rgba(255,255,255,0.15),
+    0 1px 2px rgba(10,14,23,0.5);
   padding: 0 20px;
 }
 
@@ -2318,9 +2332,9 @@ body {
 
 /* ── Regular Status Line ── */
 .hub-regular-line {
-  font-size: 11px;
+  font-size: 15px;
   letter-spacing: 0.18em;
-  color: var(--text-muted);
+  color: var(--text-primary);
   text-align: center;
   margin-bottom: 32px;
   opacity: 0;
@@ -2329,19 +2343,20 @@ body {
 
 /* ── Alive Counter ── */
 .hub-alive-line {
-  font-size: 10px;
+  font-size: 14px;
   letter-spacing: 0.12em;
-  color: var(--text-muted);
+  color: var(--text-primary);
   text-align: center;
   margin-bottom: 28px;
-  opacity: 0.6;
+  opacity: 0.8;
   transition: opacity 0.8s ease;
 }
 
 .hub-alive-count {
   color: var(--amber);
-  font-weight: 600;
-  opacity: 0.85;
+  font-weight: 700;
+  font-size: 16px;
+  opacity: 1;
 }
 
 .hub-grid {
