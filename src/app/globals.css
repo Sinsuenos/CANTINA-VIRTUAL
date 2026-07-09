@@ -957,6 +957,7 @@ body {
 [data-resident="jermate-trans"] .encounter-card-image,
 [data-resident="soda-offer"] .encounter-card-image {
   margin-top: 8px;
+  flex-shrink: 0;
   aspect-ratio: 300/270;
   background-size: cover;
   background-position: center;
@@ -974,6 +975,7 @@ body {
 [data-resident="trans-offer"] .encounter-card-desc,
 [data-resident="jermate-trans"] .encounter-card-desc,
 [data-resident="soda-offer"] .encounter-card-desc {
+  margin: 0;
   margin-top: 8px;
   text-align: center;
   color: var(--amber);
@@ -983,7 +985,6 @@ body {
   text-transform: uppercase;
   line-height: 1.6;
   white-space: pre-line;
-  margin: 0;
 }
 [data-resident="trans-offer"]:hover .encounter-card-image,
 [data-resident="jermate-trans"]:hover .encounter-card-image,
