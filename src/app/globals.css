@@ -929,7 +929,7 @@ body {
 [data-resident="jermate-trans"],
 [data-resident="soda-offer"] {
   display: grid;
-  grid-template-rows: auto auto auto;
+  grid-template-rows: 48px 234px auto;
   gap: 8px;
   border: none;
   background: none;
