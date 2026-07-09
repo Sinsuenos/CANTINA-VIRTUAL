@@ -924,7 +924,7 @@ body {
   box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 12px rgba(212,160,23,0.08);
 }
 
-/* ── Trans wing cards — title above banner, no body wrapper ── */
+/* ── Trans wing cards — flat flex, no body wrapper ── */
 [data-resident="trans-offer"],
 [data-resident="jermate-trans"],
 [data-resident="soda-offer"] {
@@ -944,15 +944,9 @@ body {
   transform: none;
   box-shadow: none;
 }
-[data-resident="trans-offer"] .encounter-card-body,
-[data-resident="jermate-trans"] .encounter-card-body,
-[data-resident="soda-offer"] .encounter-card-body {
-  display: contents;
-}
 [data-resident="trans-offer"] .encounter-card-name,
 [data-resident="jermate-trans"] .encounter-card-name,
 [data-resident="soda-offer"] .encounter-card-name {
-  order: -1;
   min-height: 48px;
   font-size: 16px;
   letter-spacing: 0.22em;
