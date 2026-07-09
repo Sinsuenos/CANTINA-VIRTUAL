@@ -927,9 +927,10 @@ body {
   box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 12px rgba(233,30,140,0.06);
 }
 
-/* ── Pay Sites — title above banner, gold/amber (Bellesa Plus + Sext Panther) ── */
+/* ── Pay Sites — title above banner, gold/amber (Bellesa Plus + Sext Panther + Faphouse) ── */
 [data-resident="bellesa-plus"],
-[data-resident="sextpanther"] {
+[data-resident="sextpanther"],
+[data-resident="faphouse"] {
   display: grid;
   grid-template-rows: auto 1fr;
   gap: 8px;
@@ -940,17 +941,20 @@ body {
   border-radius: 0;
 }
 [data-resident="bellesa-plus"]:hover,
-[data-resident="sextpanther"]:hover {
+[data-resident="sextpanther"]:hover,
+[data-resident="faphouse"]:hover {
   border-color: transparent;
   transform: none;
   box-shadow: none;
 }
 [data-resident="bellesa-plus"] .encounter-card-body,
-[data-resident="sextpanther"] .encounter-card-body {
+[data-resident="sextpanther"] .encounter-card-body,
+[data-resident="faphouse"] .encounter-card-body {
   display: contents;
 }
 [data-resident="bellesa-plus"] .encounter-card-name,
-[data-resident="sextpanther"] .encounter-card-name {
+[data-resident="sextpanther"] .encounter-card-name,
+[data-resident="faphouse"] .encounter-card-name {
   order: 1;
   font-size: 16px;
   letter-spacing: 0.22em;
@@ -959,7 +963,8 @@ body {
   text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
 }
 [data-resident="bellesa-plus"] .encounter-card-image,
-[data-resident="sextpanther"] .encounter-card-image {
+[data-resident="sextpanther"] .encounter-card-image,
+[data-resident="faphouse"] .encounter-card-image {
   order: 2;
   aspect-ratio: 300/250;
   background-size: contain;
@@ -971,11 +976,13 @@ body {
   transition: all 0.4s ease;
 }
 [data-resident="bellesa-plus"] .encounter-card-image::after,
-[data-resident="sextpanther"] .encounter-card-image::after {
+[data-resident="sextpanther"] .encounter-card-image::after,
+[data-resident="faphouse"] .encounter-card-image::after {
   background: none;
 }
 [data-resident="bellesa-plus"]:hover .encounter-card-image,
-[data-resident="sextpanther"]:hover .encounter-card-image {
+[data-resident="sextpanther"]:hover .encounter-card-image,
+[data-resident="faphouse"]:hover .encounter-card-image {
   border-color: rgba(212,160,23,0.35);
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 12px rgba(212,160,23,0.08);

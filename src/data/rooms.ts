@@ -124,6 +124,13 @@ export const RESIDENTS: Record<string, Resident> = {
     description: '',
     image: '/sext-panther-300x250.png',
   },
+  'faphouse': {
+    id: 'faphouse',
+    name: 'FAPHOUSE',
+    subtitle: '',
+    description: 'Thousands of videos. Top creators.',
+    image: 'https://www.imglnkx.com/9248/Banner_300-250-6.jpeg',
+  },
   'manga-rpg': {
     id: 'manga-rpg',
     name: 'MANGA RPG',
@@ -324,6 +331,10 @@ export const DISTRICTS: District[] = [
       {
         residentId: 'sextpanther',
         href: 'https://t.acust-9.com/413627/9927/38131?aff_sub=PAY&aff_sub2=LATINA&aff_sub3=SEXTPANTHR&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
+      },
+      {
+        residentId: 'faphouse',
+        href: 'https://t.ajump2.com/413627/9248/35234?aff_sub=PAYSTE&aff_sub2=FAP&aff_sub3=PSTARLP&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
       },
     ],
   },
