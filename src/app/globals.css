@@ -924,12 +924,11 @@ body {
   box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 12px rgba(212,160,23,0.08);
 }
 
-/* ── Trans wing cards — flat flex, no body wrapper ── */
+/* ── Trans wing cards — block layout, no flex/grid subpixel issues ── */
 [data-resident="trans-offer"],
 [data-resident="jermate-trans"],
 [data-resident="soda-offer"] {
-  display: flex;
-  flex-direction: column;
+  display: block;
   border: none;
   background: none;
   overflow: visible;
@@ -946,6 +945,7 @@ body {
 [data-resident="trans-offer"] .encounter-card-name,
 [data-resident="jermate-trans"] .encounter-card-name,
 [data-resident="soda-offer"] .encounter-card-name {
+  display: block;
   min-height: 48px;
   font-size: 16px;
   letter-spacing: 0.22em;
@@ -956,6 +956,7 @@ body {
 [data-resident="trans-offer"] .encounter-card-image,
 [data-resident="jermate-trans"] .encounter-card-image,
 [data-resident="soda-offer"] .encounter-card-image {
+  display: block;
   margin-top: 8px;
   flex-shrink: 0;
   aspect-ratio: 300/270;
@@ -985,10 +986,6 @@ body {
   text-transform: uppercase;
   line-height: 1.6;
   white-space: pre-line;
-}
-/* Compensate for Chromium subpixel rounding on card 3 */
-[data-resident="soda-offer"] .encounter-card-image {
-  margin-top: 9px;
 }
 [data-resident="trans-offer"]:hover .encounter-card-image,
 [data-resident="jermate-trans"]:hover .encounter-card-image,
