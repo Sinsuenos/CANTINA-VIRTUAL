@@ -954,6 +954,7 @@ body {
 [data-resident="jermate-trans"] .encounter-card-name,
 [data-resident="soda-offer"] .encounter-card-name {
   order: 1;
+  min-height: 48px;
   font-size: 16px;
   letter-spacing: 0.22em;
   text-align: center;
