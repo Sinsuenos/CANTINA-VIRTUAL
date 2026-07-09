@@ -324,12 +324,12 @@ block at the bottom of every district scene.
 6. **Pay Sites** — Only 2 offers; needs 1 more.
 7. **Background images behind offers** — Too light, need contrast adjustment on some wings.
 8. **Pay Sites background** — Needs replacing with a more appropriate image.
-9. **Trans card captions** — `jermate-trans` and `soda-offer` have `description: ''`
-   (no caption renders). Need short gold/amber captions added.
-10. **Dead code** — `LiveCamsRoom.tsx` on disk but unused. Orphaned `.livecams-*`
-    CSS classes in `globals.css`.
-11. **`FanvueCard.tsx`** — References non-existent `LINKS` export (pre-existing
-    build warning, unrelated to any recent changes).
+9. **Trans card placeholders** — `jermate-trans` and `soda-offer` have `href: '#'`
+   (placeholder links). Need real affiliate tracking URLs.
+10. ~~**Trans card captions**~~ — FIXED. Descriptions added for both cards.
+11. ~~**Dead code**~~ — FIXED. `LiveCamsRoom.tsx` already deleted from disk.
+    Orphaned `.livecams-*` CSS (467 lines) removed from `globals.css`.
+    `FanvueCard.tsx` already deleted from disk.
 
 ---
 
