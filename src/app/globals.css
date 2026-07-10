@@ -29,6 +29,7 @@ html {
   scroll-behavior: smooth;
   scrollbar-width: thin;
   scrollbar-color: var(--amber-dim) var(--bg-deep);
+  overscroll-behavior: none;
 }
 
 body {
@@ -37,6 +38,7 @@ body {
   font-family: 'Courier New', 'Lucida Console', monospace;
   overflow-x: hidden;
   min-height: 100vh;
+  overscroll-behavior: none;
 }
 
 /* ── Custom Scrollbar ── */
