@@ -1358,7 +1358,7 @@ body {
   position: relative;
   width: 100%;
   min-height: 100vh;
-  overflow-x: clip;
+  overflow: hidden;
 }
 
 .arrival-bg {
@@ -2590,11 +2590,11 @@ body {
   .age-gate-title-virtual { font-size: 0.88rem; letter-spacing: 0.4em; }
   .age-gate-btn { padding: 14px 36px; min-width: 180px; }
   .arrival-silhouette { width: 120px; height: 200px; }
-  .arrival-copy { font-size: 20px; padding: 0 16px; line-height: 1.8; }
+  .arrival-copy { font-size: 20px; padding: 0 16px; line-height: 1.65; }
 
   /* ── Mobile: compact age gate to fit ENTER + lang toggle without scroll ── */
-  .age-gate-butterfly { margin-bottom: 14px; }
-  .age-gate-title { margin-bottom: 10px; }
+  .age-gate-butterfly { margin-bottom: 10px; }
+  .age-gate-title { margin-bottom: 6px; }
   .arrival-copy { margin-bottom: 4px; }
   .arrival-copy-closing { margin-bottom: 8px; }
   .landing-lang-toggle { margin-bottom: 6px; }
