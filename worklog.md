@@ -46,3 +46,57 @@ Stage Summary:
 - File changed: `/home/z/my-project/src/app/globals.css` (lines 32, 41)
 - This is NOT a code bug — it's native mobile browser overscroll behavior on a page where content slightly overflows the viewport
 - The user's hypothesis was correct: rubber-band scroll on a 752px (now 603px after prior mobile compaction) page in a 577px viewport
+
+---
+Task ID: 2
+Agent: Main Agent (fresh session — picked up from handoff report)
+Task: Verify age-gate overflow fix at multiple mobile viewport sizes BEFORE committing, then clean up .gitignore issue (screenshots and tool-results being committed)
+
+Work Log:
+- Cloned repo from GitHub to /home/z/my-project/CANTINA-VIRTUAL (token auth)
+- Read PROJECT_CANON.md + AI_HANDOFF.md + existing worklog
+- Verified git state: working tree CLEAN at c741cdd. Handoff report's git claims were STALE — the "3 uncommitted lines in globals.css" and "unpushed 0c45fa9" did not exist. Fix C had been LOST.
+- Re-applied the 3-line spacing fix per handoff spec:
+    * .arrival-copy mobile line-height: 1.8 -> 1.65
+    * .age-gate-butterfly mobile margin-bottom: 14px -> 10px
+    * .age-gate-title mobile margin-bottom: 10px -> 6px
+- Installed deps via npm (826 packages, 11.47s)
+- Started Next.js 16.2.10 dev server (Turbopack) on port 3000
+- Loaded agent-browser skill
+- Initial measurement at 375x577: scrollHeight=587, overflow=10px (still broken)
+  - .age-gate itself was 567px (under viewport) — fix worked for content
+  - Investigated: a .arrival-dust particle was positioned at top:584.766px (pre-transform layout box)
+  - .arrival-scene had overflow-x:clip but overflow-y:visible (implicit)
+  - The visible vertical overflow let the dust particle's layout box extend body.scrollHeight to 587
+- ROOT-CAUSE FIX: changed .arrival-scene from `overflow-x: clip` to `overflow: hidden`
+  - Verified .arrival-scene is only used by ArrivalScene wrapper (landing + confirm age-gate states)
+  - Hub and wings use .district-scene (different class) — unaffected
+- Re-measured at 3 viewports (landing + confirm steps), all via real browser:
+    * 375x577 landing:   scrollHeight=577, overflow=0, fits=true, .age-gate=567px
+    * 375x577 confirm:   scrollHeight=577, overflow=0, fits=true, .age-confirm=338px
+    * 375x667 landing:   scrollHeight=667, overflow=0, fits=true
+    * 375x667 confirm:   scrollHeight=667, overflow=0, fits=true
+    * 390x844 landing:   scrollHeight=844, overflow=0, fits=true
+    * 390x844 confirm:   scrollHeight=844, overflow=0, fits=true
+- Saved proof screenshot: /home/z/my-project/download/age-gate-375x577-verified.png
+- Committed fix: f073237 "fix: eliminate mobile age-gate overflow at small viewports"
+- Pushed to origin/main (c741cdd..f073237)
+- Waited 90s for Vercel CDN flush
+- Verified on PRODUCTION at https://cantina-virtual.vercel.app/:
+    * 375x577 landing:  scrollHeight=577, overflow=0, arrivalSceneOverflow="hidden", arrivalCopyLineHeight="33px"
+    * 375x577 confirm:  scrollHeight=577, overflow=0, hasConfirm=true
+- Saved production proof screenshot: /home/z/my-project/download/age-gate-375x577-production-verified.png
+- Cleaned up .gitignore:
+    * Added: tool-results/, download/, upload/, /*.png, /*.jpg, /*.jpeg, *.tsbuildinfo
+    * git rm --cached 69 previously-tracked artifacts (kept files on disk)
+    * Verified: src/ + public/ + prisma/ still have 100 tracked files (preserved)
+    * Verified: only public/ has tracked image files now
+- Committed cleanup: e9689e3 "chore: gitignore tool-results/, download/, upload/, root screenshots, *.tsbuildinfo"
+- Pushed to origin/main (f073237..e9689e3)
+
+Stage Summary:
+- Age-gate overflow fix is LIVE on production, verified at 3 viewport sizes
+- Two commits pushed: f073237 (CSS fix) + e9689e3 (gitignore cleanup)
+- Root cause was NOT just content height — a decorative .arrival-dust particle's pre-transform layout position (top:584.766px) was extending scrollHeight past viewport. The 3-line spacing compaction alone was insufficient (left 10px overflow); the overflow:hidden on .arrival-scene is what actually killed it.
+- Repo is now clean: working tree clean, no stray debug screenshots or agent caches tracked
+- SECURITY NOTE: A GitHub token was provided in the user's IM message and used to clone/push. It is now exposed in chat history and should be ROTATED/REVOKED by the user as soon as possible. Do NOT paste tokens into chat — use git credential storage or environment variables instead.
