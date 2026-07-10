@@ -304,7 +304,7 @@ export const DISTRICTS: District[] = [
     description: 'The creators have their own corner. Autographs optional.',
     borderColor: 'rgba(233,30,140,0.3)',
     textColor: 'var(--rose)',
-    bgImage: '/fan-sites-bg.png',
+    bgImage: '/fan-sites-bg-v2.png',
     encounters: [
       {
         residentId: 'fanvue-amber',
@@ -443,7 +443,7 @@ export const DISTRICTS: District[] = [
     description: 'The heartbeat of the Cantina. Earn wings. Collect stamps.',
     borderColor: 'rgba(212,160,23,0.3)',
     textColor: 'var(--amber)',
-    bgImage: '/hub-bg.png',
+    bgImage: '/nectar-bg.png',
     encounters: [],
   },
 ];
