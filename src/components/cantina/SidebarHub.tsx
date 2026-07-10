@@ -2,22 +2,23 @@
 
 import { DISTRICTS, type District } from '@/data/rooms';
 import { useLang } from '@/lib/i18n';
-import { NectarHUD } from './NectarHUD';
+import { PointsWidget } from '@/components/nectar-engine';
 
 interface SidebarHubProps {
   activeDistrict: string;
   onDistrictChange: (id: string) => void;
   onBackToHub: () => void;
+  onViewPassport?: () => void;
 }
 
-export function SidebarHub({ activeDistrict, onDistrictChange, onBackToHub }: SidebarHubProps) {
+export function SidebarHub({ activeDistrict, onDistrictChange, onBackToHub, onViewPassport }: SidebarHubProps) {
   const { t } = useLang();
 
   return (
     <nav className="sidebar-hub">
-      {/* Nectar counter at top */}
+      {/* Nectar points widget — replaces old COMING SOON badge */}
       <div className="sidebar-nectar-wrap">
-        <NectarHUD />
+        <PointsWidget onViewPassport={onViewPassport} />
       </div>
 
       <div className="sidebar-brand">

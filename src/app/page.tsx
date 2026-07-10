@@ -7,6 +7,8 @@ import { MariposaCenterpiece } from '@/components/cantina/MariposaCenterpiece';
 import { SmokeParticles } from '@/components/cantina/SmokeParticles';
 import { SidebarHub } from '@/components/cantina/SidebarHub';
 import { DistrictScene } from '@/components/cantina/DistrictScene';
+import { PassportModal, NectarToast, type NectarToastData } from '@/components/nectar-engine';
+import { useNectarEngine, NectarProvider } from '@/lib/nectar-engine';
 import type { Lang } from '@/lib/i18n';
 
 /* ─── Arrival Dust Particles ─── */
@@ -287,10 +289,35 @@ function Cantina({
   onBackToHub: () => void;
 }) {
   const { t } = useLang();
+  const { visit, allQuestsComplete, config, questStatus, state } = useNectarEngine();
   const [activeDistrict, setActiveDistrict] = useState(initialDistrict);
   const [transitioning, setTransitioning] = useState(false);
   const [displayedDistrict, setDisplayedDistrict] = useState(initialDistrict);
+  const [toast, setToast] = useState<NectarToastData | null>(null);
+  const [showPassport, setShowPassport] = useState(false);
+  const [passportShown, setPassportShown] = useState(false);
   const mainRef = useRef<HTMLDivElement>(null);
+
+  /* ── On mount: register first wing visit for initialDistrict ── */
+  useEffect(() => {
+    const awarded = visit(initialDistrict);
+    if (awarded) {
+      const district = DISTRICTS.find((d) => d.id === initialDistrict);
+      const wingName = district ? (t[`district.${initialDistrict}.name`] || district.name) : initialDistrict;
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- one-time mount toast; visit() is idempotent and setToast is conditional on first-visit award.
+      setToast({ id: Date.now(), points: 10, wingName });
+    }
+  }, []);
+
+  /* ── When all 8 wings complete, show PassportModal (once) ── */
+  useEffect(() => {
+    if (allQuestsComplete && !passportShown) {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- one-time celebration trigger; guards against re-trigger via passportShown flag.
+      setPassportShown(true);
+      // Small delay so the final toast can show first
+      setTimeout(() => setShowPassport(true), 1500);
+    }
+  }, [allQuestsComplete, passportShown]);
 
   const handleDistrictChange = useCallback(
     (id: string) => {
@@ -306,14 +333,41 @@ function Cantina({
           main.classList.add('scene-transition');
           setTransitioning(false);
           setTimeout(() => main.classList.remove('scene-transition'), 800);
+          /* ── Register Nectar visit for the new wing ── */
+          const awarded = visit(id);
+          if (awarded) {
+            const district = DISTRICTS.find((d) => d.id === id);
+            const wingName = district ? (t[`district.${id}.name`] || district.name) : id;
+            setToast({
+              id: Date.now(),
+              points: 10,
+              wingName,
+              isComplete: config.sections.every((s) =>
+                s.id === id ? true : questStatus[s.id]
+              ),
+            });
+          }
         }, 500);
       } else {
         setActiveDistrict(id);
         setDisplayedDistrict(id);
         setTransitioning(false);
+        const awarded = visit(id);
+        if (awarded) {
+          const district = DISTRICTS.find((d) => d.id === id);
+          const wingName = district ? (t[`district.${id}.name`] || district.name) : id;
+          setToast({
+            id: Date.now(),
+            points: 10,
+            wingName,
+            isComplete: config.sections.every((s) =>
+              s.id === id ? true : questStatus[s.id]
+            ),
+          });
+        }
       }
     },
-    [activeDistrict, transitioning],
+    [activeDistrict, transitioning, visit, t, config.sections, questStatus],
   );
 
   const district = DISTRICTS.find((d) => d.id === displayedDistrict);
@@ -324,6 +378,7 @@ function Cantina({
         activeDistrict={activeDistrict}
         onDistrictChange={handleDistrictChange}
         onBackToHub={onBackToHub}
+        onViewPassport={() => setShowPassport(true)}
       />
 
       <main ref={mainRef} className="cantina-main scene-transition">
@@ -353,22 +408,22 @@ function Cantina({
 
         <SmokeParticles />
 
-        {/* Nectar teaser — bottom of scene */}
+        {/* Nectar status — live points + future opportunities */}
         <div className="district-nectar-teaser">
           <div className="nectar-teaser-content">
             <div className="nectar-teaser-header">
-              <span className="nectar-hud-icon">🍯</span>
+              <span className="nectar-hud-icon">🦋</span>
               <span
                 className="nectar-teaser-title"
                 style={{ color: 'var(--amber)' }}
               >
-                {t.nectarTitle}
+                {t.nectarPointsLabel} · {state.totalPoints} {t.nectarPointsUnit}
               </span>
               <span
                 className="nectar-teaser-soon"
                 style={{ color: 'var(--amber)', opacity: 0.7 }}
               >
-                {t.nectarComingSoon}
+                {config.sections.filter((s) => questStatus[s.id]).length}/{config.sections.length} {t.nectarProgress}
               </span>
             </div>
             <p className="nectar-teaser-intro" style={{ color: 'var(--text-muted)' }}>
@@ -392,6 +447,14 @@ function Cantina({
           </nav>
         </footer>
       </main>
+
+      {/* Nectar toast — brief, non-blocking notification */}
+      <NectarToast toast={toast} onDismiss={() => setToast(null)} />
+
+      {/* PassportModal — only when all 8 wings visited */}
+      {showPassport && (
+        <PassportModal onClose={() => setShowPassport(false)} />
+      )}
     </div>
   );
 }
@@ -464,24 +527,26 @@ export default function Home() {
 
   return (
     <LangProvider lang={lang} onToggleLang={handleToggleLang}>
-      {!ageConfirmed && (
-        <AgeGate
-          onConfirm={handleAgeConfirm}
-          onLeave={() => { window.location.href = 'https://google.com'; }}
-        />
-      )}
-      {ageConfirmed && !activeDistrict && (
-        <HubScreen
-          onCategorySelect={handleCategorySelect}
-          onBack={handleBackToLanding}
-        />
-      )}
-      {ageConfirmed && activeDistrict && (
-        <Cantina
-          initialDistrict={activeDistrict}
-          onBackToHub={handleBackToHub}
-        />
-      )}
+      <NectarProvider>
+        {!ageConfirmed && (
+          <AgeGate
+            onConfirm={handleAgeConfirm}
+            onLeave={() => { window.location.href = 'https://google.com'; }}
+          />
+        )}
+        {ageConfirmed && !activeDistrict && (
+          <HubScreen
+            onCategorySelect={handleCategorySelect}
+            onBack={handleBackToLanding}
+          />
+        )}
+        {ageConfirmed && activeDistrict && (
+          <Cantina
+            initialDistrict={activeDistrict}
+            onBackToHub={handleBackToHub}
+          />
+        )}
+      </NectarProvider>
     </LangProvider>
   );
 }

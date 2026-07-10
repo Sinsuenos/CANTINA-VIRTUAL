@@ -2683,3 +2683,516 @@ body {
     height: 18px;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   NECTAR ENGINE — PointsWidget, Toast, PassportModal
+   Uses existing amber palette, butterfly icon, sidebar styling.
+   No new colors/fonts — matches site chrome.
+   ═══════════════════════════════════════════════════════════════ */
+
+/* ── PointsWidget (replaces old COMING SOON badge in sidebar) ── */
+.nectar-widget-wrap {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.nectar-widget-badge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: var(--card-radius);
+  background: rgba(212,160,23,0.08);
+  border: 1px solid rgba(212,160,23,0.15);
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+  width: 100%;
+  text-align: left;
+  font-family: inherit;
+}
+.nectar-widget-badge:hover {
+  background: rgba(212,160,23,0.12);
+  border-color: rgba(212,160,23,0.3);
+}
+.nectar-widget-badge[aria-expanded="true"] {
+  border-color: rgba(212,160,23,0.4);
+  background: rgba(212,160,23,0.14);
+}
+
+.nectar-widget-icon {
+  font-size: 1.1rem;
+  line-height: 1;
+  filter: drop-shadow(0 0 4px rgba(255,105,180,0.4));
+}
+
+.nectar-widget-text {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  flex: 1;
+}
+
+.nectar-widget-label {
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  color: var(--amber);
+  opacity: 0.7;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.nectar-widget-count {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--amber);
+  font-weight: 700;
+  font-family: inherit;
+}
+
+.nectar-widget-unit {
+  font-size: 8px;
+  opacity: 0.6;
+  font-weight: 400;
+}
+
+.nectar-widget-progress {
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  color: var(--amber);
+  opacity: 0.5;
+  font-weight: 700;
+  font-family: inherit;
+}
+
+.nectar-widget-privacy {
+  font-size: 7px;
+  letter-spacing: 0.05em;
+  color: var(--text-muted);
+  opacity: 0.5;
+  text-align: center;
+  padding: 0 4px;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+/* ── Expandable panel ── */
+.nectar-widget-panel {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background: var(--bg-card);
+  border: 1px solid rgba(212,160,23,0.2);
+  border-radius: var(--card-radius);
+  padding: 12px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.6), 0 0 16px rgba(212,160,23,0.1);
+  animation: nectarPanelIn 0.2s ease;
+}
+
+@keyframes nectarPanelIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.nectar-widget-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 1px solid rgba(212,160,23,0.1);
+}
+
+.nectar-widget-panel-title {
+  font-size: 9px;
+  letter-spacing: 0.12em;
+  color: var(--amber);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.nectar-widget-panel-count {
+  font-size: 10px;
+  color: var(--amber);
+  font-weight: 700;
+  opacity: 0.8;
+}
+
+.nectar-stamp-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.nectar-stamp {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 6px;
+  border-radius: 2px;
+  font-size: 10px;
+  color: var(--text-muted);
+  opacity: 0.4;
+  transition: opacity 0.2s;
+}
+
+.nectar-stamp.visited {
+  opacity: 1;
+  color: var(--text-primary);
+  background: rgba(212,160,23,0.05);
+}
+
+.nectar-stamp-icon {
+  font-size: 11px;
+  line-height: 1;
+}
+
+.nectar-stamp.visited .nectar-stamp-icon {
+  filter: drop-shadow(0 0 3px rgba(255,105,180,0.3));
+}
+
+.nectar-stamp-name {
+  letter-spacing: 0.05em;
+  font-size: 10px;
+}
+
+.nectar-widget-panel-actions {
+  display: flex;
+  gap: 6px;
+  margin-top: 10px;
+  padding-top: 8px;
+  border-top: 1px solid rgba(212,160,23,0.1);
+}
+
+.nectar-widget-panel-btn,
+.nectar-widget-panel-btn-secondary {
+  flex: 1;
+  padding: 6px 8px;
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-radius: 2px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s;
+}
+
+.nectar-widget-panel-btn {
+  background: rgba(212,160,23,0.15);
+  border: 1px solid rgba(212,160,23,0.3);
+  color: var(--amber);
+}
+.nectar-widget-panel-btn:hover {
+  background: rgba(212,160,23,0.25);
+}
+
+.nectar-widget-panel-btn-secondary {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--text-muted);
+}
+.nectar-widget-panel-btn-secondary:hover {
+  background: rgba(255,255,255,0.04);
+  color: var(--text-primary);
+}
+
+/* ── NectarToast — brief non-blocking notification ── */
+.nectar-toast {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%) translateY(-20px);
+  z-index: 200;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background: var(--bg-card);
+  border: 1px solid rgba(212,160,23,0.4);
+  border-radius: var(--card-radius);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.7), 0 0 20px rgba(212,160,23,0.15);
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  pointer-events: none;
+  max-width: 90vw;
+}
+
+.nectar-toast.visible {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.nectar-toast.complete {
+  border-color: rgba(212,160,23,0.6);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.7), 0 0 32px rgba(212,160,23,0.3);
+}
+
+.nectar-toast-icon {
+  font-size: 1.2rem;
+  line-height: 1;
+  filter: drop-shadow(0 0 4px rgba(255,105,180,0.4));
+}
+
+.nectar-toast-text {
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  color: var(--amber);
+  font-weight: 600;
+  font-family: inherit;
+}
+
+/* ── PassportModal — full-screen celebration overlay ── */
+.passport-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(10,14,23,0.92);
+  backdrop-filter: blur(8px);
+  animation: passportFadeIn 0.4s ease;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+@keyframes passportFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.passport-modal {
+  max-width: 520px;
+  width: 100%;
+  background: var(--bg-card);
+  border: 1px solid rgba(212,160,23,0.3);
+  border-radius: var(--card-radius);
+  padding: 40px 32px 28px;
+  text-align: center;
+  box-shadow: 0 0 60px rgba(212,160,23,0.15), 0 16px 48px rgba(0,0,0,0.8);
+  animation: passportScaleIn 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+@keyframes passportScaleIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.passport-icon {
+  font-size: 3rem;
+  line-height: 1;
+  margin-bottom: 16px;
+  filter: drop-shadow(0 0 12px rgba(255,105,180,0.5));
+  animation: passportButterflyFloat 3s ease-in-out infinite;
+}
+
+@keyframes passportButterflyFloat {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.passport-title {
+  font-size: 18px;
+  letter-spacing: 0.25em;
+  color: var(--amber);
+  text-transform: uppercase;
+  font-weight: 700;
+  margin: 0 0 8px;
+  text-shadow: 0 0 18px rgba(212,160,23,0.4), 0 0 36px rgba(212,160,23,0.15);
+}
+
+.passport-subtitle {
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin: 0 0 24px;
+}
+
+.passport-stamps {
+  margin: 0 0 24px;
+  padding: 16px;
+  background: rgba(212,160,23,0.04);
+  border: 1px solid rgba(212,160,23,0.1);
+  border-radius: var(--card-radius);
+}
+
+.passport-stamps-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  color: var(--amber);
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.passport-stamps-count {
+  font-size: 11px;
+  opacity: 0.8;
+}
+
+.passport-stamp-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 6px;
+}
+
+.passport-stamp {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  background: rgba(212,160,23,0.06);
+  border-radius: 2px;
+  font-size: 10px;
+  letter-spacing: 0.04em;
+  color: var(--text-primary);
+}
+
+.passport-stamp-icon {
+  font-size: 12px;
+  line-height: 1;
+  filter: drop-shadow(0 0 3px rgba(255,105,180,0.3));
+}
+
+.passport-stamp-name {
+  font-size: 10px;
+  letter-spacing: 0.03em;
+}
+
+.passport-congrats {
+  font-size: 13px;
+  line-height: 1.6;
+  letter-spacing: 0.04em;
+  color: var(--text-primary);
+  margin: 0 0 20px;
+  font-style: italic;
+}
+
+.passport-share {
+  margin: 0 0 20px;
+  padding: 14px;
+  background: rgba(0,0,0,0.2);
+  border: 1px solid rgba(212,160,23,0.1);
+  border-radius: var(--card-radius);
+}
+
+.passport-share-label {
+  display: block;
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  color: var(--amber);
+  text-transform: uppercase;
+  font-weight: 700;
+  margin-bottom: 8px;
+  opacity: 0.8;
+}
+
+.passport-share-text {
+  font-size: 11px;
+  line-height: 1.5;
+  color: var(--text-muted);
+  margin-bottom: 10px;
+  font-style: italic;
+  text-align: left;
+}
+
+.passport-share-btn {
+  padding: 6px 16px;
+  font-size: 10px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 700;
+  background: rgba(212,160,23,0.15);
+  border: 1px solid rgba(212,160,23,0.3);
+  color: var(--amber);
+  border-radius: 2px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s;
+}
+.passport-share-btn:hover {
+  background: rgba(212,160,23,0.25);
+}
+
+.passport-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+.passport-close-btn,
+.passport-reset-btn {
+  padding: 8px 20px;
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-radius: 2px;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background 0.2s;
+}
+
+.passport-close-btn {
+  background: rgba(212,160,23,0.15);
+  border: 1px solid rgba(212,160,23,0.4);
+  color: var(--amber);
+}
+.passport-close-btn:hover {
+  background: rgba(212,160,23,0.25);
+}
+
+.passport-reset-btn {
+  background: transparent;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: var(--text-muted);
+}
+.passport-reset-btn:hover {
+  background: rgba(255,255,255,0.04);
+  color: var(--text-primary);
+}
+
+.passport-privacy {
+  font-size: 8px;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  opacity: 0.4;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* ── Mobile: nectar widget + toast ── */
+@media (max-width: 768px) {
+  .nectar-toast {
+    top: 12px;
+    padding: 8px 12px;
+  }
+  .nectar-toast-text {
+    font-size: 11px;
+  }
+  .passport-modal {
+    padding: 28px 20px 20px;
+  }
+  .passport-title {
+    font-size: 16px;
+  }
+  .passport-stamp-grid {
+    grid-template-columns: 1fr;
+  }
+}
