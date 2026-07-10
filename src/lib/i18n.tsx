@@ -55,7 +55,7 @@ export const T: Record<Lang, Record<string, string>> = {
     nectarPassportResetConfirm: 'Reset all Nectar progress on this device?',
 
     /* ── District names ── */
-    'district.dating.name': 'Dates',
+    'district.dating.name': 'Dating',
     'district.live-cams.name': 'Live Cams',
     'district.ai-companions.name': 'AI Companions',
     'district.fan-sites.name': 'Fansites',
@@ -63,6 +63,8 @@ export const T: Record<Lang, Record<string, string>> = {
     'district.niche.name': 'GAY',
     'district.gaming.name': 'Games',
     'district.our-mission.name': 'TRANSGENDER',
+    'district.unique-offers.name': 'Unique Offers',
+    'district.nectar.name': 'Nectar',
 
     /* ── District descriptions ── */
     'district.dating.desc':
@@ -81,6 +83,10 @@ export const T: Record<Lang, Record<string, string>> = {
       'The cabinets glow in the dark. Someone is already on the high score screen.',
     'district.our-mission.desc':
       'Every Body. Every Story. All Are Welcome Here.',
+    'district.unique-offers.desc':
+      'One-of-a-kind encounters. Limited time. Only here.',
+    'district.nectar.desc':
+      'The heartbeat of the Cantina. Earn wings. Collect stamps. Your journey, remembered.',
 
     /* ── Resident subtitles ── */
     'resident.girlfriendgpt.subtitle': '',
@@ -218,6 +224,8 @@ export const T: Record<Lang, Record<string, string>> = {
     'district.niche.name': 'GAY',
     'district.gaming.name': 'Juegos',
     'district.our-mission.name': 'TRANSGENDER',
+    'district.unique-offers.name': 'Ofertas Únicas',
+    'district.nectar.name': 'Néctar',
 
     /* ── District descriptions ── */
     'district.dating.desc':
@@ -236,6 +244,10 @@ export const T: Record<Lang, Record<string, string>> = {
       'Las máquinas brillan en la oscuridad. Alguien ya está en la pantalla de récord.',
     'district.our-mission.desc':
       'Cada Cuerpo. Cada Historia. Todos Son Bienvenidos Aquí.',
+    'district.unique-offers.desc':
+      'Encuentros únicos. Tiempo limitado. Solo aquí.',
+    'district.nectar.desc':
+      'El latido de la Cantina. Gana alas. Colecciona sellos. Tu viaje, recordado.',
 
     /* ── Resident subtitles ── */
     'resident.girlfriendgpt.subtitle': '',

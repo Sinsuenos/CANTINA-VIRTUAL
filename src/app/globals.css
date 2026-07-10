@@ -2525,6 +2525,16 @@ body {
   min-height: 120px;
 }
 
+/* Third row: 2 remaining wings centered below the 2x4 grid */
+.hub-card:nth-child(9) {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+.hub-card:nth-child(10) {
+  grid-column-start: 3;
+  grid-column-end: 4;
+}
+
 @keyframes hubCardIn {
   0% { opacity: 0; }
   100% { opacity: 1; }
