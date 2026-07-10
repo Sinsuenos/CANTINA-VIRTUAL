@@ -373,6 +373,7 @@ body {
 }
 .encounter-card-name {
   font-size: 16px;
+  font-weight: 800;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   text-align: center;
@@ -387,9 +388,14 @@ body {
 }
 .encounter-card-desc {
   font-size: 12px;
-  color: var(--text-muted);
+  font-weight: 700;
+  color: var(--amber);
   line-height: 1.6;
   margin: 2px 0;
+  text-align: center;
+  letter-spacing: 0.06em;
+  text-shadow: 0 0 12px rgba(212,160,23,0.3);
+  white-space: pre-line;
 }
 
 /* ── Nectar HUD (sidebar, inline — not fixed) ── */
@@ -656,6 +662,7 @@ body {
 }
 [data-resident="royal-cams"] .encounter-card-name {
   order: 1;
+  font-weight: 800;
   font-size: 16px;
   letter-spacing: 0.22em;
   text-align: center;
@@ -678,6 +685,7 @@ body {
 }
 [data-resident="royal-cams"] .encounter-card-desc {
   order: 3;
+  font-weight: 700;
   margin: 0;
   text-align: center;
   color: var(--amber);
@@ -695,6 +703,7 @@ body {
 }
 [data-resident="gay-offer"] .encounter-card-name {
   order: 1;
+  font-weight: 800;
   font-size: 16px;
   letter-spacing: 0.22em;
   text-align: center;
@@ -722,6 +731,7 @@ body {
 }
 [data-resident="gay-offer"] .encounter-card-desc {
   order: 3;
+  font-weight: 700;
   text-align: center;
   color: var(--amber);
   text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
@@ -735,6 +745,7 @@ body {
 
 [data-resident="xlovegay-cams"] .encounter-card-name {
   order: 1;
+  font-weight: 800;
   font-size: 14px;
   letter-spacing: 0.14em;
   position: relative;
@@ -764,6 +775,7 @@ body {
 }
 [data-resident="xlovegay-cams"] .encounter-card-desc {
   order: 3;
+  font-weight: 700;
   text-align: center;
   color: var(--amber);
   text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
@@ -904,6 +916,7 @@ body {
   display: contents;
 }
 [data-district="fan-sites"] .encounter-card-name {
+  font-weight: 800;
   order: 1;
   font-size: 16px;
   letter-spacing: 0.22em;
@@ -964,6 +977,7 @@ body {
 [data-resident="sextpanther"] .encounter-card-name,
 [data-resident="faphouse"] .encounter-card-name {
   order: 1;
+  font-weight: 800;
   font-size: 16px;
   letter-spacing: 0.22em;
   text-align: center;
@@ -983,17 +997,18 @@ body {
   overflow: hidden;
   transition: all 0.4s ease;
 }
-/* Faphouse caption — white text below banner, aligns image with sibling cards */
+/* Faphouse caption — amber text below banner, aligns image with sibling cards */
 [data-resident="faphouse"] .encounter-card-desc {
   order: 3;
-  color: #ffffff;
+  color: var(--amber);
+  font-weight: 700;
   font-size: 12px;
   letter-spacing: 0.06em;
   text-align: center;
   line-height: 1.4;
   margin: 0;
   padding: 0 4px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+  text-shadow: 0 0 12px rgba(212,160,23,0.3);
 }
 [data-resident="bellesa-plus"] .encounter-card-image::after,
 [data-resident="sextpanther"] .encounter-card-image::after,
@@ -1029,6 +1044,7 @@ body {
 [data-resident="trans-offer"] .encounter-card-name,
 [data-resident="jermate-trans"] .encounter-card-name,
 [data-resident="soda-offer"] .encounter-card-name {
+  font-weight: 800;
   display: block;
   min-height: 48px;
   font-size: 16px;
@@ -1060,6 +1076,7 @@ body {
 [data-resident="trans-offer"] .encounter-card-desc,
 [data-resident="jermate-trans"] .encounter-card-desc,
 [data-resident="soda-offer"] .encounter-card-desc {
+  font-weight: 700;
   margin: 0;
   margin-top: 8px;
   text-align: center;
@@ -1099,6 +1116,7 @@ body {
   display: contents;
 }
 [data-resident="manga-rpg"] .encounter-card-name {
+  font-weight: 800;
   order: 1;
   font-size: 16px;
   letter-spacing: 0.22em;
@@ -1127,6 +1145,7 @@ body {
 }
 [data-resident="manga-rpg"] .encounter-card-desc {
   order: 3;
+  font-weight: 700;
   text-align: center;
   font-size: 13px;
   letter-spacing: 0.18em;
@@ -1159,6 +1178,7 @@ body {
 }
 [data-resident="comix-harem-1"] .encounter-card-name,
 [data-resident="comix-harem-2"] .encounter-card-name {
+  font-weight: 800;
   order: 1;
   font-size: 16px;
   letter-spacing: 0.22em;
@@ -1191,6 +1211,7 @@ body {
 [data-resident="comix-harem-1"] .encounter-card-desc,
 [data-resident="comix-harem-2"] .encounter-card-desc {
   order: 3;
+  font-weight: 700;
   text-align: center;
   font-size: 13px;
   letter-spacing: 0.18em;
@@ -1244,6 +1265,7 @@ body {
 }
 [data-district="ai-companions"] .encounter-card-desc {
   order: 3;
+  font-weight: 700;
   text-align: center;
   color: var(--amber);
   text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
@@ -1523,6 +1545,97 @@ body {
   65% { opacity: 0.12; }
   75% { opacity: 0.08; transform: translateX(-48%) scaleY(1); }
   85% { opacity: 0; }
+}
+
+/* ── Red-light district silhouettes on the aerial wrap-around porch ── */
+.porch-silhouettes {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+}
+
+.porch-silhouette {
+  position: absolute;
+  font-size: 36px;
+  font-weight: 700;
+  line-height: 1;
+  color: #ff0040;
+  text-shadow:
+    0 0 4px #ff0040,
+    0 0 8px #ff0040,
+    0 0 16px #ff0040,
+    0 0 24px rgba(255, 0, 64, 0.6);
+  filter: drop-shadow(0 0 8px #ff0040);
+  opacity: 0.85;
+  animation: porchFlicker 4s ease-in-out infinite;
+}
+
+.porch-silhouette-female {
+  color: #ff1a5c;
+  text-shadow:
+    0 0 4px #ff1a5c,
+    0 0 8px #ff1a5c,
+    0 0 16px #ff1a5c,
+    0 0 24px rgba(255, 26, 92, 0.6);
+  filter: drop-shadow(0 0 8px #ff1a5c);
+}
+
+.porch-silhouette-male {
+  color: #ff0040;
+}
+
+/* Position the 4 silhouettes across the porch */
+.porch-silhouette-1.porch-silhouette-female {
+  bottom: 18%;
+  left: 12%;
+  animation-delay: 0s;
+}
+.porch-silhouette-1.porch-silhouette-male {
+  bottom: 16%;
+  left: 22%;
+  animation-delay: 0.7s;
+}
+.porch-silhouette-2.porch-silhouette-female {
+  bottom: 19%;
+  right: 14%;
+  animation-delay: 1.4s;
+}
+.porch-silhouette-2.porch-silhouette-male {
+  bottom: 17%;
+  right: 24%;
+  animation-delay: 2.1s;
+}
+
+@keyframes porchFlicker {
+  0%, 100% { opacity: 0.85; }
+  20% { opacity: 0.6; }
+  40% { opacity: 0.9; }
+  60% { opacity: 0.55; }
+  80% { opacity: 0.8; }
+}
+
+/* Mobile: smaller silhouettes */
+@media (max-width: 768px) {
+  .porch-silhouette {
+    font-size: 26px;
+  }
+  .porch-silhouette-1.porch-silhouette-female {
+    bottom: 22%;
+    left: 8%;
+  }
+  .porch-silhouette-1.porch-silhouette-male {
+    bottom: 20%;
+    left: 20%;
+  }
+  .porch-silhouette-2.porch-silhouette-female {
+    bottom: 23%;
+    right: 8%;
+  }
+  .porch-silhouette-2.porch-silhouette-male {
+    bottom: 21%;
+    right: 20%;
+  }
 }
 
 /* ── Reflection (wet bar surface) ── */

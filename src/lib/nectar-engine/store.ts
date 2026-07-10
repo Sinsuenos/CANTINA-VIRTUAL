@@ -9,6 +9,7 @@
 import { NectarState, EMPTY_NECTAR_STATE } from './types';
 
 const STORAGE_KEY = 'cv_nectar_v1';
+const CELEBRATED_KEY = 'nectar_celebrated';
 
 /** Read the full NectarState from localStorage. Returns empty state on error / missing. */
 export function readState(): NectarState {
@@ -45,6 +46,40 @@ export function clearState(): void {
   if (typeof window === 'undefined') return;
   try {
     window.localStorage.removeItem(STORAGE_KEY);
+  } catch {
+    // fail silently
+  }
+}
+
+/**
+ * Has the PassportModal celebration already been shown?
+ * Stored as a separate key so it survives Nectar state resets and
+ * prevents the modal from auto-re-triggering on subsequent visits.
+ */
+export function hasCelebrated(): boolean {
+  if (typeof window === 'undefined') return false;
+  try {
+    return window.localStorage.getItem(CELEBRATED_KEY) === 'true';
+  } catch {
+    return false;
+  }
+}
+
+/** Mark the PassportModal celebration as shown. Called when the modal is dismissed. */
+export function markCelebrated(): void {
+  if (typeof window === 'undefined') return;
+  try {
+    window.localStorage.setItem(CELEBRATED_KEY, 'true');
+  } catch {
+    // fail silently
+  }
+}
+
+/** Clear the celebrated flag (used if Nectar is ever fully reset). */
+export function clearCelebrated(): void {
+  if (typeof window === 'undefined') return;
+  try {
+    window.localStorage.removeItem(CELEBRATED_KEY);
   } catch {
     // fail silently
   }

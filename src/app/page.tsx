@@ -9,6 +9,7 @@ import { SidebarHub } from '@/components/cantina/SidebarHub';
 import { DistrictScene } from '@/components/cantina/DistrictScene';
 import { PassportModal, NectarToast, type NectarToastData } from '@/components/nectar-engine';
 import { useNectarEngine, NectarProvider } from '@/lib/nectar-engine';
+import { hasCelebrated, markCelebrated } from '@/lib/nectar-engine/store';
 import type { Lang } from '@/lib/i18n';
 
 /* ─── Arrival Dust Particles ─── */
@@ -62,6 +63,15 @@ function ArrivalScene({ children }: { children: React.ReactNode }) {
       <div className="arrival-glow arrival-glow-amber" />
       <div className="arrival-glow arrival-glow-magenta" />
       <ArrivalDust />
+
+      {/* Red-light district silhouettes on the aerial wrap-around porch */}
+      <div className="porch-silhouettes" aria-hidden="true">
+        <span className="porch-silhouette porch-silhouette-female porch-silhouette-1">♀</span>
+        <span className="porch-silhouette porch-silhouette-male porch-silhouette-1">♂</span>
+        <span className="porch-silhouette porch-silhouette-female porch-silhouette-2">♀</span>
+        <span className="porch-silhouette porch-silhouette-male porch-silhouette-2">♂</span>
+      </div>
+
       <div className="arrival-silhouette" />
       <div className="arrival-reflection" />
       <div className="arrival-vignette" />
@@ -309,20 +319,18 @@ function Cantina({
   }, []);
 
   /* ── When all 8 wings complete, show PassportModal ONCE per browser ── */
-  /* Persist "shown" flag in localStorage so navigating to Hub and back does not re-trigger. */
+  /* Only trigger if allWingsVisited === true && !hasCelebrated.
+     Once dismissed, markCelebrated() writes nectar_celebrated=true so it never auto-triggers again. */
   useEffect(() => {
-    if (allQuestsComplete) {
-      const alreadyShown = typeof window !== 'undefined' && window.localStorage.getItem('cv_nectar_passport_shown') === '1';
-      if (!alreadyShown) {
-        window.localStorage.setItem('cv_nectar_passport_shown', '1');
-        // Small delay so the final toast can show first
-        setTimeout(() => setShowPassport(true), 1500);
-      }
+    if (allQuestsComplete && !hasCelebrated()) {
+      // Small delay so the final toast can show first
+      setTimeout(() => setShowPassport(true), 1500);
     }
   }, [allQuestsComplete]);
 
-  /* ── Return to Hub from PassportModal: clear modal + trigger Hub navigation ── */
+  /* ── Return to Hub from PassportModal: mark celebrated + clear modal + trigger Hub navigation ── */
   const handleReturnToHub = useCallback(() => {
+    markCelebrated();
     setShowPassport(false);
     onBackToHub();
   }, [onBackToHub]);
