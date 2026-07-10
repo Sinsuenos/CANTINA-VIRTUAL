@@ -295,7 +295,6 @@ function Cantina({
   const [displayedDistrict, setDisplayedDistrict] = useState(initialDistrict);
   const [toast, setToast] = useState<NectarToastData | null>(null);
   const [showPassport, setShowPassport] = useState(false);
-  const [passportShown, setPassportShown] = useState(false);
   const mainRef = useRef<HTMLDivElement>(null);
 
   /* ── On mount: register first wing visit for initialDistrict ── */
@@ -309,15 +308,24 @@ function Cantina({
     }
   }, []);
 
-  /* ── When all 8 wings complete, show PassportModal (once) ── */
+  /* ── When all 8 wings complete, show PassportModal ONCE per browser ── */
+  /* Persist "shown" flag in localStorage so navigating to Hub and back does not re-trigger. */
   useEffect(() => {
-    if (allQuestsComplete && !passportShown) {
-      // eslint-disable-next-line react-hooks/set-state-in-effect -- one-time celebration trigger; guards against re-trigger via passportShown flag.
-      setPassportShown(true);
-      // Small delay so the final toast can show first
-      setTimeout(() => setShowPassport(true), 1500);
+    if (allQuestsComplete) {
+      const alreadyShown = typeof window !== 'undefined' && window.localStorage.getItem('cv_nectar_passport_shown') === '1';
+      if (!alreadyShown) {
+        window.localStorage.setItem('cv_nectar_passport_shown', '1');
+        // Small delay so the final toast can show first
+        setTimeout(() => setShowPassport(true), 1500);
+      }
     }
-  }, [allQuestsComplete, passportShown]);
+  }, [allQuestsComplete]);
+
+  /* ── Return to Hub from PassportModal: clear modal + trigger Hub navigation ── */
+  const handleReturnToHub = useCallback(() => {
+    setShowPassport(false);
+    onBackToHub();
+  }, [onBackToHub]);
 
   const handleDistrictChange = useCallback(
     (id: string) => {
@@ -451,9 +459,9 @@ function Cantina({
       {/* Nectar toast — brief, non-blocking notification */}
       <NectarToast toast={toast} onDismiss={() => setToast(null)} />
 
-      {/* PassportModal — only when all 8 wings visited */}
+      {/* PassportModal — only when all 8 wings visited (first time per browser) */}
       {showPassport && (
-        <PassportModal onClose={() => setShowPassport(false)} />
+        <PassportModal onReturnToHub={handleReturnToHub} />
       )}
     </div>
   );

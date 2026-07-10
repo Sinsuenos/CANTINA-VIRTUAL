@@ -4,8 +4,9 @@
    PassportModal — full-screen celebration overlay
    ═══════════════════════════════════════════════════════════════
 
-   Shown ONLY when all 8 wings have been visited.
-   This is the one blocking-modal moment — intentional celebration.
+   Shown ONLY when all 8 wings have been visited (first time only —
+   a localStorage flag prevents re-triggering on subsequent visits).
+   Also reachable via the "View Passport" button in PointsWidget.
 
    PRIVACY: No sign-in, no accounts, no email. Share is manual copy
    only — no auto-post to social media.
@@ -17,12 +18,13 @@ import { useNectarEngine } from '@/lib/nectar-engine';
 import { DISTRICTS } from '@/data/rooms';
 
 interface PassportModalProps {
-  onClose: () => void;
+  /** Called when user clicks "Return to Explore" — should navigate to the Hub. */
+  onReturnToHub: () => void;
 }
 
-export function PassportModal({ onClose }: PassportModalProps) {
+export function PassportModal({ onReturnToHub }: PassportModalProps) {
   const { t } = useLang();
-  const { state, questStatus, config, reset } = useNectarEngine();
+  const { state, questStatus, config } = useNectarEngine();
   const [copied, setCopied] = useState(false);
 
   const shareText = t.nectarPassportShareText.replace('{points}', String(state.totalPoints));
@@ -48,13 +50,6 @@ export function PassportModal({ onClose }: PassportModalProps) {
         // give up silently
       }
       document.body.removeChild(textarea);
-    }
-  };
-
-  const handleReset = () => {
-    if (typeof window !== 'undefined' && window.confirm(t.nectarPassportResetConfirm)) {
-      reset();
-      onClose();
     }
   };
 
@@ -107,11 +102,8 @@ export function PassportModal({ onClose }: PassportModalProps) {
         </div>
 
         <div className="passport-actions">
-          <button className="passport-close-btn" onClick={onClose}>
+          <button className="passport-close-btn" onClick={onReturnToHub}>
             {t.nectarPassportClose}
-          </button>
-          <button className="passport-reset-btn" onClick={handleReset}>
-            {t.nectarPassportReset}
           </button>
         </div>
 
