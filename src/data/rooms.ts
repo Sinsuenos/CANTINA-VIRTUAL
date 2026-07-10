@@ -411,12 +411,12 @@ export const DISTRICTS: District[] = [
     bgImage: '/trans-bg.jpg',
     encounters: [
       {
-        residentId: 'trans-offer',
-        href: 'https://t.mbagm.link/413627/8663/0?aff_sub=TRANS&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
-      },
-      {
         residentId: 'jermate-trans',
         href: 'https://t.mbjrkmms.com/413627/8780/32491?aff_sub=TRAS&aff_sub2=JMATE&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
+      },
+      {
+        residentId: 'trans-offer',
+        href: 'https://t.mbagm.link/413627/8663/0?aff_sub=TRANS&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
       },
       {
         residentId: 'soda-offer',
