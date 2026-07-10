@@ -82,6 +82,13 @@ export const RESIDENTS: Record<string, Resident> = {
     description: '',
     image: '/myfreecams-300x250.png',
   },
+  'ole': {
+    id: 'ole',
+    name: 'OLÉ',
+    subtitle: '',
+    description: 'Spanish and Latina models',
+    image: '/ole-300x250.png',
+  },
   'fanvue-mila': {
     id: 'fanvue-mila',
     name: 'MILA LERUE',
@@ -267,6 +274,10 @@ export const DISTRICTS: District[] = [
       {
         residentId: 'myfreecams',
         href: 'https://t.amyfc.link/413627/779/0?aff_sub=CAMS&aff_sub2=MYFREE&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
+      },
+      {
+        residentId: 'ole',
+        href: 'https://t.camsk7.com/413627/9648/0?aff_sub=CAMS&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
       },
     ],
   },
