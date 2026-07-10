@@ -2,3 +2,16 @@ skills/
 node_modules/
 .next/
 dev.log
+
+# Build artifacts
+*.tsbuildinfo
+
+# Agent / debug working directories (never commit)
+tool-results/
+download/
+upload/
+
+# Debug / verification screenshots at repo root (NOT public/* banners)
+/*.png
+/*.jpg
+/*.jpeg
