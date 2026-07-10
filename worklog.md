@@ -145,3 +145,61 @@ Stage Summary:
 - Item 3 (GAY needs 1 more offer): ALREADY RESOLVED — royal-cams was added, GAY now has 3 cards
 - Item 4 (Pay Sites needs 1 more offer): ALREADY RESOLVED — faphouse was added, Pay Sites now has 3 cards
 - Item 5 (6 lint warnings): RESOLVED — all 6 errors eliminated via dead code deletion, eslint ignores for scripts/, and documented eslint-disable for SSR-safe patterns. Lint now exits 0.
+
+---
+Task ID: 4
+Agent: Main Agent (Nectar Engine Phase 1 build)
+Task: Integrate standalone Nectar Engine into Cantina Virtual — live points, toast notifications, passport modal, 100% client-side localStorage, EN+ES
+
+Work Log:
+- Read existing codebase: rooms.ts (8 wing IDs confirmed), i18n.tsx, page.tsx navigation, SidebarHub, MariposaCenterpiece, globals.css for style matching
+- Created nectar-engine core (5 files):
+    * src/lib/nectar-engine/types.ts — NectarSection, NectarQuest, NectarState, NectarConfig, NectarEngineHook
+    * src/lib/nectar-engine/store.ts — pure localStorage read/write (SSR-safe, no React)
+    * src/lib/nectar-engine/config.ts — 8-wing config matching rooms.ts IDs exactly
+    * src/lib/nectar-engine/hooks.tsx — NectarProvider context + useNectarEngine hook (shared state)
+    * src/lib/nectar-engine/index.ts — barrel export
+- Created nectar-engine UI (4 files):
+    * src/components/nectar-engine/PointsWidget.tsx — sidebar badge + expandable stamp grid
+    * src/components/nectar-engine/PassportModal.tsx — full-screen celebration overlay
+    * src/components/nectar-engine/NectarToast.tsx — 3s auto-dismiss notification
+    * src/components/nectar-engine/index.ts — barrel export
+- Added i18n strings (EN+ES) for all nectar UI text
+- Integrated into app:
+    * SidebarHub: replaced NectarHUD (COMING SOON) with PointsWidget
+    * page.tsx Cantina: calls visit(wingId) on mount + sidebar wing switch
+    * page.tsx Cantina: renders NectarToast + PassportModal (auto-triggers at 8/8)
+    * page.tsx Home: wraps app in <NectarProvider> for shared state across components
+    * Bottom teaser: updated from 'COMING SOON' to live points/progress display
+- Added CSS styles matching existing amber palette, butterfly icon, sidebar chrome
+- Fixed context sharing issue: initial implementation had each useNectarEngine() call creating independent state — refactored to NectarProvider context pattern so PointsWidget and Cantina share the same state instance
+- Renamed hooks.ts → hooks.tsx (JSX required for Provider)
+- Lint: 0 errors, 0 warnings. TypeScript: clean.
+- Committed: a0b5906 "feat: integrate Nectar Engine Phase 1"
+- Pushed to origin/main (13cb63a..a0b5906)
+- Waited 90s for Vercel deploy
+
+Local verification (agent-browser):
+- Default state: widget shows 🦋NECTAR 0 pts 0/8 + "Progress saved on this device"
+- After visiting 1 wing (Dates): widget → 10 pts 1/8, toast "+10 Nectar — Dates visited"
+- Expanded panel: stamp grid showing 1 visited + 7 unvisited
+- After visiting all 8 wings: widget → 80 pts 8/8, PassportModal auto-triggers
+- PassportModal: title, subtitle, 8/8 stamp grid, congrats text, share text + copy button, continue/reset actions
+- localStorage: cv_nectar_v1 with all 8 visits, 80 points, full history array
+- ES: widget "NÉCTAR 10 pts 1/8", toast "+10 Néctar — Citas visitada", privacy "Progreso guardado en este dispositivo", passport modal all in Spanish
+- No email/sign-in/account UI anywhere in the feature (verified via DOM text search — 'password' only appears in Next.js internal RSC payload, not visible UI)
+
+Production verification (cantina-virtual.vercel.app):
+- Widget: 🦋NECTAR 10 pts 1/8 after first wing visit ✅
+- localStorage: cv_nectar_v1 with dating visit recorded ✅
+- All 8 wings: widget → 80 pts 8/8, PassportModal visible ✅
+- Screenshots saved to /home/z/my-project/download/nectar-prod-*.png
+
+Stage Summary:
+- Nectar Engine Phase 1 is LIVE on production
+- 8 files created (5 core + 4 UI including barrel), 4 files modified (page.tsx, SidebarHub, i18n, globals.css)
+- 100% client-side localStorage — no backend, no accounts, no email, no cookies, no third-party tracking
+- EN + ES fully translated and verified
+- All 7 required screenshots captured (default, toast, expanded panel, all-8-complete, passport modal, ES widget+toast, ES passport modal) + 2 production screenshots
+- Privacy note "Progress saved on this device" shown under widget + in passport modal
+- Share is manual copy-to-clipboard only — no auto-post to social media
