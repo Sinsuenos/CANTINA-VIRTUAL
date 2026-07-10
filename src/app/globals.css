@@ -942,6 +942,10 @@ body {
   padding: 0;
   border-radius: 0;
 }
+/* Faphouse has a description caption below the banner — needs 3 grid rows */
+[data-resident="faphouse"] {
+  grid-template-rows: auto 1fr auto;
+}
 [data-resident="bellesa-plus"]:hover,
 [data-resident="sextpanther"]:hover,
 [data-resident="faphouse"]:hover {
@@ -976,6 +980,18 @@ body {
   border-radius: var(--card-radius);
   overflow: hidden;
   transition: all 0.4s ease;
+}
+/* Faphouse caption — white text below banner, aligns image with sibling cards */
+[data-resident="faphouse"] .encounter-card-desc {
+  order: 3;
+  color: #ffffff;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-align: center;
+  line-height: 1.4;
+  margin: 0;
+  padding: 0 4px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.8);
 }
 [data-resident="bellesa-plus"] .encounter-card-image::after,
 [data-resident="sextpanther"] .encounter-card-image::after,

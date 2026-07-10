@@ -311,16 +311,12 @@ export const DISTRICTS: District[] = [
         href: 'https://t.acust-9.com/413627/10394/0?aff_sub=FAN&aff_sub2=AMBERS&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
       },
       {
-        residentId: 'sofia-storme',
-        href: 'https://t.acust-9.com/413627/10393/0?aff_sub=FANSTE&aff_sub2=SOFIASTRM&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
+        residentId: 'fanvue-mila',
+        href: 'https://t.acust-9.com/413627/10395/0?aff_sub=FAN&aff_sub2=MILAL&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
       },
       {
         residentId: 'fanvue-talia',
         href: 'https://t.acust-9.com/413627/10398/0?aff_sub=FAN&aff_sub2=TALIAR&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
-      },
-      {
-        residentId: 'fanvue-mila',
-        href: 'https://t.acust-9.com/413627/10395/0?aff_sub=FAN&aff_sub2=MILAL&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
       },
     ],
   },
