@@ -201,6 +201,13 @@ export const RESIDENTS: Record<string, Resident> = {
     description: 'LIVE CAMS.\nNO LIMITS.',
     image: '/royal-cams-300x250.jpg',
   },
+  'dirty-dating': {
+    id: 'dirty-dating',
+    name: 'DIRTY DATING',
+    subtitle: '',
+    description: '',
+    image: '/dirty-dating-300x250.jpg',
+  },
 };
 
 /* ─── District ─── */
@@ -443,7 +450,12 @@ export const DISTRICTS: District[] = [
     borderColor: 'rgba(212,160,23,0.3)',
     textColor: 'var(--amber)',
     bgImage: '/hub-bg.png',
-    encounters: [],
+    encounters: [
+      {
+        residentId: 'dirty-dating',
+        href: 'https://t.datsk11.com/413627/5421?aff_sub=UNIQUE&aff_sub2=SOI&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
+      },
+    ],
   },
   {
     id: 'nectar',
