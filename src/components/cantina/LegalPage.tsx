@@ -17,6 +17,7 @@ export function LegalPage({ titleEn, titleEs, en, es }: LegalPageProps) {
   useEffect(() => {
     const savedLang = sessionStorage.getItem('cv_lang');
     if (savedLang === 'en' || savedLang === 'es') {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- SSR-safe hydration: useState('en') gives deterministic server render, useEffect syncs from sessionStorage on client only. Lazy initializer would crash SSR (sessionStorage undefined on server).
       setLang(savedLang);
     }
   }, []);

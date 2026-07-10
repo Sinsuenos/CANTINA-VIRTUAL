@@ -409,6 +409,7 @@ export default function Home() {
   /* ── Persist age confirmation and lang across navigations ── */
   useEffect(() => {
     if (sessionStorage.getItem('cv_age') === '1') {
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- SSR-safe hydration: useState(false) gives deterministic server render, useEffect syncs from sessionStorage on client only. Lazy initializer would crash SSR (sessionStorage undefined on server).
       setAgeConfirmed(true);
     }
     const savedLang = sessionStorage.getItem('cv_lang');
