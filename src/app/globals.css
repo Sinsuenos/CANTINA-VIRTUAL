@@ -1147,6 +1147,54 @@ body {
   box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 12px rgba(212,160,23,0.08);
 }
 
+/* ── Unique Offers wing: smok — title above banner, no caption ── */
+[data-resident="smok"] {
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 8px;
+  border: none;
+  background: none;
+  overflow: visible;
+  padding: 0;
+  border-radius: 0;
+}
+[data-resident="smok"]:hover {
+  border-color: transparent;
+  transform: none;
+  box-shadow: none;
+}
+[data-resident="smok"] .encounter-card-body {
+  display: contents;
+}
+[data-resident="smok"] .encounter-card-name {
+  order: 1;
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 0.22em;
+  text-align: center;
+  color: var(--amber);
+  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
+}
+[data-resident="smok"] .encounter-card-image {
+  order: 2;
+  aspect-ratio: 300/250;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid rgba(212,160,23,0.15);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+[data-resident="smok"] .encounter-card-image::after {
+  background: none;
+}
+[data-resident="smok"]:hover .encounter-card-image {
+  border-color: rgba(212,160,23,0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 12px rgba(212,160,23,0.08);
+}
+
 /* ── Trans wing cards — block layout, no flex/grid subpixel issues ── */
 [data-resident="trans-offer"],
 [data-resident="jermate-trans"],
