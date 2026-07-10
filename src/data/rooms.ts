@@ -210,7 +210,7 @@ export const RESIDENTS: Record<string, Resident> = {
   },
   'smok': {
     id: 'smok',
-    name: 'SMOK',
+    name: 'SMOKE AND POKE',
     subtitle: '',
     description: '',
     image: '/smok-300x250.jpg',
