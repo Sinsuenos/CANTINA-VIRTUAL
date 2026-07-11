@@ -156,6 +156,8 @@ export const T: Record<Lang, Record<string, string>> = {
     'resident.dateplayer2-unique.desc': 'GEEK DATING MADE EASY!',
     'resident.x-game-hub.name': 'X Game Hub',
     'resident.x-game-hub.desc': 'DIGITAL GAMING COMPANION',
+    'resident.oopsie.name': 'Oopsie',
+    'resident.oopsie.desc': 'OUTRAGEOUS SITUATIONS',
     'resident.jermate-trans.desc':
       'LIVE TRANS PERFORMERS\nREADY TO CHAT',
     'resident.soda-offer.desc':
@@ -331,6 +333,8 @@ export const T: Record<Lang, Record<string, string>> = {
     'resident.dateplayer2-unique.desc': 'GEEK DATING MADE EASY!',
     'resident.x-game-hub.name': 'X Game Hub',
     'resident.x-game-hub.desc': 'COMPAÑERO DE JUEGOS DIGITAL',
+    'resident.oopsie.name': 'Oopsie',
+    'resident.oopsie.desc': 'SITUACIONES ESCANDALOSAS',
     'resident.jermate-trans.desc':
       'PERFORMERS TRANS EN VIVO\nLISTAS PARA CHATEAR',
     'resident.soda-offer.desc':

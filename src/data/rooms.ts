@@ -243,6 +243,13 @@ export const RESIDENTS: Record<string, Resident> = {
     description: 'DIGITAL GAMING COMPANION',
     image: '/x-game-hub-300x250.jpg',
   },
+  'oopsie': {
+    id: 'oopsie',
+    name: 'Oopsie',
+    subtitle: '',
+    description: 'OUTRAGEOUS SITUATIONS',
+    image: '/oopsie-300x250.jpg',
+  },
 };
 
 /* ─── District ─── */
@@ -509,6 +516,10 @@ export const DISTRICTS: District[] = [
       {
         residentId: 'dateplayer2-unique',
         href: 'https://t.datsk11.com/413627/9702/37158?aff_sub=UNIQUE&aff_sub2=LPPINK&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
+      },
+      {
+        residentId: 'oopsie',
+        href: 'https://t.bbwafx.com/413627/10095/0?aff_sub=UNIQUE&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
       },
     ],
   },
