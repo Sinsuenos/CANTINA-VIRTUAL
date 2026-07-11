@@ -151,6 +151,7 @@ export const T: Record<Lang, Record<string, string>> = {
     'resident.smok.name': 'SMOKE AND POKE',
     'resident.vescina-pasionales.name': 'VESCINA PASIONALES',
     'resident.vescina-pasionales.desc': 'LATAM DATING',
+    'resident.sexymeet.name': 'Sexymeet.tv',
     'resident.jermate-trans.desc':
       'LIVE TRANS PERFORMERS\nREADY TO CHAT',
     'resident.soda-offer.desc':
@@ -321,6 +322,7 @@ export const T: Record<Lang, Record<string, string>> = {
     'resident.smok.name': 'SMOKE AND POKE',
     'resident.vescina-pasionales.name': 'VESCINA PASIONALES',
     'resident.vescina-pasionales.desc': 'LATAM DATING',
+    'resident.sexymeet.name': 'Sexymeet.tv',
     'resident.jermate-trans.desc':
       'PERFORMERS TRANS EN VIVO\nLISTAS PARA CHATEAR',
     'resident.soda-offer.desc':
