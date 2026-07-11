@@ -66,7 +66,7 @@ export const RESIDENTS: Record<string, Resident> = {
     name: 'CAMIRADA',
     subtitle: '',
     description: 'PRIVATE SHOWS WITH SPANISH BEAUTIES!',
-    image: '/camirada-300x250-clean.jpg',
+    image: 'https://www.imglnkx.com/9776/PCAM-244_DESIGN-24826_300250_2_EN.gif',
   },
   'jerkmate-cams': {
     id: 'jerkmate-cams',
@@ -87,7 +87,7 @@ export const RESIDENTS: Record<string, Resident> = {
     name: 'OLÉ',
     subtitle: '',
     description: 'Spanish and Latina models',
-    image: '/ole-300x250-clean.png',
+    image: '/ole-300x250.png',
   },
   'fanvue-mila': {
     id: 'fanvue-mila',
