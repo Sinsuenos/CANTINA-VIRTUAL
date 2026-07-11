@@ -146,6 +146,8 @@ export const T: Record<Lang, Record<string, string>> = {
       'LIVE CAMS.\nNO LIMITS.',
     'resident.dirty-dating.name': 'DIRTY DATING',
     'resident.smok.name': 'SMOKE AND POKE',
+    'resident.vescina-pasionales.name': 'VESCINA PASIONALES',
+    'resident.vescina-pasionales.desc': 'LATAM DATING',
     'resident.jermate-trans.desc':
       'LIVE TRANS PERFORMERS\nREADY TO CHAT',
     'resident.soda-offer.desc':
@@ -311,6 +313,8 @@ export const T: Record<Lang, Record<string, string>> = {
       'CÁMARAS EN VIVO.\nSIN LÍMITES.',
     'resident.dirty-dating.name': 'DIRTY DATING',
     'resident.smok.name': 'SMOKE AND POKE',
+    'resident.vescina-pasionales.name': 'VESCINA PASIONALES',
+    'resident.vescina-pasionales.desc': 'LATAM DATING',
     'resident.jermate-trans.desc':
       'PERFORMERS TRANS EN VIVO\nLISTAS PARA CHATEAR',
     'resident.soda-offer.desc':
