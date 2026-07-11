@@ -1309,7 +1309,7 @@ body {
 [data-resident="myfreecams"],
 [data-resident="ole"] {
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto auto auto;
   gap: 8px;
   border: none;
   background: none;
