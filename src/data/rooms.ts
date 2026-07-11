@@ -236,6 +236,13 @@ export const RESIDENTS: Record<string, Resident> = {
     description: 'GEEK DATING MADE EASY!',
     image: '/dateplayer2-unique-300x250.jpg',
   },
+  'x-game-hub': {
+    id: 'x-game-hub',
+    name: 'X Game Hub',
+    subtitle: '',
+    description: 'DIGITAL GAMING COMPANION',
+    image: '/x-game-hub-300x250.jpg',
+  },
 };
 
 /* ─── District ─── */
@@ -436,6 +443,10 @@ export const DISTRICTS: District[] = [
       {
         residentId: 'manga-rpg',
         href: 'https://t.acust-9.com/413627/6621?aff_sub=GAMES&aff_sub2=MNGRPG&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
+      },
+      {
+        residentId: 'x-game-hub',
+        href: 'https://t.bbwafx.com/413627/10421/0?aff_sub=GAMES&source=CANTINA&aff_sub5=SF_006OG000004lmDNI',
       },
       {
         residentId: 'comix-harem-1',
