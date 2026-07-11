@@ -1311,6 +1311,7 @@ body {
   display: grid;
   grid-template-rows: auto auto auto;
   gap: 8px;
+  align-self: start;
   border: none;
   background: none;
   overflow: visible;
