@@ -763,7 +763,7 @@ body {
 }
 [data-resident="royal-cams"] .encounter-card-desc {
   order: 3;
-  font-weight: 700;
+  font-weight: 800;
   margin: 0;
   text-align: center;
   color: var(--amber);
@@ -809,7 +809,7 @@ body {
 }
 [data-resident="gay-offer"] .encounter-card-desc {
   order: 3;
-  font-weight: 700;
+  font-weight: 800;
   text-align: center;
   color: var(--amber);
   text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
@@ -853,7 +853,7 @@ body {
 }
 [data-resident="xlovegay-cams"] .encounter-card-desc {
   order: 3;
-  font-weight: 700;
+  font-weight: 800;
   text-align: center;
   color: var(--amber);
   text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
@@ -1079,14 +1079,14 @@ body {
 [data-resident="faphouse"] .encounter-card-desc {
   order: 3;
   color: var(--amber);
-  font-weight: 700;
-  font-size: 12px;
+  font-weight: 800;
+  font-size: 13px;
   letter-spacing: 0.06em;
   text-align: center;
   line-height: 1.4;
   margin: 0;
   padding: 0 4px;
-  text-shadow: 0 0 12px rgba(212,160,23,0.3);
+  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
 }
 [data-resident="bellesa-plus"] .encounter-card-image::after,
 [data-resident="sextpanther"] .encounter-card-image::after,
@@ -1289,13 +1289,13 @@ body {
 }
 [data-resident="vescina-pasionales"] .encounter-card-desc {
   order: 3;
-  font-weight: 700;
-  font-size: 12px;
+  font-weight: 800;
+  font-size: 13px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   text-align: center;
   color: var(--amber);
-  text-shadow: 0 0 12px rgba(212,160,23,0.3);
+  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
   margin: 0;
   white-space: pre-line;
 }
@@ -1443,7 +1443,7 @@ body {
 [data-resident="trans-offer"] .encounter-card-desc,
 [data-resident="jermate-trans"] .encounter-card-desc,
 [data-resident="soda-offer"] .encounter-card-desc {
-  font-weight: 700;
+  font-weight: 800;
   margin: 0;
   margin-top: 8px;
   text-align: center;
@@ -1512,12 +1512,12 @@ body {
 }
 [data-resident="manga-rpg"] .encounter-card-desc {
   order: 3;
-  font-weight: 700;
+  font-weight: 800;
   text-align: center;
   font-size: 13px;
   letter-spacing: 0.18em;
   color: var(--amber);
-  text-shadow: 0 0 12px rgba(212,160,23,0.3);
+  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
   white-space: pre-line;
 }
 
@@ -1578,12 +1578,12 @@ body {
 [data-resident="comix-harem-1"] .encounter-card-desc,
 [data-resident="comix-harem-2"] .encounter-card-desc {
   order: 3;
-  font-weight: 700;
+  font-weight: 800;
   text-align: center;
   font-size: 13px;
   letter-spacing: 0.18em;
   color: var(--amber);
-  text-shadow: 0 0 12px rgba(212,160,23,0.3);
+  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
   white-space: pre-line;
 }
 
@@ -1632,7 +1632,7 @@ body {
 }
 [data-district="ai-companions"] .encounter-card-desc {
   order: 3;
-  font-weight: 700;
+  font-weight: 800;
   text-align: center;
   color: var(--amber);
   text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
