@@ -229,6 +229,13 @@ export const RESIDENTS: Record<string, Resident> = {
     description: '',
     image: '/sexymeet-300x250.jpg',
   },
+  'dateplayer2-unique': {
+    id: 'dateplayer2-unique',
+    name: 'DATEPLAYER2',
+    subtitle: '',
+    description: 'GEEK DATING MADE EASY!',
+    image: '/dateplayer2-unique-300x250.jpg',
+  },
 };
 
 /* ─── District ─── */
@@ -487,6 +494,10 @@ export const DISTRICTS: District[] = [
       {
         residentId: 'sexymeet',
         href: 'https://t.camsk7.com/413627/10392/0?aff_sub=UNIQUE&aff_sub2=CAMS&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
+      },
+      {
+        residentId: 'dateplayer2-unique',
+        href: 'https://t.datsk11.com/413627/9702/37158?aff_sub=UNIQUE&aff_sub2=LPPINK&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
       },
     ],
   },
