@@ -404,6 +404,7 @@ body {
   transition: all 0.4s ease;
   text-decoration: none;
   color: inherit;
+  align-self: start;
 }
 .encounter-card:hover {
   border-color: rgba(255,255,255,0.15);
@@ -447,14 +448,15 @@ body {
   color: var(--text-dim);
 }
 .encounter-card-desc {
-  font-size: 12px;
-  font-weight: 700;
+  font-size: 13px;
+  font-weight: 800;
   color: var(--amber);
-  line-height: 1.6;
-  margin: 2px 0;
+  line-height: 1.4;
+  margin: 0;
   text-align: center;
-  letter-spacing: 0.06em;
-  text-shadow: 0 0 12px rgba(212,160,23,0.3);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
   white-space: pre-line;
 }
 
@@ -698,7 +700,7 @@ body {
 [data-resident="gay-offer"],
 [data-resident="xlovegay-cams"] {
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto auto auto;
   gap: 8px;
   border: none;
   background: none;
@@ -720,7 +722,7 @@ body {
 /* ── royal-cams: unified with gay-offer + xlovegay-cams (grid layout, title on top) ── */
 [data-resident="royal-cams"] {
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto auto auto;
   gap: 8px;
   border: none;
   background: none;
@@ -975,7 +977,7 @@ body {
 /* ── Fan Sites — title above banner, no body ── */
 [data-district="fan-sites"] .encounter-card {
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto auto;
   gap: 8px;
   border: none;
   background: none;
@@ -1025,7 +1027,7 @@ body {
 [data-resident="sextpanther"],
 [data-resident="faphouse"] {
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto auto;
   gap: 8px;
   border: none;
   background: none;
@@ -1035,7 +1037,7 @@ body {
 }
 /* Faphouse has a description caption below the banner — needs 3 grid rows */
 [data-resident="faphouse"] {
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto auto auto;
 }
 [data-resident="bellesa-plus"]:hover,
 [data-resident="sextpanther"]:hover,
@@ -1102,7 +1104,7 @@ body {
 /* ── Unique Offers wing: dirty-dating — title above banner, no caption ── */
 [data-resident="dirty-dating"] {
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto auto;
   gap: 8px;
   border: none;
   background: none;
@@ -1150,7 +1152,7 @@ body {
 /* ── Unique Offers wing: smok — title above banner, no caption ── */
 [data-resident="smok"] {
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto auto;
   gap: 8px;
   border: none;
   background: none;
@@ -1198,7 +1200,7 @@ body {
 /* ── Unique Offers wing: sexymeet — title above banner, no caption ── */
 [data-resident="sexymeet"] {
   display: grid;
-  grid-template-rows: auto 1fr;
+  grid-template-rows: auto auto;
   gap: 8px;
   border: none;
   background: none;
@@ -1246,7 +1248,7 @@ body {
 /* ── Dating wing: vescina-pasionales — title above, banner, caption below ── */
 [data-resident="vescina-pasionales"] {
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto auto auto;
   gap: 8px;
   border: none;
   background: none;
@@ -1464,7 +1466,7 @@ body {
 /* ── Manga RPG — title above banner, description below, gold/amber ── */
 [data-resident="manga-rpg"] {
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto auto auto;
   gap: 8px;
   border: none;
   background: none;
@@ -1523,7 +1525,7 @@ body {
 [data-resident="comix-harem-1"],
 [data-resident="comix-harem-2"] {
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto auto auto;
   gap: 8px;
   border: none;
   background: none;
@@ -1588,7 +1590,7 @@ body {
 /* ── AI Companions — title above card, caption below ── */
 [data-district="ai-companions"] .encounter-card {
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto auto auto;
   gap: 10px;
   border: none;
   background: none;
@@ -2556,7 +2558,7 @@ body {
 }
 .dating-encounter-card {
   display: grid;
-  grid-template-rows: auto 1fr auto;
+  grid-template-rows: auto auto auto;
   gap: 8px;
   border: none;
   background: none;
