@@ -3399,6 +3399,14 @@ body {
     grid-template-columns: 1fr;
     gap: 16px;
   }
+  /* niche & our-mission carry (0,2,0) specificity via [data-district] attr, which
+     beats the generic .district-encounters rule above — mirror the 1fr here so the
+     mobile single-column actually applies to those two districts too. */
+  [data-district="niche"] .district-encounters,
+  [data-district="our-mission"] .district-encounters {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
 
   .district-nectar-teaser {
     padding: 16px 20px 12px;
@@ -3444,7 +3452,7 @@ body {
   /* ── Mobile: Dating Room ── */
   .room-atmosphere-bg { left: 0; }
   .dating-room-overlay { left: 0; }
-  .dating-room-content { padding: 32px 20px 20px; }
+  .dating-room-content { padding: 32px 20px 80px; } /* bottom clears fixed mobile sidebar bar (matches .district-footer) */
   .dating-room-title { font-size: 20px; }
   .dating-hero-offer { flex-direction: column; gap: 0; }
   .dating-hero-image { flex: none; width: 100%; aspect-ratio: 16/8; }
@@ -3472,6 +3480,13 @@ body {
   .hub-card {
     padding: 18px 8px;
     min-height: 70px;
+  }
+  /* desktop centers the trailing 9th/10th cards via grid-column 2/3 & 3/4 on a
+     4-col grid; on the 2-col mobile grid those line numbers create an implicit
+     3rd column and horizontal overflow — reset to auto. */
+  .hub-card:nth-child(9),
+  .hub-card:nth-child(10) {
+    grid-column: auto;
   }
   .hub-card-name {
     font-size: 12px;
