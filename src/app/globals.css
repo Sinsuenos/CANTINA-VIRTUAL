@@ -450,13 +450,13 @@ body {
 .encounter-card-desc {
   font-size: 13px;
   font-weight: 800;
-  color: var(--amber);
+  color: var(--amber) !important;
   line-height: 1.4;
   margin: 0;
   text-align: center;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
+  text-shadow: 0 0 12px rgba(218,177,42,0.8);
   white-space: pre-line;
 }
 
@@ -4129,4 +4129,40 @@ body {
   background: linear-gradient(90deg, #5BCEFA, #F5A9B8, #FFFFFF, #F5A9B8, #5BCEFA);
   border-radius: 2px;
   opacity: 0.9;
+}
+
+.encounter-card-desc,
+.encounter-card-name {
+  color: var(--amber) !important;
+  font-weight: 800;
+  text-shadow: 0 0 12px rgba(218,177,42,0.8);
+}
+
+.arrival-copy,
+.arrival-copy-closing,
+.hub-subtitle,
+.hub-alive-line,
+.dating-room-prose,
+.district-description {
+  color: #F5ECD8;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.9);
+}
+
+.nectar-coming-soon {
+  background: linear-gradient(135deg, rgba(212,160,23,0.15), rgba(233,30,140,0.1));
+  color: #ff0000;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  padding: 12px 20px;
+  border-radius: var(--card-radius);
+  border: 1px solid rgba(255,0,0,0.3);
+  animation: subtle-pulse 2s ease-in-out infinite;
+}
+
+@keyframes subtle-pulse {
+  0%, 100% { opacity: 0.85; }
+  50% { opacity: 1; }
 }
