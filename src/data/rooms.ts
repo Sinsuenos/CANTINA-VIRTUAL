@@ -89,6 +89,13 @@ export const RESIDENTS: Record<string, Resident> = {
     description: 'Spanish and Latina models',
     image: '/ole-300x250.png',
   },
+  'sweepsex': {
+    id: 'sweepsex',
+    name: 'Sweepsex',
+    subtitle: '',
+    description: 'Exclusive Freemium\nAdult Webcam',
+    image: '/sweepsex-300x250.jpg',
+  },
   'fanvue-mila': {
     id: 'fanvue-mila',
     name: 'MILA LERUE',
@@ -342,6 +349,10 @@ export const DISTRICTS: District[] = [
       {
         residentId: 'ole',
         href: 'https://t.camsk7.com/413627/9648/0?aff_sub=CAMS&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
+      },
+      {
+        residentId: 'sweepsex',
+        href: 'https://t.camsk7.com/413627/7758/40242?aff_sub=CAMS&aff_sub2=HOMEPAGELP&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
       },
     ],
   },
