@@ -96,6 +96,20 @@ export const RESIDENTS: Record<string, Resident> = {
     description: 'Exclusive Freemium\nAdult Webcam',
     image: '/sweepsex-300x250.jpg',
   },
+  'sweepsex-gay': {
+    id: 'sweepsex-gay',
+    name: 'GAY CAMS',
+    subtitle: '',
+    description: 'Exclusive Freemium\nAdult Webcam',
+    image: '/sweepsex-300x250.jpg',
+  },
+  'sweepsex-trans': {
+    id: 'sweepsex-trans',
+    name: 'TRANS CAMS',
+    subtitle: '',
+    description: 'Exclusive Freemium\nAdult Webcam',
+    image: '/sweepsex-300x250.jpg',
+  },
   'fanvue-mila': {
     id: 'fanvue-mila',
     name: 'MILA LERUE',
@@ -456,6 +470,10 @@ export const DISTRICTS: District[] = [
         residentId: 'royal-cams',
         href: 'https://t.camsk1.com/413627/4533/0?aff_sub=GAY&aff_sub2=RYLCAMS&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
       },
+      {
+        residentId: 'sweepsex-gay',
+        href: 'https://t.camsk7.com/413627/7758/40245?aff_sub=CAMS&aff_sub2=GAYWING&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
+      },
     ],
   },
   {
@@ -509,6 +527,10 @@ export const DISTRICTS: District[] = [
       {
         residentId: 'soda-offer',
         href: 'https://t.camsk1.com/413627/5170/29363?aff_sub=TRANS&aff_sub2=CMSODA&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
+      },
+      {
+        residentId: 'sweepsex-trans',
+        href: 'https://t.camsk7.com/413627/7758/39647?aff_sub=CAMS&aff_sub2=TRANSWING&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
       },
     ],
   },
