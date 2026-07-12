@@ -250,6 +250,13 @@ export const RESIDENTS: Record<string, Resident> = {
     description: 'OUTRAGEOUS SITUATIONS',
     image: '/oopsie-300x250.jpg',
   },
+  'cozy': {
+    id: 'cozy',
+    name: 'COZY',
+    subtitle: '',
+    description: 'MATURE ADULTS FIND COMPANIONSHIP',
+    image: '/cozy-300x250.jpg',
+  },
 };
 
 /* ─── District ─── */
@@ -302,6 +309,10 @@ export const DISTRICTS: District[] = [
       {
         residentId: 'vescina-pasionales',
         href: 'https://t.crdtg3.com/413627/10457/40657?aff_sub=DATING&aff_sub2=VESCINAPAS&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
+      },
+      {
+        residentId: 'cozy',
+        href: 'https://t.datsk11.com/413627/9700/0?aff_sub=DATING&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
       },
     ],
   },

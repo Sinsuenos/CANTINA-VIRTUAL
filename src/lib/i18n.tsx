@@ -158,6 +158,8 @@ export const T: Record<Lang, Record<string, string>> = {
     'resident.x-game-hub.desc': 'DIGITAL GAMING COMPANION',
     'resident.oopsie.name': 'Oopsie',
     'resident.oopsie.desc': 'OUTRAGEOUS SITUATIONS',
+    'resident.cozy.name': 'COZY',
+    'resident.cozy.desc': 'MATURE ADULTS FIND COMPANIONSHIP',
     'resident.jermate-trans.desc':
       'LIVE TRANS PERFORMERS\nREADY TO CHAT',
     'resident.soda-offer.desc':
@@ -335,6 +337,8 @@ export const T: Record<Lang, Record<string, string>> = {
     'resident.x-game-hub.desc': 'COMPAÑERO DE JUEGOS DIGITAL',
     'resident.oopsie.name': 'Oopsie',
     'resident.oopsie.desc': 'SITUACIONES ESCANDALOSAS',
+    'resident.cozy.name': 'COZY',
+    'resident.cozy.desc': 'ADULTOS MADUROS ENCUENTRAN COMPAÑÍA',
     'resident.jermate-trans.desc':
       'PERFORMERS TRANS EN VIVO\nLISTAS PARA CHATEAR',
     'resident.soda-offer.desc':
