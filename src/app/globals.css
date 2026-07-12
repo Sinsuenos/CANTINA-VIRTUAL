@@ -593,12 +593,14 @@ body {
 }
 
 .sidebar-item-name {
-  font-size: 16.5px;
+  font-size: 17px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--amber);
   display: block;
   line-height: 1.2;
+  font-weight: 800;
+  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
 }
 .sidebar-item.active .sidebar-item-name {
   color: #1a1208;
@@ -932,7 +934,7 @@ body {
   font-size: 28px;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  font-weight: 400;
+  font-weight: 700;
   line-height: 1.2;
   margin-bottom: 16px;
   color: var(--amber);
@@ -3365,9 +3367,11 @@ body {
 
 
   .sidebar-item-name {
-    font-size: 12.1px;
+    font-size: 13px;
     letter-spacing: 0.05em;
     white-space: nowrap;
+    font-weight: 800;
+    text-shadow: 0 0 14px rgba(212,160,23,0.4), 0 0 28px rgba(212,160,23,0.12);
   }
 
   .cantina-main {
@@ -3459,16 +3463,19 @@ body {
   /* ── Mobile: Hub ── */
   .hub-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
-    max-width: 360px;
+    gap: 10px;
+    max-width: 100%;
+    width: 100%;
+    padding: 0 8px;
+    box-sizing: border-box;
   }
   .hub-card {
-    padding: 24px 14px;
-    min-height: 77px;
+    padding: 18px 8px;
+    min-height: 70px;
   }
   .hub-card-name {
-    font-size: 14.3px;
-    letter-spacing: 0.12em;
+    font-size: 12px;
+    letter-spacing: 0.08em;
   }
   .hub-brand-main { font-size: 1.4rem; letter-spacing: 0.25em; }
   .hub-brand-sub { font-size: 0.7rem; letter-spacing: 0.4em; }
@@ -4099,4 +4106,27 @@ body {
   background: linear-gradient(90deg, #e40303, #ff8c00, #ffed00, #008026, #24408e, #732982);
   border-radius: 2px;
   opacity: 0.85;
+}
+
+[data-district="our-mission"] .encounter-card::after {
+  content: '';
+  display: block;
+  order: 4;
+  width: 100%;
+  height: 3px;
+  margin-top: 0.5rem;
+  background: linear-gradient(90deg, #5BCEFA, #F5A9B8, #FFFFFF, #F5A9B8, #5BCEFA);
+  border-radius: 2px;
+  opacity: 0.85;
+}
+
+[data-district="our-mission"]::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 4px;
+  margin-top: 2rem;
+  background: linear-gradient(90deg, #5BCEFA, #F5A9B8, #FFFFFF, #F5A9B8, #5BCEFA);
+  border-radius: 2px;
+  opacity: 0.9;
 }
