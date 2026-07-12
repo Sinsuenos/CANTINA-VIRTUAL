@@ -874,7 +874,7 @@ body {
   white-space: pre-line;
   margin: 0;
 }
-[data-resident="xlovegay-cams"],
+[data-resident="xlovegay-cams"] .encounter-card-name::after,
 [data-resident="sweepsex-gay"] .encounter-card-name::after {
   content: '';
   position: absolute;
@@ -4048,6 +4048,7 @@ body {
   padding: 0 !important;
   width: 100% !important;
   max-width: 100% !important;
+  position: static !important;
 }
 
 [data-district="niche"] .encounter-card-body,
