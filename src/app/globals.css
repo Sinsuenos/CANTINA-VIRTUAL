@@ -4039,48 +4039,48 @@ body {
 
 [data-district="niche"] .encounter-card,
 [data-district="our-mission"] .encounter-card {
-  display: grid;
-  grid-template-rows: auto 1fr auto;
-  grid-template-columns: 1fr;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  max-width: 100%;
+  display: grid !important;
+  grid-template-rows: auto 1fr auto !important;
+  grid-template-columns: 1fr !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  max-width: 100% !important;
 }
 
 [data-district="niche"] .encounter-card-body,
 [data-district="our-mission"] .encounter-card-body {
-  display: contents;
+  display: contents !important;
 }
 
 [data-district="niche"] .encounter-card-name,
 [data-district="our-mission"] .encounter-card-name {
-  order: 1;
-  font-weight: 800;
-  color: var(--amber);
-  text-align: center;
-  margin-bottom: 0.5rem;
-  padding: 0;
+  order: 1 !important;
+  font-weight: 800 !important;
+  color: var(--amber) !important;
+  text-align: center !important;
+  margin-bottom: 0.5rem !important;
+  padding: 0 !important;
 }
 
 [data-district="niche"] .encounter-card-image,
 [data-district="our-mission"] .encounter-card-image {
-  order: 2;
-  width: 100%;
-  height: auto;
-  aspect-ratio: 300 / 250;
-  object-fit: contain;
-  display: block;
-  margin: 0;
-  padding: 0;
+  order: 2 !important;
+  width: 100% !important;
+  height: auto !important;
+  aspect-ratio: 300 / 250 !important;
+  object-fit: contain !important;
+  display: block !important;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 [data-district="niche"] .encounter-card-desc,
 [data-district="our-mission"] .encounter-card-desc {
-  order: 3;
-  font-weight: 700;
-  color: var(--amber);
-  text-align: center;
-  margin-top: 0.5rem;
-  padding: 0;
+  order: 3 !important;
+  font-weight: 700 !important;
+  color: var(--amber) !important;
+  text-align: center !important;
+  margin-top: 0.5rem !important;
+  padding: 0 !important;
 }
