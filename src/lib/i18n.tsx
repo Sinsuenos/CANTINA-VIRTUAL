@@ -180,6 +180,8 @@ export const T: Record<Lang, Record<string, string>> = {
     'resident.oopsie.desc': 'OUTRAGEOUS SITUATIONS',
     'resident.cozy.name': 'COZY',
     'resident.cozy.desc': 'MATURE ADULTS FIND COMPANIONSHIP',
+    'resident.instabang-latinas.name': 'INSTABANG LATINAS',
+    'resident.instabang-latinas.desc': 'HOOKUP & TRADE NAKED SELFIES',
     'resident.jermate-trans.desc':
       'LIVE TRANS PERFORMERS\nREADY TO CHAT',
     'resident.soda-offer.desc':
@@ -379,6 +381,8 @@ export const T: Record<Lang, Record<string, string>> = {
     'resident.oopsie.desc': 'SITUACIONES ESCANDALOSAS',
     'resident.cozy.name': 'COZY',
     'resident.cozy.desc': 'ADULTOS MADUROS ENCUENTRAN COMPAÑÍA',
+    'resident.instabang-latinas.name': 'INSTABANG LATINAS',
+    'resident.instabang-latinas.desc': 'HOOKUP & TRADE NAKED SELFIES',
     'resident.jermate-trans.desc':
       'PERFORMERS TRANS EN VIVO\nLISTAS PARA CHATEAR',
     'resident.soda-offer.desc':

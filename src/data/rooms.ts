@@ -278,6 +278,13 @@ export const RESIDENTS: Record<string, Resident> = {
     description: 'MATURE ADULTS FIND COMPANIONSHIP',
     image: '/cozy-300x250.jpg',
   },
+  'instabang-latinas': {
+    id: 'instabang-latinas',
+    name: 'INSTABANG LATINAS',
+    subtitle: '',
+    description: 'HOOKUP & TRADE NAKED SELFIES',
+    image: 'https://www.imglnkx.com/7912/HugeTraffic_Instabang_300250_3.png',
+  },
 };
 
 /* ─── District ─── */
@@ -564,6 +571,10 @@ export const DISTRICTS: District[] = [
       {
         residentId: 'oopsie',
         href: 'https://t.bbwafx.com/413627/10095/0?aff_sub=UNIQUE&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
+      },
+      {
+        residentId: 'instabang-latinas',
+        href: 'https://t.datsk11.com/413627/7912/27172?aff_sub=UNIQUE&aff_sub2=LATLP&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
       },
     ],
   },
