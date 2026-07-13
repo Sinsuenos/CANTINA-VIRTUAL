@@ -1561,13 +1561,73 @@ body {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 12px rgba(212,160,23,0.08);
 }
+[data-resident="instabang-latinas"] {
+  display: grid;
+  grid-template-rows: auto auto auto;
+  gap: 8px;
+  align-self: start;
+  border: none;
+  background: none;
+  overflow: visible;
+  padding: 0;
+  border-radius: 0;
+}
+[data-resident="instabang-latinas"]:hover {
+  border-color: transparent;
+  transform: none;
+  box-shadow: none;
+}
+[data-resident="instabang-latinas"] .encounter-card-body {
+  display: contents;
+}
+[data-resident="instabang-latinas"] .encounter-card-name {
+  order: 1;
+  font-weight: 800;
+  font-size: 16px;
+  letter-spacing: 0.22em;
+  text-align: center;
+  color: var(--amber);
+  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
+}
+[data-resident="instabang-latinas"] .encounter-card-image {
+  order: 2;
+  aspect-ratio: 300/250;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid rgba(212,160,23,0.15);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+[data-resident="instabang-latinas"] .encounter-card-image::after {
+  background: none;
+}
+[data-resident="instabang-latinas"] .encounter-card-desc {
+  order: 3;
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: center;
+  color: var(--amber);
+  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
+  margin: 0;
+  white-space: pre-line;
+}
+[data-resident="instabang-latinas"]:hover .encounter-card-image {
+  border-color: rgba(212,160,23,0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 12px rgba(212,160,23,0.08);
+}
 
-/* ── Live Cams wing: title above banner, caption below (all 5 cards) ── */
+/* ── Live Cams wing: title above banner, caption below (all 6 cards) ── */
 [data-resident="camirada"],
 [data-resident="jerkmate-cams"],
 [data-resident="myfreecams"],
 [data-resident="ole"],
-[data-resident="sweepsex"] {
+[data-resident="sweepsex"],
+[data-resident="imlive"] {
   display: grid;
   grid-template-rows: auto auto auto;
   gap: 8px;
@@ -1582,7 +1642,8 @@ body {
 [data-resident="jerkmate-cams"]:hover,
 [data-resident="myfreecams"]:hover,
 [data-resident="ole"]:hover,
-[data-resident="sweepsex"]:hover {
+[data-resident="sweepsex"]:hover,
+[data-resident="imlive"]:hover {
   border-color: transparent;
   transform: none;
   box-shadow: none;
@@ -1591,14 +1652,16 @@ body {
 [data-resident="jerkmate-cams"] .encounter-card-body,
 [data-resident="myfreecams"] .encounter-card-body,
 [data-resident="ole"] .encounter-card-body,
-[data-resident="sweepsex"] .encounter-card-body {
+[data-resident="sweepsex"] .encounter-card-body,
+[data-resident="imlive"] .encounter-card-body {
   display: contents;
 }
 [data-resident="camirada"] .encounter-card-name,
 [data-resident="jerkmate-cams"] .encounter-card-name,
 [data-resident="myfreecams"] .encounter-card-name,
 [data-resident="ole"] .encounter-card-name,
-[data-resident="sweepsex"] .encounter-card-name {
+[data-resident="sweepsex"] .encounter-card-name,
+[data-resident="imlive"] .encounter-card-name {
   order: 1;
   font-weight: 800;
   font-size: 16px;
@@ -1611,7 +1674,8 @@ body {
 [data-resident="jerkmate-cams"] .encounter-card-image,
 [data-resident="myfreecams"] .encounter-card-image,
 [data-resident="ole"] .encounter-card-image,
-[data-resident="sweepsex"] .encounter-card-image {
+[data-resident="sweepsex"] .encounter-card-image,
+[data-resident="imlive"] .encounter-card-image {
   order: 2;
   aspect-ratio: 300/250;
   background-size: cover;
@@ -1626,14 +1690,16 @@ body {
 [data-resident="jerkmate-cams"] .encounter-card-image::after,
 [data-resident="myfreecams"] .encounter-card-image::after,
 [data-resident="ole"] .encounter-card-image::after,
-[data-resident="sweepsex"] .encounter-card-image::after {
+[data-resident="sweepsex"] .encounter-card-image::after,
+[data-resident="imlive"] .encounter-card-image::after {
   background: none;
 }
 [data-resident="camirada"] .encounter-card-desc,
 [data-resident="jerkmate-cams"] .encounter-card-desc,
 [data-resident="myfreecams"] .encounter-card-desc,
 [data-resident="ole"] .encounter-card-desc,
-[data-resident="sweepsex"] .encounter-card-desc {
+[data-resident="sweepsex"] .encounter-card-desc,
+[data-resident="imlive"] .encounter-card-desc {
   order: 3;
   font-weight: 800;
   font-size: 13px;
@@ -1649,7 +1715,8 @@ body {
 [data-resident="jerkmate-cams"]:hover .encounter-card-image,
 [data-resident="myfreecams"]:hover .encounter-card-image,
 [data-resident="ole"]:hover .encounter-card-image,
-[data-resident="sweepsex"]:hover .encounter-card-image {
+[data-resident="sweepsex"]:hover .encounter-card-image,
+[data-resident="imlive"]:hover .encounter-card-image {
   border-color: rgba(212,160,23,0.35);
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 12px rgba(212,160,23,0.08);
