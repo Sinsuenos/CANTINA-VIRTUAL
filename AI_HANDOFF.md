@@ -152,6 +152,7 @@ text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
 12. **`margin: 0` shorthand after `margin-top: 8px` will override it** — CSS shorthand always wins over earlier longhands.
 13. **`agent-browser eval` reuses JS scope** — never declare the same variable name across calls in the same browser session.
 14. **Any hardcoded room component bypasses i18n** — if you create a custom renderer that reads `resident.name` directly instead of `t[\`resident.${id}.name\`]`, it will skip translations.
+15. **Every new resident card REQUIRES a per-resident CSS block in globals.css** — Adding a resident to `rooms.ts` and `i18n.tsx` is NOT sufficient. Each card needs a `[data-resident="<id>"]` CSS block that strips default `.encounter-card` chrome (border, overflow, border-radius, padding) and applies the grid layout with `order: 1/2/3` for title/banner/caption. Without it, the card renders with broken default styling. **This is the #1 cause of "new card looks wrong" bugs — check for this CSS block BEFORE investigating data, aspect-ratio, or grid issues.** See PROJECT_CANON.md §13 #11 and §14 for the full checklist.
 
 ---
 
