@@ -29,13 +29,23 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Google Analytics 4 — gtag.js */}
+        {/* Google Analytics 4 — gtag.js (gated by cookie consent) */}
+        <Script id="ga4-gate" strategy="beforeInteractive">
+          {`
+            // Read consent BEFORE any GA script loads.
+            // 'rejected' = never fire; absent or 'accepted' = normal tracking.
+            window.__cv_cookie_consent = localStorage.getItem('cv_cookie_consent');
+          `}
+        </Script>
         <Script
           src="https://www.googletagmanager.com/gtag/js?id=G-GENZPS9FMV"
           strategy="afterInteractive"
-        />
+        >
+          {`if (window.__cv_cookie_consent === 'rejected') { return { preventLoad: true }; }`}
+        </Script>
         <Script id="ga4-init" strategy="afterInteractive">
           {`
+            if (window.__cv_cookie_consent === 'rejected') return;
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
