@@ -1935,12 +1935,31 @@ body {
   padding: 40px 0;
 }
 
-/* ── Nectar Teaser (bottom of scene) ── */
+/* ── Nectar Teaser (bottom of scene) ──
+   Sits over a 50%-opacity bg image; text was near-invisible in sunlight.
+   Fix: dark translucent backdrop panel on the container + strong text-shadow
+   on every text child. Panel isolates contrast from the bg entirely, so it
+   works regardless of inline color styles on title/soon/intro/list. */
 .district-nectar-teaser {
   position: relative;
   z-index: 2;
   padding: 24px 40px 16px;
   border-top: 1px solid rgba(255,255,255,0.03);
+}
+.district-nectar-teaser .nectar-teaser-content {
+  background: rgba(10, 14, 23, 0.72);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(212, 160, 23, 0.22);
+  border-radius: 6px;
+  padding: 14px 18px;
+  max-width: 460px;
+}
+.district-nectar-teaser .nectar-teaser-content .nectar-teaser-title,
+.district-nectar-teaser .nectar-teaser-content .nectar-teaser-soon,
+.district-nectar-teaser .nectar-teaser-content .nectar-teaser-intro,
+.district-nectar-teaser .nectar-teaser-content .nectar-teaser-list {
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.95), 0 0 8px rgba(0, 0, 0, 0.7);
 }
 .nectar-teaser-content {
   max-width: 400px;
@@ -3412,6 +3431,10 @@ body {
     padding: 16px 20px 12px;
     flex-wrap: wrap;
   }
+  .district-nectar-teaser .nectar-teaser-content {
+    padding: 12px 14px;
+    max-width: 100%;
+  }
 
   .district-footer {
     flex-direction: column-reverse;
@@ -4132,7 +4155,9 @@ body {
   margin-top: 0.5rem;
   background: linear-gradient(90deg, #5BCEFA, #F5A9B8, #FFFFFF, #F5A9B8, #5BCEFA);
   border-radius: 2px;
-  opacity: 0.85;
+  opacity: 0.95;
+  filter: saturate(1.35) brightness(1.2);
+  box-shadow: 0 0 8px rgba(91, 206, 250, 0.6), 0 0 8px rgba(245, 169, 184, 0.6);
 }
 
 [data-district="our-mission"]::after {
@@ -4143,7 +4168,9 @@ body {
   margin-top: 2rem;
   background: linear-gradient(90deg, #5BCEFA, #F5A9B8, #FFFFFF, #F5A9B8, #5BCEFA);
   border-radius: 2px;
-  opacity: 0.9;
+  opacity: 0.95;
+  filter: saturate(1.35) brightness(1.2);
+  box-shadow: 0 0 10px rgba(91, 206, 250, 0.6), 0 0 10px rgba(245, 169, 184, 0.6);
 }
 
 .encounter-card-desc,
