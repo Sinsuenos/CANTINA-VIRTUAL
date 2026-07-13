@@ -3377,8 +3377,8 @@ body {
   .sidebar-item {
     flex-direction: column;
   align-items: center;
-  gap: 5px;
-  padding: 13px 11px 16px;
+  gap: 6px;
+  padding: 16px 11px 18px;
     flex: 1 0 auto;
   min-width: 0;
     border-radius: 0;
@@ -3386,16 +3386,16 @@ body {
 
 
   .sidebar-item-name {
-    font-size: 13px;
+    font-size: 15px;
     letter-spacing: 0.05em;
     white-space: nowrap;
-    font-weight: 800;
+    font-weight: 900;
     text-shadow: 0 0 14px rgba(212,160,23,0.4), 0 0 28px rgba(212,160,23,0.12);
   }
 
   .cantina-main {
     margin-left: 0;
-    margin-bottom: 72px;
+    margin-bottom: 78px;
   }
 
   .district-scene-bg {
