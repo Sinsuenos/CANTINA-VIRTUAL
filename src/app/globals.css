@@ -3418,14 +3418,6 @@ body {
     grid-template-columns: 1fr;
     gap: 16px;
   }
-  /* niche & our-mission carry (0,2,0) specificity via [data-district] attr, which
-     beats the generic .district-encounters rule above — mirror the 1fr here so the
-     mobile single-column actually applies to those two districts too. */
-  [data-district="niche"] .district-encounters,
-  [data-district="our-mission"] .district-encounters {
-    grid-template-columns: 1fr;
-    gap: 16px;
-  }
 
   .district-nectar-teaser {
     padding: 16px 20px 12px;
@@ -4207,4 +4199,18 @@ body {
 @keyframes subtle-pulse {
   0%, 100% { opacity: 0.85; }
   50% { opacity: 1; }
+}
+
+/* ── Mobile override (placed LAST so equal-specificity rules below win the
+   cascade over the desktop [data-district="niche"]/[data-district="our-mission"]
+   rules earlier in this file). Fixes the trans (our-mission) + gay (niche)
+   districts rendering 2/3 columns on phones — they must be 1fr like every
+   other district. Previous attempt in commit 3ed8299 was placed BEFORE the
+   desktop rules, so it lost the cascade tie and silently never applied. ── */
+@media (max-width: 768px) {
+  [data-district="niche"] .district-encounters,
+  [data-district="our-mission"] .district-encounters {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
 }
