@@ -292,6 +292,20 @@ export const RESIDENTS: Record<string, Resident> = {
     description: 'HOOKUP & TRADE NAKED SELFIES',
     image: 'https://www.imglnkx.com/7912/HugeTraffic_Instabang_300250_3.png',
   },
+  'imlive-trans': {
+    id: 'imlive-trans',
+    name: 'IMLIVE',
+    subtitle: '',
+    description: 'TRANSGENDER',
+    image: '/imlive-300x250.png',
+  },
+  'imlive-gay': {
+    id: 'imlive-gay',
+    name: 'IMLIVE',
+    subtitle: '',
+    description: 'GAY',
+    image: '/imlive-300x250.png',
+  },
 };
 
 /* ─── District ─── */
@@ -492,6 +506,10 @@ export const DISTRICTS: District[] = [
         residentId: 'sweepsex-gay',
         href: 'https://t.camsk7.com/413627/7758/40245?aff_sub=CAMS&aff_sub2=GAYWING&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
       },
+      {
+        residentId: 'imlive-gay',
+        href: 'https://t.camsk7.com/413627/2118/39236?aff_sub=CAMS&aff_sub2=GAY&aff_sub3=GAYLP&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
+      },
     ],
   },
   {
@@ -549,6 +567,10 @@ export const DISTRICTS: District[] = [
       {
         residentId: 'sweepsex-trans',
         href: 'https://t.camsk7.com/413627/7758/39647?aff_sub=CAMS&aff_sub2=TRANSWING&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
+      },
+      {
+        residentId: 'imlive-trans',
+        href: 'https://t.camsk7.com/413627/2118/39237?aff_sub=CAMS&aff_sub2=TRAN&aff_sub3=TRANLP&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
       },
     ],
   },

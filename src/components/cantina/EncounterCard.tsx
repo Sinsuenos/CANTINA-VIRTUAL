@@ -11,6 +11,7 @@ const FLAT_LAYOUT_RESIDENTS = new Set([
   'trans-offer',
   'jermate-trans',
   'soda-offer',
+  'imlive-trans',
 ]);
 
 export function EncounterCard({ resident, ctaColor, href }: EncounterCardProps) {

@@ -732,7 +732,8 @@ body {
 /* ── GAY wing: gay-offer + xlovegay-cams + sweepsex-gay — title above banner ── */
 [data-resident="gay-offer"],
 [data-resident="xlovegay-cams"],
-[data-resident="sweepsex-gay"] {
+[data-resident="sweepsex-gay"],
+[data-resident="imlive-gay"] {
   display: grid;
   grid-template-rows: auto auto auto;
   gap: 8px;
@@ -744,14 +745,16 @@ body {
 }
 [data-resident="gay-offer"]:hover,
 [data-resident="xlovegay-cams"]:hover,
-[data-resident="sweepsex-gay"]:hover {
+[data-resident="sweepsex-gay"]:hover,
+[data-resident="imlive-gay"]:hover {
   border-color: transparent;
   transform: none;
   box-shadow: none;
 }
 [data-resident="gay-offer"] .encounter-card-body,
 [data-resident="xlovegay-cams"] .encounter-card-body,
-[data-resident="sweepsex-gay"] .encounter-card-body {
+[data-resident="sweepsex-gay"] .encounter-card-body,
+[data-resident="imlive-gay"] .encounter-card-body {
   display: contents;
 }
 
@@ -859,7 +862,8 @@ body {
 
 [data-resident="gay-offer"] .encounter-card-name,
 [data-resident="xlovegay-cams"] .encounter-card-name,
-[data-resident="sweepsex-gay"] .encounter-card-name {
+[data-resident="sweepsex-gay"] .encounter-card-name,
+[data-resident="imlive-gay"] .encounter-card-name {
   order: 1;
   font-weight: 800;
   font-size: 16px;
@@ -870,10 +874,11 @@ body {
 }
 [data-resident="gay-offer"] .encounter-card-image,
 [data-resident="xlovegay-cams"] .encounter-card-image,
-[data-resident="sweepsex-gay"] .encounter-card-image {
+[data-resident="sweepsex-gay"] .encounter-card-image,
+[data-resident="imlive-gay"] .encounter-card-image {
   order: 2;
   aspect-ratio: 300/250;
-  background-size: contain;
+  background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   border: 1px solid rgba(212,160,23,0.15);
@@ -883,18 +888,21 @@ body {
 }
 [data-resident="gay-offer"] .encounter-card-image::after,
 [data-resident="xlovegay-cams"] .encounter-card-image::after,
-[data-resident="sweepsex-gay"] .encounter-card-image::after {
+[data-resident="sweepsex-gay"] .encounter-card-image::after,
+[data-resident="imlive-gay"] .encounter-card-image::after {
   background: none;
 }
 [data-resident="gay-offer"]:hover .encounter-card-image,
 [data-resident="xlovegay-cams"]:hover .encounter-card-image,
-[data-resident="sweepsex-gay"]:hover .encounter-card-image {
+[data-resident="sweepsex-gay"]:hover .encounter-card-image,
+[data-resident="imlive-gay"]:hover .encounter-card-image {
   border-color: rgba(212,160,23,0.35);
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 12px rgba(212,160,23,0.08);
 }
-[data-resident="xlovegay-cams"],
-[data-resident="sweepsex-gay"] .encounter-card-desc {
+[data-resident="xlovegay-cams"] .encounter-card-desc,
+[data-resident="sweepsex-gay"] .encounter-card-desc,
+[data-resident="imlive-gay"] .encounter-card-desc {
   order: 3;
   font-weight: 800;
   text-align: center;
@@ -1757,7 +1765,8 @@ body {
 [data-resident="trans-offer"],
 [data-resident="jermate-trans"],
 [data-resident="soda-offer"],
-[data-resident="sweepsex-trans"] {
+[data-resident="sweepsex-trans"],
+[data-resident="imlive-trans"] {
   display: block;
   border: none;
   background: none;
@@ -1768,7 +1777,8 @@ body {
 [data-resident="trans-offer"]:hover,
 [data-resident="jermate-trans"]:hover,
 [data-resident="soda-offer"]:hover,
-[data-resident="sweepsex-trans"]:hover {
+[data-resident="sweepsex-trans"]:hover,
+[data-resident="imlive-trans"]:hover {
   border-color: transparent;
   transform: none;
   box-shadow: none;
@@ -1776,7 +1786,8 @@ body {
 [data-resident="trans-offer"] .encounter-card-name,
 [data-resident="jermate-trans"] .encounter-card-name,
 [data-resident="soda-offer"] .encounter-card-name,
-[data-resident="sweepsex-trans"] .encounter-card-name {
+[data-resident="sweepsex-trans"] .encounter-card-name,
+[data-resident="imlive-trans"] .encounter-card-name {
   font-weight: 800;
   display: block;
   min-height: 48px;
@@ -1789,11 +1800,12 @@ body {
 [data-resident="trans-offer"] .encounter-card-image,
 [data-resident="jermate-trans"] .encounter-card-image,
 [data-resident="soda-offer"] .encounter-card-image,
-[data-resident="sweepsex-trans"] .encounter-card-image {
+[data-resident="sweepsex-trans"] .encounter-card-image,
+[data-resident="imlive-trans"] .encounter-card-image {
   display: block;
   margin-top: 8px;
   flex-shrink: 0;
-  aspect-ratio: 300/270;
+  aspect-ratio: 300/250;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -1805,13 +1817,15 @@ body {
 [data-resident="trans-offer"] .encounter-card-image::after,
 [data-resident="jermate-trans"] .encounter-card-image::after,
 [data-resident="soda-offer"] .encounter-card-image::after,
-[data-resident="sweepsex-trans"] .encounter-card-image::after {
+[data-resident="sweepsex-trans"] .encounter-card-image::after,
+[data-resident="imlive-trans"] .encounter-card-image::after {
   background: none;
 }
 [data-resident="trans-offer"] .encounter-card-desc,
 [data-resident="jermate-trans"] .encounter-card-desc,
 [data-resident="soda-offer"] .encounter-card-desc,
-[data-resident="sweepsex-trans"] .encounter-card-desc {
+[data-resident="sweepsex-trans"] .encounter-card-desc,
+[data-resident="imlive-trans"] .encounter-card-desc {
   font-weight: 800;
   margin: 0;
   margin-top: 8px;
@@ -1827,7 +1841,8 @@ body {
 [data-resident="trans-offer"]:hover .encounter-card-image,
 [data-resident="jermate-trans"]:hover .encounter-card-image,
 [data-resident="soda-offer"]:hover .encounter-card-image,
-[data-resident="sweepsex-trans"]:hover .encounter-card-image {
+[data-resident="sweepsex-trans"]:hover .encounter-card-image,
+[data-resident="imlive-trans"]:hover .encounter-card-image {
   border-color: rgba(212,160,23,0.35);
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 12px rgba(212,160,23,0.08);
