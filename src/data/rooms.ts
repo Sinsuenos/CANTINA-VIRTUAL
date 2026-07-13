@@ -287,7 +287,7 @@ export const RESIDENTS: Record<string, Resident> = {
   },
   'instabang-latinas': {
     id: 'instabang-latinas',
-    name: 'INSTABANG LATINAS',
+    name: 'INSTABANG',
     subtitle: '',
     description: 'HOOKUP & TRADE NAKED SELFIES',
     image: 'https://www.imglnkx.com/7912/HugeTraffic_Instabang_300250_3.png',
