@@ -96,6 +96,13 @@ export const RESIDENTS: Record<string, Resident> = {
     description: 'Exclusive Freemium\nAdult Webcam',
     image: '/sweepsex-300x250.jpg',
   },
+  'imlive': {
+    id: 'imlive',
+    name: "I'm Live",
+    subtitle: '',
+    description: '100+ NICHES AND SUB-NICHES',
+    image: '/imlive-300x250.png',
+  },
   'sweepsex-gay': {
     id: 'sweepsex-gay',
     name: 'GAY CAMS',
@@ -374,6 +381,10 @@ export const DISTRICTS: District[] = [
       {
         residentId: 'sweepsex',
         href: 'https://t.camsk7.com/413627/7758/40242?aff_sub=CAMS&aff_sub2=HOMEPAGELP&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
+      },
+      {
+        residentId: 'imlive',
+        href: 'https://t.camsk7.com/413627/2118/0?aff_sub=CAMS&aff_sub2=DFLTLP&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
       },
     ],
   },
