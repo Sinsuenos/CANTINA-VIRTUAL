@@ -4184,9 +4184,12 @@ body {
   align-items: start;
 }
 
+/* STANDARD: 3 columns desktop, matches all other wings (niche=3, generic=auto-fill~3).
+   Do not change without explicit instruction — this has regressed multiple times.
+   Any commit touching this value MUST state column count before→after in msg. */
 [data-district="our-mission"] .district-encounters {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   justify-items: center;
   align-items: start;
@@ -4263,9 +4266,9 @@ body {
   margin-top: 0.5rem;
   background: linear-gradient(90deg, #5BCEFA, #F5A9B8, #FFFFFF, #F5A9B8, #5BCEFA);
   border-radius: 2px;
-  opacity: 0.95;
-  filter: saturate(1.35) brightness(1.2);
-  box-shadow: 0 0 8px rgba(91, 206, 250, 0.6), 0 0 8px rgba(245, 169, 184, 0.6);
+  opacity: 1;
+  filter: saturate(1.8) brightness(1.35);
+  box-shadow: 0 0 10px rgba(91, 206, 250, 0.75), 0 0 10px rgba(245, 169, 184, 0.75), 0 0 20px rgba(91, 206, 250, 0.3);
 }
 
 [data-district="our-mission"]::after {
