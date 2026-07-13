@@ -4,6 +4,7 @@ import { RESIDENTS, type District } from '@/data/rooms';
 import { useLang } from '@/lib/i18n';
 import { EncounterCard } from './EncounterCard';
 import { DatingRoom } from './DatingRoom';
+import { NectarCabins } from './NectarCabins';
 
 
 interface DistrictSceneProps {
@@ -42,6 +43,9 @@ export function DistrictScene({ district }: DistrictSceneProps) {
             {t[`district.${district.id}.desc`] || district.description}
           </p>
         </div>
+
+        {/* Nectar cabinas — 3 doors only on the Nectar wing */}
+        {district.id === 'nectar' && <NectarCabins />}
 
         {/* Encounter cards — the people inside this place */}
         <div className="district-encounters">

@@ -33,6 +33,20 @@ export const T: Record<Lang, Record<string, string>> = {
     nectarFutureIntro: 'Future Nectar opportunities may include:',
     nectarFutureList: 'Socializing\nConversations\nParticipation\nSupporting creators\nDiscovering offers\nEvents',
 
+    /* ── Nectar Cabins (3 doors on the Nectar wing page) ── */
+    nectarCabinsIntro: "Step inside. Below are three doors — one for creators ready to build something real, one for guests curious about what's next, and one for promoters ready to cash in with CrakRevenue. Come one, come all, there's money to be made and a world to explore.",
+    nectarCabin1Name: 'CREATOR SANCTUARY',
+    nectarCabin1Body: "Step onto the digital stage without compromising your independence or your earnings. Through our partnership with FansRevenue, we deploy fast, mobile-optimized landing pages and real tracking infrastructure built to protect your brand and grow your reach. We handle the technical setup and walk you through the FansRevenue Creator Academy step by step, until you have everything you need to run things on your own terms.",
+    nectarCabin1Cta: 'Enter Creator Sanctuary',
+    nectarCabin2Name: 'NECTAR EVENTS',
+    nectarCabin2Body: "Welcome to the jungle, the surf, and the raw, explicit reality of The Nectar Route. This isn't a digital agency; it's a high-stakes, NSFW open-world multiplayer campaign built straight out of the heavy Pacific heat of Mazatlán. Players step onto the Emerald Strip, a lawless, neon-drenched digital playground where the jungle cuts into the ocean and the air floats with raw, golden Nectar — a volatile currency tied to real-world corporate bounties. Random 'Heatwaves' throw open premium portals for exclusive drops and secret bounties. Let us know what you want from the next drop.",
+    nectarCabin2Cta: 'Reach the Nectar Team',
+    nectarCabin3Name: 'CANTINA VAULT OPPORTUNITIES',
+    nectarCabin3Body: "Stop pouring your media buying and traffic skills into low-converting setups that hold you back. Plug directly into CrakRevenue, a 20-year global network processing billions of monthly clicks with proven smartlink infrastructure. Whether you're an independent marketer, a media buyer, or building a sub-affiliate network of your own, this is built to scale with you. Access Pay-Per-Lead, Pay-Per-Sale, and RevShare models backed by real-time data, and start building consistent, long-term earnings.",
+    nectarCabin3Cta: 'Open the Vault',
+    nectarCabinClose: 'Close',
+    nectarCabinEmailLabel: 'Email us',
+
     /* ── Nectar Engine (Phase 1 — live) ── */
     nectarPointsLabel: 'NECTAR',
     nectarPointsUnit: 'pts',
@@ -217,6 +231,20 @@ export const T: Record<Lang, Record<string, string>> = {
     nectarComingSoon: 'PRÓXIMAMENTE',
     nectarFutureIntro: 'Las futuras oportunidades de Néctar pueden incluir:',
     nectarFutureList: 'Socializar\nConversaciones\nParticipación\nApoyar a creadores\nDescubrir ofertas\nEventos',
+
+    /* ── Nectar Cabinas (3 puertas en la página del ala Néctar) ── */
+    nectarCabinsIntro: "Entra. Abajo hay tres puertas: una para creadores listos para construir algo real, una para invitados curiosos sobre lo que viene, y una para promotores listos para ganar con CrakRevenue. Vengan todos, hay dinero por hacer y un mundo por explorar.",
+    nectarCabin1Name: 'SANTUARIO DE CREADORES',
+    nectarCabin1Body: "Sube al escenario digital sin comprometer tu independencia ni tus ganancias. A través de nuestra asociación con FansRevenue, desplegamos páginas de destino rápidas y optimizadas para móvil, con infraestructura de seguimiento real diseñada para proteger tu marca y ampliar tu alcance. Nosotros manejamos la configuración técnica y te guiamos paso a paso por la FansRevenue Creator Academy, hasta que tengas todo lo necesario para manejar las cosas a tu manera.",
+    nectarCabin1Cta: 'Entrar al Santuario de Creadores',
+    nectarCabin2Name: 'EVENTOS NÉCTAR',
+    nectarCabin2Body: "Bienvenido a la jungla, al surf y a la realidad cruda y explícita de The Nectar Route. Esto no es una agencia digital; es una campaña multijugador de mundo abierto NSFW, de altas apuestas, construida directamente desde el calor pesado del Pacífico en Mazatlán. Los jugadores entran al Emerald Strip, un patio de juego digital sin ley, bañado en neón, donde la jungla se mete en el océano y el aire flota con Néctar dorado y volátil — una moneda ligada a recompensas corporativas del mundo real. Los 'Heatwaves' aleatorios abren portales premium para drops exclusivos y recompensas secretas. Cuéntanos qué quieres del próximo drop.",
+    nectarCabin2Cta: 'Contactar al Equipo Néctar',
+    nectarCabin3Name: 'OPORTUNIDADES DEL VAULT DE LA CANTINA',
+    nectarCabin3Body: "Deja de verter tus habilidades de compra de medios y tráfico en configuraciones de baja conversión que te frenan. Conéctate directamente a CrakRevenue, una red global de 20 años que procesa miles de millones de clics mensuales con infraestructura smartlink probada. Ya seas un marketero independiente, un comprador de medios o estés construyendo tu propia red de sub-afiliados, esto está diseñado para escalar contigo. Accede a modelos de Pay-Per-Lead, Pay-Per-Sale y RevShare respaldados por datos en tiempo real, y empieza a construir ganancias consistentes y a largo plazo.",
+    nectarCabin3Cta: 'Abrir el Vault',
+    nectarCabinClose: 'Cerrar',
+    nectarCabinEmailLabel: 'Escríbenos',
 
     /* ── Nectar Engine (Phase 1 — live) ── */
     nectarPointsLabel: 'NÉCTAR',

@@ -4214,3 +4214,305 @@ body {
     gap: 16px !important;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   NECTAR CABINS — 3 doors on the Nectar wing page
+   Intro paragraph (dark panel contrast) + 3 stacked rectangles
+   with yellow icon style matching existing wing cards.
+   ═══════════════════════════════════════════════════════════════ */
+.nectar-cabins {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 32px;
+}
+
+/* Intro paragraph — dark panel contrast (same treatment as nectar teaser) */
+.nectar-cabins-intro {
+  background: rgba(10, 14, 23, 0.72);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+  border: 1px solid rgba(212, 160, 23, 0.22);
+  border-radius: 6px;
+  padding: 16px 20px;
+  margin: 0 0 20px;
+  color: #ffffff;
+  font-size: 15px;
+  line-height: 1.7;
+  letter-spacing: 0.02em;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.95), 0 0 8px rgba(0, 0, 0, 0.7);
+}
+
+/* Grid of 3 stacked rectangles (single column for clean stack) */
+.nectar-cabins-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Each cabin rectangle — yellow icon style matching wing cards */
+.nectar-cabin-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  min-height: 88px;
+  padding: 24px 28px;
+  border: 1px solid rgba(212, 160, 23, 0.33);
+  border-radius: var(--card-radius);
+  background: linear-gradient(135deg, rgba(15, 21, 32, 0.85), rgba(10, 14, 23, 0.92));
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.4s ease;
+  overflow: hidden;
+}
+.nectar-cabin-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(212, 160, 23, 0.08), transparent 70%);
+  pointer-events: none;
+  transition: opacity 0.4s;
+  opacity: 0.6;
+}
+.nectar-cabin-card:hover {
+  border-color: rgba(212, 160, 23, 0.7);
+  background: linear-gradient(135deg, rgba(212, 160, 23, 0.12), rgba(10, 14, 23, 0.92));
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 16px rgba(212, 160, 23, 0.15);
+}
+.nectar-cabin-card:hover::before {
+  opacity: 1;
+}
+
+/* Yellow icon — left of title */
+.nectar-cabin-icon {
+  font-size: 1.8rem;
+  line-height: 1;
+  filter: drop-shadow(0 0 6px rgba(212, 160, 23, 0.5));
+  flex-shrink: 0;
+}
+
+/* Title — centered in rectangle, gold bold (matching wing card names) */
+.nectar-cabin-name {
+  text-align: center;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--amber);
+  text-shadow: 0 0 18px rgba(212, 160, 23, 0.45), 0 0 36px rgba(212, 160, 23, 0.15);
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+/* ── Detail modal — full screen with particle bg ── */
+.cabina-detail-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(5, 8, 14, 0.88);
+  -webkit-backdrop-filter: blur(4px);
+  backdrop-filter: blur(4px);
+  animation: cabinaFadeIn 0.3s ease;
+  padding: 20px;
+}
+@keyframes cabinaFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Particle layer — behind the modal panel */
+.cabina-particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Each particle — glowing orb, firefly drift */
+.cabina-particle {
+  position: absolute;
+  bottom: -10px;
+  border-radius: 50%;
+  animation: cabinaParticleFloat linear infinite;
+  will-change: transform, opacity;
+}
+@keyframes cabinaParticleFloat {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% { opacity: 0.9; }
+  50% {
+    transform: translateY(-50vh) translateX(var(--drift, 30px));
+    opacity: 0.7;
+  }
+  90% { opacity: 0.5; }
+  100% {
+    transform: translateY(-110vh) translateX(calc(var(--drift, 30px) * -0.5));
+    opacity: 0;
+  }
+}
+
+/* Modal panel — dark with amber border, scrolls if long */
+.cabina-detail-panel {
+  position: relative;
+  z-index: 2;
+  max-width: 560px;
+  width: 100%;
+  max-height: 85vh;
+  overflow-y: auto;
+  background: rgba(15, 21, 32, 0.96);
+  border: 1px solid rgba(212, 160, 23, 0.4);
+  border-radius: 8px;
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.7), 0 0 32px rgba(212, 160, 23, 0.15);
+  padding: 28px 28px 32px;
+  animation: cabinaPanelIn 0.35s ease;
+}
+@keyframes cabinaPanelIn {
+  from { opacity: 0; transform: translateY(20px) scale(0.98); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Close button — top right */
+.cabina-detail-close {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  width: 32px;
+  height: 32px;
+  border: 1px solid rgba(212, 160, 23, 0.3);
+  border-radius: 50%;
+  background: transparent;
+  color: var(--amber);
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+.cabina-detail-close:hover {
+  background: rgba(212, 160, 23, 0.15);
+  border-color: rgba(212, 160, 23, 0.7);
+}
+
+/* Header — icon + title */
+.cabina-detail-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid rgba(212, 160, 23, 0.15);
+}
+.cabina-detail-icon {
+  font-size: 2.4rem;
+  line-height: 1;
+  filter: drop-shadow(0 0 8px rgba(212, 160, 23, 0.5));
+}
+.cabina-detail-title {
+  text-align: center;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--amber);
+  text-shadow: 0 0 18px rgba(212, 160, 23, 0.45), 0 0 36px rgba(212, 160, 23, 0.15);
+  font-size: 20px;
+  font-weight: 800;
+  margin: 0;
+  line-height: 1.3;
+}
+
+/* Body copy — bright white with strong contrast */
+.cabina-detail-body {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.cabina-detail-copy {
+  color: #f5ecd8;
+  font-size: 15px;
+  line-height: 1.75;
+  letter-spacing: 0.02em;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.9);
+  margin: 0;
+  white-space: pre-line;
+}
+
+/* CTA button — gold bordered, matches site style */
+.cabina-detail-cta {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 14px 28px;
+  border: 1px solid rgba(212, 160, 23, 0.5);
+  border-radius: 4px;
+  background: rgba(212, 160, 23, 0.08);
+  color: var(--amber);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+  transition: all 0.3s;
+  width: fit-content;
+  margin: 0 auto;
+}
+.cabina-detail-cta:hover {
+  background: rgba(212, 160, 23, 0.2);
+  border-color: var(--amber);
+  box-shadow: 0 0 16px rgba(212, 160, 23, 0.3);
+  transform: translateY(-1px);
+}
+.cabina-detail-email {
+  font-size: 11px;
+  letter-spacing: 0.05em;
+  text-transform: none;
+  opacity: 0.85;
+  font-weight: 500;
+}
+
+/* ── Mobile: cabins ── */
+@media (max-width: 768px) {
+  .nectar-cabins-intro {
+    padding: 14px 16px;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+  .nectar-cabin-card {
+    min-height: 76px;
+    padding: 20px 18px;
+    gap: 12px;
+  }
+  .nectar-cabin-icon {
+    font-size: 1.5rem;
+  }
+  .nectar-cabin-name {
+    font-size: 14px;
+    letter-spacing: 0.12em;
+  }
+  .cabina-detail-panel {
+    padding: 24px 20px 28px;
+    max-height: 88vh;
+  }
+  .cabina-detail-title {
+    font-size: 17px;
+  }
+  .cabina-detail-copy {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .cabina-detail-cta {
+    padding: 12px 22px;
+    font-size: 12px;
+  }
+}
