@@ -4258,8 +4258,8 @@ body {
   gap: 14px;
   min-height: 88px;
   padding: 24px 28px;
-  border: 1px solid rgba(212, 160, 23, 0.33);
-  border-radius: var(--card-radius);
+  border: 1.5px solid rgba(212, 160, 23, 0.6);
+  border-radius: 12px;
   background: linear-gradient(135deg, rgba(15, 21, 32, 0.85), rgba(10, 14, 23, 0.92));
   -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
@@ -4267,6 +4267,7 @@ body {
   font-family: inherit;
   transition: all 0.4s ease;
   overflow: hidden;
+  box-shadow: 0 0 12px rgba(212, 160, 23, 0.1), inset 0 0 20px rgba(212, 160, 23, 0.03);
 }
 .nectar-cabin-card::before {
   content: '';
