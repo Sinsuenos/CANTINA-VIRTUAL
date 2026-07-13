@@ -593,7 +593,7 @@ body {
 }
 
 .sidebar-item-name {
-  font-size: 17px;
+  font-size: 19px;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   color: var(--amber);
@@ -3389,15 +3389,17 @@ body {
 }
 
 .sidebar-back-hub svg {
-  width: 14px;
-  height: 14px;
+  width: 18px;
+  height: 18px;
   flex-shrink: 0;
 }
 
 .sidebar-back-hub span {
-  font-size: 9px;
+  font-size: 13px;
   letter-spacing: 0.15em;
   text-transform: uppercase;
+  font-weight: 700;
+  color: var(--amber);
 }
 
 /* ── Mobile back-to-hub (floating, inside cantina-main) ── */
@@ -3631,8 +3633,8 @@ body {
 .nectar-widget-badge {
   display: flex;
   align-items: center;
-  gap: 8px;
-  padding: 8px 12px;
+  gap: 10px;
+  padding: 10px 14px;
   border-radius: var(--card-radius);
   background: rgba(212,160,23,0.08);
   border: 1px solid rgba(212,160,23,0.15);
@@ -3652,7 +3654,7 @@ body {
 }
 
 .nectar-widget-icon {
-  font-size: 1.1rem;
+  font-size: 1.4rem;
   line-height: 1;
   filter: drop-shadow(0 0 4px rgba(255,105,180,0.4));
 }
@@ -3665,42 +3667,42 @@ body {
 }
 
 .nectar-widget-label {
-  font-size: 8px;
+  font-size: 11px;
   letter-spacing: 0.12em;
   color: var(--amber);
-  opacity: 0.7;
+  opacity: 0.85;
   text-transform: uppercase;
   font-weight: 700;
 }
 
 .nectar-widget-count {
-  font-size: 11px;
+  font-size: 14px;
   letter-spacing: 0.08em;
   color: var(--amber);
-  font-weight: 700;
+  font-weight: 800;
   font-family: inherit;
 }
 
 .nectar-widget-unit {
-  font-size: 8px;
-  opacity: 0.6;
-  font-weight: 400;
+  font-size: 10px;
+  opacity: 0.7;
+  font-weight: 600;
 }
 
 .nectar-widget-progress {
-  font-size: 9px;
+  font-size: 11px;
   letter-spacing: 0.1em;
   color: var(--amber);
-  opacity: 0.5;
-  font-weight: 700;
+  opacity: 0.7;
+  font-weight: 800;
   font-family: inherit;
 }
 
 .nectar-widget-privacy {
-  font-size: 7px;
+  font-size: 9px;
   letter-spacing: 0.05em;
   color: var(--text-muted);
-  opacity: 0.5;
+  opacity: 0.6;
   text-align: center;
   padding: 0 4px;
   margin: 0;
@@ -4293,7 +4295,7 @@ body {
   margin-bottom: 32px;
 }
 
-/* Intro paragraph — dark panel contrast (same treatment as nectar teaser) */
+/* Intro paragraph — dark panel contrast, bold amber emphasis */
 .nectar-cabins-intro {
   background: rgba(10, 14, 23, 0.72);
   -webkit-backdrop-filter: blur(6px);
@@ -4302,11 +4304,12 @@ body {
   border-radius: 6px;
   padding: 16px 20px;
   margin: 0 0 20px;
-  color: #ffffff;
+  color: var(--amber);
   font-size: 15px;
+  font-weight: 700;
   line-height: 1.7;
-  letter-spacing: 0.02em;
-  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.95), 0 0 8px rgba(0, 0, 0, 0.7);
+  letter-spacing: 0.06em;
+  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
 }
 
 /* Grid of 3 stacked rectangles (single column for clean stack) */
@@ -4554,6 +4557,7 @@ body {
   .nectar-cabins-intro {
     padding: 14px 16px;
     font-size: 14px;
+    font-weight: 700;
     line-height: 1.65;
   }
   .nectar-cabin-card {
