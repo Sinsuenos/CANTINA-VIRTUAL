@@ -645,9 +645,10 @@ body {
 .sidebar-footer-text {
   font-size: 12px;
   letter-spacing: 0.15em;
-  color: rgba(212,160,23,0.45);
+  color: rgba(212,160,23,0.85);
   font-style: italic;
   margin-top: 12px;
+  text-shadow: 0 0 8px rgba(212,160,23,0.3);
 }
 
 /* ── Main Content Area ── */
@@ -3731,8 +3732,9 @@ body {
 .nectar-widget-privacy {
   font-size: 9px;
   letter-spacing: 0.05em;
-  color: var(--text-muted);
-  opacity: 0.6;
+  color: #ffffff;
+  opacity: 0.85;
+  font-weight: 600;
   text-align: center;
   padding: 0 4px;
   margin: 0;
