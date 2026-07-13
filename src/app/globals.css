@@ -4267,8 +4267,8 @@ body {
   background: linear-gradient(90deg, #5BCEFA, #F5A9B8, #FFFFFF, #F5A9B8, #5BCEFA);
   border-radius: 2px;
   opacity: 1;
-  filter: saturate(1.8) brightness(1.35);
-  box-shadow: 0 0 10px rgba(91, 206, 250, 0.75), 0 0 10px rgba(245, 169, 184, 0.75), 0 0 20px rgba(91, 206, 250, 0.3);
+  filter: saturate(2.6) brightness(1.6);
+  box-shadow: 0 0 8px rgba(91, 206, 250, 0.9), 0 0 8px rgba(245, 169, 184, 0.9), 0 0 18px rgba(91, 206, 250, 0.55), 0 0 18px rgba(245, 169, 184, 0.55), 0 0 36px rgba(91, 206, 250, 0.25);
 }
 
 [data-district="our-mission"]::after {
