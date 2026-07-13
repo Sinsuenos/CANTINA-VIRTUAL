@@ -12,7 +12,7 @@ import { useLang } from '@/lib/i18n';
 type CabinId = 1 | 2 | 3;
 
 const CABIN_LINKS: Record<CabinId, string | null> = {
-  1: 'https://www.myerolink.com/sinaloainspireddreams',
+  1: 'https://www.crakrevenue.com/?r=413627',
   2: null, // email CTA — no external link
   3: 'https://www.crakrevenue.com/?r=413627', // do NOT alter or shorten
 };
