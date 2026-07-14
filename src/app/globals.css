@@ -779,12 +779,8 @@ body {
 }
 [data-resident="royal-cams"] .encounter-card-name {
   order: 1;
-  font-weight: 800;
   font-size: 16px;
-  letter-spacing: 0.22em;
   text-align: center;
-  color: var(--amber);
-  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
 }
 [data-resident="royal-cams"] .encounter-card-image {
   order: 2;
@@ -802,16 +798,14 @@ body {
 }
 [data-resident="royal-cams"] .encounter-card-desc {
   order: 3;
-  font-weight: 800;
   margin: 0;
   text-align: center;
-  color: var(--amber);
-  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
   font-size: 13px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   line-height: 1.6;
   white-space: pre-line;
+  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
 }
 [data-resident="royal-cams"]:hover .encounter-card-image {
   border-color: rgba(212,160,23,0.35);
@@ -820,12 +814,8 @@ body {
 }
 [data-resident="gay-offer"] .encounter-card-name {
   order: 1;
-  font-weight: 800;
   font-size: 16px;
-  letter-spacing: 0.22em;
   text-align: center;
-  color: var(--amber);
-  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
 }
 [data-resident="gay-offer"] .encounter-card-image {
   order: 2;
@@ -848,16 +838,14 @@ body {
 }
 [data-resident="gay-offer"] .encounter-card-desc {
   order: 3;
-  font-weight: 800;
   text-align: center;
-  color: var(--amber);
-  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
   font-size: 13px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   line-height: 1.6;
   white-space: pre-line;
   margin: 0;
+  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
 }
 
 [data-resident="gay-offer"] .encounter-card-name,
@@ -865,12 +853,8 @@ body {
 [data-resident="sweepsex-gay"] .encounter-card-name,
 [data-resident="imlive-gay"] .encounter-card-name {
   order: 1;
-  font-weight: 800;
   font-size: 16px;
-  letter-spacing: 0.22em;
   text-align: center;
-  color: var(--amber);
-  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
 }
 [data-resident="gay-offer"] .encounter-card-image,
 [data-resident="xlovegay-cams"] .encounter-card-image,
@@ -904,16 +888,14 @@ body {
 [data-resident="sweepsex-gay"] .encounter-card-desc,
 [data-resident="imlive-gay"] .encounter-card-desc {
   order: 3;
-  font-weight: 800;
   text-align: center;
-  color: var(--amber);
-  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
   font-size: 13px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   line-height: 1.6;
   white-space: pre-line;
   margin: 0;
+  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
 }
 [data-resident="xlovegay-cams"] .encounter-card-name::after,
 [data-resident="sweepsex-gay"] .encounter-card-name::after {
