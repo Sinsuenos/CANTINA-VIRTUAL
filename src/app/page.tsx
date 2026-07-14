@@ -248,11 +248,12 @@ function HubScreen({
           <p className="hub-regular-line">{regularMessage}</p>
         )}
 
-        <div className="hub-grid">
+        <div className="hub-grid" role="list" aria-label="Wing selection">
           {DISTRICTS.map((district, index) => (
             <button
               key={district.id}
               className="hub-card"
+              role="listitem"
               style={{
                 animationDelay: `${index * 0.07}s`,
               } as React.CSSProperties}
