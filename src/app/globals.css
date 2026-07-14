@@ -3025,6 +3025,7 @@ body {
 }
 .dating-encounter-name {
   order: 1;
+  font-weight: 800;
   font-size: 16px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -3040,6 +3041,7 @@ body {
 }
 .dating-encounter-desc {
   order: 3;
+  font-weight: 800;
   text-align: center;
   color: var(--amber);
   text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
