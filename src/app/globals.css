@@ -3304,12 +3304,12 @@ body {
 }
 
 .hub-subtitle {
-  font-size: 19px;
+  font-size: 20px;
   font-weight: 700;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--amber);
-  margin-top: 24px;
+  margin-top: 36px;
   margin-bottom: 40px;
   text-shadow: 0 1px 4px rgba(10,14,23,0.8);
 }
@@ -3650,7 +3650,7 @@ body {
   }
   .hub-brand-main { font-size: 1.4rem; letter-spacing: 0.25em; }
   .hub-brand-sub { font-size: 0.7rem; letter-spacing: 0.4em; }
-  .hub-subtitle { font-size: 15px; font-weight: 700; margin-bottom: 28px; }
+  .hub-subtitle { font-size: 16px; font-weight: 700; margin-top: 24px; margin-bottom: 28px; }
   .hub-content { padding: 32px 16px; }
   .hub-glow-amber { width: 250px; height: 250px; }
   .hub-glow-magenta { width: 200px; height: 200px; }
@@ -4319,7 +4319,6 @@ body {
 
 .arrival-copy,
 .arrival-copy-closing,
-.hub-subtitle,
 .hub-alive-line,
 .dating-room-prose,
 .district-description {

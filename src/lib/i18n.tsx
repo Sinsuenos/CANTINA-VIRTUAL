@@ -202,7 +202,7 @@ export const T: Record<Lang, Record<string, string>> = {
     emptyResidents: 'Residents arriving soon.',
 
     /* ── Hub ── */
-    hubSubtitle: 'Choose your destination.',
+    hubSubtitle: 'Continue your emotion.',
     hubBack: 'Back',
     backToHub: 'Back to Hub',
 
@@ -412,7 +412,7 @@ export const T: Record<Lang, Record<string, string>> = {
     emptyResidents: 'Los residentes están por llegar.',
 
     /* ── Hub ── */
-    hubSubtitle: 'Elige tu destino.',
+    hubSubtitle: 'Continúa tu emoción.',
     hubBack: 'Volver',
     backToHub: 'Volver al Hub',
 
