@@ -45,7 +45,7 @@ export const RESIDENTS: Record<string, Resident> = {
     name: 'ENJOY A\nDISCREET DATE',
     subtitle: '',
     description: '',
-    image: '/vicky-milan-dating.png',
+    image: '/vicky-milan-dating.webp',
   },
   'date-player-two': {
     id: 'date-player-two',
@@ -150,7 +150,7 @@ export const RESIDENTS: Record<string, Resident> = {
     name: 'LOCAL DATING',
     subtitle: '',
     description: 'FIND YOUR MATCH TONIGHT',
-    image: '/gay-offer.png',
+    image: '/gay-offer.webp',
   },
   'bellesa-plus': {
     id: 'bellesa-plus',
