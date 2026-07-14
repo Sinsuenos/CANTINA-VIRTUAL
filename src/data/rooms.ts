@@ -461,9 +461,7 @@ export const DISTRICTS: District[] = [
     description: 'The velvet rope. Beyond it, the night costs a little more.',
     borderColor: 'rgba(0,255,136,0.3)',
     textColor: 'var(--emerald)',
-    // LOCKED: Pay Sites background. Do NOT change this URL or revert to a local path.
-    // This is the correct production asset (verified 2026-07-10). No local variants exist.
-    bgImage: 'https://sfile.chatglm.cn/images-ppt/fcef82f7bbdf.png',
+    bgImage: '/pay-sites-bg.webp',
     encounters: [
       {
         residentId: 'bellesa-plus',
