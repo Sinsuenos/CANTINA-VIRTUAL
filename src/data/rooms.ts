@@ -136,7 +136,7 @@ export const RESIDENTS: Record<string, Resident> = {
     name: 'DANIKA MORI VIP',
     subtitle: '',
     description: '',
-    image: 'https://www.imglnkx.com/9304/mym_300-250-7.gif',
+    image: '/danika-mori-vip.png',
   },
   'fanvue-amber': {
     id: 'fanvue-amber',
