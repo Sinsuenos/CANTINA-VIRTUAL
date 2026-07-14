@@ -1084,7 +1084,7 @@ body {
 [data-resident="sextpanther"],
 [data-resident="faphouse"] {
   display: grid;
-  grid-template-rows: auto auto;
+  grid-template-rows: auto auto auto;
   gap: 8px;
   border: none;
   background: none;
@@ -1143,6 +1143,21 @@ body {
   line-height: 1.4;
   margin: 0;
   padding: 0 4px;
+  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
+}
+/* Bellesa Plus + Sext Panther captions — same style as Faphouse */
+[data-resident="bellesa-plus"] .encounter-card-desc,
+[data-resident="sextpanther"] .encounter-card-desc {
+  order: 3;
+  color: var(--amber);
+  font-weight: 800;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  text-align: center;
+  line-height: 1.4;
+  margin: 0;
+  padding: 0 4px;
+  white-space: pre-line;
   text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
 }
 [data-resident="bellesa-plus"] .encounter-card-image::after,
