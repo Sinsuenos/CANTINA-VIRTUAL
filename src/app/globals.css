@@ -1108,12 +1108,8 @@ body {
 [data-resident="sextpanther"] .encounter-card-name,
 [data-resident="faphouse"] .encounter-card-name {
   order: 1;
-  font-weight: 800;
   font-size: 16px;
-  letter-spacing: 0.22em;
   text-align: center;
-  color: var(--amber);
-  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
 }
 [data-resident="bellesa-plus"] .encounter-card-image,
 [data-resident="sextpanther"] .encounter-card-image,
@@ -1131,8 +1127,6 @@ body {
 /* Faphouse caption — amber text below banner, aligns image with sibling cards */
 [data-resident="faphouse"] .encounter-card-desc {
   order: 3;
-  color: var(--amber);
-  font-weight: 800;
   font-size: 13px;
   letter-spacing: 0.06em;
   text-align: center;
@@ -1145,8 +1139,6 @@ body {
 [data-resident="bellesa-plus"] .encounter-card-desc,
 [data-resident="sextpanther"] .encounter-card-desc {
   order: 3;
-  color: var(--amber);
-  font-weight: 800;
   font-size: 13px;
   letter-spacing: 0.06em;
   text-align: center;
