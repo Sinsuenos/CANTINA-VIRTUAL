@@ -2454,7 +2454,7 @@ body {
   background: rgba(0, 0, 0, 0.3);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
-  border: 1px solid rgba(212, 160, 23, 0.2);
+  border: 1px solid var(--amber);
   border-radius: 6px;
   color: rgba(232, 224, 212, 0.5);
   cursor: pointer;
@@ -3164,11 +3164,12 @@ body {
   position: relative;
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .hub-bg {
-  position: absolute;
+  position: fixed;
   inset: 0;
   background: url('/hub-bg.webp') center center / cover no-repeat;
   filter: brightness(1.0) contrast(1.05);
@@ -3181,7 +3182,7 @@ body {
 }
 
 .hub-overlay {
-  position: absolute;
+  position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.22);
   z-index: 1;
@@ -3215,7 +3216,7 @@ body {
 }
 
 .hub-vignette {
-  position: absolute;
+  position: fixed;
   inset: 0;
   background: radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.28) 100%);
   pointer-events: none;
@@ -3281,7 +3282,8 @@ body {
 }
 
 .hub-subtitle {
-  font-size: 12px;
+  font-size: 17px;
+  font-weight: 700;
   letter-spacing: 0.25em;
   text-transform: uppercase;
   color: var(--amber);
@@ -3291,7 +3293,8 @@ body {
 
 /* ── Regular Status Line ── */
 .hub-regular-line {
-  font-size: 15px;
+  font-size: 19px;
+  font-weight: 700;
   letter-spacing: 0.18em;
   color: var(--text-primary);
   text-align: center;
@@ -3624,7 +3627,7 @@ body {
   }
   .hub-brand-main { font-size: 1.4rem; letter-spacing: 0.25em; }
   .hub-brand-sub { font-size: 0.7rem; letter-spacing: 0.4em; }
-  .hub-subtitle { font-size: 10px; margin-bottom: 28px; }
+  .hub-subtitle { font-size: 13px; font-weight: 700; margin-bottom: 28px; }
   .hub-content { padding: 32px 16px; }
   .hub-glow-amber { width: 250px; height: 250px; }
   .hub-glow-magenta { width: 200px; height: 200px; }
