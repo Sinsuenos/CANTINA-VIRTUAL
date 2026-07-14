@@ -1450,7 +1450,8 @@ body {
 [data-resident="x-game-hub"] .encounter-card-image {
   order: 2;
   aspect-ratio: 300/250;
-  background-size: cover;
+  background-color: #0a0a0a;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   border: 1px solid rgba(212,160,23,0.15);

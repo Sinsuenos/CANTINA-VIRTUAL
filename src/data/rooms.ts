@@ -269,7 +269,7 @@ export const RESIDENTS: Record<string, Resident> = {
     name: 'X Game Hub',
     subtitle: '',
     description: 'DIGITAL GAMING COMPANION',
-    image: '/x-game-hub-300x250.jpg',
+    image: '/x-game-hub-300x250.png',
   },
   'oopsie': {
     id: 'oopsie',
