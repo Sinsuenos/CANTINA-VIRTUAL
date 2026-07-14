@@ -1772,14 +1772,10 @@ body {
 [data-resident="soda-offer"] .encounter-card-name,
 [data-resident="sweepsex-trans"] .encounter-card-name,
 [data-resident="imlive-trans"] .encounter-card-name {
-  font-weight: 800;
   display: block;
   min-height: 48px;
   font-size: 16px;
-  letter-spacing: 0.22em;
   text-align: center;
-  color: var(--amber);
-  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
 }
 [data-resident="trans-offer"] .encounter-card-image,
 [data-resident="jermate-trans"] .encounter-card-image,
@@ -1810,17 +1806,15 @@ body {
 [data-resident="soda-offer"] .encounter-card-desc,
 [data-resident="sweepsex-trans"] .encounter-card-desc,
 [data-resident="imlive-trans"] .encounter-card-desc {
-  font-weight: 800;
   margin: 0;
   margin-top: 8px;
   text-align: center;
-  color: var(--amber);
-  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
   font-size: 13px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   line-height: 1.6;
   white-space: pre-line;
+  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
 }
 [data-resident="trans-offer"]:hover .encounter-card-image,
 [data-resident="jermate-trans"]:hover .encounter-card-image,
