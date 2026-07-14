@@ -131,6 +131,13 @@ export const RESIDENTS: Record<string, Resident> = {
     description: '',
     image: 'https://www.imglnkx.com/10398/TaliaBanner300x100-2.png',
   },
+  'danika-mori-vip': {
+    id: 'danika-mori-vip',
+    name: 'DANIKA MORI VIP',
+    subtitle: '',
+    description: '',
+    image: 'https://www.imglnkx.com/9304/mym_300-250-7.gif',
+  },
   'fanvue-amber': {
     id: 'fanvue-amber',
     name: 'AMBER SANTORI',
@@ -449,6 +456,10 @@ export const DISTRICTS: District[] = [
       {
         residentId: 'fanvue-talia',
         href: 'https://t.acust-9.com/413627/10398/0?aff_sub=FAN&aff_sub2=TALIAR&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
+      },
+      {
+        residentId: 'danika-mori-vip',
+        href: 'https://t.acust-9.com/413627/9304/36088?aff_sub=FANSTE&aff_sub2=DNKAMRIVIP&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
       },
     ],
   },
