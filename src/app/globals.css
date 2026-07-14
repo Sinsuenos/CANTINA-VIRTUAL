@@ -1046,13 +1046,9 @@ body {
   display: contents;
 }
 [data-district="fan-sites"] .encounter-card-name {
-  font-weight: 800;
   order: 1;
   font-size: 16px;
-  letter-spacing: 0.22em;
   text-align: center;
-  color: var(--amber);
-  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
 }
 [data-district="fan-sites"] .encounter-card-image {
   order: 2;
