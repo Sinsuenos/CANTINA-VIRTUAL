@@ -13,6 +13,16 @@ interface LegalPageProps {
 
 export function LegalPage({ titleEn, titleEs, en, es }: LegalPageProps) {
   const [lang, setLang] = useState<Lang>('en');
+  const [ageVerified, setAgeVerified] = useState(false);
+
+  /* ── Age gate: redirect to home if cv_age not set in sessionStorage ── */
+  useEffect(() => {
+    if (sessionStorage.getItem('cv_age') === '1') {
+      setAgeVerified(true);
+    } else {
+      window.location.replace('/');
+    }
+  }, []);
 
   useEffect(() => {
     const savedLang = sessionStorage.getItem('cv_lang');
@@ -21,6 +31,11 @@ export function LegalPage({ titleEn, titleEs, en, es }: LegalPageProps) {
       setLang(savedLang);
     }
   }, []);
+
+  /* ── Don't render content until age is verified on client ── */
+  if (!ageVerified) {
+    return null;
+  }
 
   const handleToggle = () => {
     const next = lang === 'en' ? 'es' : 'en';

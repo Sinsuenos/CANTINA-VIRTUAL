@@ -374,7 +374,7 @@ export const DISTRICTS: District[] = [
     description: 'The deep alcove. Red lights behind frosted glass. You know what you want.',
     borderColor: 'rgba(123,45,142,0.3)',
     textColor: 'var(--purple)',
-    bgImage: '/livecams-room.png',
+    bgImage: '/livecams-room.webp',
     encounters: [
       {
         residentId: 'camirada',
@@ -411,7 +411,7 @@ export const DISTRICTS: District[] = [
     description: 'Where the cantina meets the coast. Neon hums behind every screen.',
     borderColor: 'rgba(0,245,255,0.3)',
     textColor: 'var(--cyan)',
-    bgImage: '/ai-partners-bg.png',
+    bgImage: '/ai-partners-bg.webp',
     encounters: [
       {
         residentId: 'girlfriendgpt',
@@ -436,7 +436,7 @@ export const DISTRICTS: District[] = [
     description: 'The creators have their own corner. Autographs optional.',
     borderColor: 'rgba(233,30,140,0.3)',
     textColor: 'var(--rose)',
-    bgImage: '/fan-sites-bg-v2.png',
+    bgImage: '/fan-sites-bg-v2.webp',
     encounters: [
       {
         residentId: 'fanvue-amber',
@@ -488,7 +488,7 @@ export const DISTRICTS: District[] = [
     description: 'A premium corner of the cantina. Open, welcoming, and always alive.',
     borderColor: 'rgba(212,160,23,0.3)',
     textColor: 'var(--amber)',
-    bgImage: '/gay-bg.png',
+    bgImage: '/gay-bg.webp',
     encounters: [
       {
         residentId: 'gay-offer',
@@ -521,7 +521,7 @@ export const DISTRICTS: District[] = [
     description: 'The cabinets glow in the dark. Someone is already on the high score screen.',
     borderColor: 'rgba(0,245,255,0.3)',
     textColor: 'var(--cyan)',
-    bgImage: '/games-bg.png',
+    bgImage: '/games-bg.webp',
     encounters: [
       {
         residentId: 'manga-rpg',
@@ -583,7 +583,7 @@ export const DISTRICTS: District[] = [
     description: 'One-of-a-kind encounters. Limited time. Only here.',
     borderColor: 'rgba(212,160,23,0.3)',
     textColor: 'var(--amber)',
-    bgImage: '/hub-bg.png',
+    bgImage: '/hub-bg.webp',
     encounters: [
       {
         residentId: 'dirty-dating',
@@ -620,7 +620,7 @@ export const DISTRICTS: District[] = [
     description: 'The heartbeat of the Cantina. Earn wings. Collect stamps.',
     borderColor: 'rgba(212,160,23,0.3)',
     textColor: 'var(--amber)',
-    bgImage: '/nectar-bg.png',
+    bgImage: '/nectar-bg.webp',
     encounters: [],
   },
 ];

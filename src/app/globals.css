@@ -2177,7 +2177,7 @@ body {
 .arrival-bg {
   position: fixed;
   inset: 0;
-  background: url('/cantina-arrival.png') center center / cover no-repeat;
+  background: url('/cantina-arrival.webp') center center / cover no-repeat;
   filter: brightness(1.0);
   z-index: 0;
 }
@@ -3170,7 +3170,7 @@ body {
 .hub-bg {
   position: absolute;
   inset: 0;
-  background: url('/hub-bg.png') center center / cover no-repeat;
+  background: url('/hub-bg.webp') center center / cover no-repeat;
   filter: brightness(1.0) contrast(1.05);
   z-index: 0;
 }

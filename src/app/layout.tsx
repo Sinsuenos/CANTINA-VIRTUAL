@@ -21,6 +21,38 @@ export const metadata: Metadata = {
   },
 };
 
+/* ── GA4 consent-gated script component ──
+   Reads cv_cookie_consent from localStorage; only injects gtag.js
+   when the user has not explicitly rejected. This runs entirely
+   client-side inside a Strategy script so localStorage is available.
+   The `return` inside a beforeInteractive children string is what
+   caused the original console error — we now avoid that entirely. ── */
+function Ga4Scripts() {
+  return (
+    <>
+      <Script id="ga4-loader" strategy="afterInteractive">
+        {`
+          (function() {
+            var consent = localStorage.getItem('cv_cookie_consent');
+            if (consent === 'rejected') return;
+            // Load gtag.js dynamically only when consent is not rejected
+            var s = document.createElement('script');
+            s.src = 'https://www.googletagmanager.com/gtag/js?id=G-GENZPS9FMV';
+            s.async = true;
+            document.head.appendChild(s);
+            s.onload = function() {
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-GENZPS9FMV');
+            };
+          })();
+        `}
+      </Script>
+    </>
+  );
+}
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -29,29 +61,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Google Analytics 4 — gtag.js (gated by cookie consent) */}
-        <Script id="ga4-gate" strategy="beforeInteractive">
-          {`
-            // Read consent BEFORE any GA script loads.
-            // 'rejected' = never fire; absent or 'accepted' = normal tracking.
-            window.__cv_cookie_consent = localStorage.getItem('cv_cookie_consent');
-          `}
-        </Script>
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-GENZPS9FMV"
-          strategy="afterInteractive"
-        >
-          {`if (window.__cv_cookie_consent === 'rejected') { return { preventLoad: true }; }`}
-        </Script>
-        <Script id="ga4-init" strategy="afterInteractive">
-          {`
-            if (window.__cv_cookie_consent === 'rejected') return;
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-GENZPS9FMV');
-          `}
-        </Script>
+        <Ga4Scripts />
       </head>
       <body className="antialiased">
         {children}
