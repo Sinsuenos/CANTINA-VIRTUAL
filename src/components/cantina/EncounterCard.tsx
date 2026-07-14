@@ -11,6 +11,7 @@ const FLAT_LAYOUT_RESIDENTS = new Set([
   'trans-offer',
   'jermate-trans',
   'soda-offer',
+  'sweepsex-trans',
   'imlive-trans',
 ]);
 
