@@ -1960,10 +1960,7 @@ body {
 [data-district="ai-companions"] .encounter-card-name {
   order: 1;
   font-size: 16px;
-  letter-spacing: 0.22em;
   text-align: center;
-  color: var(--amber);
-  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
 }
 [data-district="ai-companions"] .encounter-card-image {
   order: 2;
@@ -1983,16 +1980,14 @@ body {
 }
 [data-district="ai-companions"] .encounter-card-desc {
   order: 3;
-  font-weight: 800;
   text-align: center;
-  color: var(--amber);
-  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
   font-size: 13px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   line-height: 1.6;
   white-space: pre-line;
   margin: 0;
+  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
 }
 
 /* ── District Encounters ── */
