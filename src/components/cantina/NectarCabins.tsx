@@ -161,7 +161,7 @@ function CabinaDetailModal({ cabinId, cabin, onClose }: CabinaDetailModalProps) 
         </div>
 
         <div className="cabina-detail-body">
-          <p className="cabina-detail-copy">{cabin.body}</p>
+          <p className="cabina-detail-copy" dangerouslySetInnerHTML={{ __html: cabin.body }} />
 
           {/* CTA */}
           {link ? (
