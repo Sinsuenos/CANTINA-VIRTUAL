@@ -4506,6 +4506,9 @@ body {
     padding: 24px 20px 28px;
     max-height: 88vh;
   }
+  .cabina-detail-header {
+    margin-top: 24px;
+  }
   .cabina-detail-title {
     font-size: 17px;
   }
