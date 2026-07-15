@@ -4169,7 +4169,6 @@ body {
 .encounter-card-name {
   color: var(--amber) !important;
   font-weight: 800;
-  text-shadow: 0 0 12px rgba(218,177,42,0.8);
 }
 
 .arrival-copy,
