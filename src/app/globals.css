@@ -1903,6 +1903,14 @@ body {
   text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
 }
 
+/* ── LUSY AI — 222×80 banner centered on black bg (no stretch) ── */
+[data-resident="lusy-ai"] .encounter-card-image {
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #000;
+}
+
 /* ── District Encounters ── */
 .district-encounters {
   display: grid;

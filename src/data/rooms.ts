@@ -33,6 +33,13 @@ export const RESIDENTS: Record<string, Resident> = {
     description: 'CREATE YOUR COMPANION\nYOUR STORY EVOLVES',
     image: 'https://www.imglnkx.com/10345/300x250a.png',
   },
+  'lusy-ai': {
+    id: 'lusy-ai',
+    name: 'LUSY AI',
+    subtitle: '',
+    description: '',
+    image: '/lusy-ai-300x250.png',
+  },
   'dating-encounter': {
     id: 'dating-encounter',
     name: 'Real Connections',
@@ -431,6 +438,10 @@ export const DISTRICTS: District[] = [
       {
         residentId: 'candy-ai-male',
         href: 'https://t.vlmai-1.com/413627/10022/37968?aff_sub=AI&aff_sub2=MALE&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
+      },
+      {
+        residentId: 'lusy-ai',
+        href: 'https://t.vlmai-1.com/413627/10467/40747?aff_sub=AI&aff_sub2=LUSY&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
       },
     ],
   },
