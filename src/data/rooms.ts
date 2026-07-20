@@ -313,6 +313,13 @@ export const RESIDENTS: Record<string, Resident> = {
     description: 'TRANSGENDER',
     image: '/imlive-300x250.png',
   },
+  'datsk-trans': {
+    id: 'datsk-trans',
+    name: 'TRANS DATING',
+    subtitle: '',
+    description: '',
+    image: '/datsk-trans-300x250.png',
+  },
   'imlive-gay': {
     id: 'imlive-gay',
     name: 'IMLIVE',
@@ -591,6 +598,10 @@ export const DISTRICTS: District[] = [
       {
         residentId: 'imlive-trans',
         href: 'https://t.camsk7.com/413627/2118/39237?aff_sub=CAMS&aff_sub2=TRAN&aff_sub3=TRANLP&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
+      },
+      {
+        residentId: 'datsk-trans',
+        href: 'https://t.datsk11.com/413627/10208/38811?aff_sub=TRANS&aff_sub2=DATING&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
       },
     ],
   },
