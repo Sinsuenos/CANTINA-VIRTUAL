@@ -1684,7 +1684,8 @@ body {
 [data-resident="jermate-trans"] .encounter-card-name,
 [data-resident="soda-offer"] .encounter-card-name,
 [data-resident="sweepsex-trans"] .encounter-card-name,
-[data-resident="imlive-trans"] .encounter-card-name {
+[data-resident="imlive-trans"] .encounter-card-name,
+[data-resident="datsk-trans"] .encounter-card-name {
   display: block;
   min-height: 48px;
   font-size: 16px;
@@ -1694,7 +1695,8 @@ body {
 [data-resident="jermate-trans"] .encounter-card-image,
 [data-resident="soda-offer"] .encounter-card-image,
 [data-resident="sweepsex-trans"] .encounter-card-image,
-[data-resident="imlive-trans"] .encounter-card-image {
+[data-resident="imlive-trans"] .encounter-card-image,
+[data-resident="datsk-trans"] .encounter-card-image {
   display: block;
   margin-top: 8px;
   flex-shrink: 0;
@@ -1711,14 +1713,16 @@ body {
 [data-resident="jermate-trans"] .encounter-card-image::after,
 [data-resident="soda-offer"] .encounter-card-image::after,
 [data-resident="sweepsex-trans"] .encounter-card-image::after,
-[data-resident="imlive-trans"] .encounter-card-image::after {
+[data-resident="imlive-trans"] .encounter-card-image::after,
+[data-resident="datsk-trans"] .encounter-card-image::after {
   background: none;
 }
 [data-resident="trans-offer"] .encounter-card-desc,
 [data-resident="jermate-trans"] .encounter-card-desc,
 [data-resident="soda-offer"] .encounter-card-desc,
 [data-resident="sweepsex-trans"] .encounter-card-desc,
-[data-resident="imlive-trans"] .encounter-card-desc {
+[data-resident="imlive-trans"] .encounter-card-desc,
+[data-resident="datsk-trans"] .encounter-card-desc {
   margin: 0;
   margin-top: 8px;
   text-align: center;
