@@ -4123,9 +4123,6 @@ body {
   margin: 0 !important;
   padding: 0 !important;
 }
-[data-resident="datsk-trans"] .encounter-card-image {
-  margin-top: 23px !important;
-}
 
 [data-district="niche"] .encounter-card-desc,
 [data-district="our-mission"] .encounter-card-desc {

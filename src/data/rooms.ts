@@ -310,14 +310,14 @@ export const RESIDENTS: Record<string, Resident> = {
     id: 'imlive-trans',
     name: 'IMLIVE',
     subtitle: '',
-    description: 'TRANSGENDER',
+    description: 'Transgender\nLive Cams',
     image: '/imlive-300x250.png',
   },
   'datsk-trans': {
     id: 'datsk-trans',
     name: 'TRANS DATING',
     subtitle: '',
-    description: '',
+    description: 'Not a typical\ntransgender dating site',
     image: '/datsk-trans-300x250.png',
   },
   'imlive-gay': {
