@@ -60,6 +60,33 @@ body {
   gap: 4px;
 }
 
+/* ── MyErolink gold promo band (inside footer, above legal nav) ── */
+.myerolink-band {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 16px;
+  background: linear-gradient(90deg, transparent 0%, rgba(218, 177, 42, 0.15) 30%, rgba(218, 177, 42, 0.25) 50%, rgba(218, 177, 42, 0.15) 70%, transparent 100%);
+  border-top: 1px solid rgba(218, 177, 42, 0.3);
+  border-bottom: 1px solid rgba(218, 177, 42, 0.3);
+}
+
+.myerolink-link {
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--amber);
+  text-decoration: none;
+  text-shadow: 0 0 10px rgba(218, 177, 42, 0.6), 0 0 20px rgba(218, 177, 42, 0.3);
+  transition: text-shadow 0.3s, opacity 0.2s;
+  cursor: pointer;
+}
+.myerolink-link:hover {
+  text-shadow: 0 0 14px rgba(218, 177, 42, 0.9), 0 0 28px rgba(218, 177, 42, 0.5);
+  opacity: 1;
+}
+
 /* ── Cookie consent row (inside footer, above nav) ── */
 .site-footer-consent {
   display: flex;
@@ -115,6 +142,13 @@ body {
 }
 
 @media (max-width: 768px) {
+  .myerolink-link {
+    font-size: 13px;
+    letter-spacing: 0.1em;
+  }
+  .myerolink-band {
+    padding: 4px 8px;
+  }
   .site-footer {
     padding: 6px 8px;
     gap: 2px;
