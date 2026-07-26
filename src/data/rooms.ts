@@ -327,6 +327,13 @@ export const RESIDENTS: Record<string, Resident> = {
     description: 'GAY',
     image: '/imlive-300x250.png',
   },
+  'aff-adult-friend-finder': {
+    id: 'aff-adult-friend-finder',
+    name: 'Adult Friend Finder',
+    subtitle: '',
+    description: 'Not a typical dating site',
+    image: '/aff-adult-friend-finder-300x250.png',
+  },
 };
 
 /* ─── District ─── */
@@ -383,6 +390,10 @@ export const DISTRICTS: District[] = [
       {
         residentId: 'cozy',
         href: 'https://t.datsk11.com/413627/9700/0?aff_sub=DATING&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
+      },
+      {
+        residentId: 'aff-adult-friend-finder',
+        href: 'https://t.datsk11.com/413627/4299/37952?aff_sub=DATING&aff_sub2=PGNOTTYPLP&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
       },
     ],
   },

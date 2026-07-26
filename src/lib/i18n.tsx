@@ -196,6 +196,8 @@ export const T: Record<Lang, Record<string, string>> = {
       'LIVE TRANS PERFORMERS\nREADY TO CHAT',
     'resident.soda-offer.desc':
       'TRANS CAM MODELS\nON DEMAND',
+    'resident.aff-adult-friend-finder.name': 'ADULT FRIEND FINDER',
+    'resident.aff-adult-friend-finder.desc': 'Not a typical dating site',
 
     /* ── UI strings ── */
     ctaDrink: 'Send a Drink',
@@ -407,6 +409,8 @@ export const T: Record<Lang, Record<string, string>> = {
       'PERFORMERS TRANS EN VIVO\nLISTAS PARA CHATEAR',
     'resident.soda-offer.desc':
       'MODELOS TRANS EN CAM\nA DEMANDA',
+    'resident.aff-adult-friend-finder.name': 'ADULT FRIEND FINDER',
+    'resident.aff-adult-friend-finder.desc': 'No es un sitio\ntípico de citas',
 
     /* ── UI strings ── */
     ctaDrink: 'Invitar un Trago',
