@@ -124,17 +124,14 @@ export function Footer() {
           </button>
         </div>
       )}
-      {/* MyErolink gold promo band — above legal nav, below cookie consent */}
-      <div className="myerolink-band">
-        <a
-          href="https://myerolink.com/sinaloainspireddreams"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="myerolink-link"
-        >
-          MYEROLINK
-        </a>
-      </div>
+      <a
+        href="https://myerolink.com/sinaloainspireddreams"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="site-footer-link myerolink-text"
+      >
+        MYEROLINK
+      </a>
       <nav className="site-footer-nav">
         <span className="site-footer-link site-footer-notice">{t.adultsOnly}</span>
         <a href="/dmca" className="site-footer-link">DMCA</a>
