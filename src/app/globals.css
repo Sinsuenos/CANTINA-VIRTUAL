@@ -1068,7 +1068,8 @@ body {
 /* ── Pay Sites — title above banner, gold/amber (Bellesa Plus + Sext Panther + Faphouse) ── */
 [data-resident="bellesa-plus"],
 [data-resident="sextpanther"],
-[data-resident="faphouse"] {
+[data-resident="faphouse"],
+[data-resident="vixenplus"] {
   display: grid;
   grid-template-rows: auto auto auto;
   gap: 8px;
@@ -1084,26 +1085,30 @@ body {
 }
 [data-resident="bellesa-plus"]:hover,
 [data-resident="sextpanther"]:hover,
-[data-resident="faphouse"]:hover {
+[data-resident="faphouse"]:hover,
+[data-resident="vixenplus"]:hover {
   border-color: transparent;
   transform: none;
   box-shadow: none;
 }
 [data-resident="bellesa-plus"] .encounter-card-body,
 [data-resident="sextpanther"] .encounter-card-body,
-[data-resident="faphouse"] .encounter-card-body {
+[data-resident="faphouse"] .encounter-card-body,
+[data-resident="vixenplus"] .encounter-card-body {
   display: contents;
 }
 [data-resident="bellesa-plus"] .encounter-card-name,
 [data-resident="sextpanther"] .encounter-card-name,
-[data-resident="faphouse"] .encounter-card-name {
+[data-resident="faphouse"] .encounter-card-name,
+[data-resident="vixenplus"] .encounter-card-name {
   order: 1;
   font-size: 16px;
   text-align: center;
 }
 [data-resident="bellesa-plus"] .encounter-card-image,
 [data-resident="sextpanther"] .encounter-card-image,
-[data-resident="faphouse"] .encounter-card-image {
+[data-resident="faphouse"] .encounter-card-image,
+[data-resident="vixenplus"] .encounter-card-image {
   order: 2;
   aspect-ratio: 300/250;
   background-size: contain;
@@ -1125,9 +1130,10 @@ body {
   padding: 0 4px;
   text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
 }
-/* Bellesa Plus + Sext Panther captions — same style as Faphouse */
+/* Bellesa Plus + Sext Panther + VixenPlus captions — same style as Faphouse */
 [data-resident="bellesa-plus"] .encounter-card-desc,
-[data-resident="sextpanther"] .encounter-card-desc {
+[data-resident="sextpanther"] .encounter-card-desc,
+[data-resident="vixenplus"] .encounter-card-desc {
   order: 3;
   font-size: 13px;
   letter-spacing: 0.06em;
@@ -1140,12 +1146,14 @@ body {
 }
 [data-resident="bellesa-plus"] .encounter-card-image::after,
 [data-resident="sextpanther"] .encounter-card-image::after,
-[data-resident="faphouse"] .encounter-card-image::after {
+[data-resident="faphouse"] .encounter-card-image::after,
+[data-resident="vixenplus"] .encounter-card-image::after {
   background: none;
 }
 [data-resident="bellesa-plus"]:hover .encounter-card-image,
 [data-resident="sextpanther"]:hover .encounter-card-image,
-[data-resident="faphouse"]:hover .encounter-card-image {
+[data-resident="faphouse"]:hover .encounter-card-image,
+[data-resident="vixenplus"]:hover .encounter-card-image {
   border-color: rgba(212,160,23,0.35);
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 12px rgba(212,160,23,0.08);

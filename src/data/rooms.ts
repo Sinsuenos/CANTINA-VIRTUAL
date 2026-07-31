@@ -187,6 +187,13 @@ export const RESIDENTS: Record<string, Resident> = {
     description: 'Thousands of videos. Top creators.',
     image: 'https://www.imglnkx.com/9248/Banner_300-250-6.jpeg',
   },
+  'vixenplus': {
+    id: 'vixenplus',
+    name: 'VIXENPLUS',
+    subtitle: '',
+    description: '9 sites $1',
+    image: 'https://www.imglnkx.com/10405/20260728145657-VP-300X250-ANGEL-YOUNGS-MELANIE-MARIE-C.jpg',
+  },
   'manga-rpg': {
     id: 'manga-rpg',
     name: 'MANGA RPG',
@@ -514,6 +521,10 @@ export const DISTRICTS: District[] = [
       {
         residentId: 'faphouse',
         href: 'https://t.ajump2.com/413627/9248/35234?aff_sub=PAYSTE&aff_sub2=FAP&aff_sub3=PSTARLP&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
+      },
+      {
+        residentId: 'vixenplus',
+        href: 'https://t.bbwafx.com/413627/10405/0?aff_sub=PAYSTE&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
       },
     ],
   },
