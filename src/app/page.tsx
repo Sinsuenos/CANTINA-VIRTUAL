@@ -425,6 +425,16 @@ function Cantina({
 
         <SmokeParticles />
 
+        {/* Casita Total Offers promo — red neon button above Nectar */}
+        <a
+          href="https://cantina-casita-total-offers.vercel.app"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="casita-total-offers-btn"
+        >
+          Cantina (Casita) Total Offers 60+
+        </a>
+
         {/* Nectar status — live points + future opportunities */}
         <div className="district-nectar-teaser">
           <div className="nectar-teaser-content">
