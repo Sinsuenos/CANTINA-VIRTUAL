@@ -1573,13 +1573,14 @@ body {
   box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 12px rgba(212,160,23,0.08);
 }
 
-/* ── Live Cams wing: title above banner, caption below (all 6 cards) ── */
+/* ── Live Cams wing: title above banner, caption below (all 7 cards) ── */
 [data-resident="camirada"],
 [data-resident="jerkmate-cams"],
 [data-resident="myfreecams"],
 [data-resident="ole"],
 [data-resident="sweepsex"],
-[data-resident="imlive"] {
+[data-resident="imlive"],
+[data-resident="xtease"] {
   display: grid;
   grid-template-rows: auto auto auto;
   gap: 8px;
@@ -1595,7 +1596,8 @@ body {
 [data-resident="myfreecams"]:hover,
 [data-resident="ole"]:hover,
 [data-resident="sweepsex"]:hover,
-[data-resident="imlive"]:hover {
+[data-resident="imlive"]:hover,
+[data-resident="xtease"]:hover {
   border-color: transparent;
   transform: none;
   box-shadow: none;
@@ -1605,7 +1607,8 @@ body {
 [data-resident="myfreecams"] .encounter-card-body,
 [data-resident="ole"] .encounter-card-body,
 [data-resident="sweepsex"] .encounter-card-body,
-[data-resident="imlive"] .encounter-card-body {
+[data-resident="imlive"] .encounter-card-body,
+[data-resident="xtease"] .encounter-card-body {
   display: contents;
 }
 [data-resident="camirada"] .encounter-card-name,
@@ -1613,7 +1616,8 @@ body {
 [data-resident="myfreecams"] .encounter-card-name,
 [data-resident="ole"] .encounter-card-name,
 [data-resident="sweepsex"] .encounter-card-name,
-[data-resident="imlive"] .encounter-card-name {
+[data-resident="imlive"] .encounter-card-name,
+[data-resident="xtease"] .encounter-card-name {
   order: 1;
   font-weight: 800;
   font-size: 16px;
@@ -1627,7 +1631,8 @@ body {
 [data-resident="myfreecams"] .encounter-card-image,
 [data-resident="ole"] .encounter-card-image,
 [data-resident="sweepsex"] .encounter-card-image,
-[data-resident="imlive"] .encounter-card-image {
+[data-resident="imlive"] .encounter-card-image,
+[data-resident="xtease"] .encounter-card-image {
   order: 2;
   aspect-ratio: 300/250;
   background-size: cover;
@@ -1643,7 +1648,8 @@ body {
 [data-resident="myfreecams"] .encounter-card-image::after,
 [data-resident="ole"] .encounter-card-image::after,
 [data-resident="sweepsex"] .encounter-card-image::after,
-[data-resident="imlive"] .encounter-card-image::after {
+[data-resident="imlive"] .encounter-card-image::after,
+[data-resident="xtease"] .encounter-card-image::after {
   background: none;
 }
 [data-resident="camirada"] .encounter-card-desc,
@@ -1651,7 +1657,8 @@ body {
 [data-resident="myfreecams"] .encounter-card-desc,
 [data-resident="ole"] .encounter-card-desc,
 [data-resident="sweepsex"] .encounter-card-desc,
-[data-resident="imlive"] .encounter-card-desc {
+[data-resident="imlive"] .encounter-card-desc,
+[data-resident="xtease"] .encounter-card-desc {
   order: 3;
   font-weight: 800;
   font-size: 13px;
@@ -1668,7 +1675,8 @@ body {
 [data-resident="myfreecams"]:hover .encounter-card-image,
 [data-resident="ole"]:hover .encounter-card-image,
 [data-resident="sweepsex"]:hover .encounter-card-image,
-[data-resident="imlive"]:hover .encounter-card-image {
+[data-resident="imlive"]:hover .encounter-card-image,
+[data-resident="xtease"]:hover .encounter-card-image {
   border-color: rgba(212,160,23,0.35);
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 12px rgba(212,160,23,0.08);

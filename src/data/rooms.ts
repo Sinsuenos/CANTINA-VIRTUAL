@@ -110,6 +110,13 @@ export const RESIDENTS: Record<string, Resident> = {
     description: '100+ NICHES AND SUB-NICHES',
     image: '/imlive-300x250.png',
   },
+  'xtease': {
+    id: 'xtease',
+    name: 'XTEASE',
+    subtitle: '',
+    description: 'SWIPE MODE',
+    image: 'https://www.imglnkx.com/10291/PMKT-2157_DESIGN-27457_Xtease-010481W_300100.jpg',
+  },
   'sweepsex-gay': {
     id: 'sweepsex-gay',
     name: 'GAY CAMS',
@@ -438,6 +445,10 @@ export const DISTRICTS: District[] = [
       {
         residentId: 'imlive',
         href: 'https://t.camsk7.com/413627/2118/0?aff_sub=CAMS&aff_sub2=DFLTLP&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
+      },
+      {
+        residentId: 'xtease',
+        href: 'https://t.camsk5.com/413627/10291/40033?aff_sub=CAMS&aff_sub2=SWIPE&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
       },
     ],
   },
