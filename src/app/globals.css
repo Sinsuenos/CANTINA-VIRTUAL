@@ -43,6 +43,12 @@ body {
   flex-direction: column;
 }
 
+/* Hide the site-wide fixed footer on the landing/arrival scene
+   so it doesn't overlap the age-gate buttons or block scroll access. */
+.arrival-scene ~ .site-footer {
+  display: none;
+}
+
 /* ── Site-wide Footer (rendered in layout.tsx, appears on every page) ── */
 .site-footer {
   position: fixed;
@@ -1680,6 +1686,12 @@ body {
   border-color: rgba(212,160,23,0.35);
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 12px rgba(212,160,23,0.08);
+}
+
+/* ── Xtease: 300x100 banner in a 300x250 frame — contain + pad ── */
+[data-resident="xtease"] .encounter-card-image {
+  background-size: contain;
+  background-color: #000;
 }
 
 /* ── Trans wing cards — block layout, no flex/grid subpixel issues ── */
