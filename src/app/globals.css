@@ -2472,7 +2472,13 @@ body {
 
 /* ── 18+ Quick Confirm ── */
 .age-confirm {
-  gap: 28px;
+  gap: 20px;
+}
+.age-confirm .age-gate-butterfly {
+  margin-bottom: 4px;
+}
+.age-confirm .age-gate-compliance {
+  margin-top: 8px;
 }
 .age-confirm-question {
   font-size: 14.3px;
