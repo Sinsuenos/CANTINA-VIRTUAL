@@ -1482,7 +1482,7 @@ body {
 
 [data-resident="crossdressing-fun"] {
   display: grid;
-  grid-template-rows: auto auto;
+  grid-template-rows: auto auto auto;
   gap: 8px;
   align-self: start;
   border: none;
@@ -1508,8 +1508,7 @@ body {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: #1a2035;
-  filter: brightness(1.25) contrast(1.1);
+  background-color: #ffffff;
   border: 1px solid rgba(212,160,23,0.15);
   border-radius: var(--card-radius);
   overflow: hidden;
@@ -1517,6 +1516,10 @@ body {
 }
 [data-resident="crossdressing-fun"] .encounter-card-image::after {
   background: none;
+}
+[data-resident="crossdressing-fun"] .encounter-card-desc {
+  order: 3;
+  white-space: pre-line;
 }
 [data-resident="crossdressing-fun"]:hover .encounter-card-image {
   border-color: rgba(212,160,23,0.35);
