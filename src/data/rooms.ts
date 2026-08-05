@@ -159,13 +159,6 @@ export const RESIDENTS: Record<string, Resident> = {
     description: '',
     image: 'https://www.imglnkx.com/10394/AmberBanner300x100-1.png',
   },
-  'sofia-storme': {
-    id: 'sofia-storme',
-    name: 'SOFIA STORME',
-    subtitle: '',
-    description: '',
-    image: 'https://www.imglnkx.com/10393/SofiaBanner300x100-1.png',
-  },
   'gay-offer': {
     id: 'gay-offer',
     name: 'LOCAL DATING',

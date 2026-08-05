@@ -204,23 +204,6 @@ body {
   margin-top: -2px;
 }
 
-/* ── Typewriter ── */
-@keyframes typewriter {
-  from { width: 0; }
-  to { width: 100%; }
-}
-@keyframes blinkCaret {
-  0%, 100% { border-color: var(--amber); }
-  50% { border-color: transparent; }
-}
-.typewriter-text {
-  overflow: hidden;
-  white-space: nowrap;
-  border-right: 2px solid var(--amber);
-  animation: typewriter 2.5s steps(28) 0.5s forwards, blinkCaret 0.8s step-end infinite;
-  width: 0;
-}
-
 /* ── Neon Glow Pulse ── */
 @keyframes neonPulse {
   0%, 100% { text-shadow: 0 1px 4px rgba(10,14,23,0.9), 0 0 6px currentColor, 0 0 16px currentColor, 0 0 32px currentColor; }
@@ -278,37 +261,6 @@ body {
   animation: smokeRise 6s ease-out infinite;
 }
 
-/* ── Scroll Reveal ── */
-.reveal {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.reveal-delay-1 { transition-delay: 0.15s; }
-.reveal-delay-2 { transition-delay: 0.3s; }
-.reveal-delay-3 { transition-delay: 0.45s; }
-
-/* ── Sale Countdown Pulse ── */
-@keyframes salePulse {
-  0%, 100% { box-shadow: 0 0 5px rgba(255,59,59,0.3), inset 0 0 5px rgba(255,59,59,0.1); }
-  50% { box-shadow: 0 0 20px rgba(255,59,59,0.6), inset 0 0 10px rgba(255,59,59,0.2); }
-}
-.sale-card { animation: salePulse 2s ease-in-out infinite; }
-
-/* ── Password Screen ── */
-@keyframes screenShake {
-  0%, 100% { transform: translateX(0); }
-  20% { transform: translateX(-8px); }
-  40% { transform: translateX(8px); }
-  60% { transform: translateX(-4px); }
-  80% { transform: translateX(4px); }
-}
-.shake { animation: screenShake 0.4s ease-in-out; }
-
 /* ── Room Card Hover ── */
 .room-card {
   transition: all 0.4s ease;
@@ -341,8 +293,7 @@ body {
 }
 
 /* ── Card Radius Normalization ── */
-.room-card,
-.sale-card {
+.room-card {
   border-radius: var(--card-radius);
 }
 
@@ -358,25 +309,6 @@ body {
     rgba(15,21,32,0.88) 100%
   );
   z-index: 0;
-}
-
-/* ── CTA Shared Treatment ── */
-.cta-bordered {
-  display: inline-block;
-  text-align: center;
-  padding: 6px 24px;
-  font-size: 10px;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  text-decoration: none;
-  border-radius: 2px;
-  transition: all 0.4s ease;
-  cursor: pointer;
-  background: transparent;
-}
-.cta-bordered:hover {
-  filter: brightness(1.3);
-  box-shadow: 0 0 14px currentColor;
 }
 
 /* ── Scene Transitions ── */
@@ -395,21 +327,11 @@ body {
   animation: sceneFadeIn 800ms ease forwards;
 }
 
-/* ── Hero Drift ── */
-@keyframes heroDrift {
-  0%, 100% { background-position: center 40%; }
-  50% { background-position: center 45%; }
-}
-.hero-bg {
-  animation: heroDrift 20s ease-in-out infinite;
-}
-
 /* ── Fade In ── */
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
-.fade-in { animation: fadeIn 1s ease forwards; }
 
 /* ── Gradient Dividers ── */
 .divider-amber {
@@ -485,11 +407,6 @@ body {
   color: var(--amber);
   text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
   white-space: pre-line;
-}
-.encounter-card-subtitle {
-  font-size: 10px;
-  letter-spacing: 0.3em;
-  color: var(--text-dim);
 }
 .encounter-card-desc {
   font-size: 13px;
@@ -626,14 +543,6 @@ body {
 .sidebar-item.active {
   background: rgba(212,160,23,0.22);
   box-shadow: inset 0 0 12px rgba(212,160,23,0.06);
-}
-
-.sidebar-dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  flex-shrink: 0;
-  transition: all 0.3s ease;
 }
 
 .sidebar-item-name {
@@ -955,14 +864,6 @@ body {
 /* ── District Header ── */
 .district-header {
   margin-bottom: 48px;
-}
-
-.district-subtitle {
-  font-size: 10px;
-  letter-spacing: 0.4em;
-  text-transform: uppercase;
-  margin-bottom: 8px;
-  text-shadow: 0 1px 4px rgba(10,14,23,0.85), 0 0 12px rgba(10,14,23,0.5);
 }
 
 .district-name {
@@ -2073,58 +1974,6 @@ body {
   margin: 0;
 }
 
-/* ── District Footer ── */
-.district-footer {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 12px 40px 20px;
-}
-.district-footer-left {
-  flex: 1;
-}
-
-/* ── Compliance Footer ── */
-.compliance-footer {
-  position: relative;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 14px 40px 20px;
-  border-top: 1px solid rgba(255,255,255,0.03);
-}
-
-.compliance-brand {
-  font-size: 9px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--amber-dim);
-  white-space: nowrap;
-}
-
-.compliance-nav {
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-}
-
-.compliance-link {
-  font-size: 9px;
-  letter-spacing: 0.05em;
-  color: var(--text-dim);
-  text-decoration: none;
-  transition: color 0.3s ease;
-  white-space: nowrap;
-}
-
-.compliance-link:hover {
-  color: var(--text-muted);
-}
-
 /* ═══════════════════════════════════════════════════════════════
    ARRIVAL SCENE — Cinematic Entrance
    ═══════════════════════════════════════════════════════════════ */
@@ -2145,11 +1994,6 @@ body {
   background: url('/cantina-arrival.webp') center center / cover no-repeat;
   filter: brightness(1.0);
   z-index: 0;
-}
-
-@keyframes arrivalBgBreath {
-  0%, 100% { transform: scale(1.05); }
-  50% { transform: scale(1.08); }
 }
 
 .arrival-dim {
@@ -2550,52 +2394,6 @@ body {
   color: var(--amber);
 }
 
-/* ── Landing compliance footer (unobtrusive, bottom corner) ── */
-.landing-compliance-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 10;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 16px;
-  padding: 8px 16px;
-  background: rgba(10, 14, 23, 0.6);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  border-top: 1px solid rgba(212, 160, 23, 0.08);
-}
-
-.landing-compliance-link {
-  font-size: 9px;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  opacity: 0.6;
-  text-decoration: none;
-  transition: opacity 0.2s, color 0.2s;
-  white-space: nowrap;
-}
-
-.landing-compliance-link:hover {
-  opacity: 1;
-  color: var(--amber);
-}
-
-@media (max-width: 768px) {
-  .landing-compliance-footer {
-    gap: 8px;
-    padding: 6px 8px;
-    flex-wrap: wrap;
-  }
-  .landing-compliance-link {
-    font-size: 7px;
-    letter-spacing: 0.08em;
-  }
-}
-
 .age-gate-btn {
   display: flex;
   flex-direction: column;
@@ -2644,12 +2442,6 @@ body {
 
 .age-gate-btn-leave .age-gate-btn-label {
   color: rgba(232,224,212,0.7);
-}
-
-.age-gate-btn-sub {
-  font-size: 9px;
-  letter-spacing: 0.15em;
-  color: var(--text-dim);
 }
 
 /* ── Arrival Copy ── */
@@ -2854,101 +2646,6 @@ body {
   text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
 }
 
-/* Featured Offer Hero */
-.dating-hero-offer {
-  display: flex;
-  gap: 24px;
-  margin-bottom: 40px;
-  border: 1px solid rgba(212,160,23,0.12);
-  border-radius: var(--card-radius);
-  overflow: hidden;
-  background: rgba(15,21,32,0.5);
-  backdrop-filter: blur(4px);
-  transition: border-color 0.4s ease, box-shadow 0.4s ease;
-}
-.dating-hero-offer:hover {
-  border-color: rgba(212,160,23,0.25);
-  box-shadow: 0 0 30px rgba(212,160,23,0.06);
-}
-.dating-hero-image {
-  flex: 0 0 320px;
-  aspect-ratio: 16/10;
-  position: relative;
-  overflow: hidden;
-}
-.dating-hero-image-placeholder {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background: rgba(212,160,23,0.04);
-  border-right: 1px solid rgba(212,160,23,0.08);
-  gap: 6px;
-}
-.dating-hero-image-placeholder span {
-  font-size: 11px;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--text-dim);
-}
-.dating-hero-image-sub {
-  font-size: 9px !important;
-  color: rgba(212,160,23,0.3) !important;
-  letter-spacing: 0.15em !important;
-}
-.dating-hero-body {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 24px 24px 24px 0;
-  gap: 8px;
-}
-.dating-hero-tag {
-  font-size: 9px;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--amber);
-  opacity: 0.9;
-}
-.dating-hero-name {
-  font-size: 18px;
-  letter-spacing: 0.08em;
-  color: var(--amber);
-  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
-  font-weight: 400;
-  line-height: 1.3;
-}
-.dating-hero-desc {
-  font-size: 12px;
-  line-height: 1.7;
-  color: var(--text-muted);
-  max-width: 320px;
-}
-.dating-hero-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 8px;
-  padding: 8px 20px;
-  border: 1px solid rgba(212,160,23,0.3);
-  border-radius: 2px;
-  font-size: 10px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--amber);
-  text-decoration: none;
-  transition: all 0.3s ease;
-  width: fit-content;
-}
-.dating-hero-cta:hover {
-  background: rgba(212,160,23,0.08);
-  border-color: rgba(212,160,23,0.5);
-  box-shadow: 0 0 12px rgba(212,160,23,0.12);
-}
-
 /* Encounter Cards */
 .dating-encounters {
   display: grid;
@@ -3008,11 +2705,6 @@ body {
   text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
   white-space: pre-line;
 }
-.dating-encounter-role {
-  font-size: 10px;
-  letter-spacing: 0.3em;
-  color: var(--text-dim);
-}
 .dating-encounter-desc {
   order: 3;
   font-weight: 800;
@@ -3026,23 +2718,6 @@ body {
   white-space: pre-line;
   margin: 0;
 }
-.dating-encounter-cta {
-  display: inline-flex;
-  align-items: center;
-  padding: 5px 14px;
-  border: 1px solid;
-  border-radius: 2px;
-  font-size: 9px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  margin-top: 4px;
-  width: fit-content;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-.dating-encounter-cta:hover {
-  background: rgba(212,160,23,0.08);
-}
 
 /* ── DATE PLAYER TWO card: per-resident overrides (now handled by base) ── */
 [data-resident="date-player-two"] .dating-encounter-image {
@@ -3054,105 +2729,6 @@ body {
 [data-resident="date-player-two"] .dating-encounter-image::after {
   background: none;
 }
-
-/* Offer Grid */
-.dating-offer-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  gap: 16px;
-  margin-bottom: 40px;
-}
-.dating-offer-card {
-  display: flex;
-  flex-direction: column;
-  border-radius: var(--card-radius);
-  overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.04);
-  background: rgba(15,21,32,0.4);
-  backdrop-filter: blur(2px);
-  transition: all 0.4s ease;
-  text-decoration: none;
-  color: inherit;
-}
-.dating-offer-card:hover {
-  border-color: rgba(212,160,23,0.15);
-  transform: translateY(-1px);
-  box-shadow: 0 4px 16px rgba(0,0,0,0.3);
-}
-.dating-offer-image {
-  width: 100%;
-  aspect-ratio: 4/3;
-  position: relative;
-  background: rgba(212,160,23,0.02);
-}
-.dating-offer-image-placeholder {
-  position: absolute;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 9px;
-  letter-spacing: 0.25em;
-  text-transform: uppercase;
-  color: rgba(212,160,23,0.2);
-  border-bottom: 1px solid rgba(255,255,255,0.03);
-}
-.dating-offer-body {
-  padding: 10px 12px 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 3px;
-}
-.dating-offer-label {
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  color: var(--text-primary);
-}
-.dating-offer-teaser {
-  font-size: 11px;
-  line-height: 1.5;
-  color: var(--text-muted);
-}
-.dating-offer-action {
-  display: inline-flex;
-  align-items: center;
-  padding: 4px 12px;
-  border: 1px solid rgba(212,160,23,0.2);
-  border-radius: 2px;
-  font-size: 9px;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  color: var(--amber);
-  margin-top: 6px;
-  width: fit-content;
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
-.dating-offer-action:hover {
-  background: rgba(212,160,23,0.08);
-  border-color: rgba(212,160,23,0.4);
-}
-
-/* Room Signature */
-.dating-room-signature {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  padding: 8px 0 0;
-}
-.dating-signature-line {
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(212,160,23,0.15), transparent);
-}
-.dating-signature-text {
-  font-size: 9px;
-  letter-spacing: 0.35em;
-  text-transform: uppercase;
-  color: var(--text-dim);
-  font-style: italic;
-}
-
 
 /* ═══════════════════════════════════════════════════════════════
    HUB SCREEN — Category Selection
@@ -3172,11 +2748,6 @@ body {
   background: url('/hub-bg.webp') center center / cover no-repeat;
   filter: brightness(1.0) contrast(1.05);
   z-index: 0;
-}
-
-@keyframes hubBgBreath {
-  0%, 100% { transform: scale(1.02); }
-  50% { transform: scale(1.06); }
 }
 
 .hub-overlay {
@@ -3357,11 +2928,6 @@ body {
   grid-column-end: 4;
 }
 
-@keyframes hubCardIn {
-  0% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
 .hub-card:hover {
   border-color: rgba(212,160,23,0.5);
   background: rgba(212,160,23,0.1);
@@ -3502,7 +3068,6 @@ body {
     border-radius: 0;
   }
 
-
   .sidebar-item-name {
     font-size: 15px;
     letter-spacing: 0.05em;
@@ -3546,14 +3111,6 @@ body {
     max-width: 100%;
   }
 
-  .district-footer {
-    flex-direction: column-reverse;
-    gap: 12px;
-    padding: 12px 20px 80px;
-    align-items: center;
-    text-align: center;
-  }
-
   /* Arrival mobile */
   .arrival-glow-amber { width: 300px; height: 300px; }
   .arrival-glow-magenta { width: 250px; height: 250px; }
@@ -3571,31 +3128,13 @@ body {
   .landing-lang-toggle { margin-bottom: 6px; }
   .age-gate-actions { gap: 8px; }
 
-  .compliance-footer {
-    flex-direction: column;
-    gap: 10px;
-    padding: 12px 20px 80px;
-    align-items: center;
-  }
-
-  .compliance-nav {
-    justify-content: center;
-  }
-
   /* ── Mobile: Dating Room ── */
   .room-atmosphere-bg { left: 0; }
   .dating-room-overlay { left: 0; }
-  .dating-room-content { padding: 32px 20px 80px; } /* bottom clears fixed mobile sidebar bar (matches .district-footer) */
+  .dating-room-content { padding: 32px 20px 80px; } /* bottom clears fixed mobile sidebar bar */
   .dating-room-title { font-size: 20px; }
-  .dating-hero-offer { flex-direction: column; gap: 0; }
-  .dating-hero-image { flex: none; width: 100%; aspect-ratio: 16/8; }
-  .dating-hero-image-placeholder { border-right: none; border-bottom: 1px solid rgba(212,160,23,0.08); }
-  .dating-hero-body { padding: 16px 14px; }
-  .dating-encounters { grid-template-columns: 1fr; gap: 16px; }
-  .dating-offer-grid { grid-template-columns: 1fr 1fr; gap: 12px; }
   .dating-glow-warm { width: 250px; height: 250px; }
   .dating-glow-candle { width: 180px; height: 180px; }
-
 
   .lang-toggle { padding: 5px 10px; gap: 5px; margin-bottom: 12px; }
   .lang-toggle svg { width: 16px; height: 16px; }
@@ -4305,25 +3844,6 @@ body {
 .district-description {
   color: #F5ECD8;
   text-shadow: 0 1px 3px rgba(0,0,0,0.9);
-}
-
-.nectar-coming-soon {
-  background: linear-gradient(135deg, rgba(212,160,23,0.15), rgba(233,30,140,0.1));
-  color: #ff0000;
-  text-align: center;
-  font-size: 14px;
-  font-weight: 800;
-  letter-spacing: 0.2em;
-  text-transform: uppercase;
-  padding: 12px 20px;
-  border-radius: var(--card-radius);
-  border: 1px solid rgba(255,0,0,0.3);
-  animation: subtle-pulse 2s ease-in-out infinite;
-}
-
-@keyframes subtle-pulse {
-  0%, 100% { opacity: 0.85; }
-  50% { opacity: 1; }
 }
 
 /* ── Mobile override (placed LAST so equal-specificity rules below win the

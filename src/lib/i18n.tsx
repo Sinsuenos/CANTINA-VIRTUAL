@@ -15,8 +15,6 @@ export const T: Record<Lang, Record<string, string>> = {
     /* ── Landing ── */
     copyLine1: 'Some evenings begin with a destination.',
     copyLine2: 'The unforgettable ones begin with a feeling.',
-    copyBody:
-      'Behind these lanterns are warm conversations, genuine companionship, playful chemistry, beautiful people, and stories that unfold one encounter at a time.',
     copyClosing: 'Tonight is yours to discover.',
     enter: 'ENTER',
     leave: 'EXIT',
@@ -28,13 +26,10 @@ export const T: Record<Lang, Record<string, string>> = {
     sidebarFooter: 'Pacific coast. After dark.',
 
     /* ── Nectar ── */
-    nectarTitle: 'NECTAR PROGRAM',
-    nectarComingSoon: 'COMING SOON',
     nectarFutureIntro: 'Future Nectar opportunities may include:',
     nectarFutureList: 'Socializing\nConversations\nParticipation\nSupporting creators\nDiscovering offers\nEvents',
 
     /* ── Nectar Cabins (3 doors on the Nectar wing page) ── */
-    nectarCabinsIntro: "Earn Nectar as you explore. Below: creator support, upcoming events, and vault rewards.",
     nectarCabin1Name: 'CREATOR SANCTUARY',
     nectarCabin1Body: "You're talented. You're just not sure where to start, or who to trust.\n\nFansRevenue is a free platform built specifically for adult creators. No fees, no catches. The brands pay CrakRevenue, and CrakRevenue pays you. Nothing ever comes out of your earnings.\n\nWhat you get, free:\n- A bio link built for NSFW content, won't get you shadowbanned\n- Real-time stats so you see what's actually working\n- The Creator Academy, training, templates, scripts\n- Brand deals with platforms your fans already use\n- Mental health support through Pineapple Support\n\nThe referral program:\nIf someone signs up through your link, you earn 5% of what they generate, paid by CrakRevenue, not taken from them. For as long as they're active.\n\nI help walk you through setup. If you can't reach FansRevenue at 2 AM, you can reach me.",
     nectarCabin1Cta: 'Enter Creator Sanctuary',
@@ -45,7 +40,6 @@ export const T: Record<Lang, Record<string, string>> = {
     nectarCabin3Body: "CrakRevenue is the #1 adult CPA network, built for affiliates who are serious about consistent earnings.\n\n- Choose your model, Pay-Per-Lead, Pay-Per-Sale, or RevShare, and promote offers your traffic already wants\n- Smartlink technology automatically matches your visitors to the highest-converting offer\n- Access banner ads, live cam tools, and a real-time dashboard that shows exactly what's working\n- Backed by 15+ years in the industry and a network of 15,000+ active professional affiliates",
     nectarCabin3Cta: 'Open the Vault',
     nectarCabinClose: 'Close',
-    nectarCabinEmailLabel: 'Email us',
 
     /* ── Nectar Engine (Phase 1 — live) ── */
     nectarPointsLabel: 'NECTAR',
@@ -137,7 +131,6 @@ export const T: Record<Lang, Record<string, string>> = {
     'resident.candy-ai-male.name': 'CANDY AI MALE',
     'resident.darlink-ai.name': 'DARLINK AI',
     'resident.fanvue-amber.name': 'AMBER SANTORI',
-    'resident.sofia-storme.name': 'SOFIA STORME',
     'resident.fanvue-talia.name': 'TALIA ROSE',
     'resident.fanvue-mila.name': 'MILA LERUE',
     'resident.danika-mori-vip.name': 'DANIKA MORI VIP',
@@ -204,8 +197,6 @@ export const T: Record<Lang, Record<string, string>> = {
     'resident.aff-adult-friend-finder.desc': 'Not a typical dating site',
 
     /* ── UI strings ── */
-    ctaDrink: 'Send a Drink',
-    ctaPrivate: 'Request Private',
     emptyResidents: 'Residents arriving soon.',
 
     /* ── Hub ── */
@@ -232,8 +223,6 @@ export const T: Record<Lang, Record<string, string>> = {
     /* ── Landing ── */
     copyLine1: 'Algunas noches empiezan con un destino.',
     copyLine2: 'Las inolvidables empiezan con una sensación.',
-    copyBody:
-      'Detrás de estas linternas hay conversaciones cálidas, compañía genuina, química divertida, gente hermosa e historias que se van tejiendo encuentro a encuentro.',
     copyClosing: 'Esta noche es tuya para descubrir.',
     enter: 'ENTRAR',
     leave: 'SALIR',
@@ -245,13 +234,10 @@ export const T: Record<Lang, Record<string, string>> = {
     sidebarFooter: 'Costa del Pacífico. Después del anochecer.',
 
     /* ── Nectar ── */
-    nectarTitle: 'PROGRAMA NÉCTAR',
-    nectarComingSoon: 'PRÓXIMAMENTE',
     nectarFutureIntro: 'Las futuras oportunidades de Néctar pueden incluir:',
     nectarFutureList: 'Socializar\nConversaciones\nParticipación\nApoyar a creadores\nDescubrir ofertas\nEventos',
 
     /* ── Nectar Cabinas (3 puertas en la página del ala Néctar) ── */
-    nectarCabinsIntro: "Gana Néctar mientras exploras. Abajo: apoyo para creadores, eventos próximos y recompensas del vault.",
     nectarCabin1Name: 'SANTUARIO DE CREADORES',
     nectarCabin1Body: "Eres talentoso. Solo no estás seguro de por dónde empezar, o en quién confiar.\n\nFansRevenue es una plataforma gratuita construida específicamente para creadores adultos. Sin tarifas, sin trampas. Las marcas le pagan a CrakRevenue, y CrakRevenue te paga a ti. Nunca se descuenta nada de tus ganancias.\n\nLo que obtienes, gratis:\n- Un enlace de biografía construido para contenido NSFW, no te van a shadowbanear\n- Estadísticas en tiempo real para que veas qué realmente funciona\n- La Creator Academy, entrenamiento, plantillas, guiones\n- Acuerdos de marca con plataformas que tus fans ya usan\n- Apoyo de salud mental a través de Pineapple Support\n\nEl programa de referidos:\nSi alguien se registra a través de tu enlace, ganas el 5% de lo que generan, pagado por CrakRevenue, no descontado de ellos. Mientras estén activos.\n\nTe ayudo con la configuración. Si no puedes contactar a FansRevenue a las 2 AM, puedes contactarme a mí.",
     nectarCabin1Cta: 'Entrar al Santuario de Creadores',
@@ -262,8 +248,6 @@ export const T: Record<Lang, Record<string, string>> = {
     nectarCabin3Body: "CrakRevenue es la red #1 de CPA para adultos, construida para afiliados serios sobre ganancias consistentes.\n\n- Elige tu modelo: Pay-Per-Lead, Pay-Per-Sale o RevShare, y promociona ofertas que tu tráfico ya busca\n- La tecnología Smartlink coincide automáticamente a tus visitantes con la oferta de mayor conversión\n- Accede a anuncios banner, herramientas de cam en vivo y un panel en tiempo real que muestra exactamente qué funciona\n- Respaldado por más de 15 años en la industria y una red de más de 15,000 afiliados profesionales activos",
     nectarCabin3Cta: 'Abrir el Vault',
     nectarCabinClose: 'Cerrar',
-    nectarCabinEmailLabel: 'Escríbenos',
-
     /* ── Nectar Engine (Phase 1 — live) ── */
     nectarPointsLabel: 'NÉCTAR',
     nectarPointsUnit: 'pts',
@@ -319,8 +303,6 @@ export const T: Record<Lang, Record<string, string>> = {
     'district.nectar.desc':
       'El latido de la Cantina. Gana alas. Colecciona sellos. Tu viaje, recordado.',
 
-    /* ── Resident subtitles ── */
-    'resident.girlfriendgpt.subtitle': '',
     /* ── Resident names ── */
     'resident.gay-offer.name': 'CITAS LOCALES',
     'resident.dating-encounter.name': 'CONEXIONES REALES',
@@ -354,7 +336,6 @@ export const T: Record<Lang, Record<string, string>> = {
     'resident.candy-ai-male.name': 'CANDY AI MASCULINO',
     'resident.darlink-ai.name': 'DARLINK IA',
     'resident.fanvue-amber.name': 'AMBER SANTORI',
-    'resident.sofia-storme.name': 'SOFIA STORME',
     'resident.fanvue-talia.name': 'TALIA ROSE',
     'resident.fanvue-mila.name': 'MILA LERUE',
     'resident.danika-mori-vip.name': 'DANIKA MORI VIP',
@@ -421,8 +402,6 @@ export const T: Record<Lang, Record<string, string>> = {
     'resident.aff-adult-friend-finder.desc': 'No es un sitio\ntípico de citas',
 
     /* ── UI strings ── */
-    ctaDrink: 'Invitar un Trago',
-    ctaPrivate: 'Pedir Privado',
     emptyResidents: 'Los residentes están por llegar.',
 
     /* ── Hub ── */
