@@ -1480,6 +1480,49 @@ body {
   box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 12px rgba(212,160,23,0.08);
 }
 
+[data-resident="crossdressing-fun"] {
+  display: grid;
+  grid-template-rows: auto auto;
+  gap: 8px;
+  align-self: start;
+  border: none;
+  background: none;
+  overflow: visible;
+  padding: 0;
+  border-radius: 0;
+}
+[data-resident="crossdressing-fun"]:hover {
+  border-color: transparent;
+  transform: none;
+  box-shadow: none;
+}
+[data-resident="crossdressing-fun"] .encounter-card-body {
+  display: contents;
+}
+[data-resident="crossdressing-fun"] .encounter-card-name {
+  order: 1;
+}
+[data-resident="crossdressing-fun"] .encounter-card-image {
+  order: 2;
+  aspect-ratio: 300/250;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-color: #0a0e17;
+  border: 1px solid rgba(212,160,23,0.15);
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+[data-resident="crossdressing-fun"] .encounter-card-image::after {
+  background: none;
+}
+[data-resident="crossdressing-fun"]:hover .encounter-card-image {
+  border-color: rgba(212,160,23,0.35);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 12px rgba(212,160,23,0.08);
+}
+
 /* ── Live Cams wing: title above banner, caption below (all 7 cards) ── */
 [data-resident="camirada"],
 [data-resident="jerkmate-cams"],

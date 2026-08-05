@@ -334,6 +334,13 @@ export const RESIDENTS: Record<string, Resident> = {
     description: 'GAY',
     image: '/imlive-300x250.png',
   },
+  'crossdressing-fun': {
+    id: 'crossdressing-fun',
+    name: 'CROSSDRESSING FUN',
+    subtitle: '',
+    description: '',
+    image: 'https://cdnw.hubpeople.com/web/b8796ba9-e523-43a0-a5a3-125c6e6a69c4.png?width=400',
+  },
   'aff-adult-friend-finder': {
     id: 'aff-adult-friend-finder',
     name: 'Adult Friend Finder',
@@ -665,6 +672,10 @@ export const DISTRICTS: District[] = [
       {
         residentId: 'instabang-latinas',
         href: 'https://t.datsk11.com/413627/7912/27172?aff_sub=UNIQUE&aff_sub2=LATLP&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
+      },
+      {
+        residentId: 'crossdressing-fun',
+        href: 'https://t.datsk9.com/413627/7090?aff_sub=DATING&aff_sub2=XRCDRS&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
       },
     ],
   },
