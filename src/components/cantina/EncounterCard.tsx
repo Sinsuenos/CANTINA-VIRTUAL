@@ -1,10 +1,12 @@
 import type { Resident } from '@/data/rooms';
 import { useLang } from '@/lib/i18n';
+import { trackOfferClick } from '@/lib/ga4';
 
 interface EncounterCardProps {
   resident: Resident;
   ctaColor: string;
   href?: string;
+  wingId?: string;
 }
 
 const FLAT_LAYOUT_RESIDENTS = new Set([
@@ -16,11 +18,15 @@ const FLAT_LAYOUT_RESIDENTS = new Set([
   'datsk-trans',
 ]);
 
-export function EncounterCard({ resident, ctaColor, href }: EncounterCardProps) {
+export function EncounterCard({ resident, ctaColor, href, wingId }: EncounterCardProps) {
   const { t } = useLang();
 
   const nameText = t[`resident.${resident.id}.name`] || resident.name;
   const descText = t[`resident.${resident.id}.desc`] || resident.description;
+
+  const handleClick = () => {
+    if (wingId) trackOfferClick(resident.id, wingId);
+  };
 
   if (FLAT_LAYOUT_RESIDENTS.has(resident.id)) {
     return (
@@ -30,6 +36,7 @@ export function EncounterCard({ resident, ctaColor, href }: EncounterCardProps) 
         rel={href ? 'noopener noreferrer' : undefined}
         className="encounter-card no-underline"
         data-resident={resident.id}
+        onClick={handleClick}
       >
         <span className="encounter-card-name">{nameText}</span>
         <div
@@ -50,6 +57,7 @@ export function EncounterCard({ resident, ctaColor, href }: EncounterCardProps) 
       rel={href ? 'noopener noreferrer' : undefined}
       className="encounter-card no-underline"
       data-resident={resident.id}
+      onClick={handleClick}
     >
       <div
         className="encounter-card-image"

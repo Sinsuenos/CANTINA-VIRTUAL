@@ -10,6 +10,7 @@ import { DistrictScene } from '@/components/cantina/DistrictScene';
 import { PassportModal, NectarToast, type NectarToastData } from '@/components/nectar-engine';
 import { useNectarEngine, NectarProvider } from '@/lib/nectar-engine';
 import { hasCelebrated, markCelebrated } from '@/lib/nectar-engine/store';
+import { trackWingView } from '@/lib/ga4';
 import type { Lang } from '@/lib/i18n';
 
 /* ─── Arrival Dust Particles ─── */
@@ -325,6 +326,7 @@ function Cantina({
   /* ── On mount: register first wing visit for initialDistrict ── */
   useEffect(() => {
     const awarded = visit(initialDistrict);
+    trackWingView(initialDistrict);
     if (awarded) {
       const district = DISTRICTS.find((d) => d.id === initialDistrict);
       const wingName = district ? (t[`district.${initialDistrict}.name`] || district.name) : initialDistrict;
@@ -364,7 +366,8 @@ function Cantina({
           main.classList.add('scene-transition');
           setTransitioning(false);
           setTimeout(() => main.classList.remove('scene-transition'), 800);
-          /* ── Register Nectar visit for the new wing ── */
+          /* ── Register Nectar visit + GA4 wing_view for the new wing ── */
+          trackWingView(id);
           const awarded = visit(id);
           if (awarded) {
             const district = DISTRICTS.find((d) => d.id === id);
@@ -383,6 +386,7 @@ function Cantina({
         setActiveDistrict(id);
         setDisplayedDistrict(id);
         setTransitioning(false);
+        trackWingView(id);
         const awarded = visit(id);
         if (awarded) {
           const district = DISTRICTS.find((d) => d.id === id);

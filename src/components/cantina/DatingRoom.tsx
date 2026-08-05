@@ -3,6 +3,7 @@
 import { useMemo } from 'react';
 import { RESIDENTS, type District } from '@/data/rooms';
 import { useLang } from '@/lib/i18n';
+import { trackOfferClick } from '@/lib/ga4';
 
 interface DatingRoomProps {
   district: District;
@@ -91,6 +92,7 @@ export function DatingRoom({ district }: DatingRoomProps) {
                 rel={href ? 'noopener noreferrer' : undefined}
                 className="dating-encounter-card no-underline"
                 data-resident={resident.id}
+                onClick={() => trackOfferClick(resident.id, district.id)}
               >
                 <div
                   className="dating-encounter-image"
