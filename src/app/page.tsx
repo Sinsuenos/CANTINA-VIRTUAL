@@ -113,6 +113,13 @@ function AgeGate({
               <span className="age-gate-btn-label">{t.confirmLeave}</span>
             </button>
           </div>
+          <div className="age-gate-compliance">
+            <span className="age-gate-compliance-notice">{t.adultsOnly}</span>
+            <a href="/dmca" className="age-gate-compliance-link">DMCA</a>
+            <a href="/privacy" className="age-gate-compliance-link">{t.privacy}</a>
+            <a href="/terms" className="age-gate-compliance-link">{t.terms}</a>
+            <a href="/contact" className="age-gate-compliance-link">{t.contact}</a>
+          </div>
         </div>
       </ArrivalScene>
     );
@@ -161,6 +168,13 @@ function AgeGate({
           >
             <span className="age-gate-btn-label">{t.leave}</span>
           </button>
+        </div>
+        <div className="age-gate-compliance">
+          <span className="age-gate-compliance-notice">{t.adultsOnly}</span>
+          <a href="/dmca" className="age-gate-compliance-link">DMCA</a>
+          <a href="/privacy" className="age-gate-compliance-link">{t.privacy}</a>
+          <a href="/terms" className="age-gate-compliance-link">{t.terms}</a>
+          <a href="/contact" className="age-gate-compliance-link">{t.contact}</a>
         </div>
       </div>
     </ArrivalScene>

@@ -2520,6 +2520,36 @@ body {
   align-items: center;
 }
 
+/* ── Age-gate inline compliance links (static, non-blocking) ── */
+.age-gate-compliance {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.age-gate-compliance-notice {
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+
+.age-gate-compliance-link {
+  font-size: 8px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.age-gate-compliance-link:hover {
+  color: var(--amber);
+}
+
 /* ── Landing compliance footer (unobtrusive, bottom corner) ── */
 .landing-compliance-footer {
   position: fixed;
