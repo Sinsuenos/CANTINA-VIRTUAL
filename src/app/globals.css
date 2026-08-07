@@ -1918,7 +1918,101 @@ body {
   padding: 40px 0;
 }
 
-/* ── Casita Total Offers promo button (above Nectar, all wings) ── */
+/* ── Promo buttons stack (all wings + nectar) ── */
+.promo-btns-stack {
+  position: relative;
+  z-index: 2;
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* Shared base — solid clickable button */
+.promo-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 16px 22px;
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: border-color 0.3s, box-shadow 0.3s, background 0.3s;
+}
+.promo-btn-arrow {
+  font-size: 18px;
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+
+/* ── Red variant (All Affiliate Offers) ── */
+.promo-btn-red {
+  color: #fff;
+  background: rgba(255, 59, 59, 0.18);
+  border: 2px solid rgba(255, 59, 59, 0.5);
+  text-shadow: 0 0 10px rgba(255, 59, 59, 0.7), 0 0 20px rgba(255, 59, 59, 0.35);
+  box-shadow: 0 0 12px rgba(255, 59, 59, 0.2), 0 0 24px rgba(255, 59, 59, 0.1);
+  animation: promoPulseRed 3s ease-in-out infinite;
+}
+.promo-btn-red:hover {
+  background: rgba(255, 59, 59, 0.28);
+  border-color: rgba(255, 59, 59, 0.7);
+  box-shadow: 0 0 18px rgba(255, 59, 59, 0.35), 0 0 36px rgba(255, 59, 59, 0.18);
+  animation: none;
+}
+@keyframes promoPulseRed {
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(255, 59, 59, 0.2), 0 0 24px rgba(255, 59, 59, 0.1);
+    text-shadow: 0 0 10px rgba(255, 59, 59, 0.7), 0 0 20px rgba(255, 59, 59, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(255, 59, 59, 0.35), 0 0 40px rgba(255, 59, 59, 0.18);
+    text-shadow: 0 0 14px rgba(255, 59, 59, 0.9), 0 0 28px rgba(255, 59, 59, 0.5);
+  }
+}
+
+/* ── Purple variant (AI Companion Reviews) ── */
+.promo-btn-purple {
+  color: #fff;
+  background: rgba(123, 45, 142, 0.18);
+  border: 2px solid rgba(123, 45, 142, 0.5);
+  text-shadow: 0 0 10px rgba(168, 85, 247, 0.7), 0 0 20px rgba(168, 85, 247, 0.35);
+  box-shadow: 0 0 12px rgba(123, 45, 142, 0.2), 0 0 24px rgba(123, 45, 142, 0.1);
+  animation: promoPulsePurple 3s ease-in-out infinite;
+}
+.promo-btn-purple:hover {
+  background: rgba(123, 45, 142, 0.28);
+  border-color: rgba(168, 85, 247, 0.7);
+  box-shadow: 0 0 18px rgba(123, 45, 142, 0.35), 0 0 36px rgba(123, 45, 142, 0.18);
+  animation: none;
+}
+@keyframes promoPulsePurple {
+  0%, 100% {
+    box-shadow: 0 0 12px rgba(123, 45, 142, 0.2), 0 0 24px rgba(123, 45, 142, 0.1);
+    text-shadow: 0 0 10px rgba(168, 85, 247, 0.7), 0 0 20px rgba(168, 85, 247, 0.35);
+  }
+  50% {
+    box-shadow: 0 0 20px rgba(123, 45, 142, 0.35), 0 0 40px rgba(123, 45, 142, 0.18);
+    text-shadow: 0 0 14px rgba(168, 85, 247, 0.9), 0 0 28px rgba(168, 85, 247, 0.5);
+  }
+}
+
+/* Nectar page — constrain purple button width to match cabin cards */
+.nectar-ai-reviews-btn {
+  max-width: 100%;
+  margin-top: 16px;
+}
+
+/* ── Legacy fallback (remove after confirmed deploy) ── */
 .casita-total-offers-btn {
   display: block;
   position: relative;

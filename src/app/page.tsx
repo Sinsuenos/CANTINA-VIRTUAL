@@ -443,15 +443,31 @@ function Cantina({
 
         <SmokeParticles />
 
-        {/* Casita Total Offers promo — red neon button above Nectar */}
-        <a
-          href="https://cantina-casita-total-offers.vercel.app"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="casita-total-offers-btn"
-        >
-          Cantina (Casita) Total Offers 60+
-        </a>
+        {/* Casita Total Offers promo — red neon button */}
+        <div className="promo-btns-stack">
+          <a
+            href="https://cantina-casita-total-offers.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="promo-btn promo-btn-red"
+          >
+            <span className="promo-btn-arrow">←</span>
+            <span>All Affiliate Offers 60+</span>
+            <span className="promo-btn-arrow">→</span>
+          </a>
+
+          {/* AI Companion Reviews — purple neon button */}
+          <a
+            href="https://sinaloa-suenos-ai-reviews.carrd.co"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="promo-btn promo-btn-purple"
+          >
+            <span className="promo-btn-arrow">←</span>
+            <span>AI Companion Reviews</span>
+            <span className="promo-btn-arrow">→</span>
+          </a>
+        </div>
 
         {/* Nectar status — live points + future opportunities */}
         <div className="district-nectar-teaser">

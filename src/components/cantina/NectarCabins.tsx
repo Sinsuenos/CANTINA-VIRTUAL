@@ -57,6 +57,18 @@ export function NectarCabins() {
         ))}
       </div>
 
+      {/* AI Companion Reviews — purple neon button */}
+      <a
+        href="https://sinaloa-suenos-ai-reviews.carrd.co"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="promo-btn promo-btn-purple nectar-ai-reviews-btn"
+      >
+        <span className="promo-btn-arrow">←</span>
+        <span>AI Companion Reviews</span>
+        <span className="promo-btn-arrow">→</span>
+      </a>
+
       {/* Detail modal — full screen with particle bg */}
       {openCabin !== null && (
         <CabinaDetailModal
