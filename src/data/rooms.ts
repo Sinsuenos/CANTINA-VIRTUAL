@@ -339,7 +339,7 @@ export const RESIDENTS: Record<string, Resident> = {
     name: 'CROSSDRESSING FUN',
     subtitle: '',
     description: '',
-    image: 'https://cdnw.hubpeople.com/web/b8796ba9-e523-43a0-a5a3-125c6e6a69c4.png?width=400',
+    image: '/crossdressing-fun-logo.png',
   },
   'aff-adult-friend-finder': {
     id: 'aff-adult-friend-finder',
