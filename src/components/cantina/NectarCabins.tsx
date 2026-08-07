@@ -40,7 +40,7 @@ export function NectarCabins() {
       {/* Intro paragraph — bright white, dark-panel contrast */}
       <p className="nectar-cabins-intro">{t.nectarCabinsIntro}</p>
 
-      {/* Three stacked cabin rectangles */}
+      {/* Five stacked cabin-style rectangles */}
       <div className="nectar-cabins-grid">
         {cabins.map((cabin) => (
           <button
@@ -55,24 +55,29 @@ export function NectarCabins() {
             <span className="nectar-cabin-name">{cabin.name}</span>
           </button>
         ))}
-      </div>
 
-      {/* AI Companion Reviews — black/gold cabin-card style (matches cabin buttons) */}
-      <a
-        href="https://sinaloa-suenos-ai-reviews.carrd.co"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="nectar-ai-reviews-gold"
-        style={{ position: 'relative' }}
-      >
-        <svg viewBox="0 0 24 24" fill="none" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" width="20" height="20">
-          <path d="M9 18l6-6-6-6" />
-        </svg>
-        <span>AI Companion Reviews</span>
-        <svg viewBox="0 0 24 24" fill="none" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" width="20" height="20">
-          <path d="M15 18l-6-6 6-6" />
-        </svg>
-      </a>
+        {/* All Affiliate Offers 60+ — cabin-card style */}
+        <a
+          href="https://cantina-casita-total-offers.vercel.app"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="nectar-cabin-card nectar-cabin-link"
+        >
+          <span className="nectar-cabin-icon" aria-hidden="true">🔥</span>
+          <span className="nectar-cabin-name">All Affiliate Offers 60+</span>
+        </a>
+
+        {/* AI Companion Reviews — cabin-card style */}
+        <a
+          href="https://sinaloa-suenos-ai-reviews.carrd.co"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="nectar-cabin-card nectar-cabin-link"
+        >
+          <span className="nectar-cabin-icon" aria-hidden="true">🤖</span>
+          <span className="nectar-cabin-name">AI Companion Reviews</span>
+        </a>
+      </div>
 
       {/* Detail modal — full screen with particle bg */}
       {openCabin !== null && (

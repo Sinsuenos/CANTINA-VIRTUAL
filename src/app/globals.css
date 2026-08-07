@@ -636,6 +636,11 @@ body {
   );
 }
 
+/* Nectar page — hide empty encounters grid (no residents, was rendering as blank box) */
+[data-district="nectar"] .district-encounters {
+  display: none;
+}
+
 /* ── TRANSGENDER wing: title above banner ── */
 [data-district="our-mission"] .district-description {
   font-size: 18px;
@@ -2007,77 +2012,6 @@ body {
   50% {
     box-shadow: 0 0 20px rgba(153, 51, 204, 0.5), 0 0 40px rgba(153, 51, 204, 0.25);
   }
-}
-
-/* Nectar page — hide the wing-style promo-btns-stack (replaced by gold-style button in NectarCabins) */
-[data-district="nectar"] ~ .promo-btns-stack {
-  display: none;
-}
-
-/* Nectar page — hide empty encounters grid (no residents) */
-[data-district="nectar"] .district-encounters {
-  display: none;
-}
-
-/* Nectar page — AI Companion Reviews in black/gold cabin-card style */
-.nectar-ai-reviews-gold {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  min-height: 88px;
-  padding: 24px 28px;
-  border: 1.5px solid rgba(212, 160, 23, 0.6);
-  border-radius: 12px;
-  background: linear-gradient(135deg, rgba(15, 21, 32, 0.85), rgba(10, 14, 23, 0.92));
-  -webkit-backdrop-filter: blur(8px);
-  backdrop-filter: blur(8px);
-  cursor: pointer;
-  font-family: inherit;
-  transition: all 0.4s ease;
-  overflow: hidden;
-  box-shadow: 0 0 12px rgba(212, 160, 23, 0.1), inset 0 0 20px rgba(212, 160, 23, 0.03);
-  text-decoration: none;
-  margin-top: 16px;
-  width: 100%;
-}
-.nectar-ai-reviews-gold::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: radial-gradient(circle at 50% 50%, rgba(212, 160, 23, 0.08), transparent 70%);
-  pointer-events: none;
-  transition: opacity 0.4s;
-  opacity: 0.6;
-}
-.nectar-ai-reviews-gold:hover {
-  border-color: rgba(212, 160, 23, 0.7);
-  background: linear-gradient(135deg, rgba(212, 160, 23, 0.12), rgba(10, 14, 23, 0.92));
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 16px rgba(212, 160, 23, 0.15);
-}
-.nectar-ai-reviews-gold:hover::before {
-  opacity: 1;
-}
-.nectar-ai-reviews-gold span {
-  position: relative;
-  z-index: 1;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: var(--amber);
-  text-shadow: 0 0 18px rgba(212, 160, 23, 0.45), 0 0 36px rgba(212, 160, 23, 0.15);
-  font-size: 17px;
-  font-weight: 800;
-  line-height: 1.3;
-}
-.nectar-ai-reviews-gold svg {
-  position: relative;
-  z-index: 1;
-  flex-shrink: 0;
-  opacity: 0.85;
-}
-.nectar-ai-reviews-gold svg path {
-  stroke: var(--amber);
 }
 
 /* ── Legacy fallback (remove after confirmed deploy) ── */
@@ -4149,6 +4083,12 @@ body {
   opacity: 1;
 }
 
+/* Ensure <a> cabin links match <button> cards exactly */
+a.nectar-cabin-card {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* Yellow icon — left of title */
 .nectar-cabin-icon {
   font-size: 1.8rem;
@@ -4380,14 +4320,5 @@ body {
   .cabina-detail-cta {
     padding: 12px 22px;
     font-size: 12px;
-  }
-  .nectar-ai-reviews-gold {
-    min-height: 76px;
-    padding: 20px 18px;
-    gap: 12px;
-  }
-  .nectar-ai-reviews-gold span {
-    font-size: 14px;
-    letter-spacing: 0.12em;
   }
 }
