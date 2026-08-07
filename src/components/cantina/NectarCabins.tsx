@@ -57,16 +57,21 @@ export function NectarCabins() {
         ))}
       </div>
 
-      {/* AI Companion Reviews — purple neon button */}
+      {/* AI Companion Reviews — black/gold cabin-card style (matches cabin buttons) */}
       <a
         href="https://sinaloa-suenos-ai-reviews.carrd.co"
         target="_blank"
         rel="noopener noreferrer"
-        className="promo-btn promo-btn-purple nectar-ai-reviews-btn"
+        className="nectar-ai-reviews-gold"
+        style={{ position: 'relative' }}
       >
-        <span className="promo-btn-arrow">←</span>
+        <svg viewBox="0 0 24 24" fill="none" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" width="20" height="20">
+          <path d="M9 18l6-6-6-6" />
+        </svg>
         <span>AI Companion Reviews</span>
-        <span className="promo-btn-arrow">→</span>
+        <svg viewBox="0 0 24 24" fill="none" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" width="20" height="20">
+          <path d="M15 18l-6-6 6-6" />
+        </svg>
       </a>
 
       {/* Detail modal — full screen with particle bg */}

@@ -443,7 +443,7 @@ function Cantina({
 
         <SmokeParticles />
 
-        {/* Casita Total Offers promo — red neon button */}
+        {/* Promo buttons — solid backgrounds, inward SVG arrows */}
         <div className="promo-btns-stack">
           <a
             href="https://cantina-casita-total-offers.vercel.app"
@@ -451,9 +451,17 @@ function Cantina({
             rel="noopener noreferrer"
             className="promo-btn promo-btn-red"
           >
-            <span className="promo-btn-arrow">←</span>
+            <span className="promo-btn-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M9 18l6-6-6-6" />
+              </svg>
+            </span>
             <span>All Affiliate Offers 60+</span>
-            <span className="promo-btn-arrow">→</span>
+            <span className="promo-btn-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M15 18l-6-6 6-6" />
+              </svg>
+            </span>
           </a>
 
           {/* AI Companion Reviews — purple neon button */}
@@ -463,9 +471,17 @@ function Cantina({
             rel="noopener noreferrer"
             className="promo-btn promo-btn-purple"
           >
-            <span className="promo-btn-arrow">←</span>
+            <span className="promo-btn-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M9 18l6-6-6-6" />
+              </svg>
+            </span>
             <span>AI Companion Reviews</span>
-            <span className="promo-btn-arrow">→</span>
+            <span className="promo-btn-arrow">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M15 18l-6-6 6-6" />
+              </svg>
+            </span>
           </a>
         </div>
 
