@@ -443,45 +443,23 @@ function Cantina({
 
         <SmokeParticles />
 
-        {/* Promo buttons — solid backgrounds, inward SVG arrows */}
+        {/* Black/gold promo buttons — site-wide, all wings */}
         <div className="promo-btns-stack">
           <a
             href="https://cantina-casita-total-offers.vercel.app"
             target="_blank"
             rel="noopener noreferrer"
-            className="promo-btn promo-btn-red"
+            className="promo-btn-gold"
           >
-            <span className="promo-btn-arrow">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M9 18l6-6-6-6" />
-              </svg>
-            </span>
-            <span>All Affiliate Offers 60+</span>
-            <span className="promo-btn-arrow">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M15 18l-6-6 6-6" />
-              </svg>
-            </span>
+            🔥 All Affiliate Offers 70+ »
           </a>
-
-          {/* AI Companion Reviews — purple neon button */}
           <a
             href="https://sinaloa-suenos-ai-reviews.carrd.co"
             target="_blank"
             rel="noopener noreferrer"
-            className="promo-btn promo-btn-purple"
+            className="promo-btn-gold"
           >
-            <span className="promo-btn-arrow">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M9 18l6-6-6-6" />
-              </svg>
-            </span>
-            <span>AI Companion Reviews</span>
-            <span className="promo-btn-arrow">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M15 18l-6-6 6-6" />
-              </svg>
-            </span>
+            🤖 AI Companion Reviews »
           </a>
         </div>
 
