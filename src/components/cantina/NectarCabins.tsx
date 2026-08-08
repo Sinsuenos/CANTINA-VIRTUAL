@@ -40,7 +40,7 @@ export function NectarCabins() {
       {/* Intro paragraph — bright white, dark-panel contrast */}
       <p className="nectar-cabins-intro">{t.nectarCabinsIntro}</p>
 
-      {/* Five stacked cabin-style rectangles */}
+      {/* Three stacked cabin rectangles */}
       <div className="nectar-cabins-grid">
         {cabins.map((cabin) => (
           <button
@@ -55,28 +55,6 @@ export function NectarCabins() {
             <span className="nectar-cabin-name">{cabin.name}</span>
           </button>
         ))}
-
-        {/* All Affiliate Offers 60+ — cabin-card style */}
-        <a
-          href="https://cantina-casita-total-offers.vercel.app"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="nectar-cabin-card nectar-cabin-link"
-        >
-          <span className="nectar-cabin-icon" aria-hidden="true">🔥</span>
-          <span className="nectar-cabin-name">All Affiliate Offers 60+</span>
-        </a>
-
-        {/* AI Companion Reviews — cabin-card style */}
-        <a
-          href="https://sinaloa-suenos-ai-reviews.carrd.co"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="nectar-cabin-card nectar-cabin-link"
-        >
-          <span className="nectar-cabin-icon" aria-hidden="true">🤖</span>
-          <span className="nectar-cabin-name">AI Companion Reviews</span>
-        </a>
       </div>
 
       {/* Detail modal — full screen with particle bg */}
