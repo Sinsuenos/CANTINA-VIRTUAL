@@ -1,6 +1,6 @@
 # CANTINA VIRTUAL — PROJECT STATUS
 
-> Last updated: 2026-07-08
+> Last updated: 2026-08-08
 > This file reflects the exact production state. Update after every deploy.
 
 ---
@@ -22,7 +22,8 @@
 ## LATEST COMMITS
 
 | Commit ID | Description |
-|-----------|-------------|
+|------|-------------|
+| `5f1a2f4` | test: verify direct ChatGPT GitHub write access |
 | `86a0945` | patch: Leave->Exit, 10% text size increase across landing/hub/sidebar |
 | `cd56322` | asset: add MYFREECAMS 300x250 banner |
 | `129358b` | feat: add MYFREECAMS card to Live Cams wing |
@@ -43,9 +44,44 @@
 
 ## VERCEL PRODUCTION STATUS
 
-- **Status:** Live (HTTP 200)
-- **Last verified:** 2026-07-08
-- **Deploy latency:** ~45-50 seconds from push to live
+- **Status:** Live / auto-deploy from `main`
+- **Last verified:** 2026-08-08
+- **Direct GitHub → Vercel deployment path:** Verified
+
+---
+
+## PRODUCT / ENGINE BACKLOG
+
+### Customer Delivery Experience
+1. **Product lands cleanly after purchase** — customer should immediately see the newly purchased product, with no confusing requirement to delete or replace an older version manually.
+2. **Version-safe delivery** — make updates additive/replacement-safe so customers always know which version is current and what changed.
+3. **Clear customer handoff** — distinguish `Your Product`, `Latest Version`, `What's New`, and optional legacy files.
+4. **Post-purchase continuity** — preserve the customer's access path when a product is updated.
+
+### Seasonal / Event Engine
+5. **Seasonal button** — one control for activating themed creative/event modes.
+6. **Event factors must be modular** — support Christmas, Thanksgiving, July 4th, Halloween, Valentine's, cultural events, weekends, special promotions, and future custom events without rebuilding the product.
+7. **Non-Christian seasonal coverage** — avoid designing the system around only Christmas/Christian holidays.
+8. **Custom event mode** — allow a user to define a temporary event with name, dates, imagery, copy, and behavior.
+9. **Event stacking / priority** — define what happens when multiple seasonal factors overlap.
+10. **Preview before activation** — see the seasonal/event transformation before publishing it.
+11. **Automatic start/end dates** — events can activate and deactivate without manual cleanup.
+12. **Event history / restore** — revert to the previous configuration instantly.
+
+### Ten Additional Differentiators To Research
+13. **Audience mode** — adapt creative behavior by audience/use case.
+14. **Locale mode** — coordinated language, imagery, cultural references, and formatting.
+15. **Platform mode** — generate/adjust outputs for specific destinations and dimensions.
+16. **Trend pulse** — optional current-event/trend input without allowing trends to override canonical facts.
+17. **A/B mode** — generate controlled variants rather than random alternatives.
+18. **Brand lock** — protect canonical voice, visual rules, facts, and forbidden elements.
+19. **Asset intelligence** — identify which existing assets can be reused, refreshed, or retired.
+20. **Campaign composer** — combine season + audience + platform + objective into one controlled build.
+21. **Change log** — show exactly what the engine changed and why.
+22. **One-click publish/export** — deliver the finished package in the format the customer actually needs.
+
+### Competitive Rule
+23. **Do not ship a feature merely because competitors have it.** Every new capability should answer: what customer friction does this remove, what new capability does it unlock, and why is our implementation harder to replace?
 
 ---
 
@@ -103,7 +139,7 @@
 ### 5. PAY SITES (`pay-sites`)
 
 | # | Offer | Banner | Size | Affiliate URL | i18n |
-|---|-------|--------|------|---------------|------|
+|---|-------|-------|------|---------------|------|
 | 1 | BELLESA PLUS | imglnkx JPEG | 300x250 | `t.bbwafx.com/.../7378?...` | Title only (no desc) |
 | 2 | SEXT PANTHER | `/sext-panther-300x250.png` | 300x250 | `t.acust-9.com/.../9927/38131?...` | Brand name (untranslated) |
 
@@ -114,7 +150,7 @@
 ### 6. GAY (`niche`)
 
 | # | Offer | Banner | Size | Affiliate URL | i18n |
-|---|-------|--------|------|---------------|------|
+|---|-------|-------|------|---------------|------|
 | 1 | PREMIUM GAY ENTERTAINMENT | `/gay-offer.png` | Default | `t.acust-7.com/.../4080/0?...` | Title only (no desc) |
 
 **Renderer:** `DistrictScene.tsx` generic
@@ -124,7 +160,7 @@
 ### 7. GAMES (`gaming`)
 
 | # | Offer | Banner | Size | Affiliate URL | i18n |
-|---|-------|--------|------|---------------|------|
+|---|-------|-------|------|---------------|------|
 | 1 | MANGA RPG | `/manga-rpg-300x250.png` | 300x250 | `t.acust-9.com/.../6621?...` | EN + ES desc |
 | 2 | COMIX HAREM | `/CxH-SQ1-13_300x250_EN.gif` | 300x250 | `t.aagm.link/.../7930/27132?...` | EN + ES desc |
 | 3 | COMIX HAREM | `/010679A_CXHR_18_ALL_EN_71_L.gif` | 300x250 | `t.aagm.link/.../7930/27132?...` | EN + ES desc |
@@ -138,7 +174,7 @@
 ### 8. TRANSGENDER (`our-mission`)
 
 | # | Offer | Banner | Size | Affiliate URL | i18n |
-|---|-------|--------|------|---------------|------|
+|---|-------|-------|------|---------------|------|
 | 1 | TRANS PORNSTAR HAREM | `/trans-offer.png` | Default | `t.mbagm.link/.../8663/0?...` | Title only (no desc) |
 
 **Renderer:** `DistrictScene.tsx` generic
@@ -150,7 +186,7 @@
 ## TOTAL AFFILIATE INVENTORY
 
 | Wing | Active Offers |
-|------|--------------|
+|------|--------------:|
 | Dating | 2 |
 | Live Cams | 3 |
 | AI Partners | 3 |
@@ -166,15 +202,10 @@
 ## ENGINEERING DECISIONS
 
 1. **Per-resident CSS via `data-resident` attribute** — Added to `EncounterCard.tsx` to allow per-card styling without per-district overrides. Used for SEXT PANTHER, MANGA RPG, COMIX HAREM.
-
 2. **LiveCamsRoom remains hardcoded** — Cards are not data-driven. New cards added directly in JSX. MYFREECAMS uses `data-cam` attribute for CSS targeting.
-
 3. **Empty descriptions hidden at component level** — `EncounterCard.tsx` conditionally renders description only when content exists.
-
 4. **i18n cross-contamination fix** — Root cause was Spanish strings placed in EN block while ES block had no keys. Fixed by ensuring EN and ES blocks each have correct-language values for every key.
-
 5. **"Video Games" renamed to "Games"** — Updated in `rooms.ts` (data), `i18n.tsx` (EN: "Games", ES: "Juegos"). All references eliminated.
-
 6. **Fan Sites use 300x100 banners** — Exception to the 300x250 standard. Titled above, no body.
 
 ---
