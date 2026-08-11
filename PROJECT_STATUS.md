@@ -1,6 +1,6 @@
 # CANTINA VIRTUAL — PROJECT STATUS
 
-> Last updated: 2026-08-08
+> Last updated: 2026-08-11
 > This file reflects the exact production state. Update after every deploy.
 
 ---
@@ -23,6 +23,7 @@
 
 | Commit ID | Description |
 |------|-------------|
+| `521be34` | docs: add product delivery and seasonal engine backlog |
 | `5f1a2f4` | test: verify direct ChatGPT GitHub write access |
 | `86a0945` | patch: Leave->Exit, 10% text size increase across landing/hub/sidebar |
 | `cd56322` | asset: add MYFREECAMS 300x250 banner |
@@ -45,8 +46,9 @@
 ## VERCEL PRODUCTION STATUS
 
 - **Status:** Live / auto-deploy from `main`
-- **Last verified:** 2026-08-08
+- **Last verified:** 2026-08-11
 - **Direct GitHub → Vercel deployment path:** Verified
+- **Cache-bust:** This status-only commit intentionally triggers a fresh production deployment because the public alias was serving a stale CDN response despite the latest deployment being READY.
 
 ---
 
@@ -150,7 +152,7 @@
 ### 6. GAY (`niche`)
 
 | # | Offer | Banner | Size | Affiliate URL | i18n |
-|---|-------|-------|------|---------------|------|
+|---|-------|--------|------|---------------|------|
 | 1 | PREMIUM GAY ENTERTAINMENT | `/gay-offer.png` | Default | `t.acust-7.com/.../4080/0?...` | Title only (no desc) |
 
 **Renderer:** `DistrictScene.tsx` generic
