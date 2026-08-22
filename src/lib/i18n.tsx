@@ -199,9 +199,9 @@ export const T: Record<Lang, Record<string, string>> = {
     'resident.aff-adult-friend-finder.name': 'ADULT FRIEND FINDER',
     'resident.aff-adult-friend-finder.desc': 'Not a typical dating site',
     'resident.my-mature-passion.name': 'MY MATURE PASSION',
-    'resident.my-mature-passion.desc': 'REAL PASSION MEETS EXPERIENCE',
+    'resident.my-mature-passion.desc': 'Real passion meets experience',
     'resident.mature-flirts-nearby.name': 'MATURE FLIRTS NEARBY',
-    'resident.mature-flirts-nearby.desc': 'FLIRTING STARTS NEAR YOU',
+    'resident.mature-flirts-nearby.desc': 'She wants to have fun. Perhaps with you?',
 
     /* ── UI strings ── */
     emptyResidents: 'Residents arriving soon.',
@@ -411,9 +411,9 @@ export const T: Record<Lang, Record<string, string>> = {
     'resident.aff-adult-friend-finder.name': 'ADULT FRIEND FINDER',
     'resident.aff-adult-friend-finder.desc': 'No es un sitio\ntípico de citas',
     'resident.my-mature-passion.name': 'MY MATURE PASSION',
-    'resident.my-mature-passion.desc': 'PASIÓN REAL CON EXPERIENCIA',
+    'resident.my-mature-passion.desc': 'Pasión real con experiencia',
     'resident.mature-flirts-nearby.name': 'MATURE FLIRTS NEARBY',
-    'resident.mature-flirts-nearby.desc': 'EL COQUETEO EMPIEZA CERCA DE TI',
+    'resident.mature-flirts-nearby.desc': 'Ella quiere divertirse. Quizás contigo?',
 
     /* ── UI strings ── */
     emptyResidents: 'Los residentes están por llegar.',
