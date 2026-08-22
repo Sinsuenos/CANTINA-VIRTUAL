@@ -1532,6 +1532,28 @@ body {
   box-shadow: 0 8px 24px rgba(0,0,0,0.4), 0 0 12px rgba(212,160,23,0.08);
 }
 
+/* ── My Mature Passion: 300x250 pink banner (IMAGE SIZING STANDARD) ── */
+[data-resident="my-mature-passion"] .encounter-card-image {
+  aspect-ratio: 300/250;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+[data-resident="my-mature-passion"] .encounter-card-image::after {
+  background: none;
+}
+
+/* ── Mature Flirts Nearby: 300x250 pink banner (IMAGE SIZING STANDARD) ── */
+[data-resident="mature-flirts-nearby"] .encounter-card-image {
+  aspect-ratio: 300/250;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+[data-resident="mature-flirts-nearby"] .encounter-card-image::after {
+  background: none;
+}
+
 /* ── Red dismiss-X on Crossdressing Fun banner ── */
 .card-dismiss-x {
   position: absolute;

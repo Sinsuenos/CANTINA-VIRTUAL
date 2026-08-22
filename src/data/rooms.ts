@@ -310,14 +310,14 @@ export const RESIDENTS: Record<string, Resident> = {
     id: 'my-mature-passion',
     name: 'MY MATURE PASSION',
     subtitle: '',
-    description: 'REAL PASSION MEETS EXPERIENCE',
+    description: 'Real passion meets experience',
     image: '/my-mature-passion-300x250.png',
   },
   'mature-flirts-nearby': {
     id: 'mature-flirts-nearby',
     name: 'MATURE FLIRTS NEARBY',
     subtitle: '',
-    description: 'FLIRTING STARTS NEAR YOU',
+    description: 'She wants to have fun. Perhaps with you?',
     image: '/mature-flirts-nearby-300x250.png',
   },
   'instabang-latinas': {
