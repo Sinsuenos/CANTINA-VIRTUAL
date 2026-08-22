@@ -21,12 +21,17 @@ Additionally, the image container MUST enforce these CSS properties:
 Copy this template for every resident card image. Replace `resident-name` with the resident ID:
 
 ```css
+/* Dating wing uses .dating-encounter-image (DatingRoom.tsx).
+   All other wings use .encounter-card-image (EncounterCard.tsx).
+   Always target BOTH to be safe. */
+[data-resident="resident-name"] .dating-encounter-image,
 [data-resident="resident-name"] .encounter-card-image {
   aspect-ratio: 300/250;
   background-size: cover;
   background-position: center;
   overflow: hidden;
 }
+[data-resident="resident-name"] .dating-encounter-image::after,
 [data-resident="resident-name"] .encounter-card-image::after {
   background: none;
 }
@@ -34,6 +39,7 @@ Copy this template for every resident card image. Replace `resident-name` with t
 
 Notes:
 - The `::after { background: none; }` removes the default gradient overlay that can obscure banner content.
+- **Critical**: The Dating wing renders cards via `DatingRoom.tsx` which uses `.dating-encounter-image`. All other wings use `EncounterCard.tsx` which uses `.encounter-card-image`. Your CSS MUST target both classes or it will silently fail on one wing.
 - If the card uses a flat layout (name above, image below), also add `order` properties.
 - If the card needs the gradient overlay for readability, omit the `::after` rule.
 

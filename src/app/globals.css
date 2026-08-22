@@ -1533,23 +1533,27 @@ body {
 }
 
 /* ── My Mature Passion: 300x250 pink banner (IMAGE SIZING STANDARD) ── */
+[data-resident="my-mature-passion"] .dating-encounter-image,
 [data-resident="my-mature-passion"] .encounter-card-image {
   aspect-ratio: 300/250;
   background-size: cover;
   background-position: center;
   overflow: hidden;
 }
+[data-resident="my-mature-passion"] .dating-encounter-image::after,
 [data-resident="my-mature-passion"] .encounter-card-image::after {
   background: none;
 }
 
 /* ── Mature Flirts Nearby: 300x250 pink banner (IMAGE SIZING STANDARD) ── */
+[data-resident="mature-flirts-nearby"] .dating-encounter-image,
 [data-resident="mature-flirts-nearby"] .encounter-card-image {
   aspect-ratio: 300/250;
   background-size: cover;
   background-position: center;
   overflow: hidden;
 }
+[data-resident="mature-flirts-nearby"] .dating-encounter-image::after,
 [data-resident="mature-flirts-nearby"] .encounter-card-image::after {
   background: none;
 }
