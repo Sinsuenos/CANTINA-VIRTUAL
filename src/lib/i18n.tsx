@@ -198,8 +198,10 @@ export const T: Record<Lang, Record<string, string>> = {
       'TRANS CAM MODELS\nON DEMAND',
     'resident.aff-adult-friend-finder.name': 'ADULT FRIEND FINDER',
     'resident.aff-adult-friend-finder.desc': 'Not a typical dating site',
-    'resident.my-mature-passion.name': 'MATURE',
-    'resident.my-mature-passion.desc': 'Age You Are Looking For',
+    'resident.my-mature-passion.name': 'MY MATURE PASSION',
+    'resident.my-mature-passion.desc': 'REAL PASSION MEETS EXPERIENCE',
+    'resident.mature-flirts-nearby.name': 'MATURE FLIRTS NEARBY',
+    'resident.mature-flirts-nearby.desc': 'FLIRTING STARTS NEAR YOU',
 
     /* ── UI strings ── */
     emptyResidents: 'Residents arriving soon.',
@@ -408,8 +410,10 @@ export const T: Record<Lang, Record<string, string>> = {
       'MODELOS TRANS EN CAM\nA DEMANDA',
     'resident.aff-adult-friend-finder.name': 'ADULT FRIEND FINDER',
     'resident.aff-adult-friend-finder.desc': 'No es un sitio\ntípico de citas',
-    'resident.my-mature-passion.name': 'MADURO',
-    'resident.my-mature-passion.desc': 'La edad que buscas',
+    'resident.my-mature-passion.name': 'MY MATURE PASSION',
+    'resident.my-mature-passion.desc': 'PASIÓN REAL CON EXPERIENCIA',
+    'resident.mature-flirts-nearby.name': 'MATURE FLIRTS NEARBY',
+    'resident.mature-flirts-nearby.desc': 'EL COQUETEO EMPIEZA CERCA DE TI',
 
     /* ── UI strings ── */
     emptyResidents: 'Los residentes están por llegar.',

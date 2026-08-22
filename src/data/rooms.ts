@@ -306,6 +306,20 @@ export const RESIDENTS: Record<string, Resident> = {
     description: 'MATURE ADULTS FIND COMPANIONSHIP',
     image: '/cozy-300x250.jpg',
   },
+  'my-mature-passion': {
+    id: 'my-mature-passion',
+    name: 'MY MATURE PASSION',
+    subtitle: '',
+    description: 'REAL PASSION MEETS EXPERIENCE',
+    image: '/my-mature-passion-300x250.png',
+  },
+  'mature-flirts-nearby': {
+    id: 'mature-flirts-nearby',
+    name: 'MATURE FLIRTS NEARBY',
+    subtitle: '',
+    description: 'FLIRTING STARTS NEAR YOU',
+    image: '/mature-flirts-nearby-300x250.png',
+  },
   'instabang-latinas': {
     id: 'instabang-latinas',
     name: 'INSTABANG',
@@ -347,13 +361,6 @@ export const RESIDENTS: Record<string, Resident> = {
     subtitle: '',
     description: 'Not a typical dating site',
     image: '/aff-adult-friend-finder-300x250.png',
-  },
-  'my-mature-passion': {
-    id: 'my-mature-passion',
-    name: 'MATURE',
-    subtitle: '',
-    description: 'Age You Are Looking For',
-    image: '/my-mature-passion-300x250.png',
   },
 };
 
@@ -419,6 +426,10 @@ export const DISTRICTS: District[] = [
       {
         residentId: 'my-mature-passion',
         href: 'https://t.datsk9.com/413627/10449/0?aff_sub=DATING&aff_sub2=OPTILND&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
+      },
+      {
+        residentId: 'mature-flirts-nearby',
+        href: 'https://t.datsk9.com/413627/10502/42203?aff_sub=MATURE&aff_sub2=REDHATLP&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
       },
     ],
   },
