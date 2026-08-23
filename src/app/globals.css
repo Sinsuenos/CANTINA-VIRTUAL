@@ -4282,3 +4282,265 @@ a.nectar-cabin-card {
     font-size: 12px;
   }
 }
+
+/* ═══════════════════════════════════════════════════════════════
+   DASHBOARD — Private Control Room Styles
+   ═══════════════════════════════════════════════════════════════ */
+
+.dashboard-gate {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #0a0a0a;
+  color: #e0e0e0;
+  font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
+}
+
+.dashboard-gate-card {
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 40px;
+  max-width: 360px;
+  width: 90%;
+  text-align: center;
+}
+
+.dashboard-gate-title {
+  font-size: 24px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: var(--amber, #dab12a);
+  margin: 0 0 4px;
+}
+
+.dashboard-gate-subtitle {
+  font-size: 13px;
+  color: #888;
+  margin: 0 0 28px;
+  letter-spacing: 1px;
+}
+
+.dashboard-pin-input {
+  width: 100%;
+  padding: 12px 16px;
+  background: #111;
+  border: 1px solid #444;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 16px;
+  text-align: center;
+  letter-spacing: 6px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.dashboard-pin-input:focus {
+  border-color: var(--amber, #dab12a);
+}
+
+.dashboard-pin-error {
+  color: #e53e3e;
+  font-size: 13px;
+  margin: 8px 0 0;
+}
+
+.dashboard-pin-btn {
+  width: 100%;
+  margin-top: 16px;
+  padding: 12px;
+  background: var(--amber, #dab12a);
+  color: #000;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+
+.dashboard-pin-btn:hover {
+  opacity: 0.9;
+}
+
+/* ── Dashboard Main ── */
+
+.dashboard {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 32px 20px 80px;
+  color: #e0e0e0;
+  font-family: var(--font-sans, system-ui, -apple-system, sans-serif);
+}
+
+.dashboard-header {
+  margin-bottom: 24px;
+  border-bottom: 1px solid #222;
+  padding-bottom: 16px;
+}
+
+.dashboard-title {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  color: var(--amber, #dab12a);
+  margin: 0 0 4px;
+}
+
+.dashboard-subtitle {
+  font-size: 13px;
+  color: #888;
+  margin: 0;
+}
+
+/* ── Time Filters ── */
+
+.dashboard-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 24px;
+}
+
+.dashboard-filter-btn {
+  padding: 6px 14px;
+  background: #1a1a1a;
+  border: 1px solid #333;
+  border-radius: 4px;
+  color: #aaa;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.dashboard-filter-btn:hover {
+  border-color: #555;
+  color: #ddd;
+}
+
+.dashboard-filter-btn.active {
+  background: var(--amber, #dab12a);
+  border-color: var(--amber, #dab12a);
+  color: #000;
+  font-weight: 600;
+}
+
+/* ── Metrics Grid ── */
+
+.dashboard-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.dashboard-metric {
+  background: #1a1a1a;
+  border: 1px solid #222;
+  border-radius: 6px;
+  padding: 16px;
+  text-align: center;
+}
+
+.dashboard-metric-value {
+  display: block;
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 4px;
+}
+
+.dashboard-metric-label {
+  font-size: 11px;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ── Sections ── */
+
+.dashboard-section {
+  margin-bottom: 28px;
+}
+
+.dashboard-section-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ccc;
+  margin: 0 0 12px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.dashboard-empty {
+  color: #666;
+  font-size: 13px;
+  margin: 0;
+}
+
+/* ── Tables ── */
+
+.dashboard-table-wrap {
+  overflow-x: auto;
+}
+
+.dashboard-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.dashboard-table th {
+  text-align: left;
+  padding: 8px 12px;
+  background: #1a1a1a;
+  color: #999;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #333;
+}
+
+.dashboard-table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid #1a1a1a;
+  color: #ccc;
+}
+
+.dashboard-table tr:hover td {
+  background: #141414;
+}
+
+/* ── Legend ── */
+
+.dashboard-legend {
+  background: #111;
+  border: 1px solid #222;
+  border-radius: 6px;
+  padding: 20px;
+  margin-top: 32px;
+}
+
+.dashboard-legend-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #999;
+  margin: 0 0 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.dashboard-legend-list {
+  margin: 0 0 12px;
+  padding-left: 20px;
+  font-size: 13px;
+  color: #aaa;
+  line-height: 1.8;
+}
+
+.dashboard-legend-note {
+  font-size: 12px;
+  color: #666;
+  margin: 0;
+  font-style: italic;
+}
