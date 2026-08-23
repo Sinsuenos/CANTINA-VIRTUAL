@@ -203,3 +203,51 @@ Stage Summary:
 - All 7 required screenshots captured (default, toast, expanded panel, all-8-complete, passport modal, ES widget+toast, ES passport modal) + 2 production screenshots
 - Privacy note "Progress saved on this device" shown under widget + in passport modal
 - Share is manual copy-to-clipboard only — no auto-post to social media
+
+---
+Task ID: 5
+Agent: Main Agent (routing migration)
+Task: Implement real Next.js routing for 10 wings + private /dashboard control room
+
+Work Log:
+- Verified repo state: Phase 0 (67abfc3) and Phase 1 (f5c52f8) committed and pushed, clean build confirmed
+- Identified Games slug: district ID is 'gaming' in rooms.ts, CrackRevenue uses aff_sub=GAMES. Public URL: /games
+- Found NO existing dashboard, NO $2,902, NO revenue data, NO database, NO auth system anywhere in repo
+- Created src/lib/wing-routes.ts: SLUG_TO_ID mapping (10 entries), ID_TO_SLUG reverse, WING_SLUGS array, SITE_BASE
+- Created src/app/[wing]/page.tsx: dynamic route with generateStaticParams + generateMetadata (unique title/desc/OG per wing)
+- Created src/app/[wing]/WingPageClient.tsx: client wrapper composing AgeGateGuard + WingPage
+- Created src/components/AgeGateGuard.tsx: 2-step age gate (Enter → Confirm) using same cv_age sessionStorage key
+- Created src/components/cantina/WingPage.tsx: extracted Cantina component using next/navigation router
+- Rewrote src/app/page.tsx: landing + age gate + hub only, removed Cantina/Home/ArrivalDust/pushState/popstate
+- SidebarHub interface unchanged — WingPage handles router.push for sidebar navigation
+- Updated src/app/sitemap.ts: 15 entries (root + 4 legal + 10 wings), /dashboard excluded
+- Created src/app/dashboard/page.tsx: noindex/nofollow/googlebot meta tags
+- Created src/app/dashboard/DashboardClient.tsx: PIN gate (cv2025), 8 time filters, 7 $0.00 metrics, click breakdown tables
+- Updated src/lib/ga4.ts: trackOfferClick now also records to localStorage (cv_dash_clicks, capped 10k)
+- Added dashboard CSS styles to globals.css (~260 lines)
+
+Commits:
+- 16841d7: feat: routing migration — 10 shareable wing URLs with real Next.js routes
+- 4eaf226: feat: add private /dashboard control room with PIN gate, time filters, and zero-default revenue
+
+Production Verification (cantina-virtual.vercel.app):
+- All 10 wing URLs return HTTP 200: /dating, /live-cams, /ai-companions, /fan-sites, /pay-sites, /gay, /games, /transgender, /unique-offers, /nectar
+- /dashboard returns HTTP 200 with noindex meta tags
+- Direct link /dating → age gate shown AT /dating (URL preserved) → confirm → dating wing renders
+- Sidebar navigation: /dating → click LIVE CAMS → URL becomes /live-cams ✅
+- Sidebar navigation: /live-cams → click GAMES → URL becomes /games ✅
+- BACK TO HUB from /live-cams → URL becomes / ✅
+- Hub card click (DATING) → URL becomes /dating ✅
+- Per-wing titles verified: 'Dating — Cantina Virtual', 'Games — Cantina Virtual', etc.
+- Sitemap: 15 URLs (root + 4 legal + 10 wings), /dashboard NOT present
+- No 'dashboard' text in homepage or wing page HTML
+- No '$2,902' or fake revenue anywhere in dashboard HTML
+- Dashboard PIN input renders in server HTML
+
+Stage Summary:
+- Routing migration COMPLETE. All 10 wings have shareable URLs.
+- Age gate works on direct links: URL stays at requested wing throughout verification.
+- Browser Back button: verified via agent-browser that back() causes CDP session disconnect (tool limitation). The navigation itself uses standard Next.js router which provides proper history stack behavior.
+- Dashboard: $0.00 default, PIN-protected, noindex, no public links, no fake data.
+- Dashboard security: PIN is client-side only. Appropriate for preventing casual discovery. For stronger protection, server-side middleware recommended.
+- Dashboard data: Clicks tracked in localStorage per-browser. Revenue/sales require API integration with affiliate networks.
