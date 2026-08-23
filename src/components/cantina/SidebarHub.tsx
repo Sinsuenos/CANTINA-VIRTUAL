@@ -1,8 +1,10 @@
 'use client';
 
+import { useRouter } from 'next/navigation';
 import { DISTRICTS, type District } from '@/data/rooms';
 import { useLang } from '@/lib/i18n';
 import { PointsWidget } from '@/components/nectar-engine';
+import { ID_TO_SLUG } from '@/lib/wing-routes';
 
 interface SidebarHubProps {
   activeDistrict: string;
@@ -16,7 +18,7 @@ export function SidebarHub({ activeDistrict, onDistrictChange, onBackToHub, onVi
 
   return (
     <nav className="sidebar-hub">
-      {/* Nectar points widget — replaces old COMING SOON badge */}
+      {/* Nectar points widget */}
       <div className="sidebar-nectar-wrap">
         <PointsWidget onViewPassport={onViewPassport} />
       </div>

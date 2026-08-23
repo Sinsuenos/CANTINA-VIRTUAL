@@ -1,16 +1,11 @@
 'use client';
 
-import { useState, useRef, useCallback, useMemo, useEffect } from 'react';
+import { useState, useMemo, useEffect, useCallback } from 'react';
+import { useRouter } from 'next/navigation';
 import { DISTRICTS } from '@/data/rooms';
 import { useLang } from '@/lib/i18n';
 import { MariposaCenterpiece } from '@/components/cantina/MariposaCenterpiece';
-import { SmokeParticles } from '@/components/cantina/SmokeParticles';
-import { SidebarHub } from '@/components/cantina/SidebarHub';
-import { DistrictScene } from '@/components/cantina/DistrictScene';
-import { PassportModal, NectarToast, type NectarToastData } from '@/components/nectar-engine';
-import { useNectarEngine } from '@/lib/nectar-engine';
-import { hasCelebrated, markCelebrated } from '@/lib/nectar-engine/store';
-import { trackWingView } from '@/lib/ga4';
+import { ID_TO_SLUG } from '@/lib/wing-routes';
 
 /* ─── Arrival Dust Particles ─── */
 function ArrivalDust() {
@@ -209,13 +204,8 @@ function useAliveCount() {
 /* ═══════════════════════════════════════════════════════════════
    HUB SCREEN — Category Selection (first screen after 18+)
    ═══════════════════════════════════════════════════════════════ */
-function HubScreen({
-  onCategorySelect,
-  onBack,
-}: {
-  onCategorySelect: (id: string) => void;
-  onBack: () => void;
-}) {
+function HubScreen() {
+  const router = useRouter();
   const { t, lang, onToggleLang } = useLang();
   const visits = useVisitCount();
   const aliveCount = useAliveCount();
@@ -226,6 +216,11 @@ function HubScreen({
     if (visits < 10) return t.regularFamiliar;
     return t.regularVip;
   }, [visits, t.regularReturn, t.regularFamiliar, t.regularVip]);
+
+  const handleCategorySelect = useCallback((districtId: string) => {
+    const slug = ID_TO_SLUG[districtId] || districtId;
+    router.push(`/${slug}`);
+  }, [router]);
 
   return (
     <div className="hub-scene">
@@ -271,7 +266,7 @@ function HubScreen({
               style={{
                 animationDelay: `${index * 0.07}s`,
               } as React.CSSProperties}
-              onClick={() => onCategorySelect(district.id)}
+              onClick={() => handleCategorySelect(district.id)}
             >
               <span className="hub-card-name">
                 {t[`district.${district.id}.name`] || district.name}
@@ -284,231 +279,18 @@ function HubScreen({
           <span className="hub-alive-count">{aliveCount}</span>{' '}
           {t.aliveText}
         </p>
-
-        <button className="hub-back" onClick={onBack}>
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="hub-back-icon"
-          >
-            <path d="M19 12H5" />
-            <path d="M12 19l-7-7 7-7" />
-          </svg>
-          {t.hubBack}
-        </button>
       </div>
-    </div>
-  );
-}
-
-/* ─── Main Cantina (only shown after explicit category selection) ─── */
-function Cantina({
-  initialDistrict,
-  onBackToHub,
-}: {
-  initialDistrict: string;
-  onBackToHub: () => void;
-}) {
-  const { t } = useLang();
-  const { visit, allQuestsComplete, config, questStatus, state } = useNectarEngine();
-  const [activeDistrict, setActiveDistrict] = useState(initialDistrict);
-  const [transitioning, setTransitioning] = useState(false);
-  const [displayedDistrict, setDisplayedDistrict] = useState(initialDistrict);
-  const [toast, setToast] = useState<NectarToastData | null>(null);
-  const [showPassport, setShowPassport] = useState(false);
-  const mainRef = useRef<HTMLDivElement>(null);
-
-  /* ── On mount: register first wing visit for initialDistrict ── */
-  useEffect(() => {
-    const awarded = visit(initialDistrict);
-    trackWingView(initialDistrict);
-    if (awarded) {
-      const district = DISTRICTS.find((d) => d.id === initialDistrict);
-      const wingName = district ? (t[`district.${initialDistrict}.name`] || district.name) : initialDistrict;
-      // eslint-disable-next-line react-hooks/set-state-in-effect -- one-time mount toast; visit() is idempotent and setToast is conditional on first-visit award.
-      setToast({ id: Date.now(), points: 10, wingName });
-    }
-  }, []);
-
-  /* ── When all 8 wings complete, show PassportModal ONCE per browser ── */
-  /* Only trigger if allWingsVisited === true && !hasCelebrated.
-     Once dismissed, markCelebrated() writes nectar_celebrated=true so it never auto-triggers again. */
-  useEffect(() => {
-    if (allQuestsComplete && !hasCelebrated()) {
-      // Small delay so the final toast can show first
-      setTimeout(() => setShowPassport(true), 1500);
-    }
-  }, [allQuestsComplete]);
-
-  /* ── Return to Hub from PassportModal: mark celebrated + clear modal + trigger Hub navigation ── */
-  const handleReturnToHub = useCallback(() => {
-    markCelebrated();
-    setShowPassport(false);
-    onBackToHub();
-  }, [onBackToHub]);
-
-  const handleDistrictChange = useCallback(
-    (id: string) => {
-      if (id === activeDistrict || transitioning) return;
-      setTransitioning(true);
-      const main = mainRef.current;
-      if (main) {
-        main.classList.add('scene-exit');
-        setTimeout(() => {
-          setActiveDistrict(id);
-          setDisplayedDistrict(id);
-          main.classList.remove('scene-exit');
-          main.classList.add('scene-transition');
-          setTransitioning(false);
-          setTimeout(() => main.classList.remove('scene-transition'), 800);
-          /* ── Register Nectar visit + GA4 wing_view for the new wing ── */
-          trackWingView(id);
-          const awarded = visit(id);
-          if (awarded) {
-            const district = DISTRICTS.find((d) => d.id === id);
-            const wingName = district ? (t[`district.${id}.name`] || district.name) : id;
-            setToast({
-              id: Date.now(),
-              points: 10,
-              wingName,
-              isComplete: config.sections.every((s) =>
-                s.id === id ? true : questStatus[s.id]
-              ),
-            });
-          }
-        }, 500);
-      } else {
-        setActiveDistrict(id);
-        setDisplayedDistrict(id);
-        setTransitioning(false);
-        trackWingView(id);
-        const awarded = visit(id);
-        if (awarded) {
-          const district = DISTRICTS.find((d) => d.id === id);
-          const wingName = district ? (t[`district.${id}.name`] || district.name) : id;
-          setToast({
-            id: Date.now(),
-            points: 10,
-            wingName,
-            isComplete: config.sections.every((s) =>
-              s.id === id ? true : questStatus[s.id]
-            ),
-          });
-        }
-      }
-    },
-    [activeDistrict, transitioning, visit, t, config.sections, questStatus],
-  );
-
-  const district = DISTRICTS.find((d) => d.id === displayedDistrict);
-
-  return (
-    <div className="cantina-layout">
-      <SidebarHub
-        activeDistrict={activeDistrict}
-        onDistrictChange={handleDistrictChange}
-        onBackToHub={onBackToHub}
-        onViewPassport={() => setShowPassport(true)}
-      />
-
-      <main ref={mainRef} className="cantina-main scene-transition">
-        <button className="mobile-back-hub" onClick={onBackToHub} aria-label="Back to Hub">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M19 12H5" />
-            <path d="M12 19l-7-7 7-7" />
-          </svg>
-        </button>
-
-        <div
-          className="mariposa"
-          style={{ top: '12%', right: '8%', color: '#ff69b4' }}
-        >
-          <span className="mariposa-wing">🦋</span>
-        </div>
-        <div
-          className="mariposa"
-          style={{ top: '35%', left: '5%', color: '#ff69b4', animationDelay: '-3s' }}
-        >
-          <span className="mariposa-wing" style={{ animationDelay: '-0.2s' }}>
-            🦋
-          </span>
-        </div>
-
-        {district && <DistrictScene district={district} />}
-
-        <SmokeParticles />
-
-        {/* Black/gold promo buttons — site-wide, all wings */}
-        <div className="promo-btns-stack">
-          <a
-            href="https://cantina-casita-total-offers.vercel.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="promo-btn-gold"
-          >
-            🔥 All Affiliate Offers 70+ »
-          </a>
-          <a
-            href="https://sinaloa-suenos-ai-reviews.carrd.co"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="promo-btn-gold"
-          >
-            🤖 AI Companion Reviews »
-          </a>
-        </div>
-
-        {/* Nectar status — live points + future opportunities */}
-        <div className="district-nectar-teaser">
-          <div className="nectar-teaser-content">
-            <div className="nectar-teaser-header">
-              <span className="nectar-hud-icon">🦋</span>
-              <span
-                className="nectar-teaser-title"
-                style={{ color: 'var(--amber)' }}
-              >
-                {t.nectarPointsLabel} · {state.totalPoints} {t.nectarPointsUnit}
-              </span>
-              <span
-                className="nectar-teaser-soon"
-                style={{ color: 'var(--amber)', opacity: 0.7 }}
-              >
-                {config.sections.filter((s) => questStatus[s.id]).length}/{config.sections.length} {t.nectarProgress}
-              </span>
-            </div>
-            <p className="nectar-teaser-intro" style={{ color: 'var(--text-muted)' }}>
-              {t.nectarFutureIntro}
-            </p>
-            <p className="nectar-teaser-list" style={{ color: 'var(--text-dim)' }}>
-              {t.nectarFutureList}
-            </p>
-          </div>
-        </div>
-      </main>
-
-      {/* Nectar toast — brief, non-blocking notification */}
-      <NectarToast toast={toast} onDismiss={() => setToast(null)} />
-
-      {/* PassportModal — only when all 8 wings visited (first time per browser) */}
-      {showPassport && (
-        <PassportModal onReturnToHub={handleReturnToHub} />
-      )}
     </div>
   );
 }
 
 /* ═══════════════════════════════════════════════════════════════
    HOME — Entry Point
-   Flow: Landing → 18+ Confirm → HUB → Category
-   Uses browser history API for real back navigation
+   Flow: Landing → 18+ Confirm → HUB
+   Wing navigation now uses real Next.js routes.
    ═══════════════════════════════════════════════════════════════ */
 export default function Home() {
   const [ageConfirmed, setAgeConfirmed] = useState(false);
-  const [activeDistrict, setActiveDistrict] = useState<string | null>(null);
   const { onToggleLang } = useLang();
 
   /* ── Persist age confirmation across navigations ── */
@@ -519,40 +301,9 @@ export default function Home() {
     }
   }, []);
 
-  /* ── Browser history integration ── */
-  useEffect(() => {
-    const handlePopState = (e: PopStateEvent) => {
-      const state = e.state as { screen?: string } | null;
-      if (!state || !state.screen || state.screen === 'landing') {
-        setAgeConfirmed(false);
-        setActiveDistrict(null);
-      } else if (state.screen === 'hub') {
-        setAgeConfirmed(true);
-        setActiveDistrict(null);
-      }
-    };
-    window.addEventListener('popstate', handlePopState);
-    return () => window.removeEventListener('popstate', handlePopState);
-  }, []);
-
   const handleAgeConfirm = useCallback(() => {
     setAgeConfirmed(true);
     sessionStorage.setItem('cv_age', '1');
-    window.history.pushState({ screen: 'hub' }, '');
-  }, []);
-
-  const handleCategorySelect = useCallback((id: string) => {
-    setActiveDistrict(id);
-    window.history.pushState({ screen: 'category', id }, '');
-  }, []);
-
-  const handleBackToHub = useCallback(() => {
-    setActiveDistrict(null);
-    window.history.pushState({ screen: 'hub' }, '');
-  }, []);
-
-  const handleBackToLanding = useCallback(() => {
-    window.history.back();
   }, []);
 
   return (
@@ -563,18 +314,7 @@ export default function Home() {
           onLeave={() => { window.location.href = 'https://google.com'; }}
         />
       )}
-      {ageConfirmed && !activeDistrict && (
-        <HubScreen
-          onCategorySelect={handleCategorySelect}
-          onBack={handleBackToLanding}
-        />
-      )}
-      {ageConfirmed && activeDistrict && (
-        <Cantina
-          initialDistrict={activeDistrict}
-          onBackToHub={handleBackToHub}
-        />
-      )}
+      {ageConfirmed && <HubScreen />}
     </>
   );
 }
