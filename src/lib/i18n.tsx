@@ -98,6 +98,9 @@ export const T: Record<Lang, Record<string, string>> = {
 
     /* ── Resident subtitles ── */
     'resident.girlfriendgpt.subtitle': '',
+    /* ── Nectar Cabins ── */
+    nectarCabinsIntro: 'Three doors. Three opportunities. Choose yours.',
+
     /* ── Resident names ── */
     'resident.gay-offer.name': 'LOCAL DATING',
     'resident.dating-encounter.name': 'REAL CONNECTIONS',
@@ -196,6 +199,8 @@ export const T: Record<Lang, Record<string, string>> = {
       'LIVE TRANS PERFORMERS\nREADY TO CHAT',
     'resident.soda-offer.desc':
       'TRANS CAM MODELS\nON DEMAND',
+    'resident.lusy-ai.name': 'LUSY AI',
+    'resident.lusy-ai.desc': '',
     'resident.aff-adult-friend-finder.name': 'ADULT FRIEND FINDER',
     'resident.aff-adult-friend-finder.desc': 'Not a typical dating site',
     'resident.my-mature-passion.name': 'MY MATURE PASSION',
@@ -245,6 +250,7 @@ export const T: Record<Lang, Record<string, string>> = {
     nectarFutureList: 'Socializar\nConversaciones\nParticipación\nApoyar a creadores\nDescubrir ofertas\nEventos',
 
     /* ── Nectar Cabinas (3 puertas en la página del ala Néctar) ── */
+    nectarCabinsIntro: 'Tres puertas. Tres oportunidades. Elige la tuya.',
     nectarCabin1Name: 'SANTUARIO DE CREADORES',
     nectarCabin1Body: "Eres talentoso. Solo no estás seguro de por dónde empezar, o en quién confiar.\n\nFansRevenue es una plataforma gratuita construida específicamente para creadores adultos. Sin tarifas, sin trampas. Las marcas le pagan a CrakRevenue, y CrakRevenue te paga a ti. Nunca se descuenta nada de tus ganancias.\n\nLo que obtienes, gratis:\n- Un enlace de biografía construido para contenido NSFW, no te van a shadowbanear\n- Estadísticas en tiempo real para que veas qué realmente funciona\n- La Creator Academy, entrenamiento, plantillas, guiones\n- Acuerdos de marca con plataformas que tus fans ya usan\n- Apoyo de salud mental a través de Pineapple Support\n\nEl programa de referidos:\nSi alguien se registra a través de tu enlace, ganas el 5% de lo que generan, pagado por CrakRevenue, no descontado de ellos. Mientras estén activos.\n\nTe ayudo con la configuración. Si no puedes contactar a FansRevenue a las 2 AM, puedes contactarme a mí.",
     nectarCabin1Cta: 'Entrar al Santuario de Creadores',
@@ -325,15 +331,15 @@ export const T: Record<Lang, Record<string, string>> = {
     'resident.ole.name': 'OLÉ',
     'resident.ole.desc': 'Modelos españolas y latinas',
     'resident.sweepsex.name': 'Sweepsex',
-    'resident.sweepsex.desc': 'Exclusive Freemium\nAdult Webcam',
+    'resident.sweepsex.desc': 'Webcam Freemium\nExclusiva para adultos',
     'resident.imlive.name': "I'm Live",
     'resident.imlive.desc': '100+ NICHOS Y SUB-NICHOS',
     'resident.xtease.name': 'XTEASE',
     'resident.xtease.desc': 'MODO SWIPE',
     'resident.sweepsex-gay.name': 'GAY CAMS',
-    'resident.sweepsex-gay.desc': 'Exclusive Freemium\nAdult Webcam',
+    'resident.sweepsex-gay.desc': 'Webcam Freemium\nExclusiva para adultos',
     'resident.sweepsex-trans.name': 'TRANS CAMS',
-    'resident.sweepsex-trans.desc': 'Exclusive Freemium\nAdult Webcam',
+    'resident.sweepsex-trans.desc': 'Webcam Freemium\nExclusiva para adultos',
     'resident.imlive-trans.name': 'IMLIVE',
     'resident.imlive-trans.desc': 'Transgénero\nCámaras en Vivo',
     'resident.datsk-trans.desc': 'No es un sitio típico\nde citas transgénero',
@@ -392,7 +398,7 @@ export const T: Record<Lang, Record<string, string>> = {
     'resident.vescina-pasionales.desc': 'LATAM DATING',
     'resident.sexymeet.name': 'Sexymeet.tv',
     'resident.dateplayer2-unique.name': 'DATEPLAYER2',
-    'resident.dateplayer2-unique.desc': 'GEEK DATING MADE EASY!',
+    'resident.dateplayer2-unique.desc': 'CITAS PARA GEEKS FACIL',
     'resident.x-game-hub.name': 'X Game Hub',
     'resident.x-game-hub.desc': 'JUEGOS INTERACTIVOS\nPARA ADULTOS',
     'resident.oopsie.name': 'Oopsie',
@@ -400,14 +406,16 @@ export const T: Record<Lang, Record<string, string>> = {
     'resident.cozy.name': 'COZY',
     'resident.cozy.desc': 'ADULTOS MADUROS ENCUENTRAN COMPAÑÍA',
     'resident.instabang-latinas.name': 'INSTABANG',
+    'resident.instabang-latinas.desc': 'ENCUENTROS Y FOTOS INTIMAS',
     'resident.crossdressing-fun.name': 'DATING',
     'resident.crossdressing-fun.desc':
       'Red Crossdresser\nActiva',
-    'resident.instabang-latinas.desc': 'HOOKUP & TRADE NAKED SELFIES',
     'resident.jermate-trans.desc':
       'PERFORMERS TRANS EN VIVO\nLISTAS PARA CHATEAR',
     'resident.soda-offer.desc':
       'MODELOS TRANS EN CAM\nA DEMANDA',
+    'resident.lusy-ai.name': 'LUSY AI',
+    'resident.lusy-ai.desc': '',
     'resident.aff-adult-friend-finder.name': 'ADULT FRIEND FINDER',
     'resident.aff-adult-friend-finder.desc': 'No es un sitio\ntípico de citas',
     'resident.my-mature-passion.name': 'MY MATURE PASSION',

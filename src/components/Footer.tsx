@@ -58,6 +58,7 @@ export function Footer() {
   }, []);
 
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- SSR-safe hydration: useState('en') gives deterministic server render, useEffect syncs from sessionStorage on client only.
     syncLang();
 
     // Check cookie consent state
