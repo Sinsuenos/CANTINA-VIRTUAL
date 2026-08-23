@@ -2,16 +2,15 @@
 
 import { useState, useRef, useCallback, useMemo, useEffect } from 'react';
 import { DISTRICTS } from '@/data/rooms';
-import { LangProvider, useLang } from '@/lib/i18n';
+import { useLang } from '@/lib/i18n';
 import { MariposaCenterpiece } from '@/components/cantina/MariposaCenterpiece';
 import { SmokeParticles } from '@/components/cantina/SmokeParticles';
 import { SidebarHub } from '@/components/cantina/SidebarHub';
 import { DistrictScene } from '@/components/cantina/DistrictScene';
 import { PassportModal, NectarToast, type NectarToastData } from '@/components/nectar-engine';
-import { useNectarEngine, NectarProvider } from '@/lib/nectar-engine';
+import { useNectarEngine } from '@/lib/nectar-engine';
 import { hasCelebrated, markCelebrated } from '@/lib/nectar-engine/store';
 import { trackWingView } from '@/lib/ga4';
-import type { Lang } from '@/lib/i18n';
 
 /* ─── Arrival Dust Particles ─── */
 function ArrivalDust() {
@@ -510,17 +509,13 @@ function Cantina({
 export default function Home() {
   const [ageConfirmed, setAgeConfirmed] = useState(false);
   const [activeDistrict, setActiveDistrict] = useState<string | null>(null);
-  const [lang, setLang] = useState<Lang>('en');
+  const { onToggleLang } = useLang();
 
-  /* ── Persist age confirmation and lang across navigations ── */
+  /* ── Persist age confirmation across navigations ── */
   useEffect(() => {
     if (sessionStorage.getItem('cv_age') === '1') {
-      // eslint-disable-next-line react-hooks/set-state-in-effect -- SSR-safe hydration: useState(false) gives deterministic server render, useEffect syncs from sessionStorage on client only. Lazy initializer would crash SSR (sessionStorage undefined on server).
+      // eslint-disable-next-line react-hooks/set-state-in-effect -- SSR-safe hydration: useState(false) gives deterministic server render, useEffect syncs from sessionStorage on client only.
       setAgeConfirmed(true);
-    }
-    const savedLang = sessionStorage.getItem('cv_lang');
-    if (savedLang === 'en' || savedLang === 'es') {
-      setLang(savedLang);
     }
   }, []);
 
@@ -546,14 +541,6 @@ export default function Home() {
     window.history.pushState({ screen: 'hub' }, '');
   }, []);
 
-  const handleToggleLang = useCallback(() => {
-    setLang((prev) => {
-      const next = prev === 'en' ? 'es' : 'en';
-      sessionStorage.setItem('cv_lang', next);
-      return next;
-    });
-  }, []);
-
   const handleCategorySelect = useCallback((id: string) => {
     setActiveDistrict(id);
     window.history.pushState({ screen: 'category', id }, '');
@@ -569,27 +556,25 @@ export default function Home() {
   }, []);
 
   return (
-    <LangProvider lang={lang} onToggleLang={handleToggleLang}>
-      <NectarProvider>
-        {!ageConfirmed && (
-          <AgeGate
-            onConfirm={handleAgeConfirm}
-            onLeave={() => { window.location.href = 'https://google.com'; }}
-          />
-        )}
-        {ageConfirmed && !activeDistrict && (
-          <HubScreen
-            onCategorySelect={handleCategorySelect}
-            onBack={handleBackToLanding}
-          />
-        )}
-        {ageConfirmed && activeDistrict && (
-          <Cantina
-            initialDistrict={activeDistrict}
-            onBackToHub={handleBackToHub}
-          />
-        )}
-      </NectarProvider>
-    </LangProvider>
+    <>
+      {!ageConfirmed && (
+        <AgeGate
+          onConfirm={handleAgeConfirm}
+          onLeave={() => { window.location.href = 'https://google.com'; }}
+        />
+      )}
+      {ageConfirmed && !activeDistrict && (
+        <HubScreen
+          onCategorySelect={handleCategorySelect}
+          onBack={handleBackToLanding}
+        />
+      )}
+      {ageConfirmed && activeDistrict && (
+        <Cantina
+          initialDistrict={activeDistrict}
+          onBackToHub={handleBackToHub}
+        />
+      )}
+    </>
   );
 }

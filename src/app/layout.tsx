@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import "./globals.css";
 import { Footer } from "@/components/Footer";
+import { Providers } from "./Providers";
 
 export const metadata: Metadata = {
   title: "Cantina Virtual — Something is Opening",
@@ -70,8 +71,10 @@ export default function RootLayout({
         <Ga4Scripts />
       </head>
       <body className="antialiased">
-        {children}
-        <Footer />
+        <Providers>
+          {children}
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
