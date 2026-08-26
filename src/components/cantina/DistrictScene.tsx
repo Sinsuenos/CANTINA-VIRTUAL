@@ -5,6 +5,7 @@ import { useLang } from '@/lib/i18n';
 import { EncounterCard } from './EncounterCard';
 import { DatingRoom } from './DatingRoom';
 import { NectarCabins } from './NectarCabins';
+import { GeneratePornRoom } from './GeneratePornRoom';
 
 
 interface DistrictSceneProps {
@@ -17,6 +18,11 @@ export function DistrictScene({ district }: DistrictSceneProps) {
   /* ── Immersive room overrides ── */
   if (district.id === 'dating') {
     return <DatingRoom district={district} />;
+  }
+
+  /* ── Dedicated GeneratePorn.ai takeover ── */
+  if (district.id === 'ai-companions') {
+    return <GeneratePornRoom district={district} />;
   }
 
   /* ── Default generic scene (all non-dating districts) ── */
