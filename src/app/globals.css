@@ -3027,12 +3027,16 @@ body {
   min-height: 120px;
 }
 
-/* Third row: 2 remaining wings centered below the 2x4 grid */
+/* Third row: 3 remaining wings centered below the 2x4 grid */
 .hub-card:nth-child(9) {
+  grid-column-start: 1;
+  grid-column-end: 2;
+}
+.hub-card:nth-child(10) {
   grid-column-start: 2;
   grid-column-end: 3;
 }
-.hub-card:nth-child(10) {
+.hub-card:nth-child(11) {
   grid-column-start: 3;
   grid-column-end: 4;
 }
@@ -3271,7 +3275,8 @@ body {
      4-col grid; on the 2-col mobile grid those line numbers create an implicit
      3rd column and horizontal overflow — reset to auto. */
   .hub-card:nth-child(9),
-  .hub-card:nth-child(10) {
+  .hub-card:nth-child(10),
+  .hub-card:nth-child(11) {
     grid-column: auto;
   }
   .hub-card-name {
@@ -4543,4 +4548,87 @@ a.nectar-cabin-card {
   color: #666;
   margin: 0;
   font-style: italic;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   AI PORN GENERATION — Featured Hub Card
+   Gold background, red neon border, pulsing animation
+   ═══════════════════════════════════════════════════════════════ */
+.hub-card-featured {
+  background: #DAB12A;
+  border: 2px solid #ff3333;
+  box-shadow: 0 0 8px rgba(255,51,51,0.6), 0 0 20px rgba(255,51,51,0.3), inset 0 0 12px rgba(0,0,0,0.2);
+  animation: hub-pulse-red 2s ease-in-out infinite;
+}
+.hub-card-featured .hub-card-name {
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(255,255,255,0.4), 0 1px 4px rgba(0,0,0,0.6);
+  font-weight: 800;
+}
+.hub-card-featured:hover {
+  border-color: #ff5555;
+  background: #e6c235;
+  box-shadow: 0 0 12px rgba(255,51,51,0.8), 0 0 30px rgba(255,51,51,0.4), inset 0 0 12px rgba(0,0,0,0.15);
+  transform: translateY(-2px) scale(1.02);
+}
+.hub-card-featured:hover .hub-card-name {
+  color: #ffffff;
+  filter: brightness(1.1);
+}
+
+@keyframes hub-pulse-red {
+  0%, 100% { box-shadow: 0 0 8px rgba(255,51,51,0.6), 0 0 20px rgba(255,51,51,0.3), inset 0 0 12px rgba(0,0,0,0.2); }
+  50% { box-shadow: 0 0 14px rgba(255,51,51,0.9), 0 0 32px rgba(255,51,51,0.5), inset 0 0 12px rgba(0,0,0,0.2); }
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   AI PORN GENERATION — Per-Resident Card CSS
+   ═══════════════════════════════════════════════════════════════ */
+[data-resident="vlmai-porn-gen"] {
+  display: block;
+}
+[data-resident="vlmai-porn-gen"] .encounter-card-image,
+[data-resident="vlmai-porn-gen"] .dating-encounter-image {
+  width: 300px;
+  height: 250px;
+  aspect-ratio: 300/250;
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+}
+[data-resident="vlmai-porn-gen"] .encounter-card-image::after,
+[data-resident="vlmai-porn-gen"] .dating-encounter-image::after {
+  background: none;
+}
+[data-resident="vlmai-porn-gen"] .encounter-card-name {
+  font-size: 16px;
+  letter-spacing: 0.22em;
+  text-align: center;
+  color: var(--amber);
+  text-shadow: 0 0 18px rgba(212,160,23,0.45), 0 0 36px rgba(212,160,23,0.15);
+  order: 1;
+}
+[data-resident="vlmai-porn-gen"] .encounter-card-desc {
+  text-align: center;
+  color: var(--text-primary);
+  order: 2;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   AI PORN GENERATION — Wing Page Accent
+   Gold/red neon accent for the wing page
+   ═══════════════════════════════════════════════════════════════ */
+[data-district="ai-porn-gen"] .district-name {
+  color: #DAB12A;
+  text-shadow: 0 0 20px rgba(218,177,42,0.6), 0 0 40px rgba(255,51,51,0.3);
+}
+[data-district="ai-porn-gen"] .district-divider {
+  background: linear-gradient(90deg, transparent, #DAB12A, #ff3333, #DAB12A, transparent);
+  box-shadow: 0 0 12px rgba(255,51,51,0.4);
+}
+[data-district="ai-porn-gen"] .district-description {
+  color: var(--text-primary);
+}
+[data-district="ai-porn-gen"] .district-scene-border {
+  border-color: rgba(255,51,51,0.4);
 }

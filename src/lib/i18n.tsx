@@ -73,6 +73,7 @@ export const T: Record<Lang, Record<string, string>> = {
     'district.our-mission.name': 'TRANSGENDER',
     'district.unique-offers.name': 'Unique Offers',
     'district.nectar.name': 'Nectar',
+    'district.ai-porn-gen.name': 'AI PORN GENERATION',
 
     /* ── District descriptions ── */
     'district.dating.desc':
@@ -95,6 +96,8 @@ export const T: Record<Lang, Record<string, string>> = {
       'One-of-a-kind encounters. Limited time. Only here.',
     'district.nectar.desc':
       'The heartbeat of the Cantina. Earn wings. Collect stamps. Your journey, remembered.',
+    'district.ai-porn-gen.desc':
+      'NOT another AI companion. This is a creation studio. Generate, edit, upscale, animate.',
 
     /* ── Resident subtitles ── */
     'resident.girlfriendgpt.subtitle': '',
@@ -207,6 +210,8 @@ export const T: Record<Lang, Record<string, string>> = {
     'resident.my-mature-passion.desc': 'Real passion meets experience',
     'resident.mature-flirts-nearby.name': 'MATURE FLIRTS NEARBY',
     'resident.mature-flirts-nearby.desc': 'She wants to have fun. Perhaps with you?',
+    'resident.vlmai-porn-gen.name': 'AI PORN GENERATION',
+    'resident.vlmai-porn-gen.desc': '48 FREE CREDITS\nNO CARD REQUIRED',
 
     /* ── UI strings ── */
     emptyResidents: 'Residents arriving soon.',
@@ -293,6 +298,7 @@ export const T: Record<Lang, Record<string, string>> = {
     'district.our-mission.name': 'TRANSGENDER',
     'district.unique-offers.name': 'Ofertas Únicas',
     'district.nectar.name': 'Néctar',
+    'district.ai-porn-gen.name': 'GENERACION IA',
 
     /* ── District descriptions ── */
     'district.dating.desc':
@@ -315,6 +321,8 @@ export const T: Record<Lang, Record<string, string>> = {
       'Encuentros únicos. Tiempo limitado. Solo aquí.',
     'district.nectar.desc':
       'El latido de la Cantina. Gana alas. Colecciona sellos. Tu viaje, recordado.',
+    'district.ai-porn-gen.desc':
+      'NO es otro compañero IA. Este es un estudio de creación. Genera, edita, escala, anima.',
 
     /* ── Resident names ── */
     'resident.gay-offer.name': 'CITAS LOCALES',
@@ -422,6 +430,8 @@ export const T: Record<Lang, Record<string, string>> = {
     'resident.my-mature-passion.desc': 'Pasión real con experiencia',
     'resident.mature-flirts-nearby.name': 'MATURE FLIRTS NEARBY',
     'resident.mature-flirts-nearby.desc': 'Ella quiere divertirse. Quizás contigo?',
+    'resident.vlmai-porn-gen.name': 'GENERACION IA',
+    'resident.vlmai-porn-gen.desc': '48 CREDITOS GRATIS\nSIN TARJETA',
 
     /* ── UI strings ── */
     emptyResidents: 'Los residentes están por llegar.',

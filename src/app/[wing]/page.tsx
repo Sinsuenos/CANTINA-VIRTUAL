@@ -77,6 +77,10 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
       title: 'Nectar — Cantina Virtual',
       description: 'The heartbeat of the Cantina. Earn wings, collect stamps, and unlock rewards as you explore every room.',
     },
+    'ai-porn-generation': {
+      title: 'AI Porn Generation — Cantina Virtual',
+      description: 'AI creation studio. Generate, edit, upscale, and animate explicit content. 48 free credits, no card required.',
+    },
   };
 
   const meta = WING_META[slug] || {

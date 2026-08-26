@@ -26,6 +26,7 @@ export const SLUG_TO_ID: Record<string, string> = {
   'transgender':   'our-mission',
   'unique-offers': 'unique-offers',
   'nectar':        'nectar',
+  'ai-porn-generation': 'ai-porn-gen',
 };
 
 /** All valid public slugs (for validation and sitemap) */

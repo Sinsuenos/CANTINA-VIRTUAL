@@ -261,8 +261,9 @@ function HubScreen() {
           {DISTRICTS.map((district, index) => (
             <button
               key={district.id}
-              className="hub-card"
+              className={`hub-card${district.id === 'ai-porn-gen' ? ' hub-card-featured' : ''}`}
               role="listitem"
+              data-district={district.id}
               style={{
                 animationDelay: `${index * 0.07}s`,
               } as React.CSSProperties}

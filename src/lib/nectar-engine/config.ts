@@ -1,10 +1,10 @@
 /* ═══════════════════════════════════════════════════════════════
-   NECTAR ENGINE — Config (Cantina Virtual 10-wing configuration)
+   NECTAR ENGINE — Config (Cantina Virtual 11-wing configuration)
    ═══════════════════════════════════════════════════════════════
 
-   10 sections, one per wing. IDs match district IDs in rooms.ts EXACTLY:
+   11 sections, one per wing. IDs match district IDs in rooms.ts EXACTLY:
      dating, live-cams, ai-companions, fan-sites, pay-sites,
-     niche, gaming, our-mission, unique-offers, nectar
+     niche, gaming, our-mission, unique-offers, nectar, ai-porn-gen
 
    Phase 1: first visit to each wing = +10 points.
    No quests, no bonus actions, no decay, no caps.
@@ -24,9 +24,10 @@ export const NECTAR_CONFIG: NectarConfig = {
     { id: 'our-mission', points: 10 },
     { id: 'unique-offers', points: 10 },
     { id: 'nectar', points: 10 },
+    { id: 'ai-porn-gen', points: 10 },
   ],
   quests: [], // Phase 1: no quests beyond section visits
 };
 
-/** Total points achievable in Phase 1 (10 wings × 10 points). */
+/** Total points achievable in Phase 1 (11 wings × 10 points). */
 export const MAX_POINTS = NECTAR_CONFIG.sections.reduce((sum, s) => sum + s.points, 0);

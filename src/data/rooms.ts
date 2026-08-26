@@ -362,6 +362,13 @@ export const RESIDENTS: Record<string, Resident> = {
     description: 'Not a typical dating site',
     image: '/aff-adult-friend-finder-300x250.png',
   },
+  'vlmai-porn-gen': {
+    id: 'vlmai-porn-gen',
+    name: 'AI PORN GENERATION',
+    subtitle: '',
+    description: '48 FREE CREDITS\nNO CARD REQUIRED',
+    image: '/vlmai-porn-gen-300x250.png',
+  },
 };
 
 /* ─── District ─── */
@@ -712,5 +719,22 @@ export const DISTRICTS: District[] = [
     textColor: 'var(--amber)',
     bgImage: '/nectar-bg.webp',
     encounters: [],
+  },
+  {
+    id: 'ai-porn-gen',
+    name: 'AI PORN GENERATION',
+    subtitle: '',
+    neonClass: 'neon-amber',
+    dividerClass: 'divider-amber',
+    description: 'NOT another AI companion. This is a creation studio. Generate, edit, upscale, animate.',
+    borderColor: 'rgba(212,160,23,0.3)',
+    textColor: 'var(--amber)',
+    bgImage: '/hub-bg.webp',
+    encounters: [
+      {
+        residentId: 'vlmai-porn-gen',
+        href: 'https://t.vlmai-5.com/413627/10513/0?aff_sub=AI&aff_sub2=GEN&aff_sub3=OPTILP&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
+      },
+    ],
   },
 ];

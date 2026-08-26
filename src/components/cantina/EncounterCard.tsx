@@ -17,6 +17,7 @@ const FLAT_LAYOUT_RESIDENTS = new Set([
   'sweepsex-trans',
   'imlive-trans',
   'datsk-trans',
+  'vlmai-porn-gen',
 ]);
 
 /* Residents that get a red dismiss-X overlay on their banner image */
