@@ -510,8 +510,20 @@ export const DISTRICTS: District[] = [
     bgImage: '/ai-partners-bg.webp',
     encounters: [
       {
-        residentId: 'generateporn-ai',
-        href: 'https://t.vlmai-5.com/413627/10512/43094?aff_sub=AI&aff_sub2=GEN&aff_sub3=GOLFO&aff_sub4=SUENOS&aff_sub5=NOCTURNO&source=X',
+        residentId: 'girlfriendgpt',
+        href: 'https://t.vlmai-1.com/413627/10046/38605?aff_sub=AI&source=Cantina&aff_sub5=SF_006OG000004lmDN',
+      },
+      {
+        residentId: 'darlink-ai',
+        href: 'https://t.vlmai-1.com/413627/10345/0?aff_sub=AI&aff_sub2=DARLINK&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
+      },
+      {
+        residentId: 'candy-ai-male',
+        href: 'https://t.vlmai-1.com/413627/10022/37968?aff_sub=AI&aff_sub2=MALE&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
+      },
+      {
+        residentId: 'lusy-ai',
+        href: 'https://t.vlmai-1.com/413627/10467/40747?aff_sub=AI&aff_sub2=LUSY&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
       },
     ],
   },
