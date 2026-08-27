@@ -168,6 +168,23 @@ export function WingPage({ districtId }: { districtId: string }) {
 
         <SmokeParticles />
 
+        {/* GeneratePorn.ai cross-promo banner - all wings except ai-porn-gen */}
+        {activeDistrict !== 'ai-porn-gen' && (
+          <a
+            href="https://t.vlmai-5.com/413627/10512/43094?aff_sub=AI&aff_sub2=GEN&aff_sub3=GOLFO&aff_sub4=SUENOS&aff_sub5=NOCTURNO&source=CANTINA"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="promo-gp-banner no-underline"
+          >
+            <img src="/generateporn-logo.svg" alt="" className="promo-gp-logo" />
+            <div className="promo-gp-center">
+              <span className="promo-gp-title">GENERATEPORN.AI</span>
+              <span className="promo-gp-sub">48 FREE CREDITS &middot; NO CARD REQUIRED</span>
+            </div>
+            <img src="/generateporn-logo.svg" alt="" className="promo-gp-logo promo-gp-logo-flip" />
+          </a>
+        )}
+
         {/* Black/gold promo buttons — site-wide, all wings */}
         <div className="promo-btns-stack">
           <a

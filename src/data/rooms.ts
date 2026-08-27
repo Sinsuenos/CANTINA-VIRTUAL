@@ -482,6 +482,23 @@ export const DISTRICTS: District[] = [
     ],
   },
   {
+    id: 'ai-porn-gen',
+    name: 'AI PORN GENERATION',
+    subtitle: '',
+    neonClass: 'neon-cyan',
+    dividerClass: 'divider-cyan',
+    description: 'GeneratePorn.ai — Uncensored AI image generation powered by KREA V3 ULTRA. Card & Crypto accepted.',
+    borderColor: 'rgba(0,245,255,0.3)',
+    textColor: 'var(--cyan)',
+    bgImage: '/ai-partners-bg.webp',
+    encounters: [
+      {
+        residentId: 'vlmai-porn-gen',
+        href: 'https://t.vlmai-5.com/413627/10512/43094?aff_sub=AI&aff_sub2=GEN&aff_sub3=GOLFO&aff_sub4=SUENOS&aff_sub5=NOCTURNO&source=X',
+      },
+    ],
+  },
+  {
     id: 'ai-companions',
     name: 'AI Companions',
     subtitle: '',
@@ -707,22 +724,5 @@ export const DISTRICTS: District[] = [
     textColor: 'var(--amber)',
     bgImage: '/nectar-bg.webp',
     encounters: [],
-  },
-  {
-    id: 'ai-porn-gen',
-    name: 'AI PORN GENERATION',
-    subtitle: '',
-    neonClass: 'neon-cyan',
-    dividerClass: 'divider-cyan',
-    description: 'GeneratePorn.ai — Uncensored AI image generation powered by KREA V3 ULTRA. Card & Crypto accepted.',
-    borderColor: 'rgba(0,245,255,0.3)',
-    textColor: 'var(--cyan)',
-    bgImage: '/ai-partners-bg.webp',
-    encounters: [
-      {
-        residentId: 'vlmai-porn-gen',
-        href: 'https://t.vlmai-5.com/413627/10512/43094?aff_sub=AI&aff_sub2=GEN&aff_sub3=GOLFO&aff_sub4=SUENOS&aff_sub5=NOCTURNO&source=X',
-      },
-    ],
   },
 ];
