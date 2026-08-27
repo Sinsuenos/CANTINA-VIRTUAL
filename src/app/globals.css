@@ -4634,8 +4634,8 @@ a.nectar-cabin-card {
 }
 
 /* ═══════════════════════════════════════════════════════════════
-   GENERATEPORN ROOM — Dedicated landing page takeover
-   Gold (#DAB12A) accents, dark cinematic, single-offer CTA
+   GENERATEPORN ROOM — Full sales floor landing page
+   Gold (#DAB12A) accents, dark cinematic, packed layout
    ═══════════════════════════════════════════════════════════════ */
 
 /* ── Room shell ── */
@@ -4656,8 +4656,8 @@ a.nectar-cabin-card {
   background-image: url('/ai-partners-bg.webp');
   background-size: cover;
   background-position: center;
-  opacity: 0.15;
-  filter: saturate(0.4) brightness(0.6);
+  opacity: 0.12;
+  filter: saturate(0.3) brightness(0.5);
   z-index: 0;
 }
 
@@ -4669,10 +4669,10 @@ a.nectar-cabin-card {
   bottom: 0;
   background: linear-gradient(
     180deg,
-    rgba(10,14,23,0.88) 0%,
-    rgba(10,14,23,0.75) 30%,
-    rgba(10,14,23,0.82) 70%,
-    rgba(10,14,23,0.94) 100%
+    rgba(10,14,23,0.90) 0%,
+    rgba(10,14,23,0.78) 25%,
+    rgba(10,14,23,0.82) 75%,
+    rgba(10,14,23,0.95) 100%
   );
   z-index: 1;
 }
@@ -4715,19 +4715,19 @@ a.nectar-cabin-card {
   animation: smokeRise 8s ease-out infinite;
 }
 
-/* ── Content container ── */
+/* ── Content — tight sales floor, no gaps ── */
 .gp-room-content {
   position: relative;
   z-index: 2;
-  padding: 40px 48px 140px;
+  padding: 28px 40px 140px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 48px;
+  gap: 28px;
   margin-left: 220px;
 }
 
-/* ══════════ FULL-WIDTH BANNER ══════════ */
+/* ══════════ BANNER ══════════ */
 .gp-banner-cta {
   display: flex;
   flex-direction: column;
@@ -4739,8 +4739,8 @@ a.nectar-cabin-card {
   border-radius: 6px;
   background: linear-gradient(135deg, rgba(218,177,42,0.08) 0%, rgba(15,21,32,0.92) 100%);
   overflow: hidden;
-  padding: 32px 24px 28px;
-  gap: 14px;
+  padding: 24px 24px 20px;
+  gap: 10px;
   transition: all 0.4s ease;
   text-decoration: none;
   color: inherit;
@@ -4751,22 +4751,19 @@ a.nectar-cabin-card {
   box-shadow: 0 0 50px rgba(218,177,42,0.12), 0 0 100px rgba(218,177,42,0.05);
   transform: translateY(-2px);
 }
-
 .gp-banner-logo {
-  height: 52px;
+  height: 48px;
   width: auto;
   filter: brightness(1.15);
 }
-
 .gp-banner-tagline {
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 800;
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: #DAB12A;
   text-shadow: 0 0 20px rgba(218,177,42,0.45);
 }
-
 .gp-banner-pulse {
   position: absolute;
   inset: 0;
@@ -4780,13 +4777,17 @@ a.nectar-cabin-card {
   50% { opacity: 1; transform: scale(1.005); }
 }
 
-/* ══════════ HERO IMAGE ══════════ */
-.gp-hero-wrap {
-  position: relative;
-  width: 100%;
-  max-width: 800px;
+/* ══════════ HERO: image + copy side by side ══════════ */
+.gp-hero {
+ display: grid;
+ grid-template-columns: 1.1fr 0.9fr;
+ gap: 32px;
+ width: 100%;
+ align-items: start;
 }
-
+.gp-hero-image-box {
+  position: relative;
+}
 .gp-hero-img {
   width: 100%;
   border-radius: 6px;
@@ -4798,8 +4799,6 @@ a.nectar-cabin-card {
   border-color: rgba(218,177,42,0.25);
   box-shadow: 0 8px 40px rgba(0,0,0,0.6);
 }
-
-/* ── RED RIGHT BORDER ── */
 .gp-red-border {
   position: absolute;
   top: 0;
@@ -4817,72 +4816,116 @@ a.nectar-cabin-card {
   border-radius: 2px;
   box-shadow: 0 0 14px rgba(255,59,59,0.45), 0 0 28px rgba(255,59,59,0.15);
 }
-
-/* ══════════ FEATURES / BULLETS ══════════ */
-.gp-features {
-  width: 100%;
-  max-width: 800px;
+.gp-hero-copy {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 14px;
+  padding-top: 4px;
 }
-
-.gp-features-headline {
-  font-size: 28px;
+.gp-headline-gold {
+  font-size: 22px;
   font-weight: 800;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
   color: #DAB12A;
-  text-shadow: 0 0 28px rgba(218,177,42,0.35), 0 0 56px rgba(218,177,42,0.10);
-  text-align: center;
-  line-height: 1.1;
+  text-shadow: 0 0 24px rgba(218,177,42,0.35);
+  line-height: 1.15;
+}
+.gp-body {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.65;
+  color: var(--text-primary);
+ letter-spacing: 0.02em;
+}
+.gp-body strong {
+  color: #DAB12A;
+}
+.gp-body-dim {
+  color: var(--text-muted);
+  font-size: 13px;
+  line-height: 1.6;
 }
 
+/* ══════════ SECTIONS (shared) ══════════ */
+.gp-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.gp-section-title {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #DAB12A;
+  text-shadow: 0 0 16px rgba(218,177,42,0.30);
+  text-align: center;
+}
 .gp-gold-divider {
   height: 1px;
   background: linear-gradient(90deg, transparent, #DAB12A, transparent);
-  opacity: 0.35;
+  opacity: 0.30;
 }
 
+/* ══════════ STUDIO SCREENSHOTS — 3 across ══════════ */
+.gp-screenshots {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+}
+.gp-screenshot {
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(218,177,42,0.15);
+  transition: all 0.4s ease;
+  background: var(--bg-card);
+}
+.gp-screenshot:hover {
+  border-color: rgba(218,177,42,0.40);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.5);
+  transform: translateY(-2px);
+}
+.gp-screenshot img {
+  width: 100%;
+  display: block;
+}
+
+/* ══════════ BULLETS ══════════ */
 .gp-bullet-list {
   list-style: none;
   padding: 0;
   margin: 0;
   display: flex;
   flex-direction: column;
-  gap: 18px;
+  gap: 12px;
 }
-
 .gp-bullet-item {
   display: flex;
   align-items: flex-start;
-  gap: 14px;
-  font-size: 15px;
+  gap: 12px;
+  font-size: 14px;
   font-weight: 700;
-  letter-spacing: 0.06em;
-  line-height: 1.55;
+  letter-spacing: 0.05em;
+  line-height: 1.50;
   color: var(--text-primary);
-  padding: 8px 0;
+  padding: 4px 0;
 }
-
 .gp-bullet-icon {
   color: #DAB12A;
-  font-size: 11px;
+  font-size: 10px;
   margin-top: 4px;
   flex-shrink: 0;
   text-shadow: 0 0 10px rgba(218,177,42,0.6);
-}
-
-.gp-bullet-text {
-  /* highlight CRYPTO and key phrases */
 }
 
 /* ══════════ CTA BUTTON ══════════ */
 .gp-cta {
   display: inline-block;
   width: fit-content;
-  padding: 18px 40px;
-  font-size: 16px;
+  padding: 16px 36px;
+  font-size: 15px;
   font-weight: 800;
   letter-spacing: 0.22em;
   text-transform: uppercase;
@@ -4901,47 +4944,24 @@ a.nectar-cabin-card {
   color: var(--bg-deep);
 }
 
-/* ══════════ GALLERY ══════════ */
-.gp-gallery {
-  width: 100%;
-  max-width: 800px;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.gp-gallery-divider {
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(218,177,42,0.20), transparent);
-}
-
-.gp-gallery-label {
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 0.3em;
-  text-transform: uppercase;
-  color: var(--text-dim);
-  text-align: center;
-}
-
-.gp-gallery-grid {
+/* ══════════ GENERATED IMAGE GALLERY — 3 across ══════════ */
+.gp-gen-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 16px;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
 }
-
-.gp-gallery-thumb {
+.gp-gen-thumb {
   border-radius: 6px;
   overflow: hidden;
   border: 1px solid rgba(218,177,42,0.12);
   transition: all 0.4s ease;
 }
-.gp-gallery-thumb:hover {
+.gp-gen-thumb:hover {
   border-color: rgba(218,177,42,0.35);
   box-shadow: 0 6px 28px rgba(0,0,0,0.5);
   transform: translateY(-2px);
 }
-.gp-gallery-thumb img {
+.gp-gen-thumb img {
   width: 100%;
   display: block;
 }
@@ -4952,13 +4972,13 @@ a.nectar-cabin-card {
   align-items: center;
   justify-content: center;
   gap: 16px;
-  padding: 22px 36px;
+  padding: 20px 32px;
   border: 1px solid rgba(218,177,42,0.25);
   border-radius: 6px;
   background: rgba(218,177,42,0.05);
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 800;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: #DAB12A;
   text-shadow: 0 0 18px rgba(218,177,42,0.40);
@@ -4982,16 +5002,21 @@ a.nectar-cabin-card {
 
 /* ══════════ MOBILE ══════════ */
 @media (max-width: 900px) {
-  .gp-gallery-grid {
+  .gp-hero {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .gp-screenshots,
+  .gp-gen-grid {
     grid-template-columns: 1fr;
   }
-  .gp-features-headline {
-    font-size: 20px;
+  .gp-headline-gold {
+    font-size: 17px;
   }
   .gp-room-content {
-    padding: 24px 16px 140px;
+    padding: 20px 16px 140px;
     margin-left: 0;
-    gap: 32px;
+    gap: 24px;
   }
   .gp-room-bg,
   .gp-room-overlay {
@@ -5002,5 +5027,9 @@ a.nectar-cabin-card {
   }
   .gp-bullet-item {
     font-size: 13px;
+  }
+  .gp-bottom-cta {
+    font-size: 11px;
+    letter-spacing: 0.12em;
   }
 }
