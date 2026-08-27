@@ -5,7 +5,7 @@ import type { District } from '@/data/rooms';
 import { trackOfferClick } from '@/lib/ga4';
 
 /* ═══════════════════════════════════════════════════════════════
-   GeneratePornRoom — Full sales floor landing page
+   GeneratePornRoom — Full-bleed banner sales floor
    ═══════════════════════════════════════════════════════════════ */
 
 const AFFILIATE_URL =
@@ -18,34 +18,30 @@ interface GeneratePornRoomProps {
 export function GeneratePornRoom({ district }: GeneratePornRoomProps) {
   const particles = useMemo(
     () =>
-      Array.from({ length: 20 }, (_, i) => ({
+      Array.from({ length: 18 }, (_, i) => ({
         id: i,
         left: Math.random() * 100,
-        delay: Math.random() * 18,
-        duration: 7 + Math.random() * 14,
-        size: 1 + Math.random() * 2.5,
-        opacity: 0.03 + Math.random() * 0.10,
+        delay: Math.random() * 16,
+        duration: 8 + Math.random() * 12,
+        size: 1 + Math.random() * 2,
+        opacity: 0.04 + Math.random() * 0.08,
       })),
     [],
   );
 
   const handleClick = () => trackOfferClick('generateporn-ai', district.id);
 
-  const screenshots = [
-    { src: '/gp-screen1.png', alt: 'GeneratePorn.ai studio interface' },
-    { src: '/gp-screen2.png', alt: 'GeneratePorn.ai editing tools' },
-    { src: '/gp-screen3.png', alt: 'GeneratePorn.ai generation output' },
-  ];
-
-  const generated = [
-    { src: '/gp-gen1.jpg', alt: 'AI generated sample 1' },
-    { src: '/gp-gen2.jpg', alt: 'AI generated sample 2' },
-    { src: '/gp-gen3.jpg', alt: 'AI generated sample 3' },
+  const banners = [
+    { src: '/gp-banner6.jpg', alt: 'GeneratePorn.ai — nightlife studio' },
+    { src: '/gp-banner3.jpg', alt: 'GeneratePorn.ai — tropical escape' },
+    { src: '/gp-banner5.jpg', alt: 'GeneratePorn.ai — festival vibes' },
+    { src: '/gp-banner4.jpg', alt: 'GeneratePorn.ai — boardwalk connections' },
+    { src: '/gp-banner1.jpg', alt: 'GeneratePorn.ai — concert energy' },
+    { src: '/gp-banner2.jpg', alt: 'GeneratePorn.ai — beach sunset' },
   ];
 
   return (
     <div className="gp-room" data-district={district.id}>
-      <div className="gp-room-bg" />
       <div className="gp-room-overlay" />
       <div className="gp-glow gp-glow-gold-top" />
       <div className="gp-glow gp-glow-gold-bottom" />
@@ -69,125 +65,142 @@ export function GeneratePornRoom({ district }: GeneratePornRoomProps) {
 
       <div className="gp-room-content">
 
-        {/* ═══ BANNER ═══ */}
+        {/* ═══ HERO BANNER 1 — full bleed ═══ */}
         <a
           href={AFFILIATE_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="gp-banner-cta no-underline"
+          className="gp-full-banner no-underline"
           onClick={handleClick}
         >
-          <img src="/generateporn-logo.svg" alt="GeneratePorn.ai" className="gp-banner-logo" />
-          <span className="gp-banner-tagline">THE #1 UNCENSORED AI PORN STUDIO</span>
-          <div className="gp-banner-pulse" />
+          <img src={banners[0].src} alt={banners[0].alt} />
+          <div className="gp-banner-fade" />
         </a>
 
-        {/* ═══ HERO: BIG OPENING IMAGE + HOOK COPY ═══ */}
-        <div className="gp-hero">
-          <div className="gp-hero-image-box">
-            <a href={AFFILIATE_URL} target="_blank" rel="noopener noreferrer" className="no-underline" onClick={handleClick}>
-              <img src="/gp-gen2.jpg" alt="GeneratePorn.ai studio" className="gp-hero-img" />
-            </a>
-            <div className="gp-red-border" />
-          </div>
-          <div className="gp-hero-copy">
-            <h2 className="gp-headline-gold">THIS IS NOT ANOTHER AI COMPANION</h2>
-            <p className="gp-body">
-              GeneratePorn.ai is a <strong>purpose-built adult AI creation studio</strong> — not another
-              AI girlfriend or chat offer. Generate explicit fictional-adult images, precisely edit
-              results, upscale them, and turn your favourites into video — all inside one
-              <strong>private-by-default studio</strong>.
-            </p>
-            <p className="gp-body gp-body-dim">
-              Your private AI creation studio is open. Generate the scenes, the vibes you
-              actually want. Late-night ideas hit different when you can turn them into
-              images and video inside your private AI studio.
-            </p>
-          </div>
+        {/* ═══ HOOK COPY — landing page font style ═══ */}
+        <div className="gp-copy-block">
+          <p className="gp-landing-copy">
+            GeneratePorn.ai is a <strong>purpose-built adult AI creation studio</strong> —
+            not another AI girlfriend or chat offer.
+          </p>
+          <p className="gp-landing-copy gp-landing-copy-dim">
+            Generate explicit fictional-adult images, precisely edit results, upscale them,
+            and turn your favourites into video — all inside one private-by-default studio.
+          </p>
         </div>
 
-        {/* ═══ STUDIO SCREENSHOTS ═══ */}
-        <div className="gp-section">
-          <h3 className="gp-section-title">THE STUDIO</h3>
-          <div className="gp-screenshots">
-            {screenshots.map((s, i) => (
-              <a
-                key={i}
-                href={AFFILIATE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="gp-screenshot no-underline"
-                onClick={handleClick}
-              >
-                <img src={s.src} alt={s.alt} />
-              </a>
-            ))}
-          </div>
-        </div>
-
-        {/* ═══ FEATURE BULLETS ═══ */}
-        <div className="gp-section">
-          <h3 className="gp-section-title">WHY GENERATEPORN.AI</h3>
-          <div className="gp-gold-divider" />
-          <ul className="gp-bullet-list">
-            <li className="gp-bullet-item">
-              <span className="gp-bullet-icon">&#9670;</span>
-              <span>48 FREE CREDITS to start — no card required</span>
-            </li>
-            <li className="gp-bullet-item">
-              <span className="gp-bullet-icon">&#9670;</span>
-              <span>Generate, edit, upscale, and animate in one studio</span>
-            </li>
-            <li className="gp-bullet-item">
-              <span className="gp-bullet-icon">&#9670;</span>
-              <span>No card required to start creating immediately</span>
-            </li>
-            <li className="gp-bullet-item">
-              <span className="gp-bullet-icon">&#9670;</span>
-              <span><strong>CRYPTO ACCEPTED</strong> — Bitcoin, Ethereum, and more</span>
-            </li>
-            <li className="gp-bullet-item">
-              <span className="gp-bullet-icon">&#9670;</span>
-              <span>Private by default — discreet billing, zero data sharing</span>
-            </li>
-            <li className="gp-bullet-item">
-              <span className="gp-bullet-icon">&#9670;</span>
-              <span><strong>FIRST IN INDUSTRY</strong> — card processing for direct AI porn content generation</span>
-            </li>
-          </ul>
-        </div>
-
-        {/* ═══ CTA BUTTON ═══ */}
+        {/* ═══ HERO BANNER 2 ═══ */}
         <a
           href={AFFILIATE_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="gp-cta no-underline"
+          className="gp-full-banner no-underline"
+          onClick={handleClick}
+        >
+          <img src={banners[1].src} alt={banners[1].alt} />
+          <div className="gp-banner-fade" />
+        </a>
+
+        {/* ═══ STUDIO LINE ═══ */}
+        <div className="gp-studio-line">
+          <span className="gp-studio-line-text">Your private AI creation studio is open.</span>
+        </div>
+
+        {/* ═══ HERO BANNER 3 ═══ */}
+        <a
+          href={AFFILIATE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="gp-full-banner no-underline"
+          onClick={handleClick}
+        >
+          <img src={banners[2].src} alt={banners[2].alt} />
+          <div className="gp-banner-fade" />
+        </a>
+
+        {/* ═══ FEATURE BULLETS ═══ */}
+        <div className="gp-bullets-strip">
+          <div className="gp-bullet-row">
+            <span className="gp-bullet-diamond">&#9670;</span>
+            <span>48 FREE CREDITS — no card required</span>
+          </div>
+          <div className="gp-bullet-row">
+            <span className="gp-bullet-diamond">&#9670;</span>
+            <span>Generate, edit, upscale, and animate in one studio</span>
+          </div>
+          <div className="gp-bullet-row">
+            <span className="gp-bullet-diamond">&#9670;</span>
+            <span><strong>CRYPTO ACCEPTED</strong> — Bitcoin, Ethereum, and more</span>
+          </div>
+          <div className="gp-bullet-row">
+            <span className="gp-bullet-diamond">&#9670;</span>
+            <span>Private by default — discreet billing, zero data sharing</span>
+          </div>
+          <div className="gp-bullet-row">
+            <span className="gp-bullet-diamond">&#9670;</span>
+            <span><strong>FIRST IN INDUSTRY</strong> — card processing for direct AI porn content generation</span>
+          </div>
+        </div>
+
+        {/* ═══ HERO BANNER 4 ═══ */}
+        <a
+          href={AFFILIATE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="gp-full-banner no-underline"
+          onClick={handleClick}
+        >
+          <img src={banners[3].src} alt={banners[3].alt} />
+          <div className="gp-banner-fade" />
+        </a>
+
+        {/* ═══ MID-PAGE CTA BUTTON ═══ */}
+        <a
+          href={AFFILIATE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="gp-cta-banner no-underline"
           onClick={handleClick}
         >
           START GENERATING NOW &#8594;
         </a>
 
-        {/* ═══ GENERATED IMAGE GALLERY ═══ */}
-        <div className="gp-section">
-          <h3 className="gp-section-title">SAMPLE OUTPUTS</h3>
-          <div className="gp-gen-grid">
-            {generated.map((g, i) => (
-              <a
-                key={i}
-                href={AFFILIATE_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="gp-gen-thumb no-underline"
-                onClick={handleClick}
-              >
-                <img src={g.src} alt={g.alt} />
-              </a>
-            ))}
-          </div>
+        {/* ═══ HERO BANNER 5 ═══ */}
+        <a
+          href={AFFILIATE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="gp-full-banner no-underline"
+          onClick={handleClick}
+        >
+          <img src={banners[4].src} alt={banners[4].alt} />
+          <div className="gp-banner-fade" />
+        </a>
+
+        {/* ═══ VIBE COPY ═══ */}
+        <div className="gp-copy-block">
+          <p className="gp-landing-copy gp-landing-copy-italic">
+            Generate the guys, the scenes, the vibes you actually want.
+            Edit. Upscale. Animate.
+          </p>
+          <p className="gp-landing-copy-dim">
+            48 free credits. No card required. Late-night ideas hit different.
+          </p>
         </div>
 
-        {/* ═══ CLOSING CTA ═══ */}
+        {/* ═══ HERO BANNER 6 ═══ */}
+        <a
+          href={AFFILIATE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="gp-full-banner no-underline"
+          onClick={handleClick}
+        >
+          <img src={banners[5].src} alt={banners[5].alt} />
+          <div className="gp-banner-fade" />
+        </a>
+
+        {/* ═══ BOTTOM CTA ═══ */}
         <a
           href={AFFILIATE_URL}
           target="_blank"
