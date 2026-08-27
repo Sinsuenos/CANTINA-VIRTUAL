@@ -21,7 +21,7 @@ export function DistrictScene({ district }: DistrictSceneProps) {
   }
 
   /* ── Dedicated GeneratePorn.ai takeover ── */
-  if (district.id === 'ai-companions' || district.id === 'ai-porn-gen') {
+  if (district.id === 'ai-porn-gen') {
     return <GeneratePornRoom district={district} />;
   }
 

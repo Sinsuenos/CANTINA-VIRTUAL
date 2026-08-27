@@ -2023,9 +2023,6 @@ body {
   filter: brightness(1.2);
   opacity: 0.9;
 }
-.promo-gp-logo-flip {
-  transform: scaleX(-1);
-}
 .promo-gp-center {
   display: flex;
   flex-direction: column;

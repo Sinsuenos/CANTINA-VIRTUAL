@@ -181,7 +181,7 @@ export function WingPage({ districtId }: { districtId: string }) {
               <span className="promo-gp-title">GENERATEPORN.AI</span>
               <span className="promo-gp-sub">48 FREE CREDITS &middot; NO CARD REQUIRED</span>
             </div>
-            <img src="/generateporn-logo.svg" alt="" className="promo-gp-logo promo-gp-logo-flip" />
+            <img src="/generateporn-logo.svg" alt="" className="promo-gp-logo" />
           </a>
         )}
 
