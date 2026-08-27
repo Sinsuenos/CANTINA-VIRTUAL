@@ -5,16 +5,15 @@ import type { District } from '@/data/rooms';
 import { trackOfferClick } from '@/lib/ga4';
 
 /* ═══════════════════════════════════════════════════════════════
-   GeneratePornRoom — Dedicated full-page for GeneratePorn.ai
+   GeneratePornRoom — Dedicated landing page for GeneratePorn.ai
    ═══════════════════════════════════════════════════════════════
 
-   Replaces the generic DistrictScene for the ai-companions wing.
-   Single-offer takeover: full-width CTA banner at top, feature
-   bullets on the right, red right-border accent.
+   Full-page single-offer takeover. Gold (#DAB12A) accents on dark
+   cinematic background. Banner → bullets → CTA. No card grid.
    ═══════════════════════════════════════════════════════════════ */
 
 const AFFILIATE_URL =
-  'https://t.vlmai-5.com/413627/10512/43094?aff_sub=AI&aff_sub2=GEN&aff_sub3=GOLFO&aff_sub4=SUENOS&aff_sub5=NOCTURNO&source=X';
+  'https://t.vlmai-5.com/413627/10512/43094?aff_sub=AI&aff_sub2=GEN&aff_sub3=GOLFO&aff_sub4=SUENOS&aff_sub5=NOCTURNO&source=CANTINA';
 
 interface GeneratePornRoomProps {
   district: District;
@@ -23,38 +22,37 @@ interface GeneratePornRoomProps {
 export function GeneratePornRoom({ district }: GeneratePornRoomProps) {
   const particles = useMemo(
     () =>
-      Array.from({ length: 12 }, (_, i) => ({
+      Array.from({ length: 18 }, (_, i) => ({
         id: i,
         left: Math.random() * 100,
-        delay: Math.random() * 14,
-        duration: 7 + Math.random() * 11,
-        size: 1 + Math.random() * 2,
-        opacity: 0.06 + Math.random() * 0.14,
+        delay: Math.random() * 16,
+        duration: 8 + Math.random() * 12,
+        size: 1 + Math.random() * 2.5,
+        opacity: 0.04 + Math.random() * 0.12,
       })),
     [],
   );
 
   const features = [
-    'UNCENSORED AI IMAGE GENERATION — Powered by KREA V3 ULTRA',
-    'EDIT ANY RESULT — Refine, extend, and perfect every image',
-    'STILL-TO-VIDEO — Turn generated images into video loops',
-    'PAY BY CARD OR CRYPTO — First platform to accept both',
-    'PRIVATE & SECURE — Discreet billing, no data sharing',
-    '3 FREE IMAGES — Start generating immediately, no card required',
+    '48 FREE CREDITS to start — no card required',
+    'Generate, edit, upscale, and animate in one studio',
+    'No card required to start creating immediately',
+    'CRYPTO ACCEPTED — Bitcoin, Ethereum, and more',
+    'Private by default — discreet billing, zero data sharing',
+    'FIRST IN INDUSTRY — card processing for direct AI porn content generation',
   ];
+
+  const handleClick = () => trackOfferClick('generateporn-ai', district.id);
 
   return (
     <div className="gp-room" data-district={district.id}>
-      {/* Atmospheric background */}
+      {/* Atmospheric layers */}
       <div className="gp-room-bg" />
       <div className="gp-room-overlay" />
+      <div className="gp-glow gp-glow-gold-top" />
+      <div className="gp-glow gp-glow-gold-bottom" />
 
-      {/* Cyan glow top-left */}
-      <div className="gp-glow gp-glow-cyan" />
-      {/* Red glow bottom-right */}
-      <div className="gp-glow gp-glow-red" />
-
-      {/* Ambient particles */}
+      {/* Ambient gold particles */}
       <div className="gp-particles-container">
         {particles.map((p) => (
           <div
@@ -74,90 +72,83 @@ export function GeneratePornRoom({ district }: GeneratePornRoomProps) {
 
       {/* ── Content ── */}
       <div className="gp-room-content">
-        {/* ===== FULL-WIDTH CTA BANNER ===== */}
+
+        {/* ===== FULL-WIDTH BANNER ===== */}
         <a
           href={AFFILIATE_URL}
           target="_blank"
           rel="noopener noreferrer"
           className="gp-banner-cta no-underline"
-          onClick={() => trackOfferClick('generateporn-ai', district.id)}
+          onClick={handleClick}
         >
-          <div className="gp-banner-inner">
-            <img
-              src="/generateporn-logo.svg"
-              alt="GeneratePorn.ai"
-              className="gp-banner-logo"
-            />
-            <span className="gp-banner-tagline">
-              AI-POWERED · UNCENSORED · CARD & CRYPTO
-            </span>
-          </div>
+          <img
+            src="/generateporn-logo.svg"
+            alt="GeneratePorn.ai"
+            className="gp-banner-logo"
+          />
+          <span className="gp-banner-tagline">
+            THE #1 UNCENSORED AI PORN STUDIO
+          </span>
           <div className="gp-banner-pulse" />
         </a>
 
-        {/* ===== HERO SECTION: Image + Features ===== */}
-        <div className="gp-hero-section">
-          {/* Left: Hero image with red right border */}
-          <div className="gp-hero-image-wrap">
-            <a
-              href={AFFILIATE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="no-underline"
-              onClick={() => trackOfferClick('generateporn-ai', district.id)}
-            >
-              <img
-                src="/generateporn-og.webp"
-                alt="GeneratePorn.ai preview"
-                className="gp-hero-image"
-              />
-            </a>
-            {/* Red accent border on right */}
-            <div className="gp-red-border-right" />
-          </div>
-
-          {/* Right: Feature bullets */}
-          <div className="gp-features-panel">
-            <h2 className="gp-features-title">
-              GENERATEPORN.AI
-            </h2>
-            <div className="gp-features-divider" />
-            <ul className="gp-features-list">
-              {features.map((f, i) => (
-                <li key={i} className="gp-feature-item">
-                  <span className="gp-feature-bullet">&#9654;</span>
-                  <span>{f}</span>
-                </li>
-              ))}
-            </ul>
-            <a
-              href={AFFILIATE_URL}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="gp-cta-button no-underline"
-              onClick={() => trackOfferClick('generateporn-ai', district.id)}
-            >
-              START GENERATING NOW &#8594;
-            </a>
-          </div>
+        {/* ===== HERO IMAGE ===== */}
+        <div className="gp-hero-wrap">
+          <a
+            href={AFFILIATE_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="no-underline"
+            onClick={handleClick}
+          >
+            <img
+              src="/generateporn-og.webp"
+              alt="GeneratePorn.ai studio preview"
+              className="gp-hero-img"
+            />
+          </a>
+          {/* Red right-border accent */}
+          <div className="gp-red-border" />
         </div>
 
+        {/* ===== FEATURES ===== */}
+        <div className="gp-features">
+          <h2 className="gp-features-headline">WHY GENERATEPORN.AI</h2>
+          <div className="gp-gold-divider" />
+          <ul className="gp-bullet-list">
+            {features.map((f, i) => (
+              <li key={i} className="gp-bullet-item">
+                <span className="gp-bullet-icon">&#9670;</span>
+                <span className="gp-bullet-text">{f}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+
+        {/* ===== CTA BUTTON ===== */}
+        <a
+          href={AFFILIATE_URL}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="gp-cta no-underline"
+          onClick={handleClick}
+        >
+          START GENERATING NOW &#8594;
+        </a>
+
         {/* ===== SAMPLE GALLERY ===== */}
-        <div className="gp-gallery-section">
+        <div className="gp-gallery">
           <div className="gp-gallery-divider" />
           <p className="gp-gallery-label">SAMPLE OUTPUTS</p>
           <div className="gp-gallery-grid">
-            {[
-              '/generateporn-hero.jpg',
-              '/generateporn-og.webp',
-            ].map((src, i) => (
+            {['/generateporn-hero.jpg', '/generateporn-og.webp'].map((src, i) => (
               <a
                 key={i}
                 href={AFFILIATE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="gp-gallery-thumb no-underline"
-                onClick={() => trackOfferClick('generateporn-ai', district.id)}
+                onClick={handleClick}
               >
                 <img src={src} alt={`GeneratePorn sample ${i + 1}`} />
               </a>
@@ -171,10 +162,10 @@ export function GeneratePornRoom({ district }: GeneratePornRoomProps) {
           target="_blank"
           rel="noopener noreferrer"
           className="gp-bottom-cta no-underline"
-          onClick={() => trackOfferClick('generateporn-ai', district.id)}
+          onClick={handleClick}
         >
-          <span>TRY 3 FREE IMAGES — NO CARD REQUIRED</span>
-          <span className="gp-bottom-cta-arrow">&#8594;</span>
+          <span>48 FREE CREDITS — NO CARD REQUIRED</span>
+          <span className="gp-bottom-arrow">&#8594;</span>
         </a>
       </div>
     </div>
