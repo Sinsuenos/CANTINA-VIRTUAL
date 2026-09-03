@@ -212,6 +212,8 @@ export const T: Record<Lang, Record<string, string>> = {
     'resident.mature-flirts-nearby.desc': 'She wants to have fun. Perhaps with you?',
     'resident.vlmai-porn-gen.name': 'AI PORN GENERATION',
     'resident.vlmai-porn-gen.desc': '48 FREE CREDITS\nNO CARD REQUIRED',
+    'resident.slut-roulette.name': 'SLUT ROULETTE',
+    'resident.slut-roulette.desc': 'EXPERIENCE = ADDICTIVE',
 
     /* ── UI strings ── */
     emptyResidents: 'Residents arriving soon.',
@@ -432,6 +434,8 @@ export const T: Record<Lang, Record<string, string>> = {
     'resident.mature-flirts-nearby.desc': 'Ella quiere divertirse. Quizás contigo?',
     'resident.vlmai-porn-gen.name': 'GENERACION IA',
     'resident.vlmai-porn-gen.desc': '48 CREDITOS GRATIS\nSIN TARJETA',
+    'resident.slut-roulette.name': 'SLUT ROULETTE',
+    'resident.slut-roulette.desc': 'LA EXPERIENCIA = ADICTIVA',
 
     /* ── UI strings ── */
     emptyResidents: 'Los residentes están por llegar.',

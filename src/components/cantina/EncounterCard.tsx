@@ -18,6 +18,7 @@ const FLAT_LAYOUT_RESIDENTS = new Set([
   'imlive-trans',
   'datsk-trans',
   'vlmai-porn-gen',
+  'slut-roulette',
 ]);
 
 /* Residents that get a red dismiss-X overlay on their banner image */

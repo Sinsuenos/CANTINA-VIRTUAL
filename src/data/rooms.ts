@@ -369,6 +369,13 @@ export const RESIDENTS: Record<string, Resident> = {
     description: '48 FREE CREDITS\nNO CARD REQUIRED',
     image: '/vlmai-porn-gen-300x250.png',
   },
+  'slut-roulette': {
+    id: 'slut-roulette',
+    name: 'SLUT ROULETTE',
+    subtitle: '',
+    description: 'EXPERIENCE = ADDICTIVE',
+    image: '/slut-roulette-300x250.gif',
+  },
 };
 
 /* ─── District ─── */
@@ -478,6 +485,10 @@ export const DISTRICTS: District[] = [
       {
         residentId: 'xtease',
         href: 'https://t.camsk5.com/413627/10291/40033?aff_sub=CAMS&aff_sub2=SWIPE&source=CANTINA&aff_sub5=SF_006OG000004lmDN',
+      },
+      {
+        residentId: 'slut-roulette',
+        href: 'https://t.frtayb.com/413627/153/30544?aff_sub=OPTILP&source=X&aff_sub5=SF_006OG000004lmDN',
       },
     ],
   },
